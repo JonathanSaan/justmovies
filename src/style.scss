@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .7rem;
+  height: 4rem;
+  align-items: center;
+  background-color: black;
+  .Menu {
+    background: none;
+    border: none;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    input {
+      height: 2rem;
+      width: 30vw;
+      padding: 20px 10px;
+      border-radius: 4px;
+      background-color: #3e3e3eca;
+      border: none;
+      outline: none;
+    }
+    
+    .Search {
+      margin: 0 .6rem 0 -2.3rem;
+      background: transparent;
+      border: none;
+    }
+  }
+  
+}
+
+  .SideBar {
+    /*display: flex;*/
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    background-color: red;
+    margin: -80px 0 0 0;
+    height: 100%;
+    width: 200px;
+    transition: 850ms;
+    left: 0;
+    .Close-Sidebar {
+      display: flex;
+      background: none;
+      border: none;
+      width: 50px;
+    }
+    
+    .Buttons-Sidebar {
+      height: 3rem;
+      background: none;
+      border: none;
+    }
+    
+    .Buttons-Sidebar:hover {
+      background-color: blue;
+    }
+  }
+  
+  
+@media screen and (max-width: 400px) {
+  .Header {
+    form {
+      input {
+        width: 60vw;
+      }
+    }
+  }
+}
