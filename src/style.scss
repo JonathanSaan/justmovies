@@ -7,25 +7,30 @@
 
 .Header {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   padding: 0 .7rem;
   height: 4rem;
+  width: 100%;
   align-items: center;
-  background-color: black;
+  background-color: #0c0c0ce7;
   .Menu {
     background: none;
     border: none;
+    cursor: pointer;
   }
   
   form {
     display: flex;
     justify-content: center;
+    
     input {
       height: 2rem;
       width: 30vw;
       padding: 20px 10px;
       border-radius: 4px;
       background-color: #3e3e3eca;
+      color: #d3d3d3f9;
       border: none;
       outline: none;
     }
@@ -36,44 +41,139 @@
       border: none;
     }
   }
-  
 }
 
-  .SideBar {
-    /*display: flex;*/
-    display: none;
-    position: fixed;
-    flex-direction: column;
-    background-color: red;
-    margin: -80px 0 0 0;
-    height: 100%;
-    width: 200px;
-    transition: 850ms;
-    left: 0;
-    .Close-Sidebar {
-      display: flex;
-      background: none;
-      border: none;
-      width: 50px;
-    }
+.SideBar {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  min-height: 100%;
+  width: 200px;
+  transition: 850ms;
+  left: -100%;
+  
+  .Close-Sidebar {
+    display: flex;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 50px;
+    margin: -5px 0 -13px 0;
+  }
     
-    .Buttons-Sidebar {
-      height: 3rem;
-      background: none;
-      border: none;
-    }
+  .Buttons-Sidebar {
+    height: 2.5rem;
+    width: 80%;
+    color: #FFF;
+    margin: 10px 0 0 16px;
+    background: none;
+    border: none;
+  }
+}
+
+.SideBarActive {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: #0C0C0C;
+  min-height: 100%;
+  width: 200px;
+  transition: 350ms;
+  left: 0;
+  
+  .Close-Sidebar {
+    display: flex;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 50px;
+    margin: -5px 0 -13px 0;
+  }
     
-    .Buttons-Sidebar:hover {
-      background-color: blue;
+  .Buttons-Sidebar {
+    height: 2.5rem;
+    width: 80%;
+    color: #FFF;
+    margin: 10px 0 0 16px;
+    background: none;
+    border: none;
+  }
+    
+  .Buttons-Sidebar:hover {
+    color: #0C0C0C;
+    background-color: #FFF;
+    border-radius: 10px;
+  }
+}
+
+.Home {
+  min-height: 100vh;
+  background-color: #191b1c;
+  padding: 5rem 0 0 1rem;
+  h1 {
+    color: #FFF;
+  }
+  
+  .NewMovie {
+    display: flex;
+    padding: 1.6rem 0;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    
+    .Movies {
+      padding: 0 1rem 1.5rem 0;
+      img {
+        height: 10rem;
+      }
+      h1 {
+        color: #FFF;
+        align-items: center;
+        font-weight: 500;
+        font-size: .8rem;
+      }
     }
   }
   
+  .NewSeries {
+    display: flex;
+    padding: 1.6rem 0;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    .Series {
+       padding: 0 1rem 1.5rem 0;
+      img {
+        height: 10rem;
+      }
+      h1 {
+        color: #FFF;
+        align-items: center;
+        font-weight: 500;
+        font-size: .8rem;
+      }
+    }
+  }
+}
   
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .Header {
     form {
       input {
         width: 60vw;
+      }
+    }
+  }
+  .Home {
+    padding: 5rem 0 0 .7rem;
+    .NewMovie {
+      min-width: 100%;
+      .Movies {
+        padding: 0 .5rem 1.2rem 0;
+      }
+    }
+    .NewSeries {
+      max-width: 100%;
+      .Series {
+        padding: 0 .5rem 1.2rem 0;
       }
     }
   }
