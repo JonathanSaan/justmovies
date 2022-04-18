@@ -1,0 +1,78 @@
+.SideBar {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  min-height: 100%;
+  width: 200px;
+  transition: 850ms;
+  left: -100%;
+  z-index: 2;
+  
+  .Close-Sidebar {
+    display: flex;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 50px;
+    margin: -5px 0 -13px 0;
+  }
+    
+  .Link {
+    color: #FFF;
+    text-decoration: none;
+    
+    .Buttons-Sidebar {
+      height: 2.5rem;
+      width: 80%;
+      margin: 10px 0 0 16px;
+      background: none;
+      border: none;
+    }
+  }
+  
+}
+
+.SideBarActive {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: #0C0C0C;
+  min-height: 100%;
+  width: 200px;
+  transition: 350ms;
+  left: 0;
+  z-index: 2;
+  
+  .Close-Sidebar {
+    display: flex;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 50px;
+    margin: -5px 0 -13px 0;
+  }
+  
+  
+  .Link {
+    color: #FFF;
+    outline: none;
+    text-decoration: none;
+    .Buttons-Sidebar {
+      height: 2.5rem;
+      width: 80%;
+      color: #FFF;
+      margin: 10px 0 0 16px;
+      background: none;
+      border: none;
+    }
+  }
+    
+  .Link:hover {
+    .Buttons-Sidebar {
+      background-color: #FFF;
+      border-radius: 10px;
+      color: #0C0C0C;
+    }
+  }
+    
+}

@@ -2,7 +2,9 @@ import Fade from 'react-reveal/Fade';
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
-import { Header } from "../Header"
+import "./style.scss";
+
+import { Header } from "../Header";
 
 
 export const Home = () => {

@@ -1,24 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5"; 
 import { IoIosSearch } from "react-icons/io";
 
-
+import "./style.scss"
 import { SideBar } from "../SideBar"
 
 export const Header = () => {
-  
   const [search, setSearch] = useState()
+  let navigate = useNavigate();
+  
   const [TypedSearch, SetTypedSearch] = useState()
   
   const SearchMovie = (e) => {
+    
+   navigate(`/search/${search.replaceAll(" ", "+")}`)
     e.preventDefault()
     SetTypedSearch(search)
-    console.log(search)
   };
   
-  const [sidebar, SetSideBar] = useState(false);
   
+  
+  
+  const [sidebar, SetSideBar] = useState(false);
   const toggleSideBar = () => {
     SetSideBar(!sidebar)
   };
@@ -32,9 +36,7 @@ export const Header = () => {
         <form>
           <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
           <button onClick={SearchMovie} className="Search">
-            <Link className="Link" to="/Search" search={search}>
               <IoIosSearch size={28} color="#FFF" />
-            </Link>
           </button>
         </form>
       </header>

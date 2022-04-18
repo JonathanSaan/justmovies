@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/Search' element={<Search />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/search/:searched" element={<Search />} />
       </Routes>
     </Router>
   );

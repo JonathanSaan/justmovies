@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.Header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  padding: 0 .7rem;
+  height: 4rem;
+  width: 100%;
+  align-items: center;
+  background-color: #0c0c0ce7;
+  z-index: 1;
+  
+  .Menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    
+    input {
+      height: 2rem;
+      width: 30vw;
+      padding: 20px 10px;
+      border-radius: 4px;
+      background-color: #3e3e3eca;
+      color: #d3d3d3f9;
+      border: none;
+      outline: none;
+    }
+    
+    .Search {
+      margin: 0 .6rem 0 -2.3rem;
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Header {
+    form {
+      input {
+        width: 60vw;
+      }
+    }
+  }
+}
