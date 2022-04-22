@@ -13,6 +13,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.28.1",
+    "react-whirligig": "^6.6.15",
     "sass": "^1.50.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
