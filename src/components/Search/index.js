@@ -13,7 +13,7 @@ export const Search = () => {
         <Header />
         <div className="Search">
           <div>
-            <h1>You searched for: {searched.replaceAll("+", " ")}</h1>
+            <h1>Results found: {searched.replaceAll("+", " ")}</h1>
           </div>
         </div>
       </>

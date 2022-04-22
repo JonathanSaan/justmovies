@@ -13,10 +13,9 @@ export const Header = () => {
   const [TypedSearch, SetTypedSearch] = useState()
   
   const SearchMovie = (e) => {
-    
-   navigate(`/search/${search.replaceAll(" ", "+")}`)
     e.preventDefault()
     SetTypedSearch(search)
+    navigate(`/search/${search.replaceAll(" ", "+")}`)
   };
   
   
