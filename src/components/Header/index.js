@@ -7,18 +7,16 @@ import "./style.scss"
 import { SideBar } from "../SideBar"
 
 export const Header = () => {
-  const [search, setSearch] = useState()
+  
   let navigate = useNavigate();
   
   const [TypedSearch, SetTypedSearch] = useState()
   
   const SearchMovie = (e) => {
     e.preventDefault()
-    SetTypedSearch(search)
-    navigate(`/search/${search.replaceAll(" ", "+")}`)
+    SetTypedSearch(TypedSearch)
+    navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`)
   };
-  
-  
   
   
   const [sidebar, SetSideBar] = useState(false);
@@ -33,7 +31,7 @@ export const Header = () => {
           <IoMenu size={40} color="#FFF" />
         </button>
         <form>
-          <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
+          <input type="text" placeholder="Search..." onChange={(e) => SetTypedSearch(e.target.value)} />
           <button onClick={SearchMovie} className="Search">
               <IoIosSearch size={28} color="#FFF" />
           </button>

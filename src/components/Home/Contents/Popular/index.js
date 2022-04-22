@@ -4,7 +4,7 @@ export const Popular = ({ slideIndex }) => {
  
  return (
   <>
-    <Whirligig visibleSlides={3} gutter="1rem" slideTo={slideIndex}>
+    <Whirligig visibleSlides={5} gutter="1rem" slideTo={slideIndex}>
           <div>
             <img src="https://br.web.img2.acsta.net/medias/nmedia/18/89/43/82/20052140.jpg" />
             <h1 className="PopularTitle">Os Vingadores</h1>

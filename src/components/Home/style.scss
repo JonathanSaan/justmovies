@@ -9,14 +9,17 @@
   
   .Popular {
     position: relative;
-    max-width: 85vw;
+    max-width: 82vw;
     margin: 20px 0 30px 0;
     
     div {
       overflow: hidden;
       height: 14rem;
       padding: 5px 0 0;
-      max-width: 80vw;
+
+      div {
+        padding: 2px 0 0 2px;
+      }
       
       img {
         height: 10rem;
@@ -27,6 +30,21 @@
         margin: 5px 0;
       }
       
+      :hover {
+        margin: -2px 0 0 -1px;
+        transition: 320ms;
+        
+        img {
+          height: 11rem;
+          transition: 320ms;
+        }
+        
+        .PopularTitle {
+          margin: 5px 0 0 0;
+          transition: 320ms;
+        }
+      
+      }
     }
   }
   
@@ -51,24 +69,21 @@
         font-weight: 500;
         font-size: .8rem;
       }
-      
     }
     
     .Movies:hover {
       margin: 0 0 -10px 0;
       
       img {
-        /*filter: blur(1px) grayscale(60%);*/
         margin: -5px -5.7px -11px -5px;
         height: 11rem;
-        transition: 300ms;
+        transition: 320ms;
       }
       
       .MovieTitle {
         margin: 15px 0 0 -4px;
         transition: 320ms;
       }
-      
     }
   }
   
@@ -92,7 +107,6 @@
         font-weight: 500;
         font-size: .8rem;
       }
-      
     }
     
     .Series:hover {
@@ -101,14 +115,13 @@
       img {
         margin: -5px -5.7px -11px -5px;
         height: 11rem;
-        transition: 300ms;
+        transition: 320ms;
       }
       
       .SerieTitle {
         margin: 15px 0 0 -4px;
         transition: 320ms;
       }
-      
     }
   }
 }
@@ -126,12 +139,10 @@
         min-width: 35vw;
         max-width: 93vw;
       }
-      
     }
     
     .NewMovie {
       min-width: 100%;
-      
       .Movies {
         padding: 0 .5rem 1.2rem 0;
       }

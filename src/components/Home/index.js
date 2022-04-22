@@ -9,13 +9,13 @@ import { Popular } from "./Contents/Popular";
 
 
 export const Home = () => {
-  
+
   return (
     <>
       <Header />
       <div className="Home">
         <Fade bottom>
-          <h1>Most popular</h1>
+          <h1>Most Popular</h1>
         </Fade>
         <div className="Popular" >
           <Popular/>
@@ -35,5 +35,5 @@ export const Home = () => {
       </div>
     </>
   );
-    
+
 };
