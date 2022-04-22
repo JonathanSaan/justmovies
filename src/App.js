@@ -1,11 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Header } from "./components/Header"
-import { Search } from "./components/Search"
-import { Home } from "./components/Home"
-
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import { Home } from "./components/Home";
+import { Categories } from "./components/Categories";
+import { Search } from "./components/Search";
 
 function App() {
 
@@ -14,6 +11,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/search/:searched" element={<Search />} />
+        <Route path="/Categories" element={<Categories />} />
       </Routes>
     </Router>
   );
