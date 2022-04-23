@@ -3,13 +3,13 @@ import Fade from 'react-reveal/Fade';
 import "./style.scss";
 
 import { Header } from "../Header";
-import { Movies } from "./Contents/Movies";
-import { Series } from "./Contents/Series";
-import { Popular } from "./Contents/Popular";
+import { Movies } from "./Movies";
+import { Series } from "./Series";
+import { Popular } from "./Popular";
 
 
 export const Home = () => {
-
+  
   return (
     <>
       <Header />
@@ -35,5 +35,5 @@ export const Home = () => {
       </div>
     </>
   );
-
+    
 };
