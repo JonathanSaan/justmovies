@@ -5,7 +5,9 @@ import "./style.scss";
 
 export const SideBar = ({ sidebar, toggleSideBar }) => {
   
+  
   return (
+    <>
       <div className={sidebar ? "SideBarActive" : "SideBar"}>
         <button onClick={toggleSideBar} className="Close-Sidebar">
           <IoIosClose size={60} color="#FFF" />
@@ -19,6 +21,7 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
           </button>
         </Link>
       </div>
+      </>
     );
     
 };

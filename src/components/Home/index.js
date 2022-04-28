@@ -1,4 +1,6 @@
-import Fade from 'react-reveal/Fade';
+import { IoIosArrowForward } from "react-icons/io";
+
+import Fade from "react-reveal/Fade";
 
 import "./style.scss";
 
@@ -12,22 +14,36 @@ export const Home = () => {
   
   return (
     <>
-      <Header />
-      <div className="Home">
+      <Header/>
+      <div className="Home" >
         <Fade bottom>
-          <h1>Most Popular</h1>
+          <div className="Fade">
+            <h1>Most Popular</h1>
+          </div>
         </Fade>
         <div className="Popular" >
           <Popular/>
         </div>
-        <Fade bottom>
-          <h1>New Movies</h1>
+       <Fade bottom>
+          <div className="Fade">
+            <h1>New Movies</h1>
+            <button>
+              <p>See all</p> 
+              <IoIosArrowForward size={16} />
+            </button>
+          </div>
         </Fade>
         <div className="NewMovie">
           <Movies />
         </div>
-        <Fade bottom>
-          <h1>New Series </h1>
+       <Fade bottom>
+          <div className="Fade">
+            <h1>New Series </h1>
+            <button>
+              <p>See all</p> 
+              <IoIosArrowForward size={16} />
+            </button>
+          </div>
         </Fade>
         <div className="NewSeries">
           <Series />

@@ -1,32 +1,36 @@
+import axios from "axios";
+import APIKey from "../../mocks/api";
+import { useState, useEffect } from "react";
+
 export const Series = () => {
+  
+  const [ listSeries, setListSeries ] = useState([])
+  const Image_path = "https://image.tmdb.org/t/p/w500";
+  
+  useEffect(
+    function () {
+      load()
+    }, []
+  )
+  
+  async function load() {
+    try {
+      const respost = await axios.get(`https://api.themoviedb.org/3/tv/airing_today?api_key=${APIKey}&language=en-US`)
+      setListSeries(respost.data.results)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
   return (
         <>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-          <div className="Series">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTPfC5xjSPKp32d2qGVze0F4fihyAhuI6teA&usqp=CAU"/>
-            <h1 className="SerieTitle">Cavaleiro da lua</h1>
-          </div>
-      </>
-    );
+          {listSeries.map((serie) => (
+            <div className="Series" key={serie.id}>
+              <img src={`${Image_path}${serie.poster_path}`} alt={serie.title}/>
+              <h1 className="SerieTitle">{serie.name}</h1>
+            </div>
+          ))}
+        </>
+      );
     
 }

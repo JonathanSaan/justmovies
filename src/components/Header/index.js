@@ -11,6 +11,7 @@ export const Header = () => {
   let navigate = useNavigate();
   
   const [TypedSearch, SetTypedSearch] = useState()
+  //const lowerSearch = TypedSearch.toLowerCase();
   
   const SearchMovie = (e) => {
     e.preventDefault()
@@ -18,11 +19,11 @@ export const Header = () => {
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`)
   };
   
-  
   const [sidebar, SetSideBar] = useState(false);
   const toggleSideBar = () => {
     SetSideBar(!sidebar)
   };
+  
   
   return (
     <>
