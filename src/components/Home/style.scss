@@ -1,160 +1,207 @@
 .Home {
   min-height: 100vh;
   background-color: #191b1c;
-  padding: 5rem 0 0 8vw;
-
+  padding: 5rem 0 0 10vw;
+  
   h1 {
     color: #FFF;
+    font-size: 1.5rem;
+    align-items: center;
+    border-left: 2px solid gray;
+    padding: 5px 0 0 8px;
+  }
+  
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .Fade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    
+    button {
+      display: flex;
+      padding: 7px;
+      background-color: #202020;
+      color: lightgray;
+      border: none;
+      border-radius: 3px;
+      
+      p {
+        padding: 0 4px;
+      }
+      
+      &:hover {
+        color: #FFF;
+        font-size: .9rem;
+        transition: 300ms;
+      }
+      
+    }
   }
 
   .Popular {
-    position: relative;
-    max-width: 82vw;
-    margin: 20px 0 30px 0;
+    height: 12rem;
+    max-width: 77vw;
+    margin: 20px 0 50px 10px;
+    box-shadow: inset -50px 0px 25px -30px black;
+    z-index: 2;
+    
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
     div {
+      transform: all 0.6s;
       overflow: hidden;
-      height: 13rem;
-
-      div {
-        padding: 5px 5px 0 0;
-      }
-
-      img {
-        height: 10rem;
-      }
-
-      .PopularTitle {
-        font-size: .8rem;
-        margin: 5px 0;
-      }
-
-      :hover {
-        margin: -2px 0 0;
-        transition: 320ms;
-
-        div {
-          position: absolute;
-          margin: 0 0 0 -5px;
+      min-width: 13vw;
+      
+      .Populars {
+      position: relative;
+        height: 13rem;
+        padding: 6px 0 0 5px;
+        
+        .PopularImage {
+          height: 10rem;
+          border-radius: 5px;
+          z-index: -4;
         }
-
-        img {
-          height: 11rem;
-          transition: 320ms;
-        }
-
+  
         .PopularTitle {
-          margin: 5px 0 0 0;
-          transition: 320ms;
+          color: #FFF;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 7rem;
+          font-size: .8rem;
+          margin: 5px 0;
         }
-
+        
+        &:hover {
+          transition: 320ms;
+          transform: scale(1.06);
+        }
+        
       }
     }
   }
 
   .NewMovie {
     display: flex;
-    padding: 1.6rem 0;
+    padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
-    min-width: 75vw;
-
+    min-height: 20rem;
+    min-width: 70vw;
+    max-width: 80vw;
+    
     .Movies {
-      padding: 0 2rem 2rem 0;
-
+      height: 12rem;
+      padding: 1rem .8rem 0 .6rem;
+      margin: 0 0 .8rem 0;
+      
       img {
         height: 10rem;
+        border-radius: 5px;
       }
 
       .MovieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6.5rem;
         color: #FFF;
         margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: .8rem;
       }
-    }
-
-    .Movies:hover {
-      margin: 0 0 -10px 0;
-
-      img {
-        margin: -5px -5.7px -11px -5px;
-        height: 11rem;
+      
+      &:hover {
+        margin: 0 0 -10px 0;
         transition: 320ms;
+        transform: scale(1.08);
       }
-
-      .MovieTitle {
-        margin: 15px 0 0 -4px;
-        transition: 320ms;
-      }
+      
     }
   }
 
-  .NewSeries {
+  .TopRated {
     display: flex;
-    padding: 1.6rem 0;
+    padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
-    min-width: 75vw;
-
-    .Series {
-      padding: 0 2rem 2rem 0;
-
+    min-width: 70vw;
+    max-width: 80vw;
+    
+    .Rateds {
+      height: 12rem;
+      padding: 1rem .7rem 0 .6rem;
+      margin: 0 0 .8rem 0;
+      
       img {
         height: 10rem;
+        border-radius: 5px;
       }
 
-      .SerieTitle {
+      .RatedTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6.5rem;
         color: #FFF;
         margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: .8rem;
       }
-    }
-
-    .Series:hover {
-      margin: 0 0 -10px 0;
-
-      img {
-        margin: -5px -5.7px -11px -5px;
-        height: 11rem;
+      
+      &:hover {
+        margin: 0 0 -10px 0;
         transition: 320ms;
+        transform: scale(1.08);
       }
-
-      .SerieTitle {
-        margin: 15px 0 0 -4px;
-        transition: 320ms;
-      }
+    
     }
   }
 }
 
+
 @media screen and (max-width: 800px) {
   .Home {
-    padding: 5rem 0 0 2.3vw;
-
+    padding: 5rem 0 0 2vw;
+    
+    .Fade {
+      width: 97%;
+    }
+    
     .Popular {
-      min-width: 100%;
-      margin: 15px 0 30px 0;
-
+      max-width: 95vw;
+      margin: 10px 10px 40px 0;
+      
       div {
-        padding: 0 7px;
-        min-width: 35vw;
-        max-width: 94vw;
+        padding: 0 1%;
+        min-width: 8rem;
       }
     }
 
     .NewMovie {
       min-width: 100%;
+      min-height: 30rem;
+      padding: 2rem 0 3rem 0;
+      
       .Movies {
-        padding: 0 .5rem 1.2rem 0;
+        padding: 0 .5rem 1rem 0;
       }
     }
 
-    .NewSeries {
+    .TopRated {
       max-width: 100%;
-      .Series {
-        padding: 0 .5rem 1.2rem 0;
+      padding: 2rem 0 3rem 0;
+      
+      .Rateds {
+        padding: 0 .5rem 1rem 0;
       }
     }
   }

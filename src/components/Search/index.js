@@ -5,7 +5,7 @@ import { Header } from "../Header";
 
 import "./style.scss";
 
-export const Search = (lowerSearch) => {
+export const Search = () => {
   
   let { searched } = useParams();
   

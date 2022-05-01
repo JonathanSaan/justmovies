@@ -1,0 +1,98 @@
+.Details {
+  min-height: 200vh;
+  padding: 7rem 0 0 0;
+  background-color: #191b1c;
+  
+  .BackDrop {
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    filter: opacity(20%);
+    margin: -3rem 0 -25rem 0;
+    padding: 0px;
+    height: 450px;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: inset 0px -50px 27px -18px #191B1C;
+  }
+    
+  .MovieDetails {
+    display: flex;
+    margin: -3rem 0 0 6rem;
+    
+    img {
+      height: 15rem;
+      z-index: 2;
+    }
+    
+    span {
+      display: inline-block;
+      padding: 0 .6rem;
+      z-index: 2;
+  
+      .TitleMovie {
+        font-size: 2rem;
+        color: #FFF;
+        /*margin: 0 1rem;
+        /*text-align: center;*/
+      }
+      
+      .ReleaseDate {
+        margin: .3rem 0;
+        font-size: 1rem;
+        color: gray;
+      }
+    }
+  }
+  .Description {
+    /*display: inline-block;*/
+    padding: 2rem 0 4rem 6rem;
+    
+    .Overview {
+      font-size: .7rem;
+      color: #FFF;
+      max-width: 70vw;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Details {
+    min-height: 100vh;
+    .BackDrop {
+      height: 220px;
+    }
+    
+    .MovieDetails {
+      margin: 13rem 0 1rem 1rem;
+      
+      img {
+        height: 10rem;
+      }
+      
+      span {
+        .TitleMovie {
+          font-size: 1rem;
+        }
+        
+        .ReleaseDate {
+          font-size: .7rem;
+        }
+      }
+    }
+    
+    .Description {
+      padding: 1rem;
+      
+      .Overview {
+        line-height: 1.3;
+        font-size: .8rem;
+        max-width: 90vw;
+      }
+    }
+  }
+}

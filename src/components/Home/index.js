@@ -6,7 +6,7 @@ import "./style.scss";
 
 import { Header } from "../Header";
 import { Movies } from "./Movies";
-import { Series } from "./Series";
+import { TopRated } from "./TopRated";
 import { Popular } from "./Popular";
 
 
@@ -38,15 +38,15 @@ export const Home = () => {
         </div>
        <Fade bottom>
           <div className="Fade">
-            <h1>New Series </h1>
+            <h1>Top Rated </h1>
             <button>
               <p>See all</p> 
               <IoIosArrowForward size={16} />
             </button>
           </div>
         </Fade>
-        <div className="NewSeries">
-          <Series />
+        <div className="TopRated">
+          <TopRated />
         </div>
       </div>
     </>

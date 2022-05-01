@@ -3,21 +3,25 @@ import { useState } from "react";
 import { IoMenu } from "react-icons/io5"; 
 import { IoIosSearch } from "react-icons/io";
 
-import "./style.scss"
-import { SideBar } from "../SideBar"
+import "./style.scss";
+import { SideBar } from "../SideBar";
 
 export const Header = () => {
   
   let navigate = useNavigate();
   
-  const [TypedSearch, SetTypedSearch] = useState()
-  //const lowerSearch = TypedSearch.toLowerCase();
+  const [TypedSearch, SetTypedSearch] = useState();
   
   const SearchMovie = (e) => {
-    e.preventDefault()
-    SetTypedSearch(TypedSearch)
-    navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`)
+    if (TypedSearch === "") {
+      return e;
+    };
+    
+    e.preventDefault();
+    SetTypedSearch(TypedSearch);
+    navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
+  
   
   const [sidebar, SetSideBar] = useState(false);
   const toggleSideBar = () => {
@@ -32,7 +36,7 @@ export const Header = () => {
           <IoMenu size={40} color="#FFF" />
         </button>
         <form>
-          <input type="text" placeholder="Search..." onChange={(e) => SetTypedSearch(e.target.value)} />
+          <input type="text" value={TypedSearch} placeholder="Search..." onChange={(e) => SetTypedSearch(e.target.value)} />
           <button onClick={SearchMovie} className="Search">
               <IoIosSearch size={28} color="#FFF" />
           </button>

@@ -6,7 +6,7 @@
   width: 200px;
   transition: 850ms;
   left: -100%;
-  z-index: 2;
+  z-index: 4;
   
   .Close-Sidebar {
     display: flex;
@@ -41,7 +41,7 @@
   width: 200px;
   transition: 350ms;
   left: 0;
-  z-index: 2;
+  z-index: 4;
   
   .Close-Sidebar {
     display: flex;
