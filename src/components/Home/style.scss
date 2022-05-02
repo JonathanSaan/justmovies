@@ -47,12 +47,12 @@
     height: 12rem;
     max-width: 77vw;
     margin: 20px 0 50px 10px;
-    box-shadow: inset -50px 0px 25px -30px black;
+    /*box-shadow: inset -50px 0px 25px -30px black;*/
     z-index: 2;
     
-    ::-webkit-scrollbar {
+    /*::-webkit-scrollbar {
       display: none;
-    }
+    }*/
 
     div {
       transform: all 0.6s;
@@ -60,7 +60,6 @@
       min-width: 13vw;
       
       .Populars {
-      position: relative;
         height: 13rem;
         padding: 6px 0 0 5px;
         

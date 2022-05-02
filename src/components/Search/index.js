@@ -9,11 +9,6 @@ export const Search = () => {
   
   let { searched } = useParams();
   
-  //const lowerSearch = searched.toLowerCase();
-  
-  //const MovieFilted = ListMovies.filter((movie) => movie.title.toLowerCase())
-  
-  
   return (
       <>
         <Header />

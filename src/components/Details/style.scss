@@ -1,5 +1,5 @@
 .Details {
-  min-height: 200vh;
+  /*min-height: 150vh;*/
   padding: 7rem 0 0 0;
   background-color: #191b1c;
   
@@ -23,22 +23,22 @@
   .MovieDetails {
     display: flex;
     margin: -3rem 0 0 6rem;
+    width: 70%;
     
-    img {
+    .PrincipalImage {
       height: 15rem;
       z-index: 2;
     }
     
     span {
       display: inline-block;
-      padding: 0 .6rem;
+      padding: 0 0 0 .6rem;
+      width: 100%;
       z-index: 2;
   
       .TitleMovie {
         font-size: 2rem;
         color: #FFF;
-        /*margin: 0 1rem;
-        /*text-align: center;*/
       }
       
       .ReleaseDate {
@@ -46,32 +46,75 @@
         font-size: 1rem;
         color: gray;
       }
+      
+      hr {
+        border: .5px solid gray;
+      }
+      
+      .Votes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 3.5rem;
+        margin: .5rem 0;
+        border: 1px solid gray;
+        color: #FFF;
+        background-color: #191B1C;
+        padding: 7px;
+      }
+      
+      .Genres {
+        margin: 5px 0;
+        max-height: 5rem;
+        
+        .genre {
+          border: .5px solid gray;
+          background-color: #191B1C;
+          color: #FFF;
+          font-size: .7rem;
+          margin: 2px;
+          padding: 10px; 
+          height: 2rem;
+          white-space: nowrap;
+        }
+      }
     }
   }
+  
   .Description {
-    /*display: inline-block;*/
-    padding: 2rem 0 4rem 6rem;
+    margin: 1rem 0 4rem 6rem;
+    width: 70%;
     
+    hr {
+      border: .5px solid gray;
+      margin: 1.3rem 0 1rem 0;
+    }
+      
     .Overview {
       font-size: .7rem;
       color: #FFF;
-      max-width: 70vw;
+      max-width: 69.5vw;
     }
+  }
+  
+  .Trailer {
+    min-height: 100vh;
   }
 }
 
 @media screen and (max-width: 500px) {
   .Details {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     .BackDrop {
       height: 220px;
     }
     
     .MovieDetails {
       margin: 13rem 0 1rem 1rem;
+      width: 89%;
       
-      img {
-        height: 10rem;
+      .PrincipalImage {
+        height: 12rem;
       }
       
       span {
@@ -79,14 +122,20 @@
           font-size: 1rem;
         }
         
+        
         .ReleaseDate {
           font-size: .7rem;
         }
+        
       }
     }
     
     .Description {
-      padding: 1rem;
+      margin: 1rem;
+      width: 20rem;
+      
+      hr {
+      }
       
       .Overview {
         line-height: 1.3;
