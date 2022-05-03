@@ -2,8 +2,8 @@ import APIKey from "../../mocks/api";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Whirligig from "react-whirligig"
-import { Link } from "react-router-dom";;
+import Whirligig from "react-whirligig";
+import { Link } from "react-router-dom";
 
 
 

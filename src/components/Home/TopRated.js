@@ -27,7 +27,7 @@ export const TopRated = () => {
       {listRated.map((rated) => (
         <Link to={`/${rated.id}`} >
           <div className="Rateds" key={rated.id}>
-            <img src={`${Image_path}` ? `${Image_path}${rated.poster_path}` : {Image_Error}} alt={rated.name}/>
+            <img className="RatedImage" src={`${Image_path}` ? `${Image_path}${rated.poster_path}` : {Image_Error}} alt={rated.name}/>
             <h2 className="RatedTitle">{rated.title}</h2>
           </div>
         </Link>
