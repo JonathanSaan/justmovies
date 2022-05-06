@@ -59,74 +59,76 @@ export const Details = () => {
           </div>
           
           <div className="Container">
-          <div className="MovieDetails">
-            <img className="PrincipalImage" src={`${Image_path}` ? `${Image_path}${detailsMovie.poster_path}` : `${Image_Error}`} alt={detailsMovie.title} />
-            <span>
-              <h1 className="TitleMovie">
-                {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
-              </h1>
-              <p className="ReleaseDate"> 
-                {detailsMovie.release_date}
-              </p>
+            <div className="MovieDetails">
+              <img className="PrincipalImage" src={`${Image_path}` ? `${Image_path}${detailsMovie.poster_path}` : `${Image_Error}`} alt={detailsMovie.title} />
+              <span>
+                <h1 className="TitleMovie">
+                  {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
+                </h1>
+                <p className="ReleaseDate">
+                  {detailsMovie.release_date}
+                </p>
+                <hr />
+                
+                <div className="Votes">
+                  <IoIosStar size={15} color="yellow"/>
+                  {detailsMovie.vote_average}
+                </div>
+                <hr />
+                
+                <div className="Genres">
+                  {genres.map((genre) => 
+                    <button className="genre">
+                      {genre.name}
+                    </button>
+                  )}
+                </div>
+              </span>
+            </div>
+            
+            <div className="Description">
               <hr />
-              <div className="Votes">
-                <IoIosStar size={15} color="yellow"/>
-                {detailsMovie.vote_average}
-              </div>
-              <hr />
-              <div className="Genres">
-                {genres.map((genre) => 
-                  <button className="genre">
-                    {genre.name}
-                  </button>
-                )}
-              </div>
-            </span>
+              <h2 className="Overview">
+                {detailsMovie.overview}
+              </h2>
+            </div>
+            
+            <div className="Trailer">
+              <iframe src={`https://m.youtube.com/embed/${trailer.key}`} frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            </div>
+            
+            <div className="AllTab">
+              <Tabs className="Tabs">
+                <TabList className="Tab">
+                 <Tab className={TabList ? "buttonActive" : "Button"}>Characters</Tab>
+                 <Tab className={TabList ? "buttonActive" : "Button"}>Similar</Tab>
+                </TabList>
+                <TabPanel className="TabPanel">
+                  <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
+                    {characters.map((Character) => (
+                      <div key={Character.id}>
+                        <img src={`${Image_path}` ? `${Image_path}${Character.profile_path}` : `${Image_Error}`} alt={Character.name}/>
+                        <p>{Character.name}</p>
+                      </div>
+                    ))}
+                  </Whirligig>
+                </TabPanel>
+                <TabPanel className="TabPanel">
+                  <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
+                    {movieSimilar.map((similar) => (
+                      <Link to={`/${similar.id}`} replace>
+                        <div key={similar.id}> 
+                          <img src={`${Image_path}` ? `${Image_path}${similar.poster_path}` : `${Image_Error}`} alt={similar.title}/>
+                          <p>{similar.title}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </Whirligig>
+                </TabPanel>
+              </Tabs>
+            </div>
           </div>
-          <div className="Description">
-            <hr />
-            <h2 className="Overview">
-              {detailsMovie.overview}
-            </h2>
-          </div>
-          
-          <div className="Trailer">
-            <iframe src={`https://m.youtube.com/embed/${trailer.key}`} frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
-          </div>
-          
-          <div className="AllTab">
-          <Tabs className="Tabs">
-            <TabList className="Tab">
-             <Tab className={TabList ? "buttonActive" : "Button"}>Characters</Tab>
-             <Tab className={TabList ? "buttonActive" : "Button"}>Similar</Tab>
-            </TabList>
-            <TabPanel className="TabPanel">
-              <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                {characters.map((Character) => (
-                  <div key={Character.id}>
-                    <img src={`${Image_path}` ? `${Image_path}${Character.profile_path}` : `${Image_Error}`} alt={Character.name}/>
-                    <p>{Character.name}</p>
-                  </div>
-                ))}
-              </Whirligig>
-            </TabPanel>
-            <TabPanel className="TabPanel">
-              <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                {movieSimilar.map((similar) => (
-                  <Link to={`/${similar.id}`} replace>
-                    <div key={similar.id}> 
-                      <img src={`${Image_path}` ? `${Image_path}${similar.poster_path}` : `${Image_Error}`} alt={similar.title}/>
-                      <p>{similar.title}    </p>
-                    </div>
-                  </Link>
-                ))}
-              </Whirligig>
-            </TabPanel>
-          </Tabs>
-          </div>
-          
-        </div>
         </div>
       </>
     );
