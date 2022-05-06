@@ -86,7 +86,6 @@
     
     .Description {
       margin: 1rem 0 3rem 0;
-      /*width: 70%;*/
       
       hr {
         border: .5px solid gray;
@@ -130,7 +129,6 @@
         margin: 1rem 0 0 0;
         padding: 0 0 3rem .4px;
         height: 2rem;
-        /*width: 70%;*/
         
         .Tab {
           display: flex;
@@ -209,15 +207,11 @@
       margin: 13rem 0 0 1rem;
       
       .MovieDetails {
-        /*width: 100%;*/
-        
         .PrincipalImage {
           height: 12rem;
         }
         
         span {
-          /*width: 100%;*/
-          
           .TitleMovie {
             font-size: 1rem;
           }
@@ -257,8 +251,6 @@
           
           .TabPanel {
             .Whirligig {
-              /*width: 98%;*/
-              
               div {
                 min-width: 8rem;
               }
