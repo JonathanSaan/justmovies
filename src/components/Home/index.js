@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-
 import Fade from "react-reveal/Fade";
 
 import "./style.scss";
