@@ -10,9 +10,7 @@ import "./style.scss";
 
 
 
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-//import 'react-tabs/style/react-tabs.css';
-
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 export const Details = () => {
   
@@ -20,19 +18,21 @@ export const Details = () => {
   
   
   const [ detailsMovie, setDetailsMovie ] = useState([]);
+  //const yearMovie = `${detailsMovie.release_date}`
+   
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
   
   
   const [ activeTab, setActiveTab ] = useState("tab1");
-  
   const handleTab1 = () => {
     setActiveTab("tab1");
   };
-
   const handleTab2 = () => {
     setActiveTab("tab2");
   };
+  
+ 
   
   const [ characters, setCharacters ] = useState([]);
   const [ movieSimilar, setMovieSimilar ] = useState([]);
@@ -44,6 +44,7 @@ export const Details = () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
       setDetailsMovie(respost.data);
       setGenres(respost.data.genres);
+      //console.log(yearMovie)
       
       const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
       setTrailer(videos.data.results[0]);
@@ -107,7 +108,7 @@ export const Details = () => {
             </div>
             
             <div className="Trailer">
-              <iframe src={`https://m.youtube.com/embed/${trailer.key}`} frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              <iframe src={`https://youtube.com/embed/${trailer.key}`} target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
               </iframe>
             </div>
             

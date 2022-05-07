@@ -85,7 +85,7 @@
     }
     
     .Description {
-      margin: 1rem 0 3rem 0;
+      margin: 1rem 0 0 0;
       
       hr {
         border: .5px solid gray;
@@ -100,10 +100,12 @@
     }
     
     .Trailer {
+      display: flex;
+      justify-content: center;
+      margin: 10% 0;
       width: 100%;
       
       iframe {
-        margin: 0 0 5% 7%;
         height: 280px;
         width: 85%;
       }
@@ -126,7 +128,6 @@
         border-end-end-radius: 8px;
         border-end-start-radius: 8px;
         background-color: #202020;
-        margin: 1rem 0 0 0;
         padding: 0 0 3rem .4px;
         height: 2rem;
         
@@ -145,13 +146,12 @@
             border: none;
             border-bottom: 1px solid gray;
             padding: .7rem;
-            margin: 0 1rem 0 0; 
+            margin: 0 .5rem 0 0; 
             outline: none;
-            transition: .3s;
           }
           
           .false {
-            margin: 0 1rem 0 0;
+            margin: 0 .5rem 0 0;
             padding: .7rem;
           }
         }
@@ -213,7 +213,7 @@
       
       .MovieDetails {
         .PrincipalImage {
-          height: 30vh;
+          height: 12rem;
         }
         
         span {
@@ -229,11 +229,11 @@
       }
       
       .Description {
-        margin: 1rem 0;
+        margin: 1rem 0 0 0;
         width: 100%;
         
         hr {
-          margin: 3vh 0;
+          margin: 1.5rem 0;
         }
         
         .Overview {
@@ -244,10 +244,7 @@
       }
       
       .Trailer {
-        margin: 10% 0 0 0;
-        
         iframe {
-          margin: 0;
           height: 190px;
           width: 100%;
         }
@@ -256,7 +253,7 @@
       .AllTab {
         .Tabs {
           width: 100%;
-          margin: 10% 0 8% 0;
+          margin: 0 0 8% 0;
           
           .TabPanel {
             .Whirligig {
@@ -265,8 +262,10 @@
               }
             }
           }
+          
         }
       }
+      
     }
   }
 }
