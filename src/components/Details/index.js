@@ -2,7 +2,7 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { IoIosStar } from "react-icons/io";
-import Whirligig from "react-whirligig"
+import Whirligig from "react-whirligig";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
@@ -18,7 +18,7 @@ export const Details = () => {
   
   
   const [ detailsMovie, setDetailsMovie ] = useState([]);
-  const [ yearMovie, setYearMovie ] = useState([])
+  const [ yearMovie, setYearMovie ] = useState([]);
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
   
@@ -42,8 +42,7 @@ export const Details = () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
       setDetailsMovie(respost.data);
       setGenres(respost.data.genres);
-      setYearMovie(respost.data.release_date.slice(0, 4))
-      
+      setYearMovie(respost.data.release_date.slice(0, 4));
       
       const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
       setTrailer(videos.data.results[0]);
