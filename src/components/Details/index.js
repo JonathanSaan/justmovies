@@ -18,8 +18,7 @@ export const Details = () => {
   
   
   const [ detailsMovie, setDetailsMovie ] = useState([]);
-  //const yearMovie = `${detailsMovie.release_date}`
-   
+  const [ yearMovie, setYearMovie ] = useState([])
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
   
@@ -31,7 +30,6 @@ export const Details = () => {
   const handleTab2 = () => {
     setActiveTab("tab2");
   };
-  
  
   
   const [ characters, setCharacters ] = useState([]);
@@ -44,7 +42,8 @@ export const Details = () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
       setDetailsMovie(respost.data);
       setGenres(respost.data.genres);
-      //console.log(yearMovie)
+      setYearMovie(respost.data.release_date.slice(0, 4))
+      
       
       const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
       setTrailer(videos.data.results[0]);
@@ -80,7 +79,7 @@ export const Details = () => {
                   {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
                 </h1>
                 <p className="ReleaseDate">
-                  {detailsMovie.release_date}
+                  {yearMovie}
                 </p>
                 <hr />
                 
