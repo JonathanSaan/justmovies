@@ -13,6 +13,7 @@ import "./style.scss";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 //import 'react-tabs/style/react-tabs.css';
 
+
 export const Details = () => {
   
   const { details } = useParams();
@@ -21,6 +22,18 @@ export const Details = () => {
   const [ detailsMovie, setDetailsMovie ] = useState([]);
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
+  
+  
+  const [ activeTab, setActiveTab ] = useState("tab1");
+  
+  const handleTab1 = () => {
+    setActiveTab("tab1");
+  };
+
+  const handleTab2 = () => {
+    setActiveTab("tab2");
+  };
+  
   const [ characters, setCharacters ] = useState([]);
   const [ movieSimilar, setMovieSimilar ] = useState([]);
   
@@ -99,10 +112,10 @@ export const Details = () => {
             </div>
             
             <div className="AllTab">
-              <Tabs className="Tabs">
-                <TabList className="Tab">
-                 <Tab className={TabList ? "buttonActive" : "Button"}>Characters</Tab>
-                 <Tab className={TabList ? "buttonActive" : "Button"}>Similar</Tab>
+              <Tabs defaultIndex={0} className="Tabs">
+                <TabList className="TabList">
+                 <Tab onClick={handleTab1} className={activeTab === "tab1" ? "active" : "false"}>Characters</Tab>
+                 <Tab onClick={handleTab2} className={activeTab  === "tab2" ? "active" : "false"}>Similar</Tab>
                 </TabList>
                 <TabPanel className="TabPanel">
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">

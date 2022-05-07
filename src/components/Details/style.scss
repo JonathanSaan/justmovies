@@ -8,7 +8,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     filter: opacity(20%);
-    margin: -3rem 0 -25rem 0;
+    margin: -3rem 0 -26rem 0;
     height: 450px;
     width: 100%;
     top: 0;
@@ -35,18 +35,18 @@
       
       span {
         display: inline-block;
-        padding: 0 0 0 .6rem;
+        padding: 0 0 0 1rem;
         width: 100%;
         z-index: 2;
     
         .TitleMovie {
-          font-size: 2rem;
+          font-size: 3vw;
           color: #FFF;
         }
         
         .ReleaseDate {
           margin: .3rem 0;
-          font-size: 1rem;
+          font-size: 2vw;
           color: gray;
         }
         
@@ -93,7 +93,7 @@
       }
         
       .Overview {
-        font-size: .7rem;
+        font-size: 1.5vw;
         color: #FFF;
         max-width: 69.5vw;
       }
@@ -130,24 +130,29 @@
         padding: 0 0 3rem .4px;
         height: 2rem;
         
-        .Tab {
+        .TabList {
           display: flex;
+          list-style-type: none;
+          color: #FFF;
+          border: none;
           
-          .buttonActive {
+          .active {
             display: flex;
-            border-end-end-radius: 4px;
-            border-end-start-radius: 4px;
+            border-end-end-radius: 3px;
+            border-end-start-radius: 3px;
             color: #FFF;
             background: none;
             border: none;
             border-bottom: 1px solid gray;
             padding: .7rem;
-            margin: 0 1rem 0 0;
+            margin: 0 1rem 0 0; 
             outline: none;
+            transition: .3s;
           }
           
-          .button {
-            display: none;
+          .false {
+            margin: 0 1rem 0 0;
+            padding: .7rem;
           }
         }
         
@@ -204,20 +209,20 @@
     .Container {
       min-height: 240vw;
       width: 90%;
-      margin: 13rem 0 0 1rem;
+      margin: 14rem 0 0 1rem;
       
       .MovieDetails {
         .PrincipalImage {
-          height: 12rem;
+          height: 30vh;
         }
         
         span {
           .TitleMovie {
-            font-size: 1rem;
+            font-size: 4vw;
           }
           
           .ReleaseDate {
-            font-size: .7rem;
+            font-size: 3vw;
           }
           
         }
@@ -227,9 +232,13 @@
         margin: 1rem 0;
         width: 100%;
         
+        hr {
+          margin: 3vh 0;
+        }
+        
         .Overview {
           line-height: 1.3;
-          font-size: .8rem;
+          font-size: 3vw;
           max-width: 90vw;
         }
       }
