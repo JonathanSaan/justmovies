@@ -93,8 +93,7 @@
     
     .Movies {
       height: 12rem;
-      padding: 1rem .8rem 0 .6rem;
-      margin: 0 0 10% 0;
+      margin: 1rem 1.2vh 0 0;
       
       .MovieImage {
         height: 10rem;
@@ -114,7 +113,6 @@
       }
       
       &:hover {
-        margin: 0 0 -10px 0;
         transition: 320ms;
         transform: scale(1.08);
       }
@@ -132,8 +130,7 @@
     
     .Rateds {
       height: 12rem;
-      padding: 1rem .7rem 0 .6rem;
-      margin: 0 0 10% 0;
+      margin: 1rem 1.2vh 0 0;
       
       .RatedImage {
         height: 10rem;
@@ -153,7 +150,6 @@
       }
       
       &:hover {
-        margin: 0 0 -10px 0;
         transition: 320ms;
         transform: scale(1.08);
       }
@@ -185,20 +181,12 @@
       min-height: 30rem;
       min-width: 100%;
       padding: 2rem 0 3rem 0;
-      
-      .Movies {
-        padding: 0 .5rem 1rem 0;
-      }
     }
 
     .TopRated {
       min-height: 30rem;
       max-width: 100%;
       padding: 2rem 0 3rem 0;
-      
-      .Rateds {
-        padding: 0 .4rem 1rem 0;
-      }
     }
   }
 }
