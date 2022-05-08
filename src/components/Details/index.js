@@ -3,19 +3,16 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { IoIosStar } from "react-icons/io";
 import Whirligig from "react-whirligig";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
 import "./style.scss";
 
 
-
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
 export const Details = () => {
   
   const { details } = useParams();
-  
   
   const [ detailsMovie, setDetailsMovie ] = useState([]);
   const [ yearMovie, setYearMovie ] = useState([]);
@@ -31,36 +28,42 @@ export const Details = () => {
     setActiveTab("tab2");
   };
  
+ const refreshPage = () => {
+    setTimeout(()=>{
+        window.location.reload(false);
+    }, 500);
+    console.log('page to reload')
+ };
+  
   
   const [ characters, setCharacters ] = useState([]);
   const [ movieSimilar, setMovieSimilar ] = useState([]);
   
-  useEffect(() => { load() }, [] );
-  
-  async function load() {
-    try {
-      const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
-      setDetailsMovie(respost.data);
-      setGenres(respost.data.genres);
-      setYearMovie(respost.data.release_date.slice(0, 4));
-      
-      const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
-      setTrailer(videos.data.results[0]);
-      
-      const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
-      setMovieSimilar(dataSimilar.data.results);
-      
-      const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
-      setCharacters(credits.data.cast);
-      
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
+        setDetailsMovie(respost.data);
+        setGenres(respost.data.genres);
+        setYearMovie(respost.data.release_date.slice(0, 4));
+        
+        const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
+        setTrailer(videos.data.results[0]);
+        
+        const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
+        setMovieSimilar(dataSimilar.data.results);
+        
+        const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
+        setCharacters(credits.data.cast);
+      } catch (error) {
+        console.log(error);
+      };
     };
-  };
+    load()
+  }, [] );
   
   
   const Image_path = "https://image.tmdb.org/t/p/w780";
-  const Image_Error = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
   
   
   return (
@@ -72,7 +75,9 @@ export const Details = () => {
           
           <div className="Container">
             <div className="MovieDetails">
-              <img className="PrincipalImage" src={`${Image_path}` ? `${Image_path}${detailsMovie.poster_path}` : `${Image_Error}`} alt={detailsMovie.title} />
+              <div className="Image">
+                <img className="PrincipalImage" src={`${Image_path}${detailsMovie.poster_path}`} alt={detailsMovie.title} />
+              </div>
               <span>
                 <h1 className="TitleMovie">
                   {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
@@ -120,7 +125,7 @@ export const Details = () => {
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
                     {characters.map((Character) => (
                       <div key={Character.id}>
-                        <img src={`${Image_path}` ? `${Image_path}${Character.profile_path}` : `${Image_Error}`} alt={Character.name}/>
+                        <img src={`${Image_path}${Character.profile_path}`} alt={Character.name}/>
                         <p>{Character.name}</p>
                       </div>
                     ))}
@@ -129,9 +134,9 @@ export const Details = () => {
                 <TabPanel className="TabPanel">
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
                     {movieSimilar.map((similar) => (
-                      <Link to={`/${similar.id}`} replace>
+                      <Link to={`/${similar.id}`} onClick={refreshPage}>
                         <div key={similar.id}> 
-                          <img src={`${Image_path}` ? `${Image_path}${similar.poster_path}` : `${Image_Error}`} alt={similar.title}/>
+                          <img src={`${Image_path}${similar.poster_path}`} alt={similar.title}/>
                           <p>{similar.title}</p>
                         </div>
                       </Link>
