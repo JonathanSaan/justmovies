@@ -1,17 +1,107 @@
 .Search {
   background-color: #191b1c;
   
-  .ResultdFound {
+  .Container {
+    width: 70vw;
     min-height: 100vh;
-    padding: 5rem 0 0 1rem;
+    padding: 5rem 0 5rem 5rem;
     
-    h1 {
-      font-size: 1rem;
-      color: #FFF;
-      align-items: center;
-      border-left: 2px solid gray;
-      padding: 5px 0 0 8px;
+    .ResultdFound {
+      h1 {
+        font-size: 2rem;
+        color: #FFF;
+        align-items: center;
+        border-left: 2px solid gray;
+        padding: 5px 0 0 8px;
+      }
     }
     
+    .SearcheFound{
+      margin: 3rem 0 0 0;
+      
+      a {
+        outline: none;
+        text-decoration: none;
+      }
+    
+      div {
+        display: flex;
+        height: 12rem;
+        
+        .Image {
+          .PrincipalImage {
+            height: 11rem;
+            margin: 0 1rem 0 0;
+          }
+        }
+        
+        .description {
+          display: inline-block;
+          
+          .MovieTitle {
+            color: #FFF;
+            font-size: 1.3rem;
+          }
+          
+          .Overview {
+            margin: .5rem 0 0 0;
+            color: gray;
+            height: 3rem;
+            font-size: 1rem;
+          }
+          
+          .Vote {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 4.3rem 0 0 0;
+            height: 2rem;
+            width: 2.2rem;
+            color: #FFF;
+          }
+        }
+          
+        }
+      
+      hr {
+        margin: 1rem 0;
+        border: 1px solid #3e3e3eca;
+      }
+    }
+      
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .Search {
+    .Container {
+      width: 95%;
+      padding: 5rem 0 5rem 1rem;
+      
+     .ResultdFound {
+        h1 {
+          font-size: 1rem;
+        }
+      }
+      
+      .SearcheFound {
+        div {
+          .description {
+            .MovieTitle {
+              font-size: 1rem;
+            }
+            
+            .Overview {
+              font-size: .9rem;
+            }
+            
+            .Vote {
+              margin: 4rem 0 0 0;
+            }
+          }
+        }
+      }
+    }
   }
 }

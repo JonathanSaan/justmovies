@@ -28,9 +28,14 @@
       display: flex;
       width: 100%;
       
-      .PrincipalImage {
+      .Image {
+        width: 15rem;
         height: 15rem;
-        z-index: 2;
+        
+        .PrincipalImage {
+          height: 15rem;
+          z-index: 2;
+        }
       }
       
       span {
@@ -212,8 +217,12 @@
       margin: 14rem 0 0 1rem;
       
       .MovieDetails {
-        .PrincipalImage {
+        .Image {
           height: 13rem;
+          
+          .PrincipalImage {
+            height: 13rem;
+          }
         }
         
         span {
@@ -225,6 +234,12 @@
             font-size: 3vw;
           }
           
+          .Genres {
+            .genre {
+              padding: 5px;
+              font-size: .6rem;
+            }
+          }
         }
       }
       
@@ -262,10 +277,8 @@
               }
             }
           }
-          
         }
       }
-      
     }
   }
 }
