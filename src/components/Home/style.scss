@@ -46,7 +46,7 @@
   .Popular {
     height: 12rem;
     max-width: 77vw;
-    margin: 20px 0 50px 10px;
+    margin: 20px 0 60px 10px;
     z-index: 2;
     
     div {
@@ -88,8 +88,7 @@
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
     min-height: 20rem;
-    min-width: 70vw;
-    max-width: 80vw;
+    width: 90%;
     
     .Movies {
       height: 12rem;
@@ -125,8 +124,7 @@
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
     min-height: 20rem;
-    min-width: 70vw;
-    max-width: 80vw;
+    width: 90%;
     
     .Rateds {
       height: 12rem;
@@ -169,7 +167,7 @@
     
     .Popular {
       max-width: 95vw;
-      margin: 10px 10px 40px 0;
+      margin: 10px 10px 60px 0;
       
       div {
         padding: 0 1%;
@@ -180,13 +178,11 @@
     .NewMovie {
       min-height: 30rem;
       min-width: 100%;
-      padding: 2rem 0 3rem 0;
     }
 
     .TopRated {
       min-height: 30rem;
-      max-width: 100%;
-      padding: 2rem 0 3rem 0;
+      min-width: 100%;
     }
   }
 }
