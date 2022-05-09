@@ -50,6 +50,7 @@ export const Details = () => {
         
         const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
         setTrailer(videos.data.results[0]);
+        console.log(videos)
         
         const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
         setMovieSimilar(dataSimilar.data.results);
@@ -116,7 +117,7 @@ export const Details = () => {
             </div>
             
             <div className="Trailer">
-              <iframe src={`https://youtube.com/embed/${trailer.key}`} target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              <iframe src={"https://youtube.com/embed/" + trailer.key} target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
               </iframe>
             </div>
             
