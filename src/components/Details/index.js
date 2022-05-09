@@ -28,16 +28,17 @@ export const Details = () => {
     setActiveTab("tab2");
   };
  
- const refreshPage = () => {
+ 
+  const [ characters, setCharacters ] = useState([]);
+  const [ movieSimilar, setMovieSimilar ] = useState([]);
+  
+  const refreshPage = () => {
     setTimeout(()=>{
         window.location.reload(false);
     }, 500);
-    console.log('page to reload')
- };
+    console.log("page to reload");
+  };
   
-  
-  const [ characters, setCharacters ] = useState([]);
-  const [ movieSimilar, setMovieSimilar ] = useState([]);
   
   useEffect(() => {
     const load = async () => {
@@ -55,6 +56,7 @@ export const Details = () => {
         
         const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
         setCharacters(credits.data.cast);
+    
       } catch (error) {
         console.log(error);
       };
@@ -63,21 +65,24 @@ export const Details = () => {
   }, [] );
   
   
-  const Image_path = "https://image.tmdb.org/t/p/w780";
   
+  const imagePath = "https://image.tmdb.org/t/p/w500";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+
   
   return (
       <>
         <Header />
         <div className="Details">
-          <div className="BackDrop" style={{backgroundImage: `url(${Image_path}${detailsMovie.backdrop_path})`}}>
+          <div className="BackDrop" style={{backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`}}>
           </div>
           
           <div className="Container">
             <div className="MovieDetails">
               <div className="Image">
-                <img className="PrincipalImage" src={`${Image_path}${detailsMovie.poster_path}`} alt={detailsMovie.title} />
+                <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
               </div>
+              
               <span>
                 <h1 className="TitleMovie">
                   {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
@@ -125,7 +130,7 @@ export const Details = () => {
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
                     {characters.map((Character) => (
                       <div key={Character.id}>
-                        <img src={`${Image_path}${Character.profile_path}`} alt={Character.name}/>
+                        <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
                         <p>{Character.name}</p>
                       </div>
                     ))}
@@ -136,7 +141,7 @@ export const Details = () => {
                     {movieSimilar.map((similar) => (
                       <Link to={`/${similar.id}`} onClick={refreshPage}>
                         <div key={similar.id}> 
-                          <img src={`${Image_path}${similar.poster_path}`} alt={similar.title}/>
+                          <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
                           <p>{similar.title}</p>
                         </div>
                       </Link>
@@ -149,5 +154,4 @@ export const Details = () => {
         </div>
       </>
     );
-    
 };
