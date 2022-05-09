@@ -19,7 +19,6 @@ export const Search = () => {
       try {
         const respost = await axios.get(UrlApi);
         setSearchesFound(respost.data.results);
-        console.log(respost.data.results)
       } catch (error) {
         console.log(error);
       };
@@ -27,7 +26,10 @@ export const Search = () => {
     load()
   }, [searched] );
   
-  let Image_path = "https://image.tmdb.org/t/p/w500";
+  
+  const imagePath = "https://image.tmdb.org/t/p/w500";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  
   
   return (
       <>
@@ -44,7 +46,7 @@ export const Search = () => {
                 <Link to={`/${movie.id}`}>
                   <div key={movie.id}>
                     <div className="Image">
-                      <img className="PrincipalImage" src={`${Image_path}${movie.poster_path}`} alt={movie.title} />
+                      <img className="PrincipalImage" src={movie.poster_path ? imagePath + movie.poster_path : imageError} alt={movie.title} />
                     </div>
                     <div className="description">
                       <h1 className="MovieTitle">
@@ -75,5 +77,4 @@ export const Search = () => {
         </div>
       </>
     );
-    
 };
