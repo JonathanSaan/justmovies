@@ -84,7 +84,7 @@ export const Details = () => {
           <div className="BackDrop" style={{backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`}}>
           </div>
           
-          <div className="Container">
+          <div className="ContainerDetails">
             <div className="MovieDetails">
               <div className="Image">
                 <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
