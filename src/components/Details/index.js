@@ -51,11 +51,12 @@ export const Details = () => {
         const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
         
         const stateVideo = () => {
-          if (videos.data.results > 0) {
+          if (videos.data.results.length > 0) {
             return setTrailer(videos.data.results[0]);
           }
           return null;
         }
+        stateVideo()
         
         const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
         setMovieSimilar(dataSimilar.data.results);
