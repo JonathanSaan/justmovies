@@ -1,107 +1,188 @@
-.Search {
+.Home {
+  min-height: 100vh;
   background-color: #191b1c;
+  padding: 5rem 0 0 10vw;
   
-  .Container {
-    width: 70vw;
-    min-height: 100vh;
-    padding: 5rem 0 5rem 5rem;
-    
-    .ResultdFound {
-      h1 {
-        font-size: 2rem;
-        color: #FFF;
-        align-items: center;
-        border-left: 2px solid gray;
-        padding: 5px 0 0 8px;
-      }
-    }
-    
-    .SearcheFound{
-      margin: 3rem 0 0 0;
-      
-      a {
-        outline: none;
-        text-decoration: none;
-      }
-    
-      div {
-        display: flex;
-        height: 12rem;
-        
-        .Image {
-          .PrincipalImage {
-            height: 11rem;
-            margin: 0 1rem 0 0;
-          }
-        }
-        
-        .description {
-          display: inline-block;
-          
-          .MovieTitle {
-            color: #FFF;
-            font-size: 1.3rem;
-          }
-          
-          .Overview {
-            margin: .5rem 0 0 0;
-            color: gray;
-            height: 3rem;
-            font-size: 1rem;
-          }
-          
-          .Vote {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 4.3rem 0 0 0;
-            height: 2rem;
-            width: 2.2rem;
-            color: #FFF;
-          }
-        }
-          
-        }
-      
-      hr {
-        margin: 1rem 0;
-        border: 1px solid #3e3e3eca;
-      }
-    }
-      
+  h1 {
+    color: #FFF;
+    font-size: 1.5rem;
+    align-items: center;
+    border-left: 2px solid gray;
+    padding: 5px 0 0 8px;
   }
   
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .Fade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    
+    button {
+      display: flex;
+      padding: 7px;
+      background-color: #202020;
+      color: lightgray;
+      border: none;
+      border-radius: 3px;
+      
+      p {
+        padding: 0 4px;
+      }
+      
+      &:hover {
+        color: #FFF;
+        font-size: .9rem;
+        transition: 300ms;
+      }
+      
+    }
+  }
+
+  .Popular {
+    height: 12rem;
+    max-width: 77vw;
+    margin: 20px 0 60px 10px;
+    z-index: 2;
+    
+    div {
+      transform: all 0.6s;
+      overflow: hidden;
+      min-width: 13vw;
+      
+      .Populars {
+        height: 13rem;
+        margin: 6px 0 0 5px;
+        
+        .PopularImage {
+          height: 10rem;
+          border-radius: 5px;
+          z-index: -4;
+        }
+  
+        .PopularTitle {
+          color: #FFF;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 7rem;
+          font-size: .8rem;
+          margin: 5px 0;
+        }
+        
+        &:hover {
+          transition: 320ms;
+          transform: scale(1.06);
+        }
+        
+      }
+    }
+  }
+
+  .NewMovie {
+    display: flex;
+    padding: 1rem 0 3rem 0;
+    flex-wrap: wrap;
+    min-height: 20rem;
+    width: 90%;
+    
+    .Movies {
+      height: 12rem;
+      margin: 1rem 1.2vh 0 0;
+      
+      .MovieImage {
+        height: 10rem;
+        border-radius: 5px;
+      }
+
+      .MovieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6.5rem;
+        color: #FFF;
+        margin: 5px 0;
+        align-items: center;
+        font-weight: 500;
+        font-size: .8rem;
+      }
+      
+      &:hover {
+        transition: 320ms;
+        transform: scale(1.08);
+      }
+      
+    }
+  }
+
+  .TopRated {
+    display: flex;
+    padding: 1rem 0 3rem 0;
+    flex-wrap: wrap;
+    min-height: 20rem;
+    width: 90%;
+    
+    .Rateds {
+      height: 12rem;
+      margin: 1rem 1.2vh 0 0;
+      
+      .RatedImage {
+        height: 10rem;
+        border-radius: 5px;
+      }
+
+      .RatedTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 6.5rem;
+        color: #FFF;
+        margin: 5px 0;
+        align-items: center;
+        font-weight: 500;
+        font-size: .8rem;
+      }
+      
+      &:hover {
+        transition: 320ms;
+        transform: scale(1.08);
+      }
+    
+    }
+  }
 }
 
-@media screen and (max-width: 400px) {
-  .Search {
-    .Container {
-      width: 95%;
-      padding: 5rem 0 5rem 1rem;
+
+@media screen and (max-width: 800px) {
+  .Home {
+    padding: 5rem 0 0 2vw;
+    
+    .Fade {
+      width: 97%;
+    }
+    
+    .Popular {
+      max-width: 95vw;
+      margin: 10px 10px 60px 0;
       
-     .ResultdFound {
-        h1 {
-          font-size: 1rem;
-        }
+      div {
+        padding: 0 1%;
+        min-width: 8rem;
       }
-      
-      .SearcheFound {
-        div {
-          .description {
-            .MovieTitle {
-              font-size: 1rem;
-            }
-            
-            .Overview {
-              font-size: .9rem;
-            }
-            
-            .Vote {
-              margin: 4rem 0 0 0;
-            }
-          }
-        }
-      }
+    }
+
+    .NewMovie {
+      min-height: 30rem;
+      min-width: 100%;
+    }
+
+    .TopRated {
+      min-height: 30rem;
+      min-width: 100%;
     }
   }
 }
