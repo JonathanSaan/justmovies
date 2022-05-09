@@ -88,11 +88,11 @@
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
     min-height: 20rem;
-    width: 95%;
+    width: 100%;
     
     .Movies {
       height: 12rem;
-      margin: 1rem 1.3vh 0 0;
+      margin: 1rem 2vw 0 0;
       
       .MovieImage {
         height: 10rem;
@@ -124,11 +124,11 @@
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
     min-height: 20rem;
-    width: 90%;
+    width: 100%;
     
     .Rateds {
       height: 12rem;
-      margin: 1rem 1.3vh 0 0;
+      margin: 1rem 2vw 0 0;
       
       .RatedImage {
         height: 10rem;
@@ -177,12 +177,10 @@
 
     .NewMovie {
       min-height: 30rem;
-      min-width: 100%;
     }
 
     .TopRated {
       min-height: 30rem;
-      min-width: 100%;
     }
   }
 }
