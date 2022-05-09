@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import Fade from "react-reveal/Fade";
 
@@ -26,10 +27,12 @@ export const Home = () => {
        <Fade bottom>
           <div className="Fade">
             <h1>New Movies</h1>
-            <button>
-              <p>See all</p> 
-              <IoIosArrowForward size={16} />
-            </button>
+            <Link to={`/NewMovies`}>
+              <button>
+                <p>See all</p> 
+                <IoIosArrowForward size={16} />
+              </button>
+            </Link>
           </div>
         </Fade>
         <div className="NewMovie">
@@ -38,10 +41,12 @@ export const Home = () => {
        <Fade bottom>
           <div className="Fade">
             <h1>Top Rated </h1>
-            <button>
-              <p>See all</p> 
-              <IoIosArrowForward size={16} />
-            </button>
+            <Link to={`/TopRated`}>
+              <button>
+                <p>See all</p> 
+                <IoIosArrowForward size={16} />
+              </button>
+            </Link>
           </div>
         </Fade>
         <div className="TopRated">
