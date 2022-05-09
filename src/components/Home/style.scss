@@ -177,10 +177,18 @@
 
     .NewMovie {
       min-height: 30rem;
+      
+      .Movies {
+        margin: 1rem 2.7vw 0 0;
+      }
     }
 
     .TopRated {
       min-height: 30rem;
+      
+      .Rateds {
+        margin: 1rem 2.5vw 0 0;
+      }
     }
   }
 }
