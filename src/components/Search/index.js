@@ -35,7 +35,7 @@ export const Search = () => {
       <>
         <Header />
         <div className = "Search">
-          <div className = "Container">
+          <div className = "ContainerSearch">
             <div className="ResultdFound">
               <h1>Results found: {searched.replaceAll("+", " ")}</h1>
             </div>

@@ -1,7 +1,7 @@
 .Search {
   background-color: #191b1c;
   
-  .Container {
+  .ContainerSearch {
     width: 70vw;
     min-height: 100vh;
     padding: 5rem 0 5rem 5rem;
@@ -75,7 +75,7 @@
 
 @media screen and (max-width: 400px) {
   .Search {
-    .Container {
+    .ContainerSearch {
       width: 95vw;
       padding: 5rem 0 5rem 1rem;
       
