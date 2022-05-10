@@ -35,9 +35,9 @@ export const Header = () => {
         <button className="Menu" onClick={toggleSideBar}>
           <IoMenu size={40} color="#FFF" />
         </button>
-        <form>
+        <form onSubmit={SearchMovie}>
           <input type="text" value={TypedSearch} placeholder="Search..." onChange={(e) => SetTypedSearch(e.target.value)} />
-          <button onClick={SearchMovie} className="Search">
+          <button type="submit"className="Search">
               <IoIosSearch size={28} color="#FFF" />
           </button>
         </form>
