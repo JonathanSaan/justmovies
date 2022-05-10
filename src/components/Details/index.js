@@ -41,6 +41,7 @@ export const Details = () => {
   
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
