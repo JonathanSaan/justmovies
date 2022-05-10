@@ -41,39 +41,45 @@ export const Search = () => {
               <h1>Results found: {searched.replaceAll("+", " ")}</h1>
             </div>
             
-            <div className="SearcheFound">
-              {searchesFound.map((movie) => (
-               <>
-                <Link to={`/${movie.id}`}>
-                  <div key={movie.id}>
-                    <div className="Image">
-                      <img className="PrincipalImage" src={movie.poster_path ? imagePath + movie.poster_path : imageError} alt={movie.title} />
-                    </div>
-                    <div className="description">
-                      <h1 className="MovieTitle">
-                        {movie.title}
-                      </h1>
-                      <p className="Overview">
-                        {movie.overview.length > 150 ? (
-                          `${movie.overview.substring(0, 150)}...`  ) : (
-                            (
-                              <p className="Overview">
-                                {movie.overview}
-                              </p>
-                            )
-                          )}
-                      </p>
-                      <div className="Vote">
-                        <IoIosStar size={10} color="yellow"/>
-                        {movie.vote_average}
+            {searchesFound.length > 0 ? (
+              <div className="SearcheFound">
+                {searchesFound.map((movie) => (
+                 <>
+                  <Link to={`/${movie.id}`}>
+                    <div key={movie.id}>
+                      <div className="Image">
+                        <img className="PrincipalImage" src={movie.poster_path ? imagePath + movie.poster_path : imageError} alt={movie.title} />
+                      </div>
+                      <div className="description">
+                        <h1 className="MovieTitle">
+                          {movie.title}
+                        </h1>
+                        <p className="Overview">
+                          {movie.overview.length > 150 ? (
+                            `${movie.overview.substring(0, 150)}...`  ) : (
+                              (
+                                <p className="Overview">
+                                  {movie.overview}
+                                </p>
+                              )
+                            )}
+                        </p>
+                        <div className="Vote">
+                          <IoIosStar size={10} color="yellow"/>
+                          {movie.vote_average}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-                <hr />
-               </>
-              ))}
-            </div>
+                  </Link>
+                  <hr />
+                 </>
+                ))}
+              </div>
+            ) : (
+              <div className="noSearchFound">
+                <h2>No results found. </h2>
+              </div>
+            ) }
           </div>
         </div>
       </>
