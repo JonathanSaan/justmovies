@@ -11,6 +11,7 @@ export const Movies = () => {
   const Image_path = "https://image.tmdb.org/t/p/w500";
   
   useEffect(() => { 
+    window.scrollTo(0, 0);
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
