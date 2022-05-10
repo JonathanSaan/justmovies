@@ -15,6 +15,7 @@ export const Search = () => {
   const [ searchesFound, setSearchesFound ] = useState([]);
   
   useEffect(() => { 
+    window.scrollTo(0, 0);
     const load = async () => {
       try {
         const respost = await axios.get(UrlApi);
