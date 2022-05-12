@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 import "./style.scss";
 import { SideBar } from "../SideBar";
 
-export const Header = ({ setLoading }) => {
+export const Header = () => {
   
   let navigate = useNavigate();
   
