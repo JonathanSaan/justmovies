@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { useState, useEffect } from "react";
 import { IoIosStar } from "react-icons/io";
 import Whirligig from "react-whirligig";
@@ -39,40 +41,46 @@ export const Details = () => {
     console.log("page to reload");
   };
   
+  const [ loading, setLoading ] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    const load = async () => {
-      try {
-        const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
-        setDetailsMovie(respost.data);
-        setGenres(respost.data.genres);
-        setYearMovie(respost.data.release_date.slice(0, 4));
-        
-        const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
-        
-        const stateVideo = () => {
-          if (videos.data.results.length > 0) {
-            return setTrailer(videos.data.results[0]);
+    setTimeout(() => { 
+      const load = async () => {
+        try {
+          const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
+          setDetailsMovie(respost.data);
+          setGenres(respost.data.genres);
+          setYearMovie(respost.data.release_date.slice(0, 4));
+          
+          const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
+          
+          const stateVideo = () => {
+            if (videos.data.results.length > 0) {
+              return setTrailer(videos.data.results[0]);
+            }
+            return null;
           }
-          return null;
-        }
-        stateVideo()
-        
-        const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
-        setMovieSimilar(dataSimilar.data.results);
-        
-        const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
-        setCharacters(credits.data.cast);
-    
-      } catch (error) {
-        console.log(error);
+          stateVideo()
+          
+          const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
+          setMovieSimilar(dataSimilar.data.results);
+          
+          const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
+          setCharacters(credits.data.cast);
+          console.log(respost.data.results)
+          setLoading(true);
+        } catch (error) {
+          console.log(error);
+        };
       };
-    };
-    load()
+      load()
+    }, 1000)
   }, [] );
   
-  
+  const styleSkeleton = {
+    marginLeft: '-18px'
+  }
   
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
@@ -87,16 +95,24 @@ export const Details = () => {
           
           <div className="ContainerDetails">
             <div className="MovieDetails">
-              <div className="Image">
-                <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
-              </div>
+              {detailsMovie.poster_path && 
+                <img className="PrincipalImage" src={imagePath + detailsMovie.poster_path} alt={detailsMovie.title} />
+              }
+              
+              {!loading && 
+                 <Skeleton style={styleSkeleton} variant="rectangular" width={160} height={240} />
+              }
+              
+              {loading && detailsMovie.poster_path === null &&
+                <img className="PrincipalImage" src={imageError} alt={'image Error'} />
+              }
               
               <span>
                 <h1 className="TitleMovie">
-                  {detailsMovie.original_title &&  detailsMovie.name }  {detailsMovie.title}
+                  {detailsMovie.title || <Skeleton style={styleSkeleton} variant="text" count={2}/>}
                 </h1>
                 <p className="ReleaseDate">
-                  {yearMovie}
+                  {yearMovie || <Skeleton style={styleSkeleton} variant="text" count={1}/>}
                 </p>
                 <hr />
                 
@@ -119,13 +135,20 @@ export const Details = () => {
             <div className="Description">
               <hr />
               <h2 className="Overview">
-                {detailsMovie.overview}
+                {detailsMovie.overview || <Skeleton count={5} />}
               </h2>
             </div>
             
             <div className="Trailer">
-              <iframe src={"https://youtube.com/embed/" + trailer.key} target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
+              {trailer.key && 
+                <iframe src={"https://youtube.com/embed/" + trailer.key } target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe> 
+              }
+              
+              {!loading && 
+                <Skeleton variant="rectangular" width={320} height={200} />
+              }
+              
             </div>
             
             <div className="AllTab">
@@ -144,6 +167,7 @@ export const Details = () => {
                     ))}
                   </Whirligig>
                 </TabPanel>
+                
                 <TabPanel className="TabPanel">
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
                     {movieSimilar.map((similar) => (
