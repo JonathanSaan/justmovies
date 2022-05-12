@@ -5,10 +5,11 @@ import { useState, useEffect } from "react";
 import APIKey from "../../mocks/api";
 
 
+
 export const TopRated = () => {
   
   const [ listRated, setListRated ] = useState([])
-  const Image_path = "https://image.tmdb.org/t/p/w500";
+  
   
   useEffect(() => { 
     window.scrollTo(0, 0);
@@ -24,13 +25,17 @@ export const TopRated = () => {
     load() 
   }, [] );
   
+  const Image_path = "https://image.tmdb.org/t/p/w500";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  
+  
   
   return (
     <>
       {listRated.map((rated) => (
         <Link to={`/${rated.id}`} >
           <div className="Rateds" key={rated.id}>
-            <img className="RatedImage" src={`${Image_path}${rated.poster_path}`} alt={rated.name}/>
+            <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
             <h2 className="RatedTitle">{rated.title}</h2>
           </div>
         </Link>
