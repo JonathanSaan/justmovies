@@ -6,18 +6,19 @@ import { IoIosSearch } from "react-icons/io";
 import "./style.scss";
 import { SideBar } from "../SideBar";
 
-export const Header = () => {
+export const Header = ({ setLoading }) => {
   
   let navigate = useNavigate();
   
   const [TypedSearch, SetTypedSearch] = useState();
+  
   
   const SearchMovie = (e) => {
     if (TypedSearch === "") {
       return e;
     };
     
-    e.preventDefault();
+    //e.preventDefault();
     SetTypedSearch(TypedSearch);
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
