@@ -2,11 +2,12 @@
   background-color: #191b1c;
   
   .ContainerSearch {
-    width: 70vw;
     min-height: 100vh;
-    padding: 5rem 0 5rem 5rem;
+    padding: 5rem 0 5rem 0;
     
     .ResultdFound {
+      padding: 0 0 0 5rem;
+      
       h1 {
         font-size: 1.8rem;
         color: #FFF;
@@ -17,7 +18,8 @@
     }
     
     .SearcheFound {
-      margin: 3rem 0 0 0;
+      width: 60vw;
+      margin: 3rem 0 0 5rem;
       
       a {
         outline: none;
@@ -70,7 +72,7 @@
     }
       
     .noSearchFound {
-      margin: 1rem 0 0 0;
+      margin: 1rem 0 0 5rem;
       
       h2 {
         font-size: 2.3rem;
@@ -84,16 +86,20 @@
 @media screen and (max-width: 768px) {
   .Search {
     .ContainerSearch {
-      width: 95vw;
-      padding: 5rem 0 5rem 1rem;
+      padding: 5rem 0 5rem 0;
       
      .ResultdFound {
+       padding: 0 0 0 1rem;
+       
         h1 {
           font-size: 1rem;
         }
       }
       
       .SearcheFound {
+        margin: 3rem 0 0 1rem;
+        width: 90vw;
+        
         div {
           .description {
             .MovieTitle {
@@ -112,6 +118,8 @@
       }
       
       .noSearchFound {
+        margin: 1rem 0 0 1rem;
+        
         h2 {
           font-size: 1.3rem;
         }
