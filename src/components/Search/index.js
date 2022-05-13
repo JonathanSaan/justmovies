@@ -83,8 +83,10 @@ export const Search = () => {
                               )}
                           </p>
                           <div className="Vote">
-                            <IoIosStar size={10} color="yellow"/>
+                            <IoIosStar className="Star" size={10} color="yellow"/>
+                            <p>
                             {movie.vote_average}
+                            </p>
                           </div>
                         </div>
                       </div>
