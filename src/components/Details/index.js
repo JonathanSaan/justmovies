@@ -117,8 +117,10 @@ export const Details = () => {
                 <hr />
                 
                 <div className="Votes">
-                  <IoIosStar size={15} color="yellow"/>
-                  {detailsMovie.vote_average}
+                  <IoIosStar className="Star" size={15} color="yellow"/>
+                  <p className="vote">
+                    {detailsMovie.vote_average}
+                  </p>
                 </div>
                 <hr />
                 

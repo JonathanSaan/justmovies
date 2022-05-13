@@ -56,14 +56,20 @@
         
         .Votes {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          width: 3.5rem;
           margin: .5rem 0;
+          padding: 7px 5px;
+          width: 3.5rem;
           border: 1px solid gray;
           color: #FFF;
           background-color: #191B1C;
-          padding: 7px;
+          
+          .Star {
+            width: 1.2rem;
+          }
+          .vote {
+            margin: 0 auto;
+          }
         }
         
         .Genres {
