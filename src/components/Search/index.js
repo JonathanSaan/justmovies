@@ -56,7 +56,7 @@ export const Search = () => {
             <div className="ResultdFound">
               <h1>Results found: {searched.replaceAll("+", " ")}</h1>
             </div>
-            {searchesFound.length > 1 && 
+            {!loading && searchesFound.length > 0 && 
               <div className="SearcheFound">
                 {searchesFound.map((movie) => (
                   <>
@@ -97,17 +97,17 @@ export const Search = () => {
                 </div>
               }
             
-            {!loading && 
-              <div>
-                <PuffLoader color={'#FFF'} css={override} size={150} /> 
-              </div>
-            }
-            
-            {loading && searchesFound.length === 0 && 
+            {!loading && searchesFound.length === 0 && (
               <div className="noSearchFound">
                 <h2>No results found. </h2>
               </div> 
-            }
+            )}
+            
+            {!loading && (
+              <div>
+                <PuffLoader color={'#FFF'} css={override} size={150} /> 
+              </div>
+            )}
           </div>
         </div>
       </>
