@@ -1,14 +1,81 @@
-.Container {
+.ContainerRated {
   background-color: #191b1c;
+  padding: 4rem 0;
+  min-height: 100vh;
   
-  div {
-    min-height: 100vh;
-    padding: 5rem 0 0 1rem;
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .TopRated {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    min-height: 20rem;
+    width: 80%;
     
-    h1 {
-      font-size: 1rem;
-      text-align: center;
-      color: #FFF;
+    .title {
+      width: 100%;
+      margin: 1rem 0;
+      
+       h1 {
+         color: #FFF;
+         font-size: 1.5rem;
+         align-items: center;
+         border-left: 2px solid gray;
+         padding: 5px 0 0 8px;
+      }
+    }
+    
+    .Rateds{
+      height: 17rem;
+     /* width: 10rem;*/
+      
+      .RatedImage {
+        height: 13rem;
+        border-radius: 5px;
+      }
+
+      .RatedTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 8.5rem;
+        color: #FFF;
+        margin: 5px 0;
+        align-items: center;
+        font-weight: 500;
+        font-size: .8rem;
+      }
+      
+      &:hover {
+        transition: 320ms;
+        transform: scale(1.08);
+      }
+      
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ContainerRated {
+    .TopRated {
+      width: 95%;
+      
+      .Rateds {
+        height: 12rem;
+        /*width: 6rem;*/
+        
+        .RatedImage {
+          height: 9rem;
+        }
+        
+        .RatedTitle {
+          max-width: 6rem;
+        }
+      }
     }
   }
 }
