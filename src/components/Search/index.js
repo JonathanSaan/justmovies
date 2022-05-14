@@ -1,5 +1,4 @@
 import axios from "axios";
-import { css } from "@emotion/react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useParams, Link } from "react-router-dom";
@@ -14,13 +13,6 @@ export const Search = () => {
   const { searched } = useParams();
   
   const [ searchesFound, setSearchesFound ] = useState([]);
-  
-  const override = css`
-    display: block;
-    margin: 20vh auto;
-    color: #FFF;
-    border-color: #FFF;
-  `;
   
   useEffect(() => { 
     window.scrollTo(0, 0);
@@ -54,6 +46,7 @@ export const Search = () => {
             </div>
             {searchesFound.length > 0 ?
               <div className="SearcheFound">
+              
                 {searchesFound.map((movie) => (
                   <>
                     <Link to={`/${movie.id}`}>
