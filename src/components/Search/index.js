@@ -1,6 +1,5 @@
 import axios from "axios";
 import { css } from "@emotion/react";
-import PuffLoader from "react-spinners/PuffLoader";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useParams, Link } from "react-router-dom";
@@ -23,16 +22,12 @@ export const Search = () => {
     border-color: #FFF;
   `;
   
-  const [ loading, setLoading ] = useState(false);
-  
-  
   useEffect(() => { 
     window.scrollTo(0, 0);
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=1&include_adult=false`);
         setSearchesFound(respost.data.results);
-        
       } catch (error) {
         console.log(error);
       };
@@ -48,6 +43,7 @@ export const Search = () => {
     marginRight: '18px'
   }
   
+  
   return (
       <>
         <Header/>
@@ -56,17 +52,21 @@ export const Search = () => {
             <div className="ResultdFound">
               <h1>Results found: {searched.replaceAll("+", " ")}</h1>
             </div>
-            {!loading && searchesFound.length > 0 && 
+            {searchesFound.length > 0 ?
               <div className="SearcheFound">
                 {searchesFound.map((movie) => (
                   <>
                     <Link to={`/${movie.id}`}>
                       <div key={movie.id}>
                         <div className="Image">
-                          {movie.poster_path !== 0 ? <img className="PrincipalImage" src={movie.poster_path ? imagePath + movie.poster_path  : imageError} alt={movie.title} /> 
-                          : ( 
-                            <Skeleton style={styleSkeleton} variant="rectangular" width={120} height={180} />
-                            )}
+                          {movie.poster_path &&
+                            <img className="PrincipalImage" src={imagePath + movie.poster_path} alt={movie.title} /> 
+                          } 
+                          
+                          {movie.poster_path === null &&
+                            <img className="PrincipalImage" src={imageError} alt={"image error"} /> 
+                          }
+                            
                         </div>
                         <div className="description">
                           <h1 className="MovieTitle">
@@ -74,18 +74,17 @@ export const Search = () => {
                           </h1>
                           <p className="Overview">
                             {movie.overview.length > 150 ? (
-                              `${movie.overview.substring(0, 150)}...`  ) : (
-                                (
+                              `${movie.overview.substring(0, 150)}...`  ) 
+                              : (
                                   <p className="Overview">
                                     {movie.overview}
                                   </p>
-                                )
                               )}
                           </p>
                           <div className="Vote">
                             <IoIosStar className="Star" size={10} color="yellow"/>
                             <p>
-                            {movie.vote_average}
+                              {movie.vote_average}
                             </p>
                           </div>
                         </div>
@@ -94,20 +93,14 @@ export const Search = () => {
                     <hr />
                    </>
                   ))}
-                </div>
-              }
-            
-            {!loading && searchesFound.length === 0 && (
-              <div className="noSearchFound">
-                <h2>No results found. </h2>
-              </div> 
-            )}
-            
-            {!loading && (
-              <div>
-                <PuffLoader color={'#FFF'} css={override} size={150} /> 
               </div>
-            )}
+              : (
+                <div className="noSearchFound">
+                  <h2>No results found. </h2>
+                </div> 
+              )
+            }
+            
           </div>
         </div>
       </>
