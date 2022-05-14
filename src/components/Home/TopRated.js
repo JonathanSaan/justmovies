@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import APIKey from "../../mocks/api";
 
 
-
 export const TopRated = () => {
   
   const [ listRated, setListRated ] = useState([])
