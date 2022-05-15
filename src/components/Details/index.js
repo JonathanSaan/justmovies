@@ -78,7 +78,6 @@ export const Details = () => {
   }, [] );
   
   const styleSkeleton = {
-    
     marginLeft: '-18px'
   }
   
