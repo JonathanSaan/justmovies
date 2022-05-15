@@ -20,7 +20,6 @@ export const TopRated = () => {
         console.log(error);
       };
     };
-    
     load() 
   }, [] );
   
@@ -33,12 +32,13 @@ export const TopRated = () => {
         <div className="ContainerRated">
           <div className="TopRated">
             <div className="title">
-              <h1>New Movies</h1>
+              <h1>Top Rated</h1>
             </div>
             {listRated.map((rated) => (
               <Link to={`/${rated.id}`} >
                 <div className="Rateds" key={rated.id}>
                   <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
+                  
                   <h2 className="RatedTitle">{rated.title}</h2>
                 </div>
               </Link>
