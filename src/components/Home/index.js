@@ -16,41 +16,43 @@ export const Home = () => {
     <>
       <Header/>
       <div className="Home" >
-        <Fade bottom>
-          <div className="Fade">
-            <h1>Most Popular</h1>
+        <div className="ContainerHome" >
+          <Fade bottom>
+            <div className="Fade">
+              <h1>Most Popular</h1>
+            </div>
+          </Fade>
+          <div className="Popular" >
+            <Popular/>
           </div>
-        </Fade>
-        <div className="Popular" >
-          <Popular/>
-        </div>
-       <Fade bottom>
-          <div className="Fade">
-            <h1>New Movies</h1>
-            <Link to={`/NewMovies`}>
-              <button>
-                <p>See all</p> 
-                <IoIosArrowForward size={16} />
-              </button>
-            </Link>
+         <Fade bottom>
+            <div className="Fade">
+              <h1>New Movies</h1>
+              <Link to={`/NewMovies`}>
+                <button>
+                  <p>See all</p> 
+                  <IoIosArrowForward size={16} />
+                </button>
+              </Link>
+            </div>
+          </Fade>
+          <div className="NewMovie">
+            <Movies />
           </div>
-        </Fade>
-        <div className="NewMovie">
-          <Movies />
-        </div>
-       <Fade bottom>
-          <div className="Fade">
-            <h1>Top Rated </h1>
-            <Link to={`/TopRated`}>
-              <button>
-                <p>See all</p> 
-                <IoIosArrowForward size={16} />
-              </button>
-            </Link>
+         <Fade bottom>
+            <div className="Fade">
+              <h1>Top Rated </h1>
+              <Link to={`/TopRated`}>
+                <button>
+                  <p>See all</p> 
+                  <IoIosArrowForward size={16} />
+                </button>
+              </Link>
+            </div>
+          </Fade>
+          <div className="TopRated">
+            <TopRated />
           </div>
-        </Fade>
-        <div className="TopRated">
-          <TopRated />
         </div>
       </div>
     </>
