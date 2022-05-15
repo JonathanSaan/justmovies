@@ -78,8 +78,10 @@ export const Details = () => {
   }, [] );
   
   const styleSkeleton = {
+    
     marginLeft: '-18px'
   }
+  
   
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
@@ -94,24 +96,21 @@ export const Details = () => {
           
           <div className="ContainerDetails">
             <div className="MovieDetails">
-              {detailsMovie.poster_path && 
-                <img className="PrincipalImage" src={imagePath + detailsMovie.poster_path} alt={detailsMovie.title} />
-              }
-              
-              {!loading && 
-                 <Skeleton style={styleSkeleton} variant="rectangular" width={160} height={240} />
-              }
-              
-              {loading && detailsMovie.poster_path === null &&
-                <img className="PrincipalImage" src={imageError} alt={'image Error'} />
-              }
-              
+              <div className="Image">
+                {detailsMovie.poster_path && 
+                  <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
+                }
+                
+                {!detailsMovie.poster_path && !loading &&
+                   <Skeleton className="PrincipalImage" style={styleSkeleton} variant="rectangular" />
+                }
+              </div>
               <span>
                 <h1 className="TitleMovie">
                   {detailsMovie.title || <Skeleton style={styleSkeleton} variant="text" count={2}/>}
                 </h1>
                 <p className="ReleaseDate">
-                  {yearMovie || <Skeleton style={styleSkeleton} variant="text" count={1}/>}
+                  {yearMovie}
                 </p>
                 <hr />
                 
@@ -142,14 +141,13 @@ export const Details = () => {
             
             <div className="Trailer">
               {trailer.key && 
-                <iframe src={"https://youtube.com/embed/" + trailer.key } target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <iframe className="Video" src={"https://youtube.com/embed/" + trailer.key } target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe> 
               }
               
-              {!loading && 
-                <Skeleton variant="rectangular" width={320} height={200} />
+              {!trailer.key && !loading &&
+                <Skeleton className="Video" variant="rectangular" />
               }
-              
             </div>
             
             <div className="AllTab">
