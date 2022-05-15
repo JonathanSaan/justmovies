@@ -68,7 +68,6 @@ export const Details = () => {
           
           const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
           setCharacters(credits.data.cast);
-          console.log(respost.data.results)
           setLoading(true);
         } catch (error) {
           console.log(error);
