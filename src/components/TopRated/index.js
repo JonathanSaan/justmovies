@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
@@ -21,6 +23,7 @@ export const TopRated = () => {
       };
     };
     load() 
+    
   }, [] );
   
   const Image_path = "https://image.tmdb.org/t/p/w500";
@@ -38,7 +41,6 @@ export const TopRated = () => {
               <Link to={`/${rated.id}`} >
                 <div className="Rateds" key={rated.id}>
                   <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
-                  
                   <h2 className="RatedTitle">{rated.title}</h2>
                 </div>
               </Link>
