@@ -18,7 +18,7 @@ export const Header = () => {
       return e;
     };
     
-    //e.preventDefault();
+    e.preventDefault();
     SetTypedSearch(TypedSearch);
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
