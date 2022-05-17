@@ -26,7 +26,7 @@
         text-decoration: none;
       }
     
-      div {
+      .Movies {
         display: flex;
         height: 12rem;
         
@@ -38,35 +38,34 @@
         }
         
         .description {
-          display: inline-block;
+          display: flex;
+          flex-direction: column;
           
           .MovieTitle {
             color: #FFF;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            max-height: 3rem;
           }
           
           .Overview {
             margin: .5rem 0 0 0;
             color: gray;
-            height: 3rem;
+            height: 7rem;
             font-size: 1rem;
           }
           
           .Vote {
             display: flex;
             align-items: center;
-            margin: 4.3rem 0 0 0;
-            height: 2rem;
+            height: 1rem;
             width: 2.5rem;
             color: #FFF;
             
             .Star {
               margin: 0 .3rem 0 0;
             }
-            
           }
         }
-        
       }
       
       hr {
@@ -83,7 +82,6 @@
         color: gray;
       }
     }
-    
   }
 }
 
@@ -104,18 +102,14 @@
         margin: 3rem 0 0 1rem;
         width: 90vw;
         
-        div {
+        .Movies {
           .description {
             .MovieTitle {
-              font-size: 1rem;
+              font-size: .8rem;
             }
             
             .Overview {
-              font-size: .9rem;
-            }
-            
-            .Vote {
-              margin: 4rem 0 0 0;
+              font-size: .7rem;
             }
           }
         }

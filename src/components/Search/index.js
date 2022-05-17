@@ -50,7 +50,7 @@ export const Search = () => {
                 {searchesFound.map((movie) => (
                   <>
                     <Link to={`/${movie.id}`}>
-                      <div key={movie.id}>
+                      <div className="Movies" key={movie.id}>
                         <div className="Image">
                           {movie.poster_path &&
                             <img className="PrincipalImage" src={imagePath + movie.poster_path} alt={movie.title} /> 
