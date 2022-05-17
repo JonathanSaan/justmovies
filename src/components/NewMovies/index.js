@@ -16,7 +16,7 @@ export const NewMovies = () => {
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
-        setListMovies(respost.data.results);
+        setListMovies(respost.data.results.slice(0, 18));
       } catch (error) {
         console.log(error);
       };

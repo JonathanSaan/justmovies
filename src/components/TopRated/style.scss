@@ -30,10 +30,10 @@
     }
     
     .Rateds{
-      height: 17rem;
+      height: 23vw;
       
       .RatedImage {
-        height: 13rem;
+        height: 18vw;
         border-radius: 5px;
       }
 
@@ -41,7 +41,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 8.5rem;
+        max-width: 11vw;
         color: #FFF;
         margin: 5px 0;
         align-items: center;
@@ -53,7 +53,6 @@
         transition: 350ms;
         transform: scale(1.08);
       }
-      
     }
   }
 }

@@ -17,7 +17,7 @@ export const TopRated = () => {
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=1`);
-        setListRated(respost.data.results);
+        setListRated(respost.data.results.slice(0, 18));
       } catch (error) {
         console.log(error);
       };
