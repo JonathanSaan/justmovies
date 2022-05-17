@@ -1,0 +1,33 @@
+.MoviesGenre {
+  background-color: #191b1c;
+  min-height: 100vh;
+  
+  .ContainerGenre {
+    padding: 5rem 0 0 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    min-height: 20rem;
+    width: 80%;
+    
+    .title {
+      width: 100%;
+      
+      h1 {
+        color: #FFF;
+        font-size: 1.5rem;
+        align-items: center;
+        border-left: 2px solid gray;
+        padding: 5px 0 0 8px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .MoviesGenre {
+    .ContainerGenre {
+      width: 95%;
+    }
+  }
+}
