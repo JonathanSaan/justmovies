@@ -10,14 +10,14 @@ import APIKey from "../../mocks/api";
 
 export const Categories = () => {
   
-  const [ categorie, setCategorie ] = useState([])
+  const [ category, setCategories ] = useState([])
   
   useEffect(() => { 
     window.scrollTo(0, 0);
     const load = async () => {
       try {
         const respost = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
-        setCategorie(respost.data.genres);
+        setCategories(respost.data.genres);
         
       } catch (error) {
         console.log(error);
@@ -30,11 +30,11 @@ export const Categories = () => {
       <>
         <Header />
         <div className="Categories">
-          <div className="ContainerCategorie">
+          <div className="ContainerCategory">
             <div className="title">
-              <h1>Categories</h1>
+              <h1>Category</h1>
             </div>
-            {categorie.map((genre) => (
+            {category.map((genre) => (
               <Link to={`/categories/${genre.name.replaceAll(" ", "-")}`}>
                 <button> 
                   {genre.name}
