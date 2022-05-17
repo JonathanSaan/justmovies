@@ -38,7 +38,7 @@ export const Details = () => {
   let navigate = useNavigate();
   
   const SearchMovieGenre = () => {
-    navigate(`/Categories/${genres.replaceAll(" ", "+")}`)
+    navigate(`/categories/${genres.replaceAll(" ", "+")}`)
   }
   
   const refreshPage = () => {

@@ -35,7 +35,7 @@ export const Categories = () => {
               <h1>Categories</h1>
             </div>
             {categorie.map((genre) => (
-              <Link to={`/Categories/${genre.name.replaceAll(" ", "-")}`}>
+              <Link to={`/categories/${genre.name.replaceAll(" ", "-")}`}>
                 <button> 
                   {genre.name}
                 </button>

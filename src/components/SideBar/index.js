@@ -16,7 +16,7 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
           <button className="Buttons-Sidebar">Home
           </button>
         </Link>
-        <Link className="Link" to="/Categories">
+        <Link className="Link" to="/categories">
           <button className="Buttons-Sidebar">Categories
           </button>
         </Link>
