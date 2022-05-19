@@ -12,7 +12,6 @@ export const Header = () => {
   
   const [TypedSearch, SetTypedSearch] = useState();
   
-  
   const SearchMovie = (e) => {
     if (TypedSearch === "") {
       return e;
