@@ -4,9 +4,9 @@
   flex-direction: column;
   min-height: 100%;
   width: 200px;
-  transition: 850ms;
+  transition: 800ms;
   left: -100%;
-  z-index: 4;
+  z-index: 6;
   
   .Close-Sidebar {
     display: flex;
@@ -22,6 +22,7 @@
     text-decoration: none;
     
     .Buttons-Sidebar {
+      color: #FFF;
       height: 2.5rem;
       width: 80%;
       margin: 10px 0 0 16px;
@@ -29,7 +30,6 @@
       border: none;
     }
   }
-  
 }
 
 .SideBarActive {
@@ -39,9 +39,9 @@
   background-color: #0C0C0C;
   min-height: 100%;
   width: 200px;
-  transition: 350ms;
+  transition: 300ms;
   left: 0;
-  z-index: 4;
+  z-index: 6;
   
   .Close-Sidebar {
     display: flex;
@@ -52,11 +52,11 @@
     margin: -5px 0 -13px 0;
   }
   
-  
   .Link {
     color: #FFF;
     outline: none;
     text-decoration: none;
+    
     .Buttons-Sidebar {
       height: 2.5rem;
       width: 80%;
@@ -74,5 +74,12 @@
       color: #0C0C0C;
     }
   }
-    
+}
+
+.ShadowActive {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #000000cf;
+  z-index: 4;
 }

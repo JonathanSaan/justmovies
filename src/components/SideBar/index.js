@@ -21,7 +21,10 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
           </button>
         </Link>
       </div>
-      </>
-    );
+      <div className={sidebar &&
+      "ShadowActive"} onClick={toggleSideBar}>
+      </div>
+    </>
+  );
     
 };
