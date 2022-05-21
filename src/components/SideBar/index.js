@@ -12,11 +12,11 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
         <button onClick={toggleSideBar} className="Close-Sidebar">
           <IoIosClose size={60} color="#FFF" />
         </button>
-        <Link className="Link" to="/">
+        <Link className="Link" to={`/`}>
           <button className="Buttons-Sidebar">Home
           </button>
         </Link>
-        <Link className="Link" to="/categories">
+        <Link className="Link" to={`/categories`}>
           <button className="Buttons-Sidebar">Categories
           </button>
         </Link>
