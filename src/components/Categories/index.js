@@ -10,6 +10,10 @@ import APIKey from "../../mocks/api";
 
 export const Categories = ({ category, setIdGenreSelected }) => {
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />
