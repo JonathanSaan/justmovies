@@ -16,11 +16,11 @@ import APIKey from "./mocks/api";
 
 
 function App() {
+  
   const [ category, setCategories ] = useState([]);
   const [ idGenreSelected, setIdGenreSelected ] = useState([]);
  
   useEffect(() => { 
-    window.scrollTo(0, 0);
     const load = async () => {
       try {
         const listGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/TopRated" element={<TopRated />} />
           <Route path="/search/" element={<Home />} />
           <Route path="/search/:searched" element={<Search />} />
-          <Route path="/:details" element={<Details />} />
+          <Route path="/:details" element={<Details setIdGenreSelected={setIdGenreSelected} />} />
           <Route path="/categories" element={<Categories category={category} setIdGenreSelected={setIdGenreSelected} />} />
           <Route path="/categories/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
         </Routes>
