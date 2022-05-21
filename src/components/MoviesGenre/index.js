@@ -15,15 +15,17 @@ export const MoviesGenre = ({ category, idGenreSelected }) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    const load = async () => {
-      try {
-        const particularGenre = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenreSelected}&with_watch_monetization_types=flatrate`);
-        setListMovies(particularGenre.data.results.slice(0, 18));
-      } catch (error) {
-        console.log(error);
+    setTimeout(() => { 
+      const load = async () => {
+        try {
+          const particularGenre = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenreSelected}&with_watch_monetization_types=flatrate`);
+          setListMovies(particularGenre.data.results.slice(0, 18));
+        } catch (error) {
+          console.log(error);
+        };
       };
-    };
-    load() 
+      load() 
+    }, 1000)
   }, [] );
   
   const Image_path = "https://image.tmdb.org/t/p/w500";
