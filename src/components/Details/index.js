@@ -1,19 +1,18 @@
 import axios from "axios";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useState, useEffect } from "react";
 import { IoIosStar } from "react-icons/io";
 import Whirligig from "react-whirligig";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { MoviesGenre } from "../MoviesGenre";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
 import "./style.scss";
 
 
-export const Details = () => {
+export const Details = ({ setIdGenreSelected }) => {
   
   const { details } = useParams();
   
@@ -34,12 +33,6 @@ export const Details = () => {
  
   const [ characters, setCharacters ] = useState([]);
   const [ movieSimilar, setMovieSimilar ] = useState([]);
-  
-  let navigate = useNavigate();
-  
-  const SearchMovieGenre = () => {
-    navigate(`/categories/${genres.replaceAll(" ", "+")}`)
-  }
   
   const refreshPage = () => {
     setTimeout(()=>{
@@ -130,7 +123,8 @@ export const Details = () => {
                 
                 <div className="Genres">
                   {genres.map((genre) => 
-                    <Link to={`/categories/${genre.name}`} >
+                    <Link onClick={() => setIdGenreSelected(genre.id)}
+                    to={`/categories/${genre.name}`} >
                       <button className="genre">
                         {genre.name}
                       </button>
