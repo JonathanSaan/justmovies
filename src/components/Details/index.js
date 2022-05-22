@@ -124,7 +124,7 @@ export const Details = ({ setIdGenreSelected }) => {
                 <div className="Genres">
                   {genres.map((genre) => 
                     <Link onClick={() => setIdGenreSelected(genre.id)}
-                    to={`/categories/${genre.name}`} >
+                    to={`/categories/${genre.name.replaceAll(" ", "-").toLowerCase()}`} >
                       <button className="genre">
                         {genre.name}
                       </button>
