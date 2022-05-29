@@ -1,11 +1,8 @@
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { Header } from "../Header";
 import "./style.scss"
-
-import APIKey from "../../mocks/api";
 
 
 export const Categories = ({ category, setIdGenreSelected }) => {

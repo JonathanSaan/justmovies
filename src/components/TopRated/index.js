@@ -1,12 +1,12 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
 import "./style.scss"
+
+
 
 export const TopRated = () => {
   
