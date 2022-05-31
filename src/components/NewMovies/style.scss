@@ -10,15 +10,14 @@
   
   .NewMovie {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
     width: 80%;
     
     .title {
-      width: 100%;
       margin: 2rem 0;
+      width: 100%;
       
        h1 {
          color: #FFF;
@@ -30,6 +29,7 @@
     }
     
     .Movies {
+      margin: 0 .6em;
       height: 23vw;
       
       .MovieImage {
@@ -41,9 +41,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin: 5px 0;
         max-width: 11vw;
         color: #FFF;
-        margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: 1rem;
@@ -63,6 +63,7 @@
       width: 95%;
       
       .Movies {
+        margin: 0 .2em;
         height: 13em;
         
         .MovieImage {

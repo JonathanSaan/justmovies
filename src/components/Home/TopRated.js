@@ -1,11 +1,13 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
 
 
 export const TopRated = () => {
+  
+  const navigate = useNavigate();
   
   const [ listRated, setListRated ] = useState([])
   
@@ -20,8 +22,7 @@ export const TopRated = () => {
         console.log(error);
       };
     };
-    
-    load() 
+    load()
   }, [] );
   
   const Image_path = "https://image.tmdb.org/t/p/w500";
@@ -32,12 +33,10 @@ export const TopRated = () => {
   return (
     <>
       {listRated.map((rated) => (
-        <Link to={`/${rated.id}`} >
-          <div className="Rateds" key={rated.id}>
-            <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
-            <h2 className="RatedTitle">{rated.title}</h2>
-          </div>
-        </Link>
+        <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>
+          <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
+          <h2 className="RatedTitle">{rated.title}</h2>
+        </div>
       ))}
     </>
   );

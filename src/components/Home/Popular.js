@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Whirligig from "react-whirligig";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import APIKey from "../../mocks/api";
 
 
 
 export const Popular = () => {
+  
+  const navigate = useNavigate();
   
   const [ listPopular, setListPopular ] = useState([])
   
@@ -33,15 +35,12 @@ export const Popular = () => {
    <>
     <Whirligig visibleSlides={6} gutter="1em">
       {listPopular.map((popular) => (
-        <Link to={`/${popular.id}`} >
-          <div className="Populars" key={popular.id}>
-            <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
-            <h2 className="PopularTitle">{popular.title}</h2>
-          </div>
-        </Link>
+        <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
+          <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
+          <h2 className="PopularTitle">{popular.title}</h2>
+        </div>
       ))}
     </Whirligig>
    </>
   );
-  
 };

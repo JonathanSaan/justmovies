@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
@@ -7,6 +7,8 @@ import APIKey from "../../mocks/api";
 
 
 export const Movies = () => {
+  
+  const navigate = useNavigate();
   
   const [ listMovies, setListMovies ] = useState([])
   
@@ -30,14 +32,11 @@ export const Movies = () => {
   return (
     <>
       {listMovies.map((movie) => (
-        <Link to={`/${movie.id}`}>
-            <div className="Movies" key={movie.id}>
-              <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
-              <h2 className="MovieTitle">{movie.title}</h2>
-            </div>
-          </Link>
+        <div onClick={() => {navigate(`/${movie.id}`) }} className="Movies" key={movie.id}>
+          <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} />
+          <h2 className="MovieTitle">{movie.title}</h2>
+        </div>
       ))}
     </>
   );
-      
 };

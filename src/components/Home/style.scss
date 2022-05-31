@@ -9,7 +9,7 @@
     
     h1 {
       color: #FFF;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       align-items: center;
       border-left: 2px solid gray;
       padding: 5px 0 0 8px;
@@ -39,15 +39,15 @@
         
         &:hover {
           color: #FFF;
-          font-size: .9rem;
+          font-size: .9em;
           transition: 300ms;
         }
       }
     }
   
     .Popular {
-      margin: 20px 0 60px 10px;
-      height: 13rem;
+      margin: 20px 0 20px 10px;
+      height: 16em;
       max-width: 76.8vw;
       z-index: 2;
       
@@ -60,12 +60,12 @@
       div {
         transform: all 0.6s;
         overflow: hidden;
-        min-width: 13vw;
         margin: .6rem 0 0 0;
+        min-width: 13vw;
         
         .Populars {
-          height: 13rem;
           margin: 6px 0 0 5px;
+          height: auto;
           
           .PopularImage {
             height: 10rem;
@@ -78,9 +78,9 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 7rem;
-            font-size: .8rem;
             margin: 5px 0;
+            max-width: 7rem;
+            font-size: .8em;
           }
           
           &:hover {
@@ -93,7 +93,6 @@
   
     .NewMovie {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       padding: 2rem 0 3rem 0;
       min-height: 20rem;
@@ -101,8 +100,9 @@
       width: 100%;
       
       .Movies {
+        margin: 0 auto;
         height: 23vw;
-       
+        
         .MovieImage {
           height: 18vw;
           border-radius: 5px;
@@ -112,12 +112,12 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin: 5px 0;
           max-width: 11vw;
           color: #FFF;
-          margin: 5px 0;
           align-items: center;
           font-weight: 500;
-          font-size: .8rem;
+          font-size: .8em;
         }
         
         &:hover {
@@ -130,15 +130,15 @@
     .TopRated {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       padding: 2rem 0 3rem 0;
       min-height: 20rem;
       max-width: 78vw;
       width: 100%;
       
       .Rateds {
+        margin: 0 auto;
         height: 23vw;
-       
+        
         .RatedImage {
           height: 18vw;
           border-radius: 5px;
@@ -148,12 +148,12 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin: 5px 0;
           max-width: 11vw;
           color: #FFF;
-          margin: 5px 0;
           align-items: center;
           font-weight: 500;
-          font-size: .8rem;
+          font-size: .8em;
         }
         
         &:hover {
@@ -178,8 +178,8 @@
       }
       
       .Popular {
+        margin: 10px 10px 10px 0;
         max-width: 96vw;
-        margin: 10px 10px 60px 0;
         
         div {
           padding: 0 1%;
@@ -210,6 +210,7 @@
         
         .Rateds {
           height: 13em;
+          width: 6.6em;
           
           .RatedImage {
             height: 10em;
