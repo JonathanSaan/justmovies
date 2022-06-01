@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useState, useEffect } from "react";
@@ -13,6 +13,8 @@ import "./style.scss";
 
 
 export const Details = ({ setIdGenreSelected }) => {
+  
+  const navigate = useNavigate();
   
   const { details } = useParams();
   
@@ -172,12 +174,10 @@ export const Details = ({ setIdGenreSelected }) => {
                 <TabPanel className="TabPanel">
                   <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
                     {movieSimilar.map((similar) => (
-                      <Link to={`/${similar.id}`} onClick={refreshPage}>
-                        <div key={similar.id}> 
-                          <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
-                          <p>{similar.title}</p>
-                        </div>
-                      </Link>
+                      <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
+                        <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
+                        <p>{similar.title}</p>
+                      </div>
                     ))}
                   </Whirligig>
                 </TabPanel>
