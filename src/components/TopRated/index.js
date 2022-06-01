@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
@@ -9,6 +9,8 @@ import "./style.scss"
 
 
 export const TopRated = () => {
+  
+  const navigate = useNavigate();
   
   const [ listRated, setListRated ] = useState([])
   
@@ -30,24 +32,21 @@ export const TopRated = () => {
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
   
   return (
-      <>
-        <Header />
-        <div className="ContainerRated">
-          <div className="TopRated">
-            <div className="title">
-              <h1>Top Rated</h1>
-            </div>
-            {listRated.map((rated) => (
-              <Link to={`/${rated.id}`} >
-                <div className="Rateds" key={rated.id}>
-                  <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
-                  <h2 className="RatedTitle">{rated.title}</h2>
-                </div>
-              </Link>
-            ))}
+    <>
+      <Header />
+      <div className="ContainerRated">
+        <div className="TopRated">
+          <div className="title">
+            <h1>Top Rated</h1>
           </div>
+          {listRated.map((rated) => (
+            <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>
+              <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
+              <h2 className="RatedTitle">{rated.title}</h2>
+            </div>
+          ))}
         </div>
-      </>
-    );
-    
+      </div>
+    </>
+  );
 };

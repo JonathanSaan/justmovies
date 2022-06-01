@@ -1,14 +1,11 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
 
 
 
-export const Movies = () => {
-  
-  const navigate = useNavigate();
+export const Movies = ({ navigate }) => {
   
   const [ listMovies, setListMovies ] = useState([])
   

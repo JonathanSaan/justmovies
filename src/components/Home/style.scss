@@ -65,10 +65,10 @@
         
         .Populars {
           margin: 6px 0 0 5px;
-          height: auto;
+          height: 23vw;
           
           .PopularImage {
-            height: 10rem;
+            height: 18vw;
             border-radius: 5px;
             z-index: -4;
           }
@@ -184,6 +184,18 @@
         div {
           padding: 0 1%;
           min-width: 8rem;
+          
+          .Populars {
+            height: 13em;
+            
+            .PopularImage {
+              height: 10em;
+            }
+            
+            .PopularTitle {
+              max-width: 8em;
+            }
+          }
         }
       }
   

@@ -1,16 +1,12 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
 
 
-export const TopRated = () => {
-  
-  const navigate = useNavigate();
+export const TopRated = ({ navigate }) => {
   
   const [ listRated, setListRated ] = useState([])
-  
   
   useEffect(() => { 
     window.scrollTo(0, 0);

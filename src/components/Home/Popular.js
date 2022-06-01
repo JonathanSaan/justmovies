@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Whirligig from "react-whirligig";
-import { useNavigate } from "react-router-dom";
 
 import APIKey from "../../mocks/api";
 
 
 
-export const Popular = () => {
-  
-  const navigate = useNavigate();
+export const Popular = ({ navigate }) => {
   
   const [ listPopular, setListPopular ] = useState([])
   

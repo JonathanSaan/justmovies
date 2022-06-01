@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
@@ -8,6 +8,8 @@ import "./style.scss"
 
 
 export const NewMovies = () => {
+  
+  const navigate = useNavigate();
   
   const [ listMovies, setListMovies ] = useState([])
   
@@ -28,24 +30,21 @@ export const NewMovies = () => {
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
   
   return (
-      <>
-        <Header />
-        <div className="ContainerMovies">
-          <div className="NewMovie">
-            <div className="title">
-              <h1>New Movies</h1>
-            </div>
-            {listMovies.map((movie) => (
-              <Link to={`/${movie.id}`}>
-                <div className="Movies" key={movie.id}>
-                  <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
-                  <h2 className="MovieTitle">{movie.title}</h2>
-                </div>
-              </Link>
-            ))}
+    <>
+      <Header />
+      <div className="ContainerMovies">
+        <div className="NewMovie">
+          <div className="title">
+            <h1>New Movies</h1>
           </div>
+          {listMovies.map((movie) => (
+            <div onClick={() => {navigate(`/${movie.id}`) }} className="Movies" key={movie.id}>
+              <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
+              <h2 className="MovieTitle">{movie.title}</h2>
+            </div>
+          ))}
         </div>
-      </>
-    );
-    
+      </div>
+    </>
+  );
 };

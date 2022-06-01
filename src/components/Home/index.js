@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import Fade from "react-reveal/Fade";
 
@@ -12,6 +13,8 @@ import { Popular } from "./Popular";
 
 export const Home = () => {
   
+  const navigate = useNavigate();
+  
   return (
     <>
       <Header/>
@@ -23,7 +26,7 @@ export const Home = () => {
             </div>
           </Fade>
           <div className="Popular" >
-            <Popular/>
+            <Popular navigate={navigate} />
           </div>
          <Fade bottom>
             <div className="Fade">
@@ -37,7 +40,7 @@ export const Home = () => {
             </div>
           </Fade>
           <div className="NewMovie">
-            <Movies />
+            <Movies navigate={navigate} />
           </div>
          <Fade bottom>
             <div className="Fade">
@@ -51,7 +54,7 @@ export const Home = () => {
             </div>
           </Fade>
           <div className="TopRated">
-            <TopRated />
+            <TopRated navigate={navigate} />
           </div>
         </div>
       </div>
