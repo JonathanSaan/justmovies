@@ -30,7 +30,7 @@ export const TopRated = ({ navigate }) => {
   
   return (
     <>
-      {!listRated.length === 0 ? (
+      {!listRated.length == 0 ? (
         <>
           {listRated.map((rated) => (
             <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>

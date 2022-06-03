@@ -17,17 +17,15 @@ export const MoviesGenre = ({ category, idGenreSelected }) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTimeout(() => { 
-      const load = async () => {
-        try {
-          const particularGenre = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenreSelected}&with_watch_monetization_types=flatrate`);
-          setListMovies(particularGenre.data.results.slice(0, 18));
-        } catch (error) {
-          console.log(error);
-        };
+    const load = async () => {
+      try {
+        const particularGenre = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenreSelected}&with_watch_monetization_types=flatrate`);
+        setListMovies(particularGenre.data.results.slice(0, 18));
+      } catch (error) {
+        console.log(error);
       };
-      load() 
-    }, 1000)
+    };
+    load() 
   }, [] );
   
   const Image_path = "https://image.tmdb.org/t/p/w500";
@@ -45,7 +43,7 @@ export const MoviesGenre = ({ category, idGenreSelected }) => {
               </h1>
             </div>
             <div className="NewMovie">
-              {!listMovies.length === 0 ? (
+              {!listMovies.length == 0 ? (
                 <>
                   {listMovies.map((movie) => (
                     <Link to={`/${movie.id}`}>

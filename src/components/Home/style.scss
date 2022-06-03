@@ -96,6 +96,10 @@
           width: 7em;
           z-index: 2;
         }
+        
+        .Text {
+          width: 7em;
+        }
       }
     }
   
@@ -243,6 +247,10 @@
             .PopularTitle {
               max-width: 8em;
             }
+          }
+          
+          .Text {
+            margin: .5em 0 1.3em 0;
           }
         }
       }

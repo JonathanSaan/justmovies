@@ -39,7 +39,7 @@ export const NewMovies = () => {
           <div className="title">
             <h1>New Movies</h1>
           </div>
-          {!listMovies.length === 0 ? (
+          {!listMovies.length == 0 ? (
             <>
               {listMovies.map((movie) => (
                 <div onClick={() => {navigate(`/${movie.id}`) }} className="Movies" key={movie.id}>

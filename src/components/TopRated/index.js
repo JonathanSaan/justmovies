@@ -41,7 +41,7 @@ export const TopRated = () => {
           <div className="title">
             <h1>Top Rated</h1>
           </div>
-          {!listRated.length === 0 ? (
+          {!listRated.length == 0 ? (
             <>
               {listRated.map((rated) => (
                 <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>

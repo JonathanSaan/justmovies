@@ -32,7 +32,7 @@ export const Popular = ({ navigate }) => {
 
  return (
    <>
-    {!listPopular.length === 0 ? (
+    {!listPopular.length == 0 ? (
       <Whirligig visibleSlides={6} gutter="1em">
         {listPopular.map((popular) => (
             <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
