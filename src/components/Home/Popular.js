@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import axios from "axios";
 import Whirligig from "react-whirligig";
 
@@ -30,14 +32,25 @@ export const Popular = ({ navigate }) => {
 
  return (
    <>
-    <Whirligig visibleSlides={6} gutter="1em">
-      {listPopular.map((popular) => (
-        <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
-          <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
-          <h2 className="PopularTitle">{popular.title}</h2>
-        </div>
-      ))}
-    </Whirligig>
+    {!listPopular.length === 0 ? (
+      <Whirligig visibleSlides={6} gutter="1em">
+        {listPopular.map((popular) => (
+            <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
+              <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
+              <h2 className="PopularTitle">{popular.title}</h2>
+            </div>
+          ))}
+      </Whirligig>
+      ) : (
+        <Whirligig visibleSlides={6} gutter="1em">
+          {Array(20).fill(1).map((card, index) => (
+            <>
+              <Skeleton className="ImageLoading" variant="rectangular" />
+              <Skeleton className="Text" variant="text" count={1}/>
+            </>
+          ))}
+        </Whirligig>
+      )}
    </>
   );
 };

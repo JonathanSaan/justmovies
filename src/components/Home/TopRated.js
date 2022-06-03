@@ -1,4 +1,6 @@
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
@@ -28,12 +30,25 @@ export const TopRated = ({ navigate }) => {
   
   return (
     <>
-      {listRated.map((rated) => (
-        <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>
-          <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
-          <h2 className="RatedTitle">{rated.title}</h2>
+      {!listRated.length === 0 ? (
+        <>
+          {listRated.map((rated) => (
+            <div onClick={() => {navigate(`/${rated.id}`) }} className="Rateds" key={rated.id}>
+              <img className="RatedImage" src={rated.poster_path ? Image_path + rated.poster_path : imageError} alt={rated.name}/>
+              <h2 className="RatedTitle">{rated.title}</h2>
+            </div>
+          ))}
+        </>
+      ) : (
+        <div className="TopRatedMovieLoading">
+          {Array(12).fill(1).map((card, index) => (
+            <div className="TopRatedMovieLoading2" >
+              <Skeleton className="ImageLoading" variant="rectangular" />
+              <Skeleton className="Text" variant="text" count={1}/>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </>
   );
 

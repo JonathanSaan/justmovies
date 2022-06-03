@@ -66,6 +66,26 @@
         }
       }
     }
+    
+    .MoviesGenreLoading {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .MoviesGenreLoading2 {
+        margin: 0 .9em 1em .9em;
+        
+        .ImageLoading {
+          height: 11em;
+          width: 7.1em;
+          z-index: 2;
+        }
+        
+        .Text {
+          margin: .5em 0;
+          width: 7.1em;
+        }
+      }
+    }
   }
 }
 
@@ -87,6 +107,22 @@
           
           .MovieTitle {
             max-width: 8em;
+          }
+        }
+        
+        .MoviesGenreLoading {
+          .MoviesGenreLoading2 {
+            margin: 0 .2em;
+            
+            .ImageLoading {
+              height: 10em;
+              width: 6.7em;
+            }
+            
+            .Text {
+              width: 6.7em;
+              margin: .5em 0 1.3em 0;
+            }
           }
         }
       }

@@ -1,5 +1,7 @@
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { useState, useEffect } from "react";
 
 import { Header } from "../Header";
@@ -43,14 +45,27 @@ export const MoviesGenre = ({ category, idGenreSelected }) => {
               </h1>
             </div>
             <div className="NewMovie">
-              {listMovies.map((movie) => (
-                <Link to={`/${movie.id}`}>
-                  <div className="Movies" key={movie.id}>
-                    <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
-                    <h2 className="MovieTitle">{movie.title}</h2>
-                  </div>
-                </Link>
-              ))}
+              {!listMovies.length === 0 ? (
+                <>
+                  {listMovies.map((movie) => (
+                    <Link to={`/${movie.id}`}>
+                      <div className="Movies" key={movie.id}>
+                        <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
+                        <h2 className="MovieTitle">{movie.title}</h2>
+                      </div>
+                    </Link>
+                  ))}
+                </>
+              ) : (
+                <div className="MoviesGenreLoading">
+                  {Array(18).fill(1).map((card, index) => (
+                    <div className="MoviesGenreLoading2" >
+                      <Skeleton className="ImageLoading" variant="rectangular" />
+                      <Skeleton className="Text" variant="text" count={1}/>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

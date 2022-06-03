@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
-    width: 80%;
+    width: 90%;
     
     .title {
       margin: 2rem 0;
@@ -29,11 +29,11 @@
     }
     
     .Movies {
-      margin: 0 .6em;
+      margin: 0 .8em;
       height: 23vw;
       
       .MovieImage {
-        height: 18vw;
+        height: 11em;
         border-radius: 5px;
       }
 
@@ -52,6 +52,26 @@
       &:hover {
         transition: 350ms;
         transform: scale(1.08);
+      }
+    }
+    
+    .NewMovieLoading{
+      display: flex;
+      flex-wrap: wrap;
+      
+      .NewMovieLoading2 {
+        margin: 0 .9em 1em .9em;
+        
+        .ImageLoading {
+          height: 11em;
+          width: 7.1em;
+          z-index: 2;
+        }
+        
+        .Text {
+          margin: .5em 0;
+          width: 7.1em;
+        }
       }
     }
   }
@@ -73,6 +93,22 @@
         .MovieTitle {
           max-width: 8em;
           font-size: .8rem;
+        }
+      }
+      
+      .NewMovieLoading{
+        .NewMovieLoading2 {
+          margin: 0 .2em;
+          
+          .ImageLoading {
+            height: 10em;
+            width: 6.7em;
+          }
+          
+          .Text {
+            width: 6.7em;
+            margin: .5em 0 1.3em 0;
+          }
         }
       }
     }
