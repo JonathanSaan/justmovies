@@ -142,7 +142,7 @@
         flex-wrap: wrap;
         
         .MovieLoading2 {
-          margin: 0 .3em 1em .3em;
+          margin: 0 auto 1em auto;
           
           .ImageLoading {
             height: 18vw;
@@ -172,7 +172,6 @@
         
         .RatedImage {
           height: 18vw;
-          width: 12vw;
           border-radius: 5px;
         }
   
@@ -199,11 +198,11 @@
         flex-wrap: wrap;
         
         .TopRatedMovieLoading2 {
-          margin: 0 .4em 1em .4em;
+          margin: 0 auto 1em auto;
           
           .ImageLoading {
-            height: 11em;
-            width: 7.1em;
+            height: 18vw;
+            width: 12vw;
             z-index: 2;
           }
           
