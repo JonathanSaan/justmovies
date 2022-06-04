@@ -91,7 +91,7 @@
         
         .ImageLoading {
           height: 18vw;
-          width: 7em;
+          width: 12vw;
           z-index: 2;
         }
         
@@ -141,11 +141,11 @@
         flex-wrap: wrap;
         
         .MovieLoading2 {
-          margin: 0 .4em 1em .4em;
+          margin: 0 .3em 1em .3em;
           
           .ImageLoading {
-            height: 11em;
-            width: 7.1em;
+            height: 18vw;
+            width: 12vw;
             z-index: 2;
           }
           
@@ -171,6 +171,7 @@
         
         .RatedImage {
           height: 18vw;
+          width: 12vw;
           border-radius: 5px;
         }
   
@@ -246,6 +247,11 @@
             .PopularTitle {
               max-width: 8em;
             }
+          }
+          
+          .ImageLoading {
+            height: 10em;
+            width: 7em;
           }
           
           .Text {
