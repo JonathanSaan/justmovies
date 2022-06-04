@@ -90,7 +90,7 @@
         }
         
         .ImageLoading {
-          height: 10em;
+          height: 18vw;
           width: 7em;
           z-index: 2;
         }
@@ -111,7 +111,7 @@
       
       .Movies {
         margin: 0 auto;
-        height: 23vw;
+        height: 21vw;
         
         .MovieImage {
           height: 18vw;
@@ -166,8 +166,8 @@
       width: 100%;
       
       .Rateds {
-        margin: 0 auto;
-        height: 23vw;
+        margin: 0 auto 1.5em auto;
+        height: 21vw;
         
         .RatedImage {
           height: 18vw;
@@ -292,6 +292,7 @@
         max-width: 96vw;
         
         .Rateds {
+          margin: 0 auto .3em auto;
           height: 13em;
           width: 6.6em;
           
