@@ -42,7 +42,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin: 5px 0;
-        max-width: 11vw;
+        max-width: 12vw;
         color: #FFF;
         align-items: center;
         font-weight: 500;
@@ -60,11 +60,11 @@
       flex-wrap: wrap;
       
       .TopRatedMovieLoading2 {
-        margin: 0 1.4vw 3em 1.4vw;
+        margin: 0 1.4vw 1em 1.4vw;
         
         .ImageLoading {
           height: 18vw;
-          width: 11.8vw;
+          width: 12vw;
           z-index: 2;
         }
         
