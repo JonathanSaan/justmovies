@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { SignUp } from "./components/SignUp";
 import { NewMovies } from "./components/NewMovies";
 import { TopRated } from "./components/TopRated";
 import { Categories } from "./components/Categories";
@@ -37,13 +39,15 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/NewMovies" element={<NewMovies />} />
-          <Route exact path="/TopRated" element={<TopRated />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/sign-up" element={<SignUp />} />
+          <Route exact path="/new-movies" element={<NewMovies />} />
+          <Route exact path="/top-rated" element={<TopRated />} />
           <Route path="/search/" element={<Home />} />
           <Route path="/search/:searched" element={<Search />} />
           <Route path="/:details" element={<Details setIdGenreSelected={setIdGenreSelected} />} />
-          <Route path="/categories" element={<Categories category={category} setIdGenreSelected={setIdGenreSelected} />} />
-          <Route path="/categories/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
+          <Route path="/genre" element={<Categories category={category} setIdGenreSelected={setIdGenreSelected} />} />
+          <Route path="/genre/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
         </Routes>
       </Router>
     </SkeletonTheme>

@@ -1,16 +1,22 @@
-.MoviesGenre {
+.ContainerGenre {
   background-color: #191b1c;
+  padding: 3.5rem 0;
   min-height: 100vh;
   
-  .ContainerGenre {
-    padding: 5rem 0 0 0;
-    justify-content: space-between;
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .MoviesGenre {
+    display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
-    width: 80%;
+    width: 90%;
     
-    .title {
+    .Title {
+      margin: 2rem 0;
       width: 100%;
       
       h1 {
@@ -26,44 +32,30 @@
       }
     }
     
-    a {
-      outline: none;
-      text-decoration: none;
-    }
-    
-    .NewMovie {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 2rem 0 3rem 0;
-      min-height: 20rem;
-      max-width: 78vw;
-      width: 100%;
+    .Movies {
+      margin: 0 1.5vw 1.5em auto; 
+      height: 21vw;
       
-      .Movies {
-        height: 23vw;
-       
-        .MovieImage {
-          height: 18vw;
-          border-radius: 5px;
-        }
-  
-        .MovieTitle {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-width: 11vw;
-          color: #FFF;
-          margin: 5px 0;
-          align-items: center;
-          font-weight: 500;
-          font-size: .8rem;
-        }
-        
-        &:hover {
-          transition: 350ms;
-          transform: scale(1.08);
-        }
+      .MovieImage {
+        height: 18vw;
+        border-radius: 5px;
+      }
+
+      .MovieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 12vw;
+        color: #FFF;
+        margin: 5px 0;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      
+      &:hover {
+        transition: 350ms;
+        transform: scale(1.08);
       }
     }
     
@@ -72,17 +64,21 @@
       flex-wrap: wrap;
       
       .MoviesGenreLoading2 {
-        margin: 0 .9em 1em .9em;
+        /*margin: 0 .9em 1em .9em;*/
+        margin: 0 1.5vw 1.2em auto;
         
         .ImageLoading {
-          height: 11em;
-          width: 7.1em;
+          /*height: 11em;
+          width: 7.1em;*/
+          height: 18vw;
+          width: 12vw;
           z-index: 2;
         }
         
         .Text {
+          /*width: 7.1em;*/
           margin: .5em 0;
-          width: 7.1em;
+          width: 11.8vw;
         }
       }
     }
@@ -90,39 +86,38 @@
 }
 
 @media screen and (max-width: 768px) {
-  .MoviesGenre {
-    .ContainerGenre {
+  .ContainerGenre {
+    .MoviesGenre {
       width: 95%;
       
-      .NewMovie {
-        min-height: 30rem;
-        max-width: 96vw;
+      .Movies {
+        margin: 0 auto;
+        height: 13em;
+        width: 6.6em;
         
-        .Movies {
-          height: 13em;
-          
-          .MovieImage {
-            height: 10em;
-          }
-          
-          .MovieTitle {
-            max-width: 8em;
-          }
+        .MovieImage {
+          height: 10em;
+          width: 6.7em;
         }
         
-        .MoviesGenreLoading {
-          .MoviesGenreLoading2 {
-            margin: 0 .2em;
-            
-            .ImageLoading {
-              height: 10em;
-              width: 6.7em;
-            }
-            
-            .Text {
-              width: 6.7em;
-              margin: .5em 0 1.3em 0;
-            }
+        .MovieTitle {
+          max-width: 8em;
+          font-size: .8rem;
+        }
+      }
+      
+      .MoviesGenreLoading {
+        .MoviesGenreLoading2 {
+          margin: 0 auto;
+          
+          .ImageLoading {
+            height: 10em;
+            width: 6.7em;
+          }
+          
+          .Text {
+            width: 6.7em;
+            margin: .5em 0 1.3em 0;
           }
         }
       }

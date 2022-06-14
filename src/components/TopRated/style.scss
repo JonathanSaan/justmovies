@@ -15,21 +15,21 @@
     min-height: 20rem;
     width: 90%;
     
-    . {
+    .Title {
       margin: 2rem 0;
       width: 100%;
       
-       h1 {
-         color: #FFF;
-         font-size: 1.5rem;
-         align-items: center;
-         border-left: 2px solid gray;
-         padding: 5px 0 0 8px;
+      h1 {
+        color: #FFF;
+        font-size: 1.5rem;
+        align-items: center;
+        border-left: 2px solid gray;
+        padding: 5px 0 0 8px;
       }
     }
     
     .Rateds{
-      margin: 0 1.4vw 1.5em 1.4vw;
+      margin: 0 1.5vw 1.5em auto;
       height: 21vw;
       
       .RatedImage {
@@ -37,13 +37,13 @@
         border-radius: 5px;
       }
 
-      .Rated {
+      .RatedTitle {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 5px 0;
         max-width: 12vw;
         color: #FFF;
+        margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: 1rem;
@@ -60,7 +60,7 @@
       flex-wrap: wrap;
       
       .TopRatedMovieLoading2 {
-        margin: 0 1.4vw 1.5em 1.4vw;
+        margin: 0 1.5vw 1.5em auto;
         
         .ImageLoading {
           height: 18vw;
@@ -83,15 +83,16 @@
       width: 95%;
       
       .Rateds {
-        margin: 0 .2rem;
+        margin: 0 auto;
         height: 13em;
         width: 6.6em;
         
         .RatedImage {
           height: 10em;
+          width: 6.7em;
         }
         
-        .Rated {
+        .RatedTitle {
           max-width: 8em;
           font-size: .8rem;
         }
@@ -99,7 +100,7 @@
       
       .TopRatedMovieLoading {
         .TopRatedMovieLoading2 {
-          margin: 0 .2em;
+          margin: 0 auto;
           
           .ImageLoading {
             height: 10em;

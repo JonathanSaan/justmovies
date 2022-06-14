@@ -1,9 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import { IoIosClose } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
+import { FaBook } from "react-icons/fa";
 
 import "./style.scss";
 
+
+
 export const SideBar = ({ sidebar, toggleSideBar }) => {
+  
+  const navigate = useNavigate();
   
   
   return (
@@ -12,14 +19,16 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
         <button onClick={toggleSideBar} className="Close-Sidebar">
           <IoIosClose size={60} color="#FFF" />
         </button>
-        <Link className="Link" to={`/`}>
-          <button className="Buttons-Sidebar">Home
-          </button>
-        </Link>
-        <Link className="Link" to={`/categories`}>
-          <button className="Buttons-Sidebar">Categories
-          </button>
-        </Link>
+        <button onClick={() => {navigate("/") }}
+        className="Buttons-Sidebar">
+          <AiFillHome className="IconHome" size={20} />
+          Home
+        </button>
+        <button onClick={() => {navigate("/genre") }}
+          className="Buttons-Sidebar">
+          <FaBook size={20} className="IconGenre" />
+          Genre
+        </button>
       </div>
       <div className={sidebar &&
       "ShadowActive"} onClick={toggleSideBar}>

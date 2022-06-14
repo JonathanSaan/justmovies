@@ -1,10 +1,14 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { IoMenu } from "react-icons/io5"; 
 import { IoIosSearch } from "react-icons/io";
 
-import "./style.scss";
+import { Dropdown } from "../Dropdown";
 import { SideBar } from "../SideBar";
+import "./style.scss";
+
+
 
 export const Header = () => {
   
@@ -22,7 +26,6 @@ export const Header = () => {
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
   
-  
   const [sidebar, SetSideBar] = useState(false);
   const toggleSideBar = () => {
     SetSideBar(!sidebar)
@@ -37,13 +40,15 @@ export const Header = () => {
         </button>
         <form onSubmit={SearchMovie}>
           <input type="text" value={TypedSearch} placeholder="Search..." onChange={(e) => SetTypedSearch(e.target.value)} />
-          <button type="submit"className="Search">
+          <button type="submit" className="Search">
               <IoIosSearch size={28} color="#FFF" />
           </button>
+          
+          
         </form>
       </header>
       <SideBar toggleSideBar={toggleSideBar} sidebar={sidebar} />
     </>
   );
-  
 };
+         //<Dropdown />

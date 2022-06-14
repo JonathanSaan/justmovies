@@ -14,20 +14,30 @@
     background: none;
     border: none;
     width: 50px;
-    margin: -5px 0 -13px 0;
+    margin: -5px 0 -10px 0;
   }
-    
-  .Link {
+  
+  .Buttons-Sidebar {
+    display: flex;
+    align-items: center;
+    margin: .5em auto 0 auto;
+    padding: 0 .5em;
+    height: 2.5rem;
+    width: 90%;
     color: #FFF;
-    text-decoration: none;
+    background: none;
+    border: none;
     
-    .Buttons-Sidebar {
-      color: #FFF;
-      height: 2.5rem;
-      width: 80%;
-      margin: 10px 0 0 16px;
-      background: none;
-      border: none;
+    .IconUser {
+      margin: -.2rem .3rem 0 0;
+    }
+    
+    .IconHome {
+      margin: -.2rem .4rem 0 0;
+    }
+    
+    .IconGenre {
+      margin: -.2rem .4rem 0 0;
     }
   }
 }
@@ -49,26 +59,33 @@
     background: none;
     border: none;
     width: 50px;
-    margin: -5px 0 -13px 0;
+    margin: -5px 0 -10px 0;
   }
   
-  .Link {
+  .Buttons-Sidebar {
+    display: flex;
+    align-items: center;
+    margin: .5em auto 0 auto;
+    padding: 0 1em;
+    height: 2.5rem;
+    width: 90%;
     color: #FFF;
-    outline: none;
-    text-decoration: none;
+    background: none;
+    border: none;
     
-    .Buttons-Sidebar {
-      height: 2.5rem;
-      width: 80%;
-      color: #FFF;
-      margin: 10px 0 0 16px;
-      background: none;
-      border: none;
+    .IconUser {
+      margin: -.2rem .3rem 0 0;
     }
-  }
     
-  .Link:hover {
-    .Buttons-Sidebar {
+    .IconHome {
+      margin: -.2rem .4rem 0 0;
+    }
+    
+    .IconGenre {
+      margin: -.2rem .4rem 0 0;
+    }
+    
+    &:hover {
       background-color: #FFF;
       border-radius: 10px;
       color: #0C0C0C;

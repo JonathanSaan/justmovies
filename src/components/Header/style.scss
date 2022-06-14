@@ -8,7 +8,6 @@
 .Header {
   display: flex;
   position: fixed;
-  justify-content: space-between;
   padding: 0 .7rem;
   height: 4rem;
   width: 100%;
@@ -24,14 +23,18 @@
   
   form {
     display: flex;
+    margin: 0 0 0 auto;
+    align-items: center;
     justify-content: center;
     
     input {
+      /*margin: 0 1vw 0 0;*/
+      padding: 20px 40px 20px 15px;
       height: 2rem;
       width: 30vw;
-      padding: 20px 40px 20px 15px;
       border-radius: 4px;
       background-color: #3e3e3eca;
+      align-items: center;
       color: #d3d3d3f9;
       border: none;
       outline: none;
@@ -42,6 +45,26 @@
       background: transparent;
       border: none;
     }
+    
+    .IconButton {
+      margin: 0 -.2em 0 0;
+      height: 1.7em;
+      width: 1.7em;
+      
+      .IconUser {
+        color: #FFF;
+      }
+      
+      &:hover {
+        background-color: #FFF;
+        transition: 500ms;
+        
+        .IconUser {
+          transition: 500ms;
+          color: #000;
+        }
+      }
+    }
   }
 }
 
@@ -49,7 +72,7 @@
   .Header {
     form {
       input {
-        width: 60vw;
+        width: 50vw;
       }
     }
   }

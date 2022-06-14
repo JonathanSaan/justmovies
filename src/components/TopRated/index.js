@@ -1,8 +1,9 @@
+import { useState, useEffect } from "react";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
 import { Header } from "../Header";
@@ -38,7 +39,7 @@ export const TopRated = () => {
       <Header />
       <div className="ContainerRated">
         <div className="TopRated">
-          <div className="title">
+          <div className="Title">
             <h1>Top Rated</h1>
           </div>
           {!listRated.length == 0 ? (

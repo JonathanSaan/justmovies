@@ -17,10 +17,10 @@ export const Categories = ({ category, setIdGenreSelected }) => {
       <div className="Categories">
         <div className="ContainerCategory">
           <div className="title">
-            <h1>Category</h1>
+            <h1>Genre</h1>
           </div>
           {category.map((genre) => (
-            <Link onClick={() => setIdGenreSelected(genre.id)} to={`/categories/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
+            <Link onClick={() => setIdGenreSelected(genre.id)} to={`/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
               <button> 
                 {genre.name}
               </button>

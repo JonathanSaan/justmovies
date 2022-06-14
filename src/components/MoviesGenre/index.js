@@ -1,14 +1,17 @@
+import { useState, useEffect } from "react";
+
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useState, useEffect } from "react";
 
 import { Header } from "../Header";
 import APIKey from "../../mocks/api";
 import "./style.scss";
 
 export const MoviesGenre = ({ category, idGenreSelected }) => {
+  
+  const navigate = useNavigate();
   
   const { genre } = useParams();
   
@@ -35,36 +38,32 @@ export const MoviesGenre = ({ category, idGenreSelected }) => {
   return (
       <>
         <Header />
-        <div className="MoviesGenre">
-          <div className="ContainerGenre">
-            <div className="title">
+        <div className="ContainerGenre">
+          <div className="MoviesGenre">
+            <div className="Title">
               <h1> 
                 {genre.replaceAll("-", " ")}
               </h1>
             </div>
-            <div className="NewMovie">
-              {!listMovies.length == 0 ? (
-                <>
-                  {listMovies.map((movie) => (
-                    <Link to={`/${movie.id}`}>
-                      <div className="Movies" key={movie.id}>
-                        <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
-                        <h2 className="MovieTitle">{movie.title}</h2>
-                      </div>
-                    </Link>
-                  ))}
-                </>
-              ) : (
-                <div className="MoviesGenreLoading">
-                  {Array(18).fill(1).map((card, index) => (
-                    <div className="MoviesGenreLoading2" >
-                      <Skeleton className="ImageLoading" variant="rectangular" />
-                      <Skeleton className="Text" variant="text" count={1}/>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            {!listMovies.length == 0 ? (
+              <>
+                {listMovies.map((movie) => (
+                  <div onClick={() => {navigate(`/${movie.id}`) }} className="Movies" key={movie.id}>
+                    <img className="MovieImage" src={movie.poster_path ? Image_path + movie.poster_path : imageError} alt={movie.title} /> 
+                    <h2 className="MovieTitle">{movie.title}</h2>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="MoviesGenreLoading">
+                {Array(18).fill(1).map((card, index) => (
+                  <div className="MoviesGenreLoading2" >
+                    <Skeleton className="ImageLoading" variant="rectangular" />
+                    <Skeleton className="Text" variant="text" count={1}/>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </>

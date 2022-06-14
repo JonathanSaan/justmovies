@@ -15,21 +15,22 @@
     min-height: 20rem;
     width: 90%;
     
-    .title {
+    .Title {
       margin: 2rem 0;
       width: 100%;
       
-       h1 {
-         color: #FFF;
-         font-size: 1.5rem;
-         align-items: center;
-         border-left: 2px solid gray;
-         padding: 5px 0 0 8px;
+      h1 {
+        color: #FFF;
+        font-size: 1.5rem;
+        align-items: center;
+        border-left: 2px solid gray;
+        padding: 5px 0 0 8px;
       }
     }
     
     .Movies {
-      margin: 0 1.5vw 1.5em 1.5vw;
+      margin: 0 1.5vw 1.5em auto;
+      //margin: 0 1.5vw 1.5em 1.5vw;
       height: 21vw;
       
       .MovieImage {
@@ -41,9 +42,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 5px 0;
         max-width: 12vw;
         color: #FFF;
+        margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: 1rem;
@@ -60,7 +61,7 @@
       flex-wrap: wrap;
       
       .NewMovieLoading2 {
-        margin: 0 1.5vw 1.5em 1.5vw;
+        margin: 0 1.5vw 1.2em auto;
         
         .ImageLoading {
           height: 18vw;
@@ -83,11 +84,13 @@
       width: 95%;
       
       .Movies {
-        margin: 0 .2em;
+        margin: 0 auto;
         height: 13em;
+        width: 6.6em;
         
         .MovieImage {
           height: 10em;
+          width: 6.7em;
         }
         
         .MovieTitle {
@@ -98,7 +101,7 @@
       
       .NewMovieLoading{
         .NewMovieLoading2 {
-          margin: 0 .2em;
+          margin: 0 auto;
           
           .ImageLoading {
             height: 10em;
