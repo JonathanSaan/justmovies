@@ -2,12 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import Fade from "react-reveal/Fade";
 
-import "./style.scss";
-
 import { Header } from "../Header";
 import { Movies } from "./Movies";
 import { TopRated } from "./TopRated";
 import { Popular } from "./Popular";
+import "./style.scss";
+
 
 
 export const Home = () => {

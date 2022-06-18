@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5"; 
 import { IoIosSearch } from "react-icons/io";
 
-import { Dropdown } from "../Dropdown";
+//import { Dropdown } from "../Dropdown";
 import { SideBar } from "../SideBar";
 import "./style.scss";
 
@@ -51,4 +51,4 @@ export const Header = () => {
     </>
   );
 };
-         //<Dropdown />
+          //<Dropdown />

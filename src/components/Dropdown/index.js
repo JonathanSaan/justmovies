@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, MenuItem, Button, IconButton } from "@mui/material";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { AiOutlineUser, AiOutlineUserAdd } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi";
 
-import "./style.scss";
 
 
 export const Dropdown = () => {
@@ -35,11 +34,15 @@ export const Dropdown = () => {
             <AiOutlineUser size={30} className="IconUser" />
           </IconButton>
           
-          <Menu {...bindMenu(popupState)}>
+          <Menu style={{ marginTop: "10px" }} {...bindMenu(popupState)}>
             {options.map((option) => (
-              <MenuItem onClick={popupState.close}>
-                {option.img}
-                {option.aOption}
+              <MenuItem component={Link} to={`/${option.aOption.replaceAll(" ", "-").toLowerCase()}`} >
+                <span style={{ display: "flex", marginLeft: "-5px", marginRight: "15px"}} >
+                  {option.img}
+                  <p style={{ marginLeft: "5px"}}>
+                    {option.aOption}
+                  </p>
+                </span>
               </MenuItem>
             ))}
           </Menu>
@@ -48,19 +51,3 @@ export const Dropdown = () => {
     </PopupState>
   );
 };
-/*onClick={popupState.close}
-    /*<div className="dropdown">
-      <div className="dropdown-btn" onClick={(e) => SetIsActive(!isActive)}>
-        <AiOutlineUser size={30} className="IconUser" />
-      </div>
-      {isActive && (
-        <div className="dropdown-content">
-          {options.map((option) => (
-            <div onClick={navigate(`/${option.aOption.replaceAll(" ", "-").toLowerCase()}`)} key={option.id} className="dropdown-item">
-              {option.img}
-              {option.aOption}
-            </div>
-          ))}
-        </div>
-      )}
-    </div*/

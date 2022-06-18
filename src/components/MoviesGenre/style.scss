@@ -64,22 +64,38 @@
       flex-wrap: wrap;
       
       .MoviesGenreLoading2 {
-        /*margin: 0 .9em 1em .9em;*/
         margin: 0 1.5vw 1.2em auto;
         
         .ImageLoading {
-          /*height: 11em;
-          width: 7.1em;*/
           height: 18vw;
           width: 12vw;
           z-index: 2;
         }
         
         .Text {
-          /*width: 7.1em;*/
           margin: .5em 0;
           width: 11.8vw;
         }
+      }
+    }
+  }
+  
+  ul {
+    margin: -1em 0 0 0;
+    
+    li {
+      width: 6vw;
+      
+      div {
+        color: #FFF;
+      }
+      
+      .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+        background-color: #202020;
+      }
+        
+      button {
+        color: #FFF;
       }
     }
   }
@@ -120,6 +136,14 @@
             margin: .5em 0 1.3em 0;
           }
         }
+      }
+    }
+    
+    ul {
+      margin: -3em 0 0 0;
+      
+      li {
+        width: 10vw;
       }
     }
   }

@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
+
 import axios from "axios";
 import { SkeletonTheme } from "react-loading-skeleton";
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home";
@@ -22,16 +23,13 @@ function App() {
   const [ category, setCategories ] = useState([]);
   const [ idGenreSelected, setIdGenreSelected ] = useState([]);
  
+  const LoadGenres = async () => {
+    const listGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
+    setCategories(listGenres.data.genres);
+  };
+  
   useEffect(() => { 
-    const load = async () => {
-      try {
-        const listGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
-        setCategories(listGenres.data.genres);
-      } catch (error) {
-        console.log(error);
-      };
-    };
-    load() 
+    LoadGenres() 
   }, [] );
   
   return (

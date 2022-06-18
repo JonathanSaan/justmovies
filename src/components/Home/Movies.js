@@ -1,9 +1,11 @@
+import { useState, useEffect } from "react";
+
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useState, useEffect } from "react";
 
 import APIKey from "../../mocks/api";
+
 
 
 export const Movies = ({ navigate }) => {

@@ -75,6 +75,26 @@
       }
     }
   }
+  
+  ul {
+    margin: -1em 0 0 0;
+    
+    li {
+      width: 6vw;
+      
+      div {
+        color: #FFF;
+      }
+      
+      .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+        background-color: #202020;
+      }
+        
+      button {
+        color: #FFF;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -112,6 +132,14 @@
             margin: .5em 0 1.3em 0;
           }
         }
+      }
+    }
+    
+    ul {
+      margin: -3em 0 0 0;
+      
+      li {
+        width: 10vw;
       }
     }
   }

@@ -32,62 +32,43 @@
         height: 4vw;
         width: 30vw;
       }
-    }
-    
-    .Checkbox {
-      display: flex;
-      margin: .4vw auto;
-      align-items: center;
-      width: 30vw;
       
-      input[type=checkbox] {
-        margin: 0 1vw 0 0;
-        height: 1em;
-        width: 1em;
-      }
-      
-      label {
-        color: #FFF;
-        font-size: 1vw;
+      button {
+        display: flex;
+        justify-content: center;
         align-items: center;
-        max-width: 7em; 
+        border: none;
+        border-radius: .7em;
+        background-color: #5516c4;
+        color: #FFF;
+        margin: 1em 0;
+        height: 5.5vw;
+        width: 30vw;
+        
+        &:hover {
+          background-color: #4810aa;
+          transition: 200ms;
+        }
+      }
+      
+      .Chrome {
+        background-color: #e4e4e4;
+        color: #000;
+        
+        .ChromeIcon {
+          margin: 0 .5em 0 0;
+        }
+        
+        &:hover {
+          background-color: #a6a6a6;
+        }
       }
     }
     
-    button {
-      display: flex;
-      justify-content: center;
-      border: none;
-      border-radius: .7em;
-      background-color: #5516c4;
-      color: #FFF;
-      align-items: center;
-      margin: 1em 0 1em 4vw;
-      height: 5.5vw;
-      width: 30vw;
-      
-      &:hover {
-        background-color: #4810aa;
-        transition: 200ms;
-      }
-    }
-    
-    .Chrome {
-      background-color: #e4e4e4;
-      color: #000;
-      
-      .ChromeIcon {
-        margin: 0 .5em 0 0;
-      }
-      
-      &:hover {
-        background-color: #a6a6a6;
-      }
-    }
     
     p {
       font-size: .7em;
-      margin: 12em 0 3em 0;
+      margin: 10em 0 3em 0;
       color: #FFF;
       text-align: center;
       
@@ -113,23 +94,15 @@
           height: 3em;
           width: 80vw;
         }
-      }
-      
-      .Checkbox {
-        margin: .5em auto;
-        width: 80vw;
         
-        label {
+        button {
+          margin: 1em 0;
+          height: 4em;
           width: 80vw;
-          font-size: 2.5vw;
         }
       }
       
-      button {
-        margin: 1em 0 1em 5vw;
-        height: 4em;
-        width: 80vw;
-      }
+      
       
       p {
         /*margin: 13em 0 0 0;

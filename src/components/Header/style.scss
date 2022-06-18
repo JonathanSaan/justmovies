@@ -28,7 +28,7 @@
     justify-content: center;
     
     input {
-      /*margin: 0 1vw 0 0;*/
+      /*margin: 0 .5em 0 0;*/
       padding: 20px 40px 20px 15px;
       height: 2rem;
       width: 30vw;
@@ -41,13 +41,13 @@
     }
     
     .Search {
-      margin: 0 .6rem 0 -2.3rem;
+      margin: 0 1em 0 -3em;
       background: transparent;
       border: none;
     }
     
-    .IconButton {
-      margin: 0 -.2em 0 0;
+    /*.IconButton {
+      margin: 0 -.3em 0 .1em;
       height: 1.7em;
       width: 1.7em;
       
@@ -64,7 +64,7 @@
           color: #000;
         }
       }
-    }
+    }*/
   }
 }
 
@@ -73,6 +73,10 @@
     form {
       input {
         width: 50vw;
+      }
+      
+      .Search {
+        margin: 0 .8em 0 -2.8em;
       }
     }
   }

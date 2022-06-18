@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+
+import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import axios from "axios";
 import Whirligig from "react-whirligig";
 
 import APIKey from "../../mocks/api";
