@@ -22,9 +22,12 @@ function App() {
   
   const [ category, setCategories ] = useState([]);
   const [ idGenreSelected, setIdGenreSelected ] = useState([]);
- 
+  
   const LoadGenres = async () => {
     const listGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
+    
+    {category.map(genre => {console.log(genre) })}
+    console.log(category)
     setCategories(listGenres.data.genres);
   };
   
@@ -44,12 +47,31 @@ function App() {
           <Route path="/search/" element={<Home />} />
           <Route path="/search/:searched" element={<Search />} />
           <Route path="/:details" element={<Details setIdGenreSelected={setIdGenreSelected} />} />
-          <Route path="/genre" element={<Categories category={category} setIdGenreSelected={setIdGenreSelected} />} />
-          <Route path="/genre/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
+          
+          <Route path="/genre" element={<Categories category={category} />} />
+          <Route path="/genre/:id/:genre" element={<MoviesGenre />} />
         </Routes>
       </Router>
     </SkeletonTheme>
   );
 };
+/*
 
+          {category.map(genre => {
+            return <Route key={genre.id} path={`/genre/:genre`} element={<MoviesGenre idGenreSelected={genre.id} /> } />
+          })}
+          
+  {category.map(genre => (
+              <Route key={genre.id} path={`/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`} element={<MoviesGenre category={genre.id} idGenreSelected={genre.id} /> } />
+              
+            ))
+          }
+          
+          {category.map(genre => {
+             return <Route path={`/genre/${genre.name}`} element={<MoviesGenre category={genre.id} idGenreSelected={genre.id} /> } />
+           })}
+           
+           */
+          //<Route path={category.map(genre => `/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`)} element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
+          //<Route path="/genre/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
 export default App;

@@ -13,7 +13,7 @@ import { Header } from "../Header";
 import "./style.scss";
 
 
-export const Details = ({ setIdGenreSelected }) => {
+export const Details = () => {
   
   const navigate = useNavigate();
   
@@ -38,6 +38,7 @@ export const Details = ({ setIdGenreSelected }) => {
   const [ movieSimilar, setMovieSimilar ] = useState([]);
   
   const refreshPage = () => {
+    
     setTimeout(()=>{
         window.location.reload(false);
     }, 500);
@@ -48,33 +49,30 @@ export const Details = ({ setIdGenreSelected }) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    
     setTimeout(() => { 
       const load = async () => {
-        try {
-          const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
-          setDetailsMovie(respost.data);
-          setGenres(respost.data.genres);
-          setYearMovie(respost.data.release_date.slice(0, 4));
-          
-          const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
-          
-          const stateVideo = () => {
-            if (videos.data.results.length > 0) {
-              return setTrailer(videos.data.results[0]);
-            }
-            return null;
+        const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
+        setDetailsMovie(respost.data);
+        setGenres(respost.data.genres);
+        setYearMovie(respost.data.release_date.slice(0, 4));
+        
+        const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
+        
+        const stateVideo = () => {
+          if (videos.data.results.length > 0) {
+            return setTrailer(videos.data.results[0]);
           }
-          stateVideo()
-          
-          const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
-          setMovieSimilar(dataSimilar.data.results);
-          
-          const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
-          setCharacters(credits.data.cast);
-          setLoading(true);
-        } catch (error) {
-          console.log(error);
-        };
+          return null;
+        }
+        stateVideo()
+        
+        const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
+        setMovieSimilar(dataSimilar.data.results);
+        
+        const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
+        setCharacters(credits.data.cast);
+        setLoading(true);
       };
       load()
     }, 1000)
@@ -126,8 +124,7 @@ export const Details = ({ setIdGenreSelected }) => {
                 
                 <div className="Genres">
                   {genres.map((genre) => 
-                    <Link onClick={() => setIdGenreSelected(genre.id)}
-                    to={`/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`} >
+                    <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`} >
                       <button className="genre">
                         {genre.name}
                       </button>

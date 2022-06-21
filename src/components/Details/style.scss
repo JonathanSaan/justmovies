@@ -88,6 +88,10 @@
             padding: 10px; 
             height: 2rem;
             white-space: nowrap;
+            
+            &:hover {
+              background-color: #000;
+            }
           }
         }
       }
@@ -199,7 +203,6 @@
                 transition: 350ms;
                 transform: scale(1.06);
               }
-                
             }
           }
         }
