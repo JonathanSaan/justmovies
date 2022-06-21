@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 import { IoIosClose } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { FaBook } from "react-icons/fa";
@@ -35,5 +34,4 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
       </div>
     </>
   );
-    
 };

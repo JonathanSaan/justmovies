@@ -45,6 +45,7 @@ export const TopRated = () => {
   const Image_path = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
   
+  
   return (
     <>
       <Header />
