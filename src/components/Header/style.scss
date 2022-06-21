@@ -28,7 +28,6 @@
     justify-content: center;
     
     input {
-      /*margin: 0 .5em 0 0;*/
       padding: 20px 40px 20px 15px;
       height: 2rem;
       width: 30vw;
@@ -45,26 +44,6 @@
       background: transparent;
       border: none;
     }
-    
-    /*.IconButton {
-      margin: 0 -.3em 0 .1em;
-      height: 1.7em;
-      width: 1.7em;
-      
-      .IconUser {
-        color: #FFF;
-      }
-      
-      &:hover {
-        background-color: #FFF;
-        transition: 500ms;
-        
-        .IconUser {
-          transition: 500ms;
-          color: #000;
-        }
-      }
-    }*/
   }
 }
 

@@ -5,8 +5,6 @@ import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Home } from "./components/Home";
-import { Login } from "./components/Login";
-import { SignUp } from "./components/SignUp";
 import { NewMovies } from "./components/NewMovies";
 import { TopRated } from "./components/TopRated";
 import { Categories } from "./components/Categories";
@@ -40,8 +38,6 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/sign-up" element={<SignUp />} />
           <Route exact path="/new-movies" element={<NewMovies />} />
           <Route exact path="/top-rated" element={<TopRated />} />
           <Route path="/search/" element={<Home />} />
@@ -55,23 +51,5 @@ function App() {
     </SkeletonTheme>
   );
 };
-/*
 
-          {category.map(genre => {
-            return <Route key={genre.id} path={`/genre/:genre`} element={<MoviesGenre idGenreSelected={genre.id} /> } />
-          })}
-          
-  {category.map(genre => (
-              <Route key={genre.id} path={`/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`} element={<MoviesGenre category={genre.id} idGenreSelected={genre.id} /> } />
-              
-            ))
-          }
-          
-          {category.map(genre => {
-             return <Route path={`/genre/${genre.name}`} element={<MoviesGenre category={genre.id} idGenreSelected={genre.id} /> } />
-           })}
-           
-           */
-          //<Route path={category.map(genre => `/genre/${genre.name.replaceAll(" ", "-").toLowerCase()}`)} element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
-          //<Route path="/genre/:genre" element={<MoviesGenre category={category} idGenreSelected={idGenreSelected} />} />
 export default App;
