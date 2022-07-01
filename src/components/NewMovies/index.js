@@ -46,7 +46,6 @@ export const NewMovies = () => {
   
   return (
     <>
-      
       <Header />
       <div className="ContainerMovies">
         <div className="NewMovie">

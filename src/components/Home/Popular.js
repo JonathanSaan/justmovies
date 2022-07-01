@@ -16,12 +16,8 @@ export const Popular = ({ navigate }) => {
   useEffect(() => { 
     window.scrollTo(0, 0);
     const load = async () => {
-      try {
-        const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
-        setListPopular(respost.data.results);
-      } catch (error) {
-        console.log(error);
-      };
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
+      setListPopular(respost.data.results);
     };
     load() 
   }, [] );

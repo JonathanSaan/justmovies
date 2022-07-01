@@ -23,9 +23,6 @@ function App() {
   
   const LoadGenres = async () => {
     const listGenres = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
-    
-    {category.map(genre => {console.log(genre) })}
-    console.log(category)
     setCategories(listGenres.data.genres);
   };
   

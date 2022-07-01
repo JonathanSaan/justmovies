@@ -10,6 +10,8 @@ import { Header } from "../Header";
 import APIKey from "../../mocks/api";
 import "./style.scss";
 
+
+
 export const MoviesGenre = () => {
 
   const navigate = useNavigate();

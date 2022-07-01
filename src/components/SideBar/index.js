@@ -11,7 +11,6 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
   
   const navigate = useNavigate();
   
-  
   return (
     <>
       <div className={sidebar ? "SideBarActive" : "SideBar"}>

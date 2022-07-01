@@ -88,101 +88,101 @@ export const Details = () => {
 
   
   return (
-      <>
-        <Header />
-        <div className="Details">
-          <div className="BackDrop" style={{backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`}}>
-          </div>
-          
-          <div className="ContainerDetails">
-            <div className="MovieDetails">
-              <div className="Image">
-                {detailsMovie.poster_path && 
-                  <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
-                }
-                
-                {!detailsMovie.poster_path && !loading &&
-                   <Skeleton className="PrincipalImage" style={styleSkeleton} variant="rectangular" />
-                }
-              </div>
-              <span>
-                <h1 className="TitleMovie">
-                  {detailsMovie.title || <Skeleton style={styleSkeleton} variant="text" count={2}/>}
-                </h1>
-                <p className="ReleaseDate">
-                  {yearMovie}
-                </p>
-                <hr />
-                
-                <div className="Votes">
-                  <IoIosStar className="Star" size={15} color="yellow"/>
-                  <p className="vote">
-                    {detailsMovie.vote_average}
-                  </p>
-                </div>
-                <hr />
-                
-                <div className="Genres">
-                  {genres.map((genre) => 
-                    <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`} >
-                      <button className="genre">
-                        {genre.name}
-                      </button>
-                    </Link>
-                  )}
-                </div>
-              </span>
-            </div>
-            
-            <div className="Description">
-              <hr />
-              <h2 className="Overview">
-                {detailsMovie.overview || <Skeleton count={5} />}
-              </h2>
-            </div>
-            
-            <div className="Trailer">
-              {trailer.key && 
-                <iframe className="Video" src={"https://youtube.com/embed/" + trailer.key } target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe> 
+    <>
+      <Header />
+      <div className="Details">
+        <div className="BackDrop" style={{backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`}}>
+        </div>
+        
+        <div className="ContainerDetails">
+          <div className="MovieDetails">
+            <div className="Image">
+              {detailsMovie.poster_path && 
+                <img className="PrincipalImage" src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError} alt={detailsMovie.title} />
               }
               
-              {!trailer.key && !loading &&
-                <Skeleton className="Video" variant="rectangular" />
+              {!detailsMovie.poster_path && !loading &&
+                 <Skeleton className="PrincipalImage" style={styleSkeleton} variant="rectangular" />
               }
             </div>
+            <span>
+              <h1 className="TitleMovie">
+                {detailsMovie.title || <Skeleton style={styleSkeleton} variant="text" count={2}/>}
+              </h1>
+              <p className="ReleaseDate">
+                {yearMovie}
+              </p>
+              <hr />
+              
+              <div className="Votes">
+                <IoIosStar className="Star" size={15} color="yellow"/>
+                <p className="vote">
+                  {detailsMovie.vote_average}
+                </p>
+              </div>
+              <hr />
+              
+              <div className="Genres">
+                {genres.map((genre) => 
+                  <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`} >
+                    <button className="genre">
+                      {genre.name}
+                    </button>
+                  </Link>
+                )}
+              </div>
+            </span>
+          </div>
+          
+          <div className="Description">
+            <hr />
+            <h2 className="Overview">
+              {detailsMovie.overview || <Skeleton count={5} />}
+            </h2>
+          </div>
+          
+          <div className="Trailer">
+            {trailer.key && 
+              <iframe className="Video" src={"https://youtube.com/embed/" + trailer.key } target="_parent" frameborder="0" title="trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe> 
+            }
             
-            <div className="AllTab">
-              <Tabs defaultIndex={0} className="Tabs">
-                <TabList className="TabList">
-                 <Tab onClick={handleTab1} className={activeTab === "tab1" ? "active" : "false"}>Characters</Tab>
-                 <Tab onClick={handleTab2} className={activeTab  === "tab2" ? "active" : "false"}>Similar</Tab>
-                </TabList>
-                <TabPanel className="TabPanel">
-                  <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                    {characters.map((Character) => (
-                      <div key={Character.id}>
-                        <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
-                        <p>{Character.name}</p>
-                      </div>
-                    ))}
-                  </Whirligig>
-                </TabPanel>
-                
-                <TabPanel className="TabPanel">
-                  <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                    {movieSimilar.map((similar) => (
-                      <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
-                        <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
-                        <p>{similar.title}</p>
-                      </div>
-                    ))}
-                  </Whirligig>
-                </TabPanel>
-              </Tabs>
-            </div>
+            {!trailer.key && !loading &&
+              <Skeleton className="Video" variant="rectangular" />
+            }
+          </div>
+          
+          <div className="AllTab">
+            <Tabs defaultIndex={0} className="Tabs">
+              <TabList className="TabList">
+               <Tab onClick={handleTab1} className={activeTab === "tab1" ? "active" : "false"}>Characters</Tab>
+               <Tab onClick={handleTab2} className={activeTab  === "tab2" ? "active" : "false"}>Similar</Tab>
+              </TabList>
+              <TabPanel className="TabPanel">
+                <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
+                  {characters.map((Character) => (
+                    <div key={Character.id}>
+                      <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
+                      <p>{Character.name}</p>
+                    </div>
+                  ))}
+                </Whirligig>
+              </TabPanel>
+              
+              <TabPanel className="TabPanel">
+                <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
+                  {movieSimilar.map((similar) => (
+                    <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
+                      <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
+                      <p>{similar.title}</p>
+                    </div>
+                  ))}
+                </Whirligig>
+              </TabPanel>
+            </Tabs>
           </div>
         </div>
-      </>
-    );
+      </div>
+    </>
+  );
 };
