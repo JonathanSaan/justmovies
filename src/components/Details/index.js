@@ -13,6 +13,7 @@ import { Header } from "../Header";
 import "./style.scss";
 
 
+
 export const Details = () => {
   
   const navigate = useNavigate();

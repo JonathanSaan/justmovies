@@ -5,6 +5,7 @@ import { Header } from "../Header";
 import "./style.scss"
 
 
+
 export const Categories = ({ category }) => {
   
   useEffect(() => {
