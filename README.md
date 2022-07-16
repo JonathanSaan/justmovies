@@ -7,3 +7,4 @@ https://justmovies.vercel.app/
 
 ## Detail Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/e708a54e869c4691e8e5cb772b0d7517e76713d8/Capture+_2022-05-17-13-16-48-1-1.png)
+
