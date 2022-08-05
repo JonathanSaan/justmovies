@@ -72,6 +72,10 @@
           }
           .vote {
             margin: 0 auto;
+            max-width: 1ch;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
           }
         }
         
