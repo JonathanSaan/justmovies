@@ -1,13 +1,13 @@
 .Search {
   background-color: #191b1c;
-  
+
   .ContainerSearch {
     min-height: 100vh;
     padding: 5rem 0 5rem 0;
-    
+
     .ResultdFound {
       padding: 0 0 0 5rem;
-      
+
       h1 {
         font-size: 1.8rem;
         color: #FFF;
@@ -16,67 +16,68 @@
         padding: 5px 0 0 8px;
       }
     }
-    
+
     .SearcheFound {
       width: 60vw;
       margin: 3rem 0 0 5rem;
-      
+
       a {
         outline: none;
         text-decoration: none;
       }
-    
+
       .Movies {
         display: flex;
+        margin: 1em 0;
+        padding: 0 0 5em 0;
         height: 12rem;
-        
+        border-bottom: .5px solid #3e3e3eca;
+
         .Image {
           .PrincipalImage {
             height: 11rem;
             margin: 0 1rem 0 0;
           }
         }
-        
+
         .description {
           display: flex;
           flex-direction: column;
-          
+
           .MovieTitle {
             color: #FFF;
             font-size: 1.2rem;
             max-height: 3rem;
           }
-          
+
           .Overview {
             margin: .5rem 0 0 0;
             color: gray;
             height: 7rem;
             font-size: 1rem;
           }
-          
+
           .Vote {
             display: flex;
             align-items: center;
             height: 1rem;
             width: 2.5rem;
             color: #FFF;
-            
+
             .Star {
               margin: 0 .3rem 0 0;
             }
           }
         }
-      }
-      
-      hr {
-        margin: 1rem 0;
-        border: 1px solid #3e3e3eca;
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
-      
+
     .noSearchFound {
       margin: 1rem 0 0 5rem;
-      
+
       h2 {
         font-size: 2.3rem;
         color: gray;
@@ -89,35 +90,35 @@
   .Search {
     .ContainerSearch {
       padding: 5rem 0 5rem 0;
-      
-     .ResultdFound {
-       padding: 0 0 0 1rem;
-       
+
+      .ResultdFound {
+        padding: 0 0 0 1rem;
+
         h1 {
           font-size: 1rem;
         }
       }
-      
+
       .SearcheFound {
         margin: 3rem 0 0 1rem;
         width: 90vw;
-        
+
         .Movies {
           .description {
             .MovieTitle {
               font-size: .8rem;
             }
-            
+
             .Overview {
               font-size: .7rem;
             }
           }
         }
       }
-      
+
       .noSearchFound {
         margin: 1rem 0 0 1rem;
-        
+
         h2 {
           font-size: 1.3rem;
         }

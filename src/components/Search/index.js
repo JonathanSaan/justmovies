@@ -43,46 +43,40 @@ export const Search = () => {
           </div>
           {searchesFound.length > 0 ?
             <div className="SearcheFound">
-            
               {searchesFound.map((movie) => (
-                <>
-                  <Link to={`/${movie.id}`}>
-                    <div className="Movies" key={movie.id}>
-                      <div className="Image">
-                        {movie.poster_path &&
-                          <img className="PrincipalImage" src={imagePath + movie.poster_path} alt={movie.title} /> 
-                        } 
-                        
-                        {movie.poster_path === null &&
-                          <img className="PrincipalImage" src={imageError} alt={"image error"} /> 
-                        }
-                          
-                      </div>
-                      <div className="description">
-                        <h1 className="MovieTitle">
-                          {movie.title || <Skeleton variant="text" count={1}/>}
-                        </h1>
-                        <p className="Overview">
-                          {movie.overview.length > 150 ? (
-                            `${movie.overview.substring(0, 150)}...`  ) 
-                            : (
-                                <p className="Overview">
-                                  {movie.overview}
-                                </p>
-                            )}
-                        </p>
-                        <div className="Vote">
-                          <IoIosStar className="Star" size={10} color="yellow"/>
-                          <p>
-                            {movie.vote_average}
-                          </p>
-                        </div>
-                      </div>
+                <Link className="Movies" to={`/${movie.id}`}>
+                  <div className="Image">
+                    {movie.poster_path &&
+                      <img className="PrincipalImage" src={imagePath + movie.poster_path} alt={movie.title} /> 
+                    } 
+                    
+                    {movie.poster_path === null &&
+                      <img className="PrincipalImage" src={imageError} alt={"image error"} /> 
+                    }
+                      
+                  </div>
+                  <div className="description">
+                    <h1 className="MovieTitle">
+                      {movie.title || <Skeleton variant="text" count={1}/>}
+                    </h1>
+                    <p className="Overview">
+                      {movie.overview.length > 150 ? (
+                        `${movie.overview.substring(0, 150)}...`  ) 
+                        : (
+                            <p className="Overview">
+                              {movie.overview}
+                            </p>
+                        )}
+                    </p>
+                    <div className="Vote">
+                      <IoIosStar className="Star" size={10} color="yellow"/>
+                      <p>
+                        {movie.vote_average}
+                      </p>
                     </div>
-                  </Link>
-                  <hr />
-                 </>
-                ))}
+                  </div>
+                </Link>
+              ))}
             </div>
             : (
               <div className="noSearchFound">
