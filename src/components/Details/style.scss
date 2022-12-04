@@ -43,13 +43,13 @@
         z-index: 2;
     
         .TitleMovie {
-          font-size: 3vw;
+          font-size: 2vw;
           color: #FFF;
         }
         
         .ReleaseDate {
           margin: .3rem 0;
-          font-size: 2vw;
+          font-size: 1.5vw;
           color: gray;
         }
         
@@ -86,6 +86,7 @@
           .genre {
             border: .5px solid gray;
             background-color: #191B1C;
+            cursor: pointer;
             color: #FFF;
             font-size: .7rem;
             margin: 2px;
@@ -160,6 +161,7 @@
             border-end-start-radius: 3px;
             color: #FFF;
             background: none;
+            cursor: default;
             border: none;
             border-bottom: 1px solid gray;
             padding: .7rem;
@@ -170,6 +172,7 @@
           .false {
             margin: 0 .5rem 0 0;
             padding: .7rem;
+            cursor: pointer;
           }
         }
         
@@ -183,9 +186,10 @@
             overflow: hidden;
             
             div {
-              height: 14rem;
-              margin: 4% 2%;
-              min-width: 8rem;
+              cursor: pointer;
+              height: 11rem;
+              margin: .5rem 1vw 0 1vw;
+              min-width: 7rem;
                 
               img {
                 height: 10rem;
@@ -238,7 +242,7 @@
           }
           
           .ReleaseDate {
-            font-size: 3vw;
+            font-size: 3.5vw;
           }
           
           .Genres {

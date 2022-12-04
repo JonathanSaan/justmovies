@@ -29,6 +29,7 @@
         display: flex;
         padding: 7px;
         background-color: #202020;
+        cursor: pointer;
         color: lightgray;
         border: none;
         border-radius: 3px;
@@ -39,7 +40,7 @@
         
         &:hover {
           color: #FFF;
-          font-size: .9em;
+          transform: scale(1.1);
           transition: 300ms;
         }
       }
@@ -64,6 +65,7 @@
         min-width: 13vw;
         
         .Populars {
+          cursor: pointer;
           margin: 6px 0 0 5px;
           height: 21vw;
           
@@ -111,6 +113,7 @@
       width: 100%;
       
       .Movies {
+        cursor: pointer;
         margin: 0 auto;
         height: 21vw;
         
@@ -168,6 +171,7 @@
       
       .Rateds {
         margin: 0 auto 1.5em auto;
+        cursor: pointer;
         height: 21vw;
         
         .RatedImage {

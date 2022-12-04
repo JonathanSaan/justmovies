@@ -10,7 +10,6 @@
   
   .Close-Sidebar {
     display: flex;
-    cursor: pointer;
     background: none;
     border: none;
     width: 50px;
@@ -55,7 +54,6 @@
   
   .Close-Sidebar {
     display: flex;
-    cursor: pointer;
     background: none;
     border: none;
     width: 50px;
@@ -65,6 +63,7 @@
   .Buttons-Sidebar {
     display: flex;
     align-items: center;
+    cursor: pointer;
     margin: .5em auto 0 auto;
     padding: 0 1em;
     height: 2.5rem;

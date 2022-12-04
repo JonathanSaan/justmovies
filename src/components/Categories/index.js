@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { Header } from "../Header";
 import "./style.scss"
 
 
-
 export const Categories = ({ category }) => {
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
