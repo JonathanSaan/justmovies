@@ -62,11 +62,13 @@
         transform: all 0.6s;
         overflow: hidden;
         margin: .6rem 0 0 0;
+        height: 24vw;
         min-width: 13vw;
         
         .Populars {
           cursor: pointer;
           margin: 6px 0 0 5px;
+          min-height: 10rem;
           height: 21vw;
           
           .PopularImage {
@@ -108,15 +110,16 @@
       display: flex;
       flex-wrap: wrap;
       padding: 2rem 0 3rem 0;
-      min-height: 33.5rem;
+      min-height: 20rem;
       max-width: 78vw;
       width: 100%;
       
       .Movies {
         cursor: pointer;
-        margin: 0 auto;
-        height: 21vw;
-        
+        margin: 0 auto 2em auto;
+        height: 20vw;
+        width: 12vw;
+
         .MovieImage {
           height: 18vw;
           border-radius: 5px;
@@ -170,9 +173,10 @@
       width: 100%;
       
       .Rateds {
-        margin: 0 auto 1.5em auto;
+        margin: 0 auto 2em auto;
+        height: 20vw;
+        width: 12vw;
         cursor: pointer;
-        height: 21vw;
         
         .RatedImage {
           height: 18vw;
@@ -239,6 +243,7 @@
         
         div {
           padding: 0 1%;
+          height: 13em;
           min-width: 8rem;
           
           .Populars {
@@ -269,7 +274,9 @@
         max-width: 96vw;
         
         .Movies {
-          height: 13em;
+          margin: 0 auto 5vw auto;
+          height: 12em;
+          width: 6.6em;
           
           .MovieImage {
             height: 10em;
@@ -302,8 +309,8 @@
         max-width: 96vw;
         
         .Rateds {
-          margin: 0 auto .3em auto;
-          height: 13em;
+          margin: 0 auto 5vw auto;
+          height: 12em;
           width: 6.6em;
           
           .RatedImage {
