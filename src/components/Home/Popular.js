@@ -47,21 +47,34 @@ export const Popular = ({ navigate }) => {
           transition={{ duration: 0.8 }}
         >
           {listPopular.map((popular) => (
-              <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
-                <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
-                <h2 className="PopularTitle">{popular.title}</h2>
-              </div>
-            ))}
+            <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
+              <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
+              <h2 className="PopularTitle">{popular.title}</h2>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
       ) : (
-        <motion.div>
-          {Array(20).fill(1).map((card, index) => (
-            <>
-              <Skeleton className="ImageLoading" variant="rectangular" />
-              <Skeleton className="Text" variant="text" count={1}/>
-            </>
-          ))}
+        <motion.div
+          className="carousel"
+          ref={carousel}
+          whileTap={{ cursor: "grabbing" }}
+        >
+          <motion.div
+            className="inner"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {Array(20).fill(1).map((card, index) => (
+              <div className="Populars">
+                <Skeleton className="ImageLoading" variant="rectangular" />
+                <Skeleton className="Text" variant="text" count={1}/>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       )}
    </>

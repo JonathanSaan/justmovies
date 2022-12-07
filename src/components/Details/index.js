@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { IoIosStar } from "react-icons/io";
-import Whirligig from "react-whirligig";
+import { motion } from "framer-motion";
+/*import Whirligig from "react-whirligig";*/
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
@@ -25,7 +26,10 @@ export const Details = () => {
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
   
-  
+  const CharactersCarousel = useRef();
+  const SimilarCarousel = useRef();
+  const [width, setWidth] = useState(0);
+
   const [ activeTab, setActiveTab ] = useState("tab1");
   const handleTab1 = () => {
     setActiveTab("tab1");
@@ -50,6 +54,8 @@ export const Details = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    setWidth(CharactersCarousel.current?.scrollWidth - CharactersCarousel.current?.offsetWidth);
+    setWidth(SimilarCarousel.current?.scrollWidth - SimilarCarousel.current?.offsetWidth);
     
     setTimeout(() => { 
       const load = async () => {
@@ -160,25 +166,51 @@ export const Details = () => {
                <Tab onClick={handleTab2} className={activeTab  === "tab2" ? "active" : "false"}>Similar</Tab>
               </TabList>
               <TabPanel className="TabPanel">
-                <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                  {characters.map((Character) => (
-                    <div key={Character.id}>
-                      <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
-                      <p>{Character.name}</p>
-                    </div>
-                  ))}
-                </Whirligig>
+                <motion.div
+                  className="carousel"
+                  ref={CharactersCarousel}
+                  whileTap={{ cursor: "grabbing" }}
+                >
+                  <motion.div
+                    className="inner"
+                    drag="x"
+                    dragConstraints={{ right: 0, left: -width }}
+                    initial={{ x: 100 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {characters.map((Character) => (
+                      <div key={Character.id}>
+                        <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
+                        <p>{Character.name}</p>
+                      </div>
+                    ))}
+                  </motion.div>
+                </motion.div>
               </TabPanel>
               
               <TabPanel className="TabPanel">
-                <Whirligig className="Whirligig" visibleSlides={6} gutter="1em">
-                  {movieSimilar.map((similar) => (
-                    <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
-                      <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
-                      <p>{similar.title}</p>
-                    </div>
-                  ))}
-                </Whirligig>
+                <motion.div
+                  className="carousel"
+                  ref={SimilarCarousel}
+                  whileTap={{ cursor: "grabbing" }}
+                >
+                  <motion.div
+                    className="inner"
+                    drag="x"
+                    dragConstraints={{ right: 0, left: -width }}
+                    initial={{ x: 100 }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {movieSimilar.map((similar) => (
+                      <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
+                        <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
+                        <p>{similar.title}</p>
+                      </div>
+                    ))}
+                  </motion.div>
+                </motion.div>
               </TabPanel>
             </Tabs>
           </div>

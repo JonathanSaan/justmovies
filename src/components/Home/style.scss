@@ -46,34 +46,29 @@
       }
     }
         
-    .Popular {
-      margin: 20px 0 20px 10px;
-      height: 25vw;
+    .carousel {
+      cursor: grab;
+      overflow: hidden;
+      margin: 20px 0 4vw 10px;
+      height: 22vw;
       max-width: 76.8vw;
       z-index: 2;
       
-      ::-webkit-scrollbar {
-        display: none;
-        -ms-overflow-style: none; 
-        scrollbar-width: none;
-      }
-      
-      div {
-        transform: all 0.6s;
-        overflow: hidden;
-        margin: .6rem 0 0 0;
+      .inner {
+        display: flex;
         height: 24vw;
         min-width: 13vw;
         
         .Populars {
           cursor: pointer;
-          margin: 6px 0 0 5px;
-          min-height: 10rem;
-          height: 21vw;
+          margin: 6px 10px 0;
+          min-height: 8rem;
+          height: 17vw;
           
           .PopularImage {
             height: 18vw;
             border-radius: 5px;
+            pointer-events: none;
             z-index: -4;
           }
     
@@ -82,27 +77,30 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: 5px 0;
-            max-width: 7rem;
             font-size: .8em;
+            margin: 5px 0 0;
+            max-width: 7rem;
+          }
+
+          .ImageLoading {
+            margin: 6px 10px 0;
+            min-height: 8rem;
+            height: 18vw;
+            z-index: 2;
           }
           
+          .Text {
+            margin: 5px 0 0;
+            width: 13vw;
+          }
+
           &:hover {
             transition: 350ms;
             transform: scale(1.06);
           }
         }
         
-        .ImageLoading {
-          height: 18vw;
-          width: 12vw;
-          z-index: 2;
-        }
         
-        .Text {
-          margin: .5em 0;
-          width: 12vw;
-        }
       }
     }
   
@@ -148,7 +146,7 @@
         flex-wrap: wrap;
         
         .MovieLoading2 {
-          margin: 0 auto 1em auto;
+          margin: 0 auto 2em auto;
           
           .ImageLoading {
             height: 18vw;
@@ -204,9 +202,13 @@
       .TopRatedMovieLoading {
         display: flex;
         flex-wrap: wrap;
+        padding: 2rem 0 3rem 0;
+        min-height: 20rem;
+        max-width: 78vw;
+        width: 100%;
         
         .TopRatedMovieLoading2 {
-          margin: 0 auto 1em auto;
+          margin: 0 auto 2em auto;
           
           .ImageLoading {
             height: 18vw;
@@ -236,18 +238,18 @@
         width: 98%;
       }
       
-      .Popular {
-        margin: 10px 10px 10px 0;
-        height: 15em;
+      .carousel {
+        margin: 10px 10px 10vw 0;
+        height: 12rem;
         max-width: 96vw;
         
-        div {
+        .inner {
           padding: 0 1%;
           height: 13em;
           min-width: 8rem;
           
           .Populars {
-            height: 13em;
+            height: 12em;
             
             .PopularImage {
               height: 10em;
@@ -256,15 +258,15 @@
             .PopularTitle {
               max-width: 8em;
             }
-          }
-          
-          .ImageLoading {
-            height: 10em;
-            width: 7em;
-          }
-          
-          .Text {
-            margin: .5em 0 1.3em 0;
+
+            .ImageLoading {
+              height: 10em;
+              width: 7em;
+            }
+            
+            .Text {
+              margin: .5em 0 1.3em 0;
+            }
           }
         }
       }
@@ -289,7 +291,9 @@
         
         .MovieLoading {
           .MovieLoading2 {
-            margin: 0 .2em;
+            margin: 0 auto 5vw auto;
+            height: 12em;
+            width: 6.6em;
             
             .ImageLoading {
               height: 10em;
@@ -323,8 +327,13 @@
         }
         
         .TopRatedMovieLoading {
+          min-height: 30rem;
+          
+          max-width: 96vw;
           .TopRatedMovieLoading2 {
-            margin: 0 .2em;
+            margin: 0 auto 5vw auto;
+            height: 12em;
+            width: 6.6em;
             
             .ImageLoading {
               height: 10em;

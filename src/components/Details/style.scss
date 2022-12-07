@@ -177,39 +177,47 @@
         }
         
         .TabPanel {
-          .Whirligig {
+          .carousel {
+            cursor: grab;
+            overflow: hidden;
             margin: 4% 0 0 0;
-            height: 14.5rem;
+            height: 13rem;
             width: 100%;
             z-index: 2;
-            transform: all 0.6s;
-            overflow: hidden;
+
+            .inner {
+              display: flex;
+              height: 24vw;
+              min-width: 13vw;
+              
+              div {
+                cursor: pointer;
+                margin: .5rem 1vw 0 1vw;
+                height: 11rem;
+                min-width: 7rem;
+                  
+                img {
+                  height: 10rem;
+                  border-radius: 5px;
+                  pointer-events: none;
+                  z-index: -4;
+                }
             
-            div {
-              cursor: pointer;
-              height: 11rem;
-              margin: .5rem 1vw 0 1vw;
-              min-width: 7rem;
-                
-              img {
-                height: 10rem;
-                border-radius: 5px;
-                z-index: -4;
-              }
-          
-              p {
-                color: #FFF;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 7rem;
-                font-size: .8rem;
-                margin: 5px 0;
-              }
-                
-              &:hover {
-                transition: 350ms;
-                transform: scale(1.06);
+                p {
+                  color: #FFF;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  max-width: 7rem;
+                  font-size: .8rem;
+                  margin: 5px 0;
+                }
+                  
+                &:hover {
+                  transition: 350ms;
+                  transform: scale(1.06);
+                }
+
               }
             }
           }
@@ -282,8 +290,8 @@
           margin: 0 0 8% 0;
           
           .TabPanel {
-            .Whirligig {
-              div {
+            .carousel  {
+              .inner {
                 min-width: 8rem;
               }
             }
