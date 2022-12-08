@@ -89,6 +89,7 @@
             cursor: pointer;
             color: #FFF;
             font-size: .7rem;
+            text-align: center;
             margin: 2px;
             padding: 10px; 
             height: 2rem;
@@ -237,7 +238,7 @@
     .ContainerDetails {
       min-height: 240vw;
       width: 90%;
-      margin: 14rem 0 0 1rem;
+      margin: 14rem auto 0 auto;
       
       .MovieDetails {
         .PrincipalImage {
@@ -291,6 +292,8 @@
           
           .TabPanel {
             .carousel  {
+              margin: 2rem 0 0 0;
+
               .inner {
                 min-width: 8rem;
               }
