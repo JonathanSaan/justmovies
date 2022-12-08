@@ -11,13 +11,14 @@ import APIKey from "../../mocks/api";
 
 export const Popular = ({ navigate }) => {
   const carousel = useRef();
-  const [width, setWidth] = useState(0);
+  const [ width, setWidth ] = useState(0);
 
   const [ listPopular, setListPopular ] = useState([]);
 
   useEffect(() => { 
     window.scrollTo(0, 0);
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+
     const load = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
       setListPopular(respost.data.results);
@@ -42,9 +43,6 @@ export const Popular = ({ navigate }) => {
           className="inner"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.8 }}
         >
           {listPopular.map((popular) => (
             <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
@@ -57,16 +55,11 @@ export const Popular = ({ navigate }) => {
       ) : (
         <motion.div
           className="carousel"
-          ref={carousel}
           whileTap={{ cursor: "grabbing" }}
         >
           <motion.div
             className="inner"
             drag="x"
-            dragConstraints={{ right: 0, left: -width }}
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.8 }}
           >
             {Array(20).fill(1).map((card, index) => (
               <div className="Populars">

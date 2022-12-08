@@ -83,7 +83,7 @@
           }
 
           .ImageLoading {
-            margin: 6px 10px 0;
+            margin: 6px 0;
             min-height: 8rem;
             height: 18vw;
             z-index: 2;
@@ -99,8 +99,6 @@
             transform: scale(1.06);
           }
         }
-        
-        
       }
     }
   
@@ -240,7 +238,7 @@
       
       .carousel {
         margin: 10px 10px 10vw 0;
-        height: 12rem;
+        height: 13rem;
         max-width: 96vw;
         
         .inner {
@@ -266,6 +264,7 @@
             
             .Text {
               margin: .5em 0 1.3em 0;
+              width: 7em;
             }
           }
         }

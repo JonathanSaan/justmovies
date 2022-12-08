@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { IoIosStar } from "react-icons/io";
 import { motion } from "framer-motion";
-/*import Whirligig from "react-whirligig";*/
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
@@ -69,10 +68,10 @@ export const Details = () => {
         const stateVideo = () => {
           if (videos.data.results.length > 0) {
             return setTrailer(videos.data.results[0]);
-          }
+          };
           return null;
-        }
-        stateVideo()
+        };
+        stateVideo();
         
         const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
         setMovieSimilar(dataSimilar.data.results);
@@ -81,13 +80,13 @@ export const Details = () => {
         setCharacters(credits.data.cast);
         setLoading(true);
       };
-      load()
-    }, 1000)
+      load();
+    }, 1000);
   }, [] );
   
   const styleSkeleton = {
     marginLeft: '-18px'
-  }
+  };
   
   
   const imagePath = "https://image.tmdb.org/t/p/w500";
@@ -175,9 +174,6 @@ export const Details = () => {
                     className="inner"
                     drag="x"
                     dragConstraints={{ right: 0, left: -width }}
-                    initial={{ x: 100 }}
-                    animate={{ x: 0 }}
-                    transition={{ duration: 0.8 }}
                   >
                     {characters.map((Character) => (
                       <div key={Character.id}>
@@ -199,9 +195,6 @@ export const Details = () => {
                     className="inner"
                     drag="x"
                     dragConstraints={{ right: 0, left: -width }}
-                    initial={{ x: 100 }}
-                    animate={{ x: 0 }}
-                    transition={{ duration: 0.8 }}
                   >
                     {movieSimilar.map((similar) => (
                       <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
