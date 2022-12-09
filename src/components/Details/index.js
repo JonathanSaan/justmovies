@@ -25,8 +25,8 @@ export const Details = () => {
   const [ genres, setGenres ] = useState([]);
   const [ trailer, setTrailer ] = useState([]);
   
-  const CharactersCarousel = useRef();
-  const SimilarCarousel = useRef();
+  const carousel1 = useRef();
+  const carousel2 = useRef();
   const [charactersWidth, setCharactersWidth] = useState(0);
   const [movieSimilarWidth, setMovieSimilarWidth] = useState(0);
 
@@ -37,7 +37,6 @@ export const Details = () => {
   const handleTab2 = () => {
     setActiveTab("tab2");
   };
- 
  
   const [ characters, setCharacters ] = useState([]);
   const [ movieSimilar, setMovieSimilar ] = useState([]);
@@ -54,10 +53,10 @@ export const Details = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(SimilarCarousel)
-    console.log(CharactersCarousel)
-    setMovieSimilarWidth(SimilarCarousel.current?.scrollWidth - SimilarCarousel.current?.offsetWidth);
-    setCharactersWidth(CharactersCarousel.current?.scrollWidth - CharactersCarousel.current?.offsetWidth);
+    console.log(carousel1)
+    console.log(carousel2)
+    setCharactersWidth(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
+    setMovieSimilarWidth(carousel2.current?.scrollWidth - carousel2.current?.offsetWidth);
     
     setTimeout(() => { 
       const load = async () => {
@@ -169,8 +168,8 @@ export const Details = () => {
               </TabList>
               <TabPanel className="TabPanel">
                 <motion.div
-                  ref={CharactersCarousel}
-                  className="carousel"
+                  ref={carousel1}
+                  className="carousel1"
                   whileTap={{ cursor: "grabbing" }}
                 >
                   <motion.div
@@ -190,8 +189,8 @@ export const Details = () => {
               
               <TabPanel className="TabPanel">
                 <motion.div
-                  ref={SimilarCarousel}
-                  className="carousel"
+                  ref={carousel2}
+                  className="carousel2"
                   whileTap={{ cursor: "grabbing" }}
                 >
                   <motion.div

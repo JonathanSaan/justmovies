@@ -178,7 +178,7 @@
         }
         
         .TabPanel {
-          .carousel {
+          .carousel1, .carousel2 {
             cursor: grab;
             overflow: hidden;
             margin: 4% 0 0 0;
@@ -291,7 +291,7 @@
           margin: 0 0 8% 0;
           
           .TabPanel {
-            .carousel  {
+            .carousel1, .carousel2  {
               margin: 2rem 0 0 0;
 
               .inner {
