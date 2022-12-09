@@ -27,7 +27,8 @@ export const Details = () => {
   
   const CharactersCarousel = useRef();
   const SimilarCarousel = useRef();
-  const [width, setWidth] = useState(0);
+  const [charactersWidth, setCharactersWidth] = useState(0);
+  const [movieSimilarWidth, setMovieSimilarWidth] = useState(0);
 
   const [ activeTab, setActiveTab ] = useState("tab1");
   const handleTab1 = () => {
@@ -53,8 +54,10 @@ export const Details = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    setWidth(CharactersCarousel.current?.scrollWidth - CharactersCarousel.current?.offsetWidth);
-    setWidth(SimilarCarousel.current?.scrollWidth - SimilarCarousel.current?.offsetWidth);
+    console.log(SimilarCarousel)
+    console.log(CharactersCarousel)
+    setMovieSimilarWidth(SimilarCarousel.current?.scrollWidth - SimilarCarousel.current?.offsetWidth);
+    setCharactersWidth(CharactersCarousel.current?.scrollWidth - CharactersCarousel.current?.offsetWidth);
     
     setTimeout(() => { 
       const load = async () => {
@@ -166,20 +169,20 @@ export const Details = () => {
               </TabList>
               <TabPanel className="TabPanel">
                 <motion.div
-                  className="carousel"
                   ref={CharactersCarousel}
+                  className="carousel"
                   whileTap={{ cursor: "grabbing" }}
                 >
                   <motion.div
                     className="inner"
                     drag="x"
-                    dragConstraints={{ right: 0, left: -width }}
+                    dragConstraints={{ right: 0, left: -charactersWidth }}
                   >
                     {characters.map((Character) => (
-                      <div key={Character.id}>
+                      <motion.div key={Character.id}>
                         <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name}/>
                         <p>{Character.name}</p>
-                      </div>
+                      </motion.div>
                     ))}
                   </motion.div>
                 </motion.div>
@@ -187,20 +190,20 @@ export const Details = () => {
               
               <TabPanel className="TabPanel">
                 <motion.div
-                  className="carousel"
                   ref={SimilarCarousel}
+                  className="carousel"
                   whileTap={{ cursor: "grabbing" }}
                 >
                   <motion.div
                     className="inner"
                     drag="x"
-                    dragConstraints={{ right: 0, left: -width }}
+                    dragConstraints={{ right: 0, left: -movieSimilarWidth }}
                   >
                     {movieSimilar.map((similar) => (
-                      <div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
+                      <motion.div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
                         <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title}/>
                         <p>{similar.title}</p>
-                      </div>
+                      </motion.div>
                     ))}
                   </motion.div>
                 </motion.div>

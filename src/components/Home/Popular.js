@@ -10,8 +10,8 @@ import APIKey from "../../mocks/api";
 
 
 export const Popular = ({ navigate }) => {
-  const carousel = useRef();
   const [ width, setWidth ] = useState(0);
+  const carousel = useRef();
 
   const [ listPopular, setListPopular ] = useState([]);
 
@@ -32,11 +32,11 @@ export const Popular = ({ navigate }) => {
 
 
  return (
-   <>
+  <>
     {!listPopular.length == 0 ? (
       <motion.div
-        className="carousel"
         ref={carousel}
+        className="carousel"
         whileTap={{ cursor: "grabbing" }}
       >
         <motion.div
@@ -45,15 +45,16 @@ export const Popular = ({ navigate }) => {
           dragConstraints={{ right: 0, left: -width }}
         >
           {listPopular.map((popular) => (
-            <div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
+            <motion.div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
               <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
               <h2 className="PopularTitle">{popular.title}</h2>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </motion.div>
       ) : (
         <motion.div
+          ref={carousel}
           className="carousel"
           whileTap={{ cursor: "grabbing" }}
         >
@@ -62,14 +63,14 @@ export const Popular = ({ navigate }) => {
             drag="x"
           >
             {Array(20).fill(1).map((card, index) => (
-              <div className="Populars">
+              <motion.div className="Populars">
                 <Skeleton className="ImageLoading" variant="rectangular" />
                 <Skeleton className="Text" variant="text" count={1}/>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
       )}
-   </>
+  </>
   );
 };
