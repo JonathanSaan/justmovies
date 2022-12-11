@@ -178,6 +178,14 @@
         }
         
         .TabPanel {
+          .carousel1 {
+            .inner {
+              div {
+                cursor: grab!important;
+              }
+            }
+          }
+
           .carousel1, .carousel2 {
             cursor: grab;
             overflow: hidden;

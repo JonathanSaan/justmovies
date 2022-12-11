@@ -27,8 +27,9 @@ export const Details = () => {
   
   const carousel1 = useRef();
   const carousel2 = useRef();
-  const [charactersWidth, setCharactersWidth] = useState(0);
-  const [movieSimilarWidth, setMovieSimilarWidth] = useState(0);
+  //const [widthCarousel1, setWidthCarousel1] = useState(0);
+  //const [widthCarousel2, setWidthCarousel2] = useState(0);
+  const [ width, setWidth ] = useState(0);
 
   const [ activeTab, setActiveTab ] = useState("tab1");
   const handleTab1 = () => {
@@ -55,8 +56,8 @@ export const Details = () => {
     window.scrollTo(0, 0);
     console.log(carousel1)
     console.log(carousel2)
-    setCharactersWidth(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
-    setMovieSimilarWidth(carousel2.current?.scrollWidth - carousel2.current?.offsetWidth);
+    setWidth(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
+    setWidth(carousel2.current?.scrollWidth - carousel2.current?.offsetWidth);
     
     setTimeout(() => { 
       const load = async () => {
@@ -175,7 +176,7 @@ export const Details = () => {
                   <motion.div
                     className="inner"
                     drag="x"
-                    dragConstraints={{ right: 0, left: -charactersWidth }}
+                    dragConstraints={{ right: 0, left: -width }}
                   >
                     {characters.map((Character) => (
                       <motion.div key={Character.id}>
@@ -196,7 +197,7 @@ export const Details = () => {
                   <motion.div
                     className="inner"
                     drag="x"
-                    dragConstraints={{ right: 0, left: -movieSimilarWidth }}
+                    dragConstraints={{ right: 0, left: -width }}
                   >
                     {movieSimilar.map((similar) => (
                       <motion.div onClick={() => {navigate(`/${similar.id}`); refreshPage() }} key={similar.id}> 
