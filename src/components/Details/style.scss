@@ -217,6 +217,7 @@
                   white-space: nowrap;
                   overflow: hidden;
                   text-overflow: ellipsis;
+                  width: 100%;
                   max-width: 7rem;
                   font-size: .8rem;
                   margin: 5px 0;
@@ -226,7 +227,6 @@
                   transition: 350ms;
                   transform: scale(1.06);
                 }
-
               }
             }
           }
@@ -234,7 +234,6 @@
       }
     }
   }
-  
 }
 
 @media screen and (max-width: 768px) {
