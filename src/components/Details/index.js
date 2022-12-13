@@ -15,7 +15,6 @@ import "./style.scss";
 
 
 export const Details = () => {
-  
   const navigate = useNavigate();
   
   const { details } = useParams();
