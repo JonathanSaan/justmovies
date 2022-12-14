@@ -276,15 +276,16 @@
       .NewMovie {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 auto;
+        margin: 0 0 0 3vw;
 
         .Movies {
           margin: 0 2vw auto;
           height: 12em;
-          width: 6.6em;
+          width: auto;
           
           .MovieImage {
             height: 10em;
+            width: 100%;
           }
           
           .MovieTitle {
@@ -296,10 +297,11 @@
           .MovieLoading2 {
             margin: 0 2vw auto;
             height: 12em;
-            width: 6.6em;
+            width: auto;
             
             .ImageLoading {
               height: 10em;
+              width: 100%;
             }
             
             .Text {
@@ -312,12 +314,12 @@
       .TopRated {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 auto;
+        margin: 0 0 0 3vw;
 
         .Rateds {
           margin: 0 2vw auto;
           height: 12em;
-          width: 6.6em;
+          width: auto;
           
           .RatedImage {
             height: 10em;
