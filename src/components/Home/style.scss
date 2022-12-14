@@ -126,7 +126,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           margin: 5px 0;
-          max-width: 11vw;
+          max-width: 11vw; 
           color: #FFF;
           align-items: center;
           font-weight: 500;
@@ -145,7 +145,9 @@
         
         .MovieLoading2 {
           margin: 0 auto 2em auto;
-          
+          height: 20vw;
+          width: 12vw;
+
           .ImageLoading {
             height: 18vw;
             width: 12vw;
@@ -153,8 +155,8 @@
           }
           
           .Text {
-            margin: .5em 0;
-            width: 7.1em;
+            margin: 5px 0;
+            max-width: 11vw;
           }
         }
       }
@@ -205,6 +207,8 @@
         
         .TopRatedMovieLoading2 {
           margin: 0 auto 2em auto;
+          height: 20vw;
+          width: 12vw;
           
           .ImageLoading {
             height: 18vw;
@@ -213,8 +217,8 @@
           }
           
           .Text {
-            margin: .5em 0;
-            width: 7.1em;
+            margin: 5px 0;
+            max-width: 11vw;
           }
         }
       }
@@ -272,7 +276,7 @@
       .NewMovie {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 4vw;
+        margin: 0 0 0 auto;
 
         .Movies {
           margin: 0 2vw auto;
@@ -290,18 +294,16 @@
         
         .MovieLoading {
           .MovieLoading2 {
-            margin: 0 auto 5vw auto;
+            margin: 0 2vw auto;
             height: 12em;
             width: 6.6em;
             
             .ImageLoading {
               height: 10em;
-              width: 6.7em;
             }
             
             .Text {
-              width: 6.7em;
-              margin: .5em 0 1.3em 0;
+              max-width: 8em;
             }
           }
         }
@@ -310,7 +312,7 @@
       .TopRated {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 4vw;
+        margin: 0 0 0 auto;
 
         .Rateds {
           margin: 0 2vw auto;
@@ -331,18 +333,16 @@
           max-width: 96vw;
 
           .TopRatedMovieLoading2 {
-            margin: 0 auto 5vw auto;
+            margin: 0 2vw auto;
             height: 12em;
             width: 6.6em;
             
             .ImageLoading {
               height: 10em;
-              width: 6.7em;
             }
             
             .Text {
-              width: 6.7em;
-              margin: .5em 0 1.3em 0;
+              max-width: 8em;
             }
           }
         }
