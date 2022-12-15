@@ -10,12 +10,12 @@ import APIKey from "../../mocks/api";
 
 
 export const Popular = ({ navigate }) => {
-  const [ width, setWidth ] = useState(0);
+  const [width, setWidth] = useState(0);
   const carousel = useRef();
 
-  const [ listPopular, setListPopular ] = useState([]);
+  const [listPopular, setListPopular] = useState([]);
 
-  useEffect(() => { 
+  useEffect(() => {
     window.scrollTo(0, 0);
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
 
@@ -24,34 +24,34 @@ export const Popular = ({ navigate }) => {
       setListPopular(respost.data.results);
     };
     load();
-  }, [] );
-  
+  }, []);
+
   const Image_path = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
 
 
- return (
-  <>
-    {!listPopular.length == 0 ? (
-      <motion.div
-        ref={carousel}
-        className="carousel"
-        whileTap={{ cursor: "grabbing" }}
-      >
+  return (
+    <>
+      {!listPopular.length == 0 ? (
         <motion.div
-          className="inner"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
+          ref={carousel}
+          className="carousel"
+          whileTap={{ cursor: "grabbing" }}
         >
-          {listPopular.map((popular) => (
-            <motion.div onClick={() => {navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
-              <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} /> 
-              <h2 className="PopularTitle">{popular.title}</h2>
-            </motion.div>
-          ))}
+          <motion.div
+            className="inner"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {listPopular.map((popular) => (
+              <motion.div onClick={() => { navigate(`/${popular.id}`) }} className="Populars" key={popular.id}>
+                <img className="PopularImage" src={popular.poster_path ? Image_path + popular.poster_path : imageError} alt={popular.title} />
+                <h2 className="PopularTitle">{popular.title}</h2>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
       ) : (
         <motion.div
           ref={carousel}
@@ -65,12 +65,12 @@ export const Popular = ({ navigate }) => {
             {Array(20).fill(1).map((card, index) => (
               <motion.div className="Populars">
                 <Skeleton className="ImageLoading" variant="rectangular" />
-                <Skeleton className="Text" variant="text" count={1}/>
+                <Skeleton className="Text" variant="text" count={1} />
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
       )}
-  </>
+    </>
   );
 };

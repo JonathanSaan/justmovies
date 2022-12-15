@@ -2,11 +2,11 @@
   min-height: 100vh;
   background-color: #191b1c;
   padding: 5rem 0 0 0;
-  
+
   .ContainerHome {
     margin: 0 auto;
     width: 80%;
-    
+
     h1 {
       color: #FFF;
       font-size: 1.5em;
@@ -14,30 +14,30 @@
       border-left: 2px solid gray;
       padding: 5px 0 0 8px;
     }
-    
+
     a {
       outline: none;
       text-decoration: none;
     }
-    
+
     .Fade {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
+
       button {
         display: flex;
+        cursor: pointer;
         padding: 7px;
         background-color: #202020;
-        cursor: pointer;
         color: lightgray;
         border: none;
         border-radius: 3px;
-        
+
         p {
           padding: 0 4px;
         }
-        
+
         &:hover {
           color: #FFF;
           transform: scale(1.1);
@@ -45,7 +45,7 @@
         }
       }
     }
-        
+
     .carousel {
       cursor: grab;
       overflow: hidden;
@@ -53,12 +53,12 @@
       max-width: 76.8vw;
       height: 22vw;
       z-index: 2;
-      
+
       .inner {
         display: flex;
         height: 22vw;
         width: 12vw;
-        
+
         .Populars {
           cursor: pointer;
           margin: 6px 10px 0;
@@ -66,14 +66,14 @@
           min-height: 8rem;
           height: 20vw;
           min-width: 12vw;
-          
+
           .PopularImage {
             min-height: 8rem;
             height: 18vw;
             border-radius: 5px;
             pointer-events: none;
           }
-    
+
           .PopularTitle {
             color: #FFF;
             white-space: nowrap;
@@ -90,7 +90,7 @@
             min-height: 8rem;
             height: 18vw;
           }
-          
+
           .Text {
             margin: 5px 0 0;
             width: 100%;
@@ -103,13 +103,13 @@
         }
       }
     }
-  
+
     .NewMovie {
       display: flex;
       flex-wrap: wrap;
       padding: 2rem 0 3rem 0;
       min-height: 20rem;
-      
+
       .Movies {
         cursor: pointer;
         margin: 0 auto 2em auto;
@@ -122,23 +122,23 @@
           height: 18vw;
           border-radius: 5px;
         }
-  
+
         .MovieTitle {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-width: 11vw; 
+          max-width: 11vw;
           color: #FFF;
           font-weight: 500;
-          font-size: 1.5vw;
+          font-size: 1.3vw;
         }
-        
+
         &:hover {
           transition: 350ms;
           transform: scale(1.08);
         }
       }
-      
+
       .MovieLoading {
         display: flex;
         flex-wrap: wrap;
@@ -157,7 +157,7 @@
             width: 12vw;
             z-index: 2;
           }
-          
+
           .Text {
             margin: 5px 0;
             width: 100%;
@@ -165,24 +165,24 @@
         }
       }
     }
-  
+
     .TopRated {
       display: flex;
       flex-wrap: wrap;
       padding: 2rem 0 3rem 0;
       min-height: 20rem;
-      
+
       .Rateds {
         margin: 0 auto 2em auto;
         height: 20.5vw;
         width: 12vw;
         cursor: pointer;
-        
+
         .RatedImage {
           height: 18vw;
           border-radius: 5px;
         }
-  
+
         .RatedTitle {
           white-space: nowrap;
           overflow: hidden;
@@ -190,16 +190,15 @@
           max-width: 11vw;
           color: #FFF;
           font-weight: 500;
-          /*font-size: .8em;*/
-          font-size: 1.5vw;
+          font-size: 1.3vw;
         }
-        
+
         &:hover {
           transition: 350ms;
           transform: scale(1.08);
         }
       }
-      
+
       .TopRatedMovieLoading {
         display: flex;
         flex-wrap: wrap;
@@ -207,18 +206,18 @@
         min-height: 20rem;
         max-width: 78vw;
         width: 100%;
-        
+
         .TopRatedMovieLoading2 {
           margin: 0 auto 2em auto;
           height: 20vw;
           width: 12vw;
-          
+
           .ImageLoading {
             height: 18vw;
             width: 12vw;
             z-index: 2;
           }
-          
+
           .Text {
             margin: 5px 0;
             width: 100%;
@@ -233,10 +232,10 @@
 @media screen and (max-width: 768px) {
   .Home {
     padding: 5rem 0 0 2vw;
-    
+
     .ContainerHome {
       width: 100%;
-      
+
       .Fade {
         width: 98%;
       }
@@ -245,20 +244,20 @@
         margin: 10px 10px 10vw 0;
         height: 13rem;
         max-width: 96vw;
-        
+
         .inner {
           padding: 0 1%;
           height: 13em;
           min-width: 8rem;
-          
+
           .Populars {
             height: 12em;
             min-width: 6.7em;
-            
+
             .PopularImage {
               height: 10em;
             }
-            
+
             .PopularTitle {
               max-width: 8em;
             }
@@ -267,7 +266,7 @@
               height: 10em;
               width: 7em;
             }
-            
+
             .Text {
               margin: .5em 0 1.3em 0;
               width: 7em;
@@ -275,7 +274,7 @@
           }
         }
       }
-      
+
       .NewMovie {
         min-height: 30rem;
         max-width: 96vw;
@@ -284,35 +283,35 @@
           margin: 0 auto 1rem;
           height: 12em;
           width: auto;
-          
+
           .MovieImage {
             height: 10em;
             width: 100%;
           }
-          
+
           .MovieTitle {
             max-width: 8em;
           }
         }
-        
+
         .MovieLoading {
           .MovieLoading2 {
             margin: 0 2vw auto;
             height: 12em;
             width: auto;
-            
+
             .ImageLoading {
               height: 10em;
               width: 100%;
             }
-            
+
             .Text {
               max-width: 8em;
             }
           }
         }
       }
-  
+
       .TopRated {
         min-height: 30rem;
         max-width: 96vw;
@@ -321,16 +320,16 @@
           margin: 0 auto 1rem;
           height: 12em;
           width: auto;
-          
+
           .RatedImage {
             height: 10em;
           }
-          
+
           .RatedTitle {
             max-width: 8em;
           }
         }
-        
+
         .TopRatedMovieLoading {
           min-height: 30rem;
           max-width: 96vw;
@@ -339,11 +338,11 @@
             margin: 0 2vw auto;
             height: 12em;
             width: auto;
-            
+
             .ImageLoading {
               height: 10em;
             }
-            
+
             .Text {
               max-width: 8em;
             }

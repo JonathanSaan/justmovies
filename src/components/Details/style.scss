@@ -2,7 +2,7 @@
   padding: 7rem 0 0 0;
   min-height: 100vh;
   background-color: #191b1c;
-  
+
   .BackDrop {
     background-size: cover;
     overflow-x: hidden;
@@ -18,16 +18,16 @@
     z-index: -1;
     box-shadow: inset 0px -50px 27px -18px #191B1C;
   }
-  
+
   .ContainerDetails {
     filter: opacity(100%);
     margin: 0 auto;
     width: 60%;
-    
+
     .MovieDetails {
       display: flex;
       width: 100%;
-      
+
       .Image {
         .PrincipalImage {
           height: 15rem;
@@ -35,28 +35,28 @@
           z-index: 2;
         }
       }
-      
+
       span {
         display: inline-block;
         padding: 0 0 0 1rem;
         width: 100%;
         z-index: 2;
-    
+
         .TitleMovie {
-          font-size: 2vw;
+          font-size: 1.7vw;
           color: #FFF;
         }
-        
+
         .ReleaseDate {
           margin: .3rem 0;
-          font-size: 1.5vw;
+          font-size: 1.3vw;
           color: gray;
         }
-        
+
         hr {
           border: .5px solid gray;
         }
-        
+
         .Votes {
           display: flex;
           align-items: center;
@@ -66,23 +66,24 @@
           border: 1px solid gray;
           color: #FFF;
           background-color: #191B1C;
-          
+
           .Star {
             width: 1.2rem;
           }
+
           .vote {
             margin: 0 auto;
-            max-width: 2.5ch;
+            max-width: 2.4ch;
             overflow: hidden;
             text-overflow: clip;
             white-space: nowrap;
           }
         }
-        
+
         .Genres {
           margin: 5px 0;
           max-height: 5rem;
-          
+
           .genre {
             border: .5px solid gray;
             background-color: #191B1C;
@@ -91,10 +92,10 @@
             font-size: .7rem;
             text-align: center;
             margin: 2px;
-            padding: 10px; 
+            padding: 10px;
             min-height: 2rem;
             white-space: nowrap;
-            
+
             &:hover {
               background-color: #000;
             }
@@ -102,46 +103,46 @@
         }
       }
     }
-    
+
     .Description {
       margin: 1rem 0 0 0;
-      
+
       hr {
         border: .5px solid gray;
         margin: 1.3rem 0 1rem 0;
       }
-        
+
       .Overview {
         font-size: 1rem;
         color: #FFF;
         max-width: 69.5vw;
       }
     }
-    
+
     .Trailer {
       display: flex;
       justify-content: center;
       margin: 10% 0;
       width: 100%;
-      
+
       .Video {
         height: 30vw;
         width: 50vw;
       }
     }
-    
+
     a {
       outline: none;
       text-decoration: none;
     }
-    
+
     ::-webkit-scrollbar {
       display: none;
     }
-    
+
     .AllTab {
       height: 20rem;
-      
+
       .Tabs {
         list-style-type: none;
         border-end-end-radius: 8px;
@@ -149,13 +150,13 @@
         background-color: #202020;
         padding: 0 0 3rem .4px;
         height: 2rem;
-        
+
         .TabList {
           display: flex;
           list-style-type: none;
           color: #FFF;
           border: none;
-          
+
           .active {
             display: flex;
             border-end-end-radius: 3px;
@@ -166,27 +167,28 @@
             border: none;
             border-bottom: 1px solid gray;
             padding: .7rem;
-            margin: 0 .5rem 0 0; 
+            margin: 0 .5rem 0 0;
             outline: none;
           }
-          
+
           .false {
             margin: 0 .5rem 0 0;
             padding: .7rem;
             cursor: pointer;
           }
         }
-        
+
         .TabPanel {
           .carousel1 {
             .inner {
               div {
-                cursor: grab!important;
+                cursor: grab !important;
               }
             }
           }
 
-          .carousel1, .carousel2 {
+          .carousel1,
+          .carousel2 {
             cursor: grab;
             overflow: hidden;
             margin: 4% 0 0 0;
@@ -198,20 +200,20 @@
               display: flex;
               height: 24vw;
               min-width: 13vw;
-              
+
               div {
                 cursor: pointer;
                 margin: .5rem 1vw 0 1vw;
                 height: 11rem;
                 min-width: 7rem;
-                  
+
                 img {
                   height: 10rem;
                   border-radius: 5px;
                   pointer-events: none;
                   z-index: -4;
                 }
-            
+
                 p {
                   color: #FFF;
                   white-space: nowrap;
@@ -222,7 +224,7 @@
                   font-size: .8rem;
                   margin: 5px 0;
                 }
-                  
+
                 &:hover {
                   transition: 350ms;
                   transform: scale(1.06);
@@ -241,26 +243,26 @@
     .BackDrop {
       height: 220px;
     }
-    
+
     .ContainerDetails {
       min-height: 240vw;
       width: 90%;
       margin: 14rem auto 0 auto;
-      
+
       .MovieDetails {
         .PrincipalImage {
           height: 13rem;
         }
-        
+
         span {
           .TitleMovie {
             font-size: 4vw;
           }
-          
+
           .ReleaseDate {
             font-size: 3.5vw;
           }
-          
+
           .Genres {
             .genre {
               padding: 5px;
@@ -269,36 +271,38 @@
           }
         }
       }
-      
+
       .Description {
         margin: 1rem 0 0 0;
         width: 100%;
-        
+
         hr {
           margin: 1.5rem 0;
         }
-        
+
         .Overview {
           line-height: 1.3;
           font-size: .8rem;
           max-width: 90vw;
         }
       }
-      
+
       .Trailer {
         .Video {
           height: 55vw;
           width: 90vw;
         }
       }
-    
+
       .AllTab {
         .Tabs {
           width: 100%;
           margin: 0 0 8% 0;
-          
+
           .TabPanel {
-            .carousel1, .carousel2  {
+
+            .carousel1,
+            .carousel2 {
               margin: 2rem 0 0 0;
 
               .inner {
