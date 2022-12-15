@@ -113,7 +113,9 @@
       .Movies {
         cursor: pointer;
         margin: 0 auto 2em auto;
-        height: 20vw;
+        align-items: center;
+        flex-direction: column;
+        height: 20.5vw;
         width: 12vw;
 
         .MovieImage {
@@ -125,12 +127,10 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          margin: 5px 0;
           max-width: 11vw; 
           color: #FFF;
-          align-items: center;
           font-weight: 500;
-          font-size: .8em;
+          font-size: 1.5vw;
         }
         
         &:hover {
@@ -174,7 +174,7 @@
       
       .Rateds {
         margin: 0 auto 2em auto;
-        height: 20vw;
+        height: 20.5vw;
         width: 12vw;
         cursor: pointer;
         
@@ -187,12 +187,11 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          margin: 5px 0;
           max-width: 11vw;
           color: #FFF;
-          align-items: center;
           font-weight: 500;
-          font-size: .8em;
+          /*font-size: .8em;*/
+          font-size: 1.5vw;
         }
         
         &:hover {
@@ -280,10 +279,9 @@
       .NewMovie {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 3vw;
 
         .Movies {
-          margin: 0 2vw auto;
+          margin: 0 auto 1rem;
           height: 12em;
           width: auto;
           
@@ -318,10 +316,9 @@
       .TopRated {
         min-height: 30rem;
         max-width: 96vw;
-        margin: 0 0 0 3vw;
 
         .Rateds {
-          margin: 0 2vw auto;
+          margin: 0 auto 1rem;
           height: 12em;
           width: auto;
           
