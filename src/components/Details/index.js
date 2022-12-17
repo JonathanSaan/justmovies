@@ -5,10 +5,14 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { IoIosStar } from "react-icons/io";
-import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+/*import { motion } from "framer-motion";*/
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
+import settings from "../../mocks/carouselsettings";
 import { Header } from "../Header";
 import "./style.scss";
 
@@ -167,45 +171,47 @@ export const Details = () => {
                 <Tab onClick={handleTab2} className={activeTab === "tab2" ? "active" : "false"}>Similar</Tab>
               </TabList>
               <TabPanel className="TabPanel">
-                <motion.div
-                  ref={carousel1}
-                  className="carousel1"
-                  whileTap={{ cursor: "grabbing" }}
-                >
-                  <motion.div
-                    className="inner"
-                    drag="x"
-                    dragConstraints={{ right: 0, left: -width }}
-                  >
+                {!characters.length == 0 ? (
+                  <Slider {...settings} className="carousel1">
                     {characters.map((Character) => (
-                      <motion.div key={Character.id}>
+                      <div className="item" key={Character.id}>
                         <img src={Character.profile_path ? imagePath + Character.profile_path : imageError} alt={Character.name} />
                         <p>{Character.name}</p>
-                      </motion.div>
+                      </div>
                     ))}
-                  </motion.div>
-                </motion.div>
+                  </Slider>
+                ) : (
+                  <Slider {...settings} className="carousel1">
+                    {Array(20).fill(1).map((card, index) => (
+                      <div className="item">
+                        <Skeleton className="ImageLoading" variant="rectangular" />
+                        <Skeleton className="Text" variant="text" count={1} />
+                      </div>
+                    ))}
+                  </Slider>
+                )}
               </TabPanel>
 
               <TabPanel className="TabPanel">
-                <motion.div
-                  ref={carousel2}
-                  className="carousel2"
-                  whileTap={{ cursor: "grabbing" }}
-                >
-                  <motion.div
-                    className="inner"
-                    drag="x"
-                    dragConstraints={{ right: 0, left: -width }}
-                  >
+                {!movieSimilar.length == 0 ? (
+                  <Slider {...settings} className="carousel2">
                     {movieSimilar.map((similar) => (
-                      <motion.div onClick={() => { navigate(`/${similar.id}`); refreshPage() }} key={similar.id}>
+                      <div onClick={() => { navigate(`/${similar.id}`); refreshPage() }} className="item" key={similar.id}>
                         <img src={similar.poster_path ? imagePath + similar.poster_path : imageError} alt={similar.title} />
                         <p>{similar.title}</p>
-                      </motion.div>
+                      </div>
                     ))}
-                  </motion.div>
-                </motion.div>
+                  </Slider>
+                ) : (
+                  <Slider {...settings} className="carousel1">
+                    {Array(20).fill(1).map((card, index) => (
+                      <div className="item">
+                        <Skeleton className="ImageLoading" variant="rectangular" />
+                        <Skeleton className="Text" variant="text" count={1} />
+                      </div>
+                    ))}
+                  </Slider>
+                )}
               </TabPanel>
             </Tabs>
           </div>

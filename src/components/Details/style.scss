@@ -180,55 +180,55 @@
 
         .TabPanel {
           .carousel1 {
-            .inner {
-              div {
-                cursor: grab !important;
-              }
+            div {
+              cursor: grab !important;
             }
           }
 
           .carousel1,
           .carousel2 {
             cursor: grab;
-            overflow: hidden;
-            margin: 4% 0 0 0;
-            height: 13rem;
-            width: 100%;
-            z-index: 2;
+            margin: 20px 0 5vw 10px;
+            height: 15vw;
+            min-height: 7rem;
+            width: 58vw;
 
-            .inner {
-              display: flex;
-              height: 24vw;
-              min-width: 13vw;
+            .item {
+              cursor: pointer;
+              margin: 8px 10px;
+              max-width: 8vw;
 
-              div {
-                cursor: pointer;
-                margin: .5rem 1vw 0 1vw;
-                height: 11rem;
-                min-width: 7rem;
+              .ImageLoading {
+                height: 10rem;
+                min-width: 100%;
+              }
 
-                img {
-                  height: 10rem;
-                  border-radius: 5px;
-                  pointer-events: none;
-                  z-index: -4;
-                }
+              img {
+                height: 10rem;
+                border-radius: 5px;
+                pointer-events: none;
+                z-index: -4;
+              }
 
-                p {
-                  color: #FFF;
-                  white-space: nowrap;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  width: 100%;
-                  max-width: 7rem;
-                  font-size: .8rem;
-                  margin: 5px 0;
-                }
+              p {
+                color: #FFF;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                max-width: 7rem;
+                font-size: .8rem;
+                margin: 5px 0;
+              }
 
-                &:hover {
-                  transition: 350ms;
-                  transform: scale(1.06);
-                }
+              .Text {
+                margin: 5px 0 0;
+                width: 100%;
+              }
+
+              &:hover {
+                transition: 350ms;
+                transform: scale(1.06);
               }
             }
           }
@@ -304,8 +304,9 @@
             .carousel1,
             .carousel2 {
               margin: 2rem 0 0 0;
+              width: 90vw;
 
-              .inner {
+              .item {
                 min-width: 8rem;
               }
             }

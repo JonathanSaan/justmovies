@@ -45,61 +45,53 @@
         }
       }
     }
-
-    .carousel {
-      cursor: grab;
+    
+    .owl-theme {
+      display: flex;
       overflow: hidden;
       margin: 20px 0 5vw 10px;
-      max-width: 76.8vw;
       height: 22vw;
-      z-index: 2;
+      max-width: 76.8vw;
 
-      .inner {
-        display: flex;
-        height: 22vw;
-        width: 12vw;
+      .item {
+        cursor: pointer;
+        margin: 8px 10px;
+        min-height: 8rem;
+        height: 20vw;
+        max-width: 12vw;
 
-        .Populars {
-          cursor: pointer;
-          margin: 6px 10px 0;
-          padding: .2vw 0 0 0;
+        .PopularImage {
           min-height: 8rem;
-          height: 20vw;
+          height: 18vw;
+          border-radius: 5px;
+          pointer-events: none;
+        }
+
+        .PopularTitle {
+          color: #FFF;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 1.1vw;
+          margin: 5px 0 0 0;
+          width: 100%;
+          max-width: 11.5vw;
+        }
+
+        .ImageLoading {
+          min-height: 8rem;
+          height: 18vw;
           min-width: 12vw;
+        }
 
-          .PopularImage {
-            min-height: 8rem;
-            height: 18vw;
-            border-radius: 5px;
-            pointer-events: none;
-          }
+        .Text {
+          margin: 5px 0 0;
+          width: 100%;
+        }
 
-          .PopularTitle {
-            color: #FFF;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: .8em;
-            margin: 5px 0 0 0;
-            width: 100%;
-            max-width: 11.5vw;
-          }
-
-          .ImageLoading {
-            margin: 6px 0;
-            min-height: 8rem;
-            height: 18vw;
-          }
-
-          .Text {
-            margin: 5px 0 0;
-            width: 100%;
-          }
-
-          &:hover {
-            transition: 350ms;
-            transform: scale(1.06);
-          }
+        &:hover {
+          transition: 350ms;
+          transform: scale(1.06);
         }
       }
     }
@@ -130,10 +122,11 @@
           max-width: 12vw;
           color: #FFF;
           font-weight: 500;
-          font-size: 1.3vw;
+          font-size: 1.1vw;
         }
 
         &:hover {
+          font-weight: 400;
           transition: 350ms;
           transform: scale(1.08);
         }
@@ -190,7 +183,7 @@
           max-width: 12vw;
           color: #FFF;
           font-weight: 500;
-          font-size: 1.3vw;
+          font-size: 1.1vw;
         }
 
         &:hover {
@@ -240,37 +233,32 @@
         width: 98%;
       }
 
-      .carousel {
+      .owl-theme {
         margin: 10px 10px 10vw 0;
-        height: 13rem;
+        height: 12rem;
         max-width: 96vw;
 
-        .inner {
+        .item {
           padding: 0 1%;
           height: 13em;
-          min-width: 8rem;
-
-          .Populars {
-            height: 12em;
-            min-width: 6.7em;
-
-            .PopularImage {
-              height: 10em;
-            }
-
-            .PopularTitle {
-              max-width: 8em;
-            }
-
-            .ImageLoading {
-              height: 10em;
-              width: 7em;
-            }
-
-            .Text {
-              margin: .5em 0 1.3em 0;
-              width: 7em;
-            }
+          min-width: 6.7rem;
+  
+          .PopularImage {
+            height: 10em;
+          }
+  
+          .PopularTitle {
+            max-width: 8em;
+          }
+  
+          .ImageLoading {
+            height: 10em;
+            width: 7em;
+          }
+  
+          .Text {
+            margin: .5em 0 1.3em 0;
+            width: 7em;
           }
         }
       }

@@ -15,7 +15,7 @@ export const SideBar = ({ sidebar, toggleSideBar }) => {
     <>
       <div className={sidebar ? "SideBarActive" : "SideBar"}>
         <button onClick={toggleSideBar} className="Close-Sidebar">
-          <IoIosClose size={60} color="#FFF" />
+          <IoIosClose size={190} color="#FFF" />
         </button>
         <button onClick={() => {navigate("/") }}
         className="Buttons-Sidebar">
