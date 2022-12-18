@@ -27,6 +27,20 @@ const settings = {
                 slidesToShow: 3.5,
                 slidesToScroll: 3.5
             }
+        },
+        {
+            breakpoint: 380,
+            settings: {
+                slidesToShow: 2.8,
+                slidesToScroll: 2.8
+            }
+        },
+        {
+            breakpoint: 315,
+            settings: {
+                slidesToShow: 2.2,
+                slidesToScroll: 2.2
+            }
         }
     ]
 };

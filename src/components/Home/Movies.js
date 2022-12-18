@@ -15,7 +15,7 @@ export const Movies = ({ navigate }) => {
   useEffect(() => { 
     window.scrollTo(0, 0);
     const load = async () => {
-      const respost = await axios.get(`hhttps://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
       setListMovies(respost.data.results.slice(0, 12));
     };
     load() 
