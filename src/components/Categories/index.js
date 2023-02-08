@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-import { Header } from "../Header";
-import "./style.scss"
+import Header from "../Header";
+import "./style.scss";
 
-
-export const Categories = ({ category }) => {
+const Categories = ({ category }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,20 +12,26 @@ export const Categories = ({ category }) => {
   return (
     <>
       <Header />
-      <div className="Categories">
-        <div className="ContainerCategory">
-          <div className="title">
-            <h1>Genre</h1>
-          </div>
+      <div className="category">
+        <div className="container_category">
+          <h1 className="container_category-title">Genre</h1>
           {category.map((genre) => (
-            <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
-              <button> 
-                {genre.name}
-              </button>
-            </Link>
+            <div className="container_category_genre">
+              <Link
+                to={`/genre/${genre.id}/${genre.name
+                  .replaceAll(" ", "-")
+                  .toLowerCase()}`}
+              >
+                <button className="container_category_genre-button">
+                  {genre.name}
+                </button>
+              </Link>
+            </div>
           ))}
         </div>
       </div>
     </>
   );
 };
+
+export default Categories;

@@ -50,19 +50,19 @@
       display: flex;
       overflow: hidden;
       margin: 20px 0 5vw 10px;
-      height: 22vw;
+      height: 23vw;
       max-width: 76.8vw;
 
       .item {
         cursor: pointer;
-        margin: 8px 10px;
+        margin: 1vw 10px;
         min-height: 8rem;
         height: 20vw;
-        max-width: 12vw;
+        max-width: 12.5vw;
 
         .PopularImage {
           min-height: 8rem;
-          height: 18vw;
+          height: 19vw;
           border-radius: 5px;
           pointer-events: none;
         }
@@ -75,7 +75,7 @@
           font-size: 87%;
           margin: 5px 0 0 0;
           width: 100%;
-          max-width: 11.5vw;
+          max-width: 12.5vw;
         }
 
         .ImageLoading {
