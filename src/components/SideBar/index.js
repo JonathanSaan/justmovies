@@ -15,21 +15,17 @@ const SideBar = ({ sidebar, toggleSideBar }) => {
           <IoIosClose size={190} color="#FFF" />
         </button>
         <button
-          onClick={() => {
-            navigate("/");
-          }}
+          onClick={() => {navigate("/")}}
           className="Buttons-Sidebar"
         >
-          <AiFillHome className="IconHome" size={20} />
+          <AiFillHome className="Icon" size={20} />
           Home
         </button>
         <button
-          onClick={() => {
-            navigate("/genre");
-          }}
+          onClick={() => {navigate("/genre")}}
           className="Buttons-Sidebar"
         >
-          <FaBook size={20} className="IconGenre" />
+          <FaBook size={20} className="Icon" />
           Genre
         </button>
       </div>

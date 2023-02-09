@@ -48,45 +48,35 @@ const TopRated = () => {
   return (
     <>
       <Header />
-      <div className="ContainerRated">
-        <div className="TopRated">
-          <div className="Title">
-            <h1>Top Rated</h1>
-          </div>
+      <div className="ratedmovie">
+        <div className="ratedmovie_container">
+          <h1 className="ratedmovie_container-title">Top Rated</h1>
           {!listRated.length == 0 ? (
             <>
               {listRated.map((rated) => (
                 <div
-                  onClick={() => {
-                    navigate(`/${rated.id}`);
-                  }}
-                  className="Rateds"
+                  onClick={() => {navigate(`/${rated.id}`)}}
+                  className="ratedmovie_container_card"
                   key={rated.id}
                 >
                   <img
-                    className="RatedImage"
-                    src={
-                      rated.poster_path
-                        ? Image_path + rated.poster_path
-                        : imageError
-                    }
+                    className="ratedmovie_container_card-image"
+                    src={rated.poster_path ? Image_path + rated.poster_path : imageError}
                     alt={rated.name}
                   />
-                  <h2 className="RatedTitle">{rated.title}</h2>
+                  <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
                 </div>
               ))}
             </>
           ) : (
-            <div className="TopRatedMovieLoading">
-              {Array(18)
-                .fill(1)
-                .map((card, index) => (
-                  <div className="TopRatedMovieLoading2">
-                    <Skeleton className="ImageLoading" variant="rectangular" />
-                    <Skeleton className="Text" variant="text" count={1} />
+            <>
+              {Array(18).fill(1).map((card, index) => (
+                  <div className="ratedmovie_container_card">
+                    <Skeleton className="ratedmovie_container_card-image" variant="rectangular" />
+                    <Skeleton className="ratedmovie_container_card-title" variant="text" count={1} />
                   </div>
                 ))}
-            </div>
+            </>
           )}
         </div>
         <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">

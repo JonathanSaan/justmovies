@@ -14,42 +14,40 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="Home">
-        <div className="ContainerHome">
+      <div className="home">
+        <div className="home_container">
           <Fade bottom>
-            <div className="Fade">
-              <h1>Most Popular</h1>
+            <div className="home_container_fade">
+              <h1 className="home_container_fade-title">Most Popular</h1>
             </div>
           </Fade>
-          <div className="Popular">
-            <Popular navigate={navigate} />
-          </div>
+          <Popular navigate={navigate} />
           <Fade bottom>
-            <div className="Fade">
-              <h1>New Movies</h1>
+            <div className="home_container_fade">
+              <h1 className="home_container_fade-title">New Movies</h1>
               <Link to={`/new-movies`}>
-                <button>
-                  <p>See all</p>
-                  <IoIosArrowForward size={16} />
+                <button className="home_container_fade-button">
+                  See all
+                  <IoIosArrowForward className="home_container_fade-button-icon" size={16} />
                 </button>
               </Link>
             </div>
           </Fade>
-          <div className="NewMovie">
+          <div className="home_container_newmovie">
             <Movies navigate={navigate} />
           </div>
           <Fade bottom>
-            <div className="Fade">
-              <h1>Top Rated </h1>
+            <div className="home_container_fade">
+              <h1 className="home_container_fade-title">Top Rated</h1>
               <Link to={`/top-rated`}>
-                <button>
-                  <p>See all</p>
-                  <IoIosArrowForward size={16} />
+                <button className="home_container_fade-button">
+                  See all
+                  <IoIosArrowForward className="home_container_fade-button-icon" size={16} />
                 </button>
               </Link>
             </div>
           </Fade>
-          <div className="TopRated">
+          <div className="home_container_ratedmovie">
             <TopRated navigate={navigate} />
           </div>
         </div>

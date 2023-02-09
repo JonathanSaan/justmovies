@@ -1,72 +1,69 @@
-.Search {
+.search {
   background-color: #191b1c;
+  min-height: 100vh;
+  padding: 5rem 0;
 
-  .ContainerSearch {
-    min-height: 100vh;
-    padding: 5rem 0 5rem 0;
+  .search_container {
+    margin: 0 auto;
+    width: 80%;
 
-    .ResultdFound {
-      padding: 0 0 0 5rem;
-
-      h1 {
-        font-size: 1.8rem;
-        color: #FFF;
-        align-items: center;
-        border-left: 2px solid gray;
-        padding: 5px 0 0 8px;
-      }
+    .search_container-title {
+      color: #fff;
+      font-size: 1.5rem;
+      align-items: center;
+      border-left: 2px solid gray;
+      padding: 5px 0 0 8px;
     }
 
-    .SearcheFound {
+    .search_container_moviefound {
       width: 60vw;
-      margin: 3rem 0 0 5rem;
+      margin: 3rem 0 0 1.5rem;
 
       a {
         outline: none;
         text-decoration: none;
       }
 
-      .Movies {
+      .search_container_moviefound_card {
         display: flex;
         cursor: pointer;
         margin: 1em 0;
-        padding: 0 0 5em 0;
         height: 12rem;
-        border-bottom: .5px solid #3e3e3eca;
+        border-bottom: 0.5px solid #3e3e3eca;
 
-        .Image {
-          .PrincipalImage {
+        .search_container_moviefound_card_containerimage {
+          .search_container_moviefound_card_containerimage-image {
             height: 11rem;
             margin: 0 1rem 0 0;
           }
         }
 
-        .description {
+        .search_container_moviefound_card_description {
           display: flex;
           flex-direction: column;
 
-          .MovieTitle {
-            color: #FFF;
+          .search_container_moviefound_card_description-title {
+            color: #fff;
             font-size: 1.2rem;
             max-height: 3rem;
           }
 
-          .Overview {
-            margin: .5rem 0 0 0;
+          .search_container_moviefound_card_description-synopsis {
+            margin: 0.5rem 0 0 0;
             color: gray;
             height: 7rem;
             font-size: 1rem;
           }
 
-          .Vote {
+          .search_container_moviefound_card_description_vote {
             display: flex;
             align-items: center;
             height: 1rem;
             width: 2.5rem;
-            color: #FFF;
+            color: #fff;
 
-            .Star {
-              margin: 0 .3rem 0 0;
+            .search_container_moviefound_card_description_vote-icon {
+              margin: 0 0.3rem 0 0;
             }
           }
         }
@@ -77,10 +74,10 @@
       }
     }
 
-    .noSearchFound {
-      margin: 1rem 0 0 5rem;
+    .search_container-movienoFound {
+      margin: 1.5rem 0 0 .5rem;
 
-      h2 {
+      .search_container-movienoFound-title {
         font-size: 2.3rem;
         color: gray;
       }
@@ -89,39 +86,35 @@
 }
 
 @media screen and (max-width: 768px) {
-  .Search {
-    .ContainerSearch {
+  .search {
+    .search_container {
       padding: 5rem 0 5rem 0;
 
-      .ResultdFound {
-        padding: 0 0 0 1rem;
-
-        h1 {
-          font-size: 1rem;
-        }
+      .search_container-title {
+        font-size: 1rem;
       }
 
-      .SearcheFound {
+      .search_container_moviefound {
         margin: 3rem 0 0 1rem;
         width: 90vw;
 
-        .Movies {
-          .description {
-            .MovieTitle {
-              font-size: .8rem;
+        .search_container_moviefound_card {
+          .search_container_moviefound_card_description {
+            .search_container_moviefound_card_description-title {
+              font-size: 0.8rem;
             }
 
-            .Overview {
-              font-size: .7rem;
+            .search_container_moviefound_card_description-synopsis {
+              font-size: 0.7rem;
             }
           }
         }
       }
 
-      .noSearchFound {
+      .search_container-movienoFound {
         margin: 1rem 0 0 1rem;
 
-        h2 {
+        .search_container-movienoFound-title {
           font-size: 1.3rem;
         }
       }

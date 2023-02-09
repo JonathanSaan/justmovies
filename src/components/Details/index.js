@@ -112,9 +112,9 @@ const Details = () => {
           <div className="details_container_movie">
             {detailsMovie.poster_path && (
               <img
-                className="details_container_movie-image"
                 loading="lazy"
-                src={imagePath + detailsMovie.poster_path}
+                className="details_container_movie-image"
+                src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError}
                 alt={detailsMovie.title}
               />
             )}
@@ -210,8 +210,8 @@ const Details = () => {
                     {characters.map((Character) => (
                       <div className="item" key={Character.id}>
                         <img
-                          src={imagePath + Character.profile_path}
                           loading="lazy"
+                          src={Character.profile_path ? imagePath + Character.profile_path : imageError}
                           alt={Character.name}
                         />
                         <p>{Character.name}</p>
@@ -248,7 +248,7 @@ const Details = () => {
                         key={similar.id}
                       >
                         <img
-                          src={imagePath + similar.poster_path}
+                          src={similar.poster_path ? imagePath + similar.poster_path : imageError}
                           loading="lazy"
                           alt={similar.title}
                         />

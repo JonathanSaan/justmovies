@@ -33,46 +33,45 @@ const Search = () => {
   return (
     <>
       <Header />
-      <div className="Search">
-        <div className="ContainerSearch">
-          <div className="ResultdFound">
-            <h1>Results found: {searched.replaceAll("+", " ")}</h1>
-          </div>
-          {searchesFound.length > 0 ? (
-            <div className="SearcheFound">
+      <div className="search">
+        <div className="search_container">
+          <h1 className="search_container-title">Results found: {searched.replaceAll("+", " ")}</h1>
+          {!searchesFound.length == 0 ? (
+            <div className="search_container_moviefound">
               {searchesFound.map((movie) => (
-                <Link className="Movies" to={`/${movie.id}`}>
-                  <div className="Image">
+                <Link className="search_container_moviefound_card" to={`/${movie.id}`}>
+                  <div className="search_container_moviefound_card_containerimage">
                     {movie.poster_path && (
                       <img
-                        className="PrincipalImage"
-                        src={imagePath + movie.poster_path}
+                        loading="lazy"
+                        className="search_container_moviefound_card_containerimage-image"
+                        src={movie.poster_path ? imagePath + movie.poster_path : imageError}
                         alt={movie.title}
                       />
                     )}
 
                     {movie.poster_path === null && (
                       <img
-                        className="PrincipalImage"
+                        loading="lazy"
+                        className="search_container_moviefound_card_containerimage-image"
                         src={imageError}
                         alt="image error"
                       />
                     )}
-                    
                   </div>
-                  <div className="description">
-                    <h1 className="MovieTitle">
-                      {movie.title || <Skeleton variant="text" count={1} />}
+                  <div className="search_container_moviefound_card_description">
+                    <h1 className="search_container_moviefound_card_description-title">
+                      {movie.title}
                     </h1>
-                    <p className="Overview">
+                    <p className="search_container_moviefound_card_description-synopsis">
                       {movie.overview.length > 150 ? (
                         `${movie.overview.substring(0, 150)}...`
                       ) : (
-                        <p className="Overview">{movie.overview}</p>
+                        <p className="search_container_moviefound_card_description-synopsis">{movie.overview}</p>
                       )}
                     </p>
-                    <div className="Vote">
-                      <IoIosStar className="Star" size={10} color="yellow" />
+                    <div className="search_container_moviefound_card_description_vote">
+                      <IoIosStar className="search_container_moviefound_card_description_vote-icon" size={10} color="yellow" />
                       <p>{movie.vote_average}</p>
                     </div>
                   </div>
@@ -80,8 +79,8 @@ const Search = () => {
               ))}
             </div>
           ) : (
-            <div className="noSearchFound">
-              <h2>No results found. </h2>
+            <div className="search_container-movienoFound">
+              <h2 className="search_container-movienoFound-title">No results found. </h2>
             </div>
           )}
         </div>

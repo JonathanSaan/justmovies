@@ -43,51 +43,42 @@ const NewMovies = () => {
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
   const imageError =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+ 
   return (
     <>
       <Header />
-      <div className="ContainerMovies">
-        <div className="NewMovie">
-          <div className="Title">
-            <h1>New Movies</h1>
-          </div>
+      <div className="newmovies">
+        <div className="newmovies_container">
+          <h1 className="newmovies_container-title">New Movies</h1>
           {!listMovies.length == 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div
-                  onClick={() => {
-                    navigate(`/${movie.id}`);
-                  }}
-                  className="Movies"
+                <div onClick={() => {navigate(`/${movie.id}`)}}
+                  className="newmovies_container_card"
                   key={movie.id}
                 >
                   <img
-                    className="MovieImage"
-                    src={
-                      movie.poster_path
-                        ? Image_path + movie.poster_path
-                        : imageError
-                    }
+                    loading="lazy"
+                    className="newmovies_container_card-image"
+                    src={movie.poster_path ? Image_path + movie.poster_path : imageError}
                     alt={movie.title}
                   />
-                  <h2 className="MovieTitle">{movie.title}</h2>
+                  <h2 className="newmovies_container_card-title">{movie.title}</h2>
                 </div>
               ))}
             </>
           ) : (
-            <div className="NewMovieLoading">
-              {Array(18)
-                .fill(1)
-                .map((card, index) => (
-                  <div className="NewMovieLoading2">
-                    <Skeleton className="ImageLoading" variant="rectangular" />
-                    <Skeleton className="Text" variant="text" count={1} />
+            <>
+              {Array(18).fill(1).map((card, index) => (
+                  <div className="newmovies_container_card">
+                    <Skeleton className="newmovies_container_card-image" variant="rectangular" />
+                    <Skeleton className="newmovies_container_card-title" variant="text" count={1} />
                   </div>
                 ))}
-            </div>
+            </>
           )}
+
         </div>
         <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
           <Pagination

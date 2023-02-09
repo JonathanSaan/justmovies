@@ -52,47 +52,38 @@ const MoviesGenre = () => {
   return (
     <>
       <Header />
-      <div className="ContainerGenre">
-        <div className="MoviesGenre">
-          <div className="Title">
-            <h1>{genre.replaceAll("-", " ")}</h1>
-          </div>
+      <div className="genre">
+        <div className="genre_containergenre">
+          <h1 className="genre_containergenre-title">{genre.replaceAll("-", " ")}</h1>
           {!listMovies.length == 0 ? (
             <>
               {listMovies.map((movie) => (
                 <div
-                  onClick={() => {
-                    navigate(`/${movie.id}`);
-                  }}
-                  className="Movies"
+                  onClick={() => {navigate(`/${movie.id}`)}}
+                  className="genre_containergenre_card"
                   key={movie.id}
                 >
                   <img
-                    className="MovieImage"
-                    src={
-                      movie.poster_path
-                        ? Image_path + movie.poster_path
-                        : imageError
-                    }
+                    loading="lazy"
+                    className="genre_containergenre_card-image"
+                    src={movie.poster_path ? Image_path + movie.poster_path : imageError}
                     alt={movie.title}
                   />
-                  <h2 className="MovieTitle">
-                    {movie.title || <Skeleton variant="text" count={1} />}
+                  <h2 className="genre_containergenre_card-title">
+                    {movie.title}
                   </h2>
                 </div>
               ))}
             </>
           ) : (
-            <div className="MoviesGenreLoading">
-              {Array(18)
-                .fill(1)
-                .map((card, index) => (
-                  <div className="MoviesGenreLoading2">
-                    <Skeleton className="ImageLoading" variant="rectangular" />
-                    <Skeleton className="Text" variant="text" count={1} />
+            <>
+              {Array(18).fill(1).map((card, index) => (
+                  <div className="genre_containergenre_card">
+                    <Skeleton className="genre_containergenre_card-image" variant="rectangular" />
+                    <Skeleton className="genre_containergenre_card-title" variant="text" count={1} />
                   </div>
                 ))}
-            </div>
+            </>
           )}
         </div>
         <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">

@@ -1,145 +1,116 @@
-.ContainerMovies {
+.newmovies {
   background-color: #191b1c;
   padding: 3.5rem 0;
   min-height: 100vh;
-  
+
   a {
     outline: none;
     text-decoration: none;
   }
-  
-  .NewMovie {
+
+  .newmovies_container {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
     width: 90%;
-    
-    .Title {
+
+    .newmovies_container-title {
       margin: 2rem 0;
       width: 100%;
-      
-      h1 {
-        color: #FFF;
-        font-size: 1.5rem;
-        align-items: center;
-        border-left: 2px solid gray;
-        padding: 5px 0 0 8px;
-      }
+      color: #fff;
+      font-size: 1.5rem;
+      align-items: center;
+      border-left: 2px solid gray;
+      padding: 5px 0 0 8px;
     }
-    
-    .Movies {
-      margin: 0 1.5vw 1.5em auto;
-      height: 21vw;
-      
-      .MovieImage {
+
+    .newmovies_container_card {
+      cursor: pointer;
+      margin: 0 1.5vw 3em auto;
+      height: 19.5vw;
+
+      .newmovies_container_card-image {
         height: 18vw;
+        width: 12vw;
         border-radius: 5px;
       }
 
-      .MovieTitle {
+      .newmovies_container_card-title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 12vw;
-        color: #FFF;
+        color: #fff;
         margin: 5px 0;
         align-items: center;
         font-weight: 500;
         font-size: 1rem;
       }
-      
+
       &:hover {
         transition: 350ms;
         transform: scale(1.08);
       }
     }
-    
-    .NewMovieLoading{
-      display: flex;
-      flex-wrap: wrap;
-      
-      .NewMovieLoading2 {
-        margin: 0 1.5vw 1.2em auto;
-        
-        .ImageLoading {
-          height: 18vw;
-          width: 12vw;
-          z-index: 2;
-        }
-        
-        .Text {
-          margin: .5em 0;
-          width: 11.8vw;
-        }
-      }
-    }
   }
-  
+
   ul {
     margin: -1em 0 0 0;
-    
+
     li {
-      width: 6vw;
-      
+      width: 4vw;
+
       div {
-        color: #FFF;
+        font-size: 1rem;
+        color: #fff;
       }
-      
+
       .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
         background-color: #202020;
       }
-        
+
       button {
-        color: #FFF;
+        font-size: 1rem;
+        padding: 1.2vw 1vw;
+        color: #fff;
       }
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .ContainerMovies {
-    .NewMovie {
+  .newmovies {
+    .newmovies_container {
       width: 95%;
-      
-      .Movies {
+
+      .newmovies_container_card {
         margin: 0 auto;
         height: 13em;
         width: 6.6em;
-        
-        .MovieImage {
+
+        .newmovies_container_card-image {
           height: 10em;
           width: 6.7em;
         }
-        
-        .MovieTitle {
+
+        .newmovies_container_card-title {
           max-width: 8em;
-          font-size: .8rem;
-        }
-      }
-      
-      .NewMovieLoading{
-        .NewMovieLoading2 {
-          margin: 0 auto;
-          
-          .ImageLoading {
-            height: 10em;
-            width: 6.7em;
-          }
-          
-          .Text {
-            width: 6.7em;
-            margin: .5em 0 1.3em 0;
-          }
+          font-size: 0.8rem;
         }
       }
     }
-    
+
     ul {
-      margin: -3em 0 0 0;
-      
+      width: 65vw;
+      margin: -3em 0 0 -4vw;
+
       li {
-        width: 10vw;
+        margin: 0 auto;
+
+        button {
+          padding: 1vw;
+        }
       }
     }
   }
