@@ -102,7 +102,7 @@ const Details = () => {
     <>
       <Header />
       <Helmet>
-        <title>{detailsMovie.title ? detailsMovie.title : ""} - justmovies</title>
+        <title>{detailsMovie.title ? `${detailsMovie.title} - ` : ""}justmovies</title>
       </Helmet>
       <div className="details">
         <div
