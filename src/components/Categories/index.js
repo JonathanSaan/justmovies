@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Header from "../Header";
 import "./style.scss";
@@ -12,6 +13,9 @@ const Categories = ({ category }) => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>genre - justmovies</title>
+      </Helmet>
       <div className="category">
         <div className="container_category">
           <h1 className="container_category-title">Genre</h1>
