@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import { useParams, Link } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 import Header from "../Header";
 import APIKey from "../../mocks/api";
@@ -33,19 +32,31 @@ const Search = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>Search result for {searched} - justmovies</title>
+      </Helmet>
       <div className="search">
         <div className="search_container">
-          <h1 className="search_container-title">Results found: {searched.replaceAll("+", " ")}</h1>
+          <h1 className="search_container-title">
+            Results found: {searched.replaceAll("+", " ")}
+          </h1>
           {!searchesFound.length == 0 ? (
             <div className="search_container_moviefound">
               {searchesFound.map((movie) => (
-                <Link className="search_container_moviefound_card" to={`/${movie.id}`}>
+                <Link
+                  className="search_container_moviefound_card"
+                  to={`/${movie.id}`}
+                >
                   <div className="search_container_moviefound_card_containerimage">
                     {movie.poster_path && (
                       <img
                         loading="lazy"
                         className="search_container_moviefound_card_containerimage-image"
-                        src={movie.poster_path ? imagePath + movie.poster_path : imageError}
+                        src={
+                          movie.poster_path
+                            ? imagePath + movie.poster_path
+                            : imageError
+                        }
                         alt={movie.title}
                       />
                     )}
@@ -67,11 +78,17 @@ const Search = () => {
                       {movie.overview.length > 150 ? (
                         `${movie.overview.substring(0, 150)}...`
                       ) : (
-                        <p className="search_container_moviefound_card_description-synopsis">{movie.overview}</p>
+                        <p className="search_container_moviefound_card_description-synopsis">
+                          {movie.overview}
+                        </p>
                       )}
                     </p>
                     <div className="search_container_moviefound_card_description_vote">
-                      <IoIosStar className="search_container_moviefound_card_description_vote-icon" size={10} color="yellow" />
+                      <IoIosStar
+                        className="search_container_moviefound_card_description_vote-icon"
+                        size={10}
+                        color="yellow"
+                      />
                       <p>{movie.vote_average}</p>
                     </div>
                   </div>
@@ -80,7 +97,9 @@ const Search = () => {
             </div>
           ) : (
             <div className="search_container-movienoFound">
-              <h2 className="search_container-movienoFound-title">No results found. </h2>
+              <h2 className="search_container-movienoFound-title">
+                No results found.{" "}
+              </h2>
             </div>
           )}
         </div>

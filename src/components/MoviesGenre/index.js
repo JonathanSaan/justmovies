@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Pagination, Stack } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -52,6 +53,9 @@ const MoviesGenre = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>{genre} - justmovies</title>
+      </Helmet>
       <div className="genre">
         <div className="genre_containergenre">
           <h1 className="genre_containergenre-title">{genre.replaceAll("-", " ")}</h1>

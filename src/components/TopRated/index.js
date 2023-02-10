@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Pagination, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -48,6 +49,9 @@ const TopRated = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>top rated - justmovies</title>
+      </Helmet>
       <div className="ratedmovie">
         <div className="ratedmovie_container">
           <h1 className="ratedmovie_container-title">Top Rated</h1>

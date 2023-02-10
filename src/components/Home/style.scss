@@ -73,8 +73,8 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 87%;
-          margin: 5px 0 0 0;
+          font-size: 95%;
+          margin: 15px 0 0 0;
           width: 100%;
           max-width: 12.5vw;
         }
@@ -94,7 +94,7 @@
 
       .home_container_newmovie_card {
         cursor: pointer;
-        margin: 0 auto 2.5em auto;
+        margin: 0 auto 3em auto;
         align-items: center;
         flex-direction: column;
         height: 19.5vw;
@@ -109,10 +109,10 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin: 10px 0 0 0;
           max-width: 12vw;
           color: #fff;
-          font-weight: 500;
-          font-size: 87%;
+          font-size: 95%;
         }
 
         &:hover {
@@ -121,35 +121,6 @@
           transform: scale(1.08);
         }
       }
-
-      /*
-      .MovieLoading {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 2rem 0 3rem 0;
-        min-height: 20rem;
-        max-width: 78vw;
-        width: 100%;
-
-        .MovieLoading2 {
-          margin: 0 auto 2em auto;
-          height: 20vw;
-          width: 12vw;
-
-          .ImageLoading {
-            height: 18vw;
-            width: 12vw;
-            z-index: 2;
-          }
-
-          .Text {
-            margin: 5px 0;
-            width: 100%;
-          }
-        }
-      }
-
-      */
     }
 
     .home_container_ratedmovie {
@@ -159,7 +130,7 @@
       min-height: 20rem;
 
       .home_container_ratedmovie_card {
-        margin: 0 auto 2.5em auto;
+        margin: 0 auto 3em auto;
         height: 19.5vw;
         width: 12vw;
         cursor: pointer;
@@ -173,10 +144,10 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin: 10px 0 0 0;
           max-width: 12vw;
           color: #fff;
-          font-weight: 500;
-          font-size: 87%;
+          font-size: 95%;
         }
 
         &:hover {
@@ -237,30 +208,6 @@
             max-width: 8em;
           }
         }
-
-        /*
-        .MovieLoading {
-          padding: 0;
-          min-height: 30rem;
-          max-width: 100%;
-
-          .MovieLoading2 {
-            margin: 0 auto 2rem auto;
-            min-height: 11em;
-            height: 30vw;
-            min-width: 6.7rem;
-
-            .ImageLoading {
-              height: 10em;
-              width: 100%;
-            }
-
-            .Text {
-              max-width: 8em;
-            }
-          }
-        } 
-        */
       }
 
       .home_container_ratedmovie {

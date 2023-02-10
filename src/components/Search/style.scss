@@ -29,11 +29,12 @@
         cursor: pointer;
         margin: 1em 0;
         height: 12rem;
-        border-bottom: 0.5px solid #3e3e3eca;
+        border-bottom: .5px solid #3e3e3eca;
 
         .search_container_moviefound_card_containerimage {
           .search_container_moviefound_card_containerimage-image {
             height: 11rem;
+            min-width: 8.5rem;
             margin: 0 1rem 0 0;
           }
         }
@@ -49,7 +50,7 @@
           }
 
           .search_container_moviefound_card_description-synopsis {
-            margin: 0.5rem 0 0 0;
+            margin: .5rem 0 0 0;
             color: gray;
             height: 7rem;
             font-size: 1rem;
@@ -63,7 +64,7 @@
             color: #fff;
 
             .search_container_moviefound_card_description_vote-icon {
-              margin: 0 0.3rem 0 0;
+              margin: 0 .3rem 0 0;
             }
           }
         }
@@ -101,11 +102,11 @@
         .search_container_moviefound_card {
           .search_container_moviefound_card_description {
             .search_container_moviefound_card_description-title {
-              font-size: 0.8rem;
+              font-size: .8rem;
             }
 
             .search_container_moviefound_card_description-synopsis {
-              font-size: 0.7rem;
+              font-size: .7rem;
             }
           }
         }

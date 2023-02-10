@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import { IoIosArrowForward } from "react-icons/io";
+import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
+import { IoIosArrowForward } from "react-icons/io";
 
 import Header from "../Header";
 import { Movies } from "./Movies";
@@ -14,6 +15,9 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>justmovies</title>
+      </Helmet>
       <div className="home">
         <div className="home_container">
           <Fade bottom>

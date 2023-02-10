@@ -2,14 +2,15 @@ import { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { IoIosStar } from "react-icons/io";
 import Slider from "react-slick";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
-import "react-loading-skeleton/dist/skeleton.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
 
 import APIKey from "../../mocks/api";
 import { detailscarouselsetting } from "../../mocks/carouselsettings";
@@ -100,6 +101,9 @@ const Details = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>details movie - justmovies</title>
+      </Helmet>
       <div className="details">
         <div
           className="details_backdrop"

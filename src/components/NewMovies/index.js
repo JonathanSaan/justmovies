@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Pagination, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -48,6 +49,9 @@ const NewMovies = () => {
   return (
     <>
       <Header />
+      <Helmet>
+        <title>new movies - justmovies</title>
+      </Helmet>
       <div className="newmovies">
         <div className="newmovies_container">
           <h1 className="newmovies_container-title">New Movies</h1>

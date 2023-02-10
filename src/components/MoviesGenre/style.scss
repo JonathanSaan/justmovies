@@ -22,7 +22,7 @@
       color: #fff;
       font-size: 1.5rem;
       border-left: 2px solid gray;
-      padding: 0.4vw 0 0.4vw 8px;
+      padding: .4vw 0 .4vw 8px;
 
       &:first-letter {
         text-transform: capitalize;
@@ -37,7 +37,7 @@
       .genre_containergenre_card-image {
         height: 18vw;
         width: 12vw;
-        margin: 0.5em 0;
+        margin: .5em 0;
         z-index: 2;
         border-radius: 5px;
       }
@@ -99,9 +99,9 @@
 
         .genre_containergenre_card-title {
           width: 6.7em;
-          margin: 0.5em 0 1.3em 0;
+          margin: .5em 0 1.3em 0;
           max-width: 8em;
-          font-size: 0.8rem;
+          font-size: .8rem;
         }
       }
     }
