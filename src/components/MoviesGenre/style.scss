@@ -22,7 +22,7 @@
       color: #fff;
       font-size: 1.5rem;
       border-left: 2px solid gray;
-      padding: .4vw 0 .4vw 8px;
+      padding: 0.4vw 0 0.4vw 8px;
 
       &:first-letter {
         text-transform: capitalize;
@@ -37,7 +37,7 @@
       .genre_containergenre_card-image {
         height: 18vw;
         width: 12vw;
-        margin: .5em 0;
+        margin: 0.5em 0;
         z-index: 2;
         border-radius: 5px;
       }
@@ -65,9 +65,10 @@
     margin: -1em 0 0 0;
 
     li {
-      width: 6vw;
+      width: 4vw;
 
       div {
+        font-size: 1rem;
         color: #fff;
       }
 
@@ -76,6 +77,8 @@
       }
 
       button {
+        font-size: 1rem;
+        padding: 1.2vw 1vw;
         color: #fff;
       }
     }
@@ -99,18 +102,23 @@
 
         .genre_containergenre_card-title {
           width: 6.7em;
-          margin: .5em 0 1.3em 0;
+          margin: 0.5em 0 1.3em 0;
           max-width: 8em;
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
       }
     }
 
     ul {
-      margin: -3em 0 0 0;
+      width: 65vw;
+      margin: -3em 0 0 -4vw;
 
       li {
-        width: 10vw;
+        margin: 0 auto;
+
+        button {
+          padding: 1vw;
+        }
       }
     }
   }
