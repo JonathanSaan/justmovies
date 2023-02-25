@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { IoMenu } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 
 import SideBar from "../SideBar";
@@ -30,10 +28,6 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <button className="header-menu" onClick={toggleSideBar}>
-          <IoMenu size={40} color="#FFF" />
-        </button>
-
         <form className="header_search-from" onSubmit={SearchMovie}>
           <input
             type="text"
