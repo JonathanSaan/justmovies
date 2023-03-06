@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { IoIosClose } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import { FaBook } from "react-icons/fa";
 import { slide as Menu } from "react-burger-menu";
