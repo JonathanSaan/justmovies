@@ -19,12 +19,7 @@ const Header = () => {
     SetTypedSearch(TypedSearch);
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
-
-  const [sidebar, SetSideBar] = useState(false);
-  const toggleSideBar = () => {
-    SetSideBar(!sidebar);
-  };
-
+  
   return (
     <>
       <header className="header">
@@ -42,7 +37,7 @@ const Header = () => {
           </button>
         </form>
       </header>
-      <SideBar toggleSideBar={toggleSideBar} sidebar={sidebar} />
+      <SideBar />
     </>
   );
 };
