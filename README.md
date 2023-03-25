@@ -10,5 +10,5 @@
 🌑 [Live Demo](https://justmovies.vercel.app/)
 
 ## Built with
-* NextJs
+* ReactJs
 * Styled Components
