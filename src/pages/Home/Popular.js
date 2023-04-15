@@ -32,7 +32,7 @@ export const Popular = ({ navigate }) => {
 
   return (
     <>
-      {!listPopular.length == 0 ? (
+      {listPopular.length > 0 ? (
         <Slider {...popularcarouselsetting} className="home_container_popular">
           {listPopular.map((popular) => (
             <div
@@ -55,7 +55,7 @@ export const Popular = ({ navigate }) => {
       ) : (
         <Slider {...popularcarouselsetting} className="home_container_popular">
           {Array(20).fill(1).map((card, index) => (
-              <div className="home_container_popular_card">
+              <div key={index} className="home_container_popular_card">
                 <Skeleton
                   className="home_container_popular_card-image"
                   variant="rectangular"

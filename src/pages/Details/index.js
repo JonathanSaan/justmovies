@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
 import { detailscarouselsetting } from "../../mocks/carouselsettings";
-import Header from "../Header";
+import Header from "../../components/Header";
 import "./style.scss";
 
 const Details = () => {
@@ -27,10 +27,6 @@ const Details = () => {
   const [genres, setGenres] = useState([]);
   const [trailer, setTrailer] = useState([]);
 
-  const carousel1 = useRef();
-  const carousel2 = useRef();
-  const [width, setWidth] = useState(0);
-
   const [activeTab, setActiveTab] = useState("tab1");
   const handleTab1 = () => {
     setActiveTab("tab1");
@@ -42,61 +38,39 @@ const Details = () => {
   const [characters, setCharacters] = useState([]);
   const [movieSimilar, setMovieSimilar] = useState([]);
 
-  const refreshPage = () => {
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 500);
-    console.log("page to reload");
-  };
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(carousel1);
-    console.log(carousel2);
-    setWidth(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
-    setWidth(carousel2.current?.scrollWidth - carousel2.current?.offsetWidth);
+    
+    const load = async () => {
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
+      setDetailsMovie(respost.data);
+      setGenres(respost.data.genres);
+      setYearMovie(respost.data.release_date.slice(0, 4));
 
-    setTimeout(() => {
-      const load = async () => {
-        const respost = await axios.get(
-          `https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`
-        );
-        setDetailsMovie(respost.data);
-        setGenres(respost.data.genres);
-        setYearMovie(respost.data.release_date.slice(0, 4));
+      const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
 
-        const videos = await axios.get(
-          `https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`
-        );
-
-        const stateVideo = () => {
-          if (videos.data.results.length > 0) {
-            return setTrailer(videos.data.results[0]);
-          }
-          return null;
-        };
-        stateVideo();
-
-        const dataSimilar = await axios.get(
-          `https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`
-        );
-        setMovieSimilar(dataSimilar.data.results);
-
-        const credits = await axios.get(
-          `https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`
-        );
-        setCharacters(credits.data.cast);
-        setLoading(true);
+      const stateVideo = () => {
+        if (videos.data.results.length > 0) {
+          return setTrailer(videos.data.results[0]);
+        }
+        return null;
       };
-      load();
-    }, 1000);
-  }, []);
+      stateVideo();
+
+      const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
+      setMovieSimilar(dataSimilar.data.results);
+
+      const credits = await axios.get(`https://api.themoviedb.org/3/movie/${details}/credits?api_key=${APIKey}&language=en-US`);
+      setCharacters(credits.data.cast);
+      setLoading(true);
+    };
+    load();
+  }, [details]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
     <>
@@ -209,7 +183,7 @@ const Details = () => {
                 </Tab>
               </TabList>
               <TabPanel className="TabPanel">
-                {!characters.length == 0 ? (
+                {characters.length > 0 ? (
                   <Slider {...detailscarouselsetting} className="carousel1">
                     {characters.map((Character) => (
                       <div className="item" key={Character.id}>
@@ -240,13 +214,12 @@ const Details = () => {
               </TabPanel>
 
               <TabPanel className="TabPanel">
-                {!movieSimilar.length == 0 ? (
+                {movieSimilar.length > 0 ? (
                   <Slider {...detailscarouselsetting} className="carousel2">
                     {movieSimilar.map((similar) => (
                       <div
                         onClick={() => {
                           navigate(`/${similar.id}`);
-                          refreshPage();
                         }}
                         className="item"
                         key={similar.id}

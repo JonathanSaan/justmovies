@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import { IoIosArrowForward } from "react-icons/io";
 
-import Header from "../Header";
+import Header from "../../components/Header";
 import { Movies } from "./Movies";
 import { TopRated } from "./TopRated";
 import { Popular } from "./Popular";

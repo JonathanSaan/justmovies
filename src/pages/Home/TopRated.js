@@ -6,16 +6,16 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import APIKey from "../../mocks/api";
 
-export const Movies = ({ navigate }) => {
-  const [listMovies, setListMovies] = useState([]);
+export const TopRated = ({ navigate }) => {
+  const [listRated, setListRated] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     const load = async () => {
       const respost = await axios.get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=1`
       );
-      setListMovies(respost.data.results.slice(0, 12));
+      setListRated(respost.data.results.slice(0, 12));
     };
     load();
   }, []);
@@ -26,22 +26,22 @@ export const Movies = ({ navigate }) => {
 
   return (
     <>
-      {!listMovies.length == 0 ? (
+      {listRated.length > 0 ? (
         <>
-          {listMovies.map((movie) => (
+          {listRated.map((rated) => (
             <div
-              onClick={() => {navigate(`/${movie.id}`)}}
-              className="home_container_newmovie_card"
-              key={movie.id}
+              onClick={() => {navigate(`/${rated.id}`)}}
+              className="home_container_ratedmovie_card"
+              key={rated.id}
             >
               <img
                 loading="lazy"
-                className="home_container_newmovie_card-image"
-                src={movie.poster_path ? Image_path + movie.poster_path : imageError}
-                alt={movie.title}
+                className="home_container_ratedmovie_card-image"
+                src={rated.poster_path ? Image_path + rated.poster_path : imageError}
+                alt={rated.name}
               />
-              <h2 className="home_container_newmovie_card-title">
-                {movie.title}
+              <h2 className="home_container_ratedmovie_card-title">
+                {rated.title}
               </h2>
             </div>
           ))}
@@ -49,13 +49,13 @@ export const Movies = ({ navigate }) => {
       ) : (
         <>
           {Array(12).fill(1).map((card, index) => (
-              <div className="home_container_newmovie_card">
+              <div key={index} className="home_container_ratedmovie_card">
                 <Skeleton
-                  className="home_container_newmovie_card-image"
+                  className="home_container_ratedmovie_card-image"
                   variant="rectangular"
                 />
                 <Skeleton
-                  className="home_container_newmovie_card-title"
+                  className="home_container_ratedmovie_card-title"
                   variant="text"
                   count={1}
                 />

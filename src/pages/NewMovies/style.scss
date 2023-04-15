@@ -1,4 +1,4 @@
-.ratedmovie {
+.newmovies {
   background-color: #191b1c;
   padding: 3.5rem 0;
   min-height: 100vh;
@@ -8,14 +8,14 @@
     text-decoration: none;
   }
 
-  .ratedmovie_container {
+  .newmovies_container {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
     width: 90%;
 
-    .ratedmovie_container-title {
+    .newmovies_container-title {
       margin: 2rem 0;
       width: 100%;
       color: #fff;
@@ -25,18 +25,18 @@
       padding: 5px 0 0 8px;
     }
 
-    .ratedmovie_container_card {
+    .newmovies_container_card {
       cursor: pointer;
       margin: 0 1.5vw 3em auto;
       height: 19.5vw;
 
-      .ratedmovie_container_card-image {
+      .newmovies_container_card-image {
         height: 18vw;
         width: 12vw;
         border-radius: 5px;
       }
 
-      .ratedmovie_container_card-title {
+      .newmovies_container_card-title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -59,9 +59,10 @@
     margin: -1em 0 0 0;
 
     li {
-      width: 6vw;
+      width: 4vw;
 
       div {
+        font-size: 1rem;
         color: #fff;
       }
 
@@ -70,6 +71,8 @@
       }
 
       button {
+        font-size: 1rem;
+        padding: 1.2vw 1vw;
         color: #fff;
       }
     }
@@ -77,21 +80,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  .ratedmovie {
-    .ratedmovie_container {
+  .newmovies {
+    .newmovies_container {
       width: 95%;
 
-      .ratedmovie_container_card {
+      .newmovies_container_card {
         margin: 0 auto;
         height: 13em;
         width: 6.6em;
 
-        .ratedmovie_container_card-image {
+        .newmovies_container_card-image {
           height: 10em;
           width: 6.7em;
         }
 
-        .ratedmovie_container_card-title {
+        .newmovies_container_card-title {
           max-width: 8em;
           font-size: .8rem;
         }
@@ -99,10 +102,15 @@
     }
 
     ul {
-      margin: -3em 0 0 0;
+      width: 65vw;
+      margin: -3em 0 0 -4vw;
 
       li {
-        width: 10vw;
+        margin: 0 auto;
+
+        button {
+          padding: 1vw;
+        }
       }
     }
   }
