@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
