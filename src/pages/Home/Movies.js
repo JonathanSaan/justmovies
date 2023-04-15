@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
+import { SkeletonHomeMovies } from "../../components/Skeleton";
 import APIKey from "../../mocks/api";
 
 export const Movies = ({ navigate }) => {
@@ -46,23 +45,7 @@ export const Movies = ({ navigate }) => {
             </div>
           ))}
         </>
-      ) : (
-        <>
-          {Array(12).fill(1).map((card, index) => (
-              <div key={index} className="home_container_newmovie_card">
-                <Skeleton
-                  className="home_container_newmovie_card-image"
-                  variant="rectangular"
-                />
-                <Skeleton
-                  className="home_container_newmovie_card-title"
-                  variant="text"
-                  count={1}
-                />
-              </div>
-            ))}
-        </>
-      )}
+      ) : <SkeletonHomeMovies />}
     </>
   );
 };

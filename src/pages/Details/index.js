@@ -81,9 +81,7 @@ const Details = () => {
       <div className="details">
         <div
           className="details_backdrop"
-          style={{
-            backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`,
-          }}
+          style={{ backgroundImage: `url(${imagePath}${detailsMovie.backdrop_path})`}}
         ></div>
 
         <div className="details_container">
@@ -98,10 +96,7 @@ const Details = () => {
             )}
 
             {!detailsMovie.poster_path && !loading && (
-              <Skeleton
-                className="details_container_movie-image"
-                variant="rectangular"
-              />
+              <Skeleton className="details_container_movie-image" variant="rectangular" />
             )}
 
             <span className="details_container_movie-details">
@@ -128,11 +123,7 @@ const Details = () => {
 
               <div className="details_container_movie-details_genres">
                 {genres.map((genre) => (
-                  <Link
-                    to={`/genre/${genre.id}/${genre.name
-                      .replaceAll(" ", "-")
-                      .toLowerCase()}`}
-                  >
+                  <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
                     <button className="details_container_movie-details_genres-button">{genre.name}</button>
                   </Link>
                 ))}
@@ -152,7 +143,7 @@ const Details = () => {
             {trailer.key && (
               <iframe
                 className="details_container_movie-containervideo-video"
-                src={"https://youtube.com/embed/" + trailer.key}
+                src={`https://youtube.com/embed/${trailer.key}`}
                 target="_parent"
                 frameborder="0"
                 title="trailer"
@@ -198,17 +189,12 @@ const Details = () => {
                   </Slider>
                 ) : (
                   <Slider {...detailscarouselsetting} className="carousel1">
-                    {Array(20)
-                      .fill(1)
-                      .map((card, index) => (
-                        <div className="item">
-                          <Skeleton
-                            className="ImageLoading"
-                            variant="rectangular"
-                          />
-                          <Skeleton className="Text" variant="text" count={1} />
-                        </div>
-                      ))}
+                    {Array(20).fill(1).map((card, index) => (
+                      <div className="item">
+                        <Skeleton className="ImageLoading" variant="rectangular" />
+                        <Skeleton className="Text" variant="text" count={1} />
+                      </div>
+                    ))}
                   </Slider>
                 )}
               </TabPanel>
@@ -217,10 +203,7 @@ const Details = () => {
                 {movieSimilar.length > 0 ? (
                   <Slider {...detailscarouselsetting} className="carousel2">
                     {movieSimilar.map((similar) => (
-                      <div
-                        onClick={() => {
-                          navigate(`/${similar.id}`);
-                        }}
+                      <div onClick={() => { navigate(`/${similar.id}`) }}
                         className="item"
                         key={similar.id}
                       >
@@ -235,17 +218,12 @@ const Details = () => {
                   </Slider>
                 ) : (
                   <Slider {...detailscarouselsetting} className="carousel1">
-                    {Array(20)
-                      .fill(1)
-                      .map((card, index) => (
-                        <div className="item">
-                          <Skeleton
-                            className="ImageLoading"
-                            variant="rectangular"
-                          />
-                          <Skeleton className="Text" variant="text" count={1} />
-                        </div>
-                      ))}
+                    {Array(20).fill(1).map((card, index) => (
+                      <div className="item">
+                        <Skeleton className="ImageLoading" variant="rectangular"/>
+                        <Skeleton className="Text" variant="text" count={1} />
+                      </div>
+                    ))}
                   </Slider>
                 )}
               </TabPanel>

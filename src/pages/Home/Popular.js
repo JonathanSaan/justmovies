@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import Slider from "react-slick";
-import Skeleton from "react-loading-skeleton";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "react-loading-skeleton/dist/skeleton.css";
 
 import APIKey from "../../mocks/api";
+import { SkeletonHomePopular } from "../../components/Skeleton";
 import { popularcarouselsetting } from "../../mocks/carouselsettings";
 
 export const Popular = ({ navigate }) => {
@@ -52,23 +51,7 @@ export const Popular = ({ navigate }) => {
             </div>
           ))}
         </Slider>
-      ) : (
-        <Slider {...popularcarouselsetting} className="home_container_popular">
-          {Array(20).fill(1).map((card, index) => (
-              <div key={index} className="home_container_popular_card">
-                <Skeleton
-                  className="home_container_popular_card-image"
-                  variant="rectangular"
-                />
-                <Skeleton
-                  className="home_container_popular_card-title"
-                  variant="text"
-                  count={1}
-                />
-              </div>
-            ))}
-        </Slider>
-      )}
+      ) : <SkeletonHomePopular popularcarouselsetting={popularcarouselsetting} />}
     </>
   );
 };

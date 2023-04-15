@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 import Header from "../../components/Header";
+import { SkeletonMoviesGenre } from "../../components/Skeleton";
 import Pagination from "../../components/Pagination";
 import APIKey from "../../mocks/api";
 import "./style.scss";
@@ -73,16 +72,7 @@ const MoviesGenre = () => {
                 </div>
               ))}
             </>
-          ) : (
-            <>
-              {Array(18).fill(1).map((card, index) => (
-                  <div className="genre_containergenre_card">
-                    <Skeleton className="genre_containergenre_card-image" variant="rectangular" />
-                    <Skeleton className="genre_containergenre_card-title" variant="text" count={1} />
-                  </div>
-                ))}
-            </>
-          )}
+          ) : <SkeletonMoviesGenre />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
       </div>
