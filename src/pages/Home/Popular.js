@@ -17,17 +17,14 @@ export const Popular = ({ navigate }) => {
     window.scrollTo(0, 0);
 
     const load = async () => {
-      const respost = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`
-      );
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
       setListPopular(respost.data.results);
     };
     load();
   }, []);
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
-  const imageError =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
     <>
