@@ -61,6 +61,7 @@ const TopRated = () => {
                   key={rated.id}
                 >
                   <img
+                    loading="lazy"
                     className="ratedmovie_container_card-image"
                     src={rated.poster_path ? Image_path + rated.poster_path : imageError}
                     alt={rated.name}

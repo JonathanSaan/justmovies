@@ -55,7 +55,8 @@ const NewMovies = () => {
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div onClick={() => {navigate(`/${movie.id}`)}}
+                <div 
+                  onClick={() => {navigate(`/${movie.id}`)}}
                   className="newmovies_container_card"
                   key={movie.id}
                 >
@@ -69,8 +70,7 @@ const NewMovies = () => {
                 </div>
               ))}
             </>
-          ) : SkeletonNewMovies}
-
+          ) : <SkeletonNewMovies />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
       </div>
