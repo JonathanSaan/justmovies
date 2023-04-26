@@ -21,7 +21,7 @@ const NewMovies = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const LoadMovies = async () => {
-      const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=${page}`);
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
       setTotalPage(respost.data.total_pages);
       setListMovies(respost.data.results.slice(0, 18));
   
