@@ -87,7 +87,7 @@
 
 @media screen and (max-width: 768px) {
   .search > .search_container {
-    margin: 0 0 0 5vw;
+    margin: 0 0 0 3vw;
     padding: 1rem 0 5rem 0;
     
     .search_container-title {
@@ -95,7 +95,7 @@
     }
 
     .search_container_moviefound {
-      margin: 3rem 0 0 1rem;
+      margin: 3rem 0 0 .5rem;
       width: 90vw;
 
       .search_container_moviefound_card
@@ -111,10 +111,10 @@
     }
 
     .search_container-movienoFound {
-      margin: 1rem 0 0 1rem;
+      margin: 1rem 0 0 .5rem;
 
       .search_container-movienoFound-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
     }
   }
