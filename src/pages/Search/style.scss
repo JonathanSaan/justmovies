@@ -31,8 +31,7 @@
         height: 12rem;
         border-bottom: .5px solid #3e3e3eca;
 
-        .search_container_moviefound_card_containerimage
-          > .search_container_moviefound_card_containerimage-image {
+        .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
           height: 11rem;
           min-width: 8.5rem;
           margin: 0 1rem 0 0;
@@ -89,17 +88,16 @@
   .search > .search_container {
     margin: 0 0 0 3vw;
     padding: 1rem 0 5rem 0;
-    
+
     .search_container-title {
       font-size: 1rem;
     }
 
     .search_container_moviefound {
-      margin: 3rem 0 0 .5rem;
+      margin: 1rem 0 0 .5rem;
       width: 90vw;
 
-      .search_container_moviefound_card
-        > .search_container_moviefound_card_description {
+      .search_container_moviefound_card > .search_container_moviefound_card_description {
         .search_container_moviefound_card_description-title {
           font-size: .8rem;
         }
