@@ -79,10 +79,12 @@ const Search = () => {
                     <div className="search_container_moviefound_card_description_vote">
                       <IoIosStar
                         className="search_container_moviefound_card_description_vote-icon"
-                        size={10}
+                        size={15}
                         color="yellow"
                       />
-                      <p>{movie.vote_average}</p>
+                      <p className="search_container_moviefound_card_description_vote-number">
+                        {movie.vote_average}
+                      </p>
                     </div>
                   </div>
                 </Link>

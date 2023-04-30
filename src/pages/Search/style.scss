@@ -64,6 +64,13 @@
             .search_container_moviefound_card_description_vote-icon {
               margin: 0 .3rem 0 0;
             }
+            .search_container_moviefound_card_description_vote-number {
+              width: 2rem;
+              max-width: 2.4rem;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: clip;
+            }
           }
         }
 
@@ -104,6 +111,15 @@
 
         .search_container_moviefound_card_description-synopsis {
           font-size: .7rem;
+        }
+        .search_container_moviefound_card_description_vote {
+          margin: auto 0 1rem 0;
+          width: 2.7rem;
+
+          .search_container_moviefound_card_description_vote-number {
+            /*width: 2.4rem;
+            max-width: 5.9rem;*/
+          }
         }
       }
     }
