@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Header from "../../components/Header";
@@ -55,8 +55,8 @@ const TopRated = () => {
           {listRated.length > 0 ? (
             <>
               {listRated.map((rated) => (
-                <div
-                  onClick={() => {navigate(`/${rated.id}`)}}
+                <Link
+                  to={`/${rated.id}`}
                   className="ratedmovie_container_card"
                   key={rated.id}
                 >
@@ -67,7 +67,7 @@ const TopRated = () => {
                     alt={rated.name}
                   />
                   <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
-                </div>
+                </Link>
               ))}
             </>
           ) : <SkeletonTopRated />}

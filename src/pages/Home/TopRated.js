@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { SkeletonHomeTopRated } from "../../components/Skeleton";
 import APIKey from "../../mocks/api";
 
-export const TopRated = ({ navigate }) => {
+export const TopRated = () => {
   const [listRated, setListRated] = useState([]);
 
   useEffect(() => {
@@ -25,8 +26,8 @@ export const TopRated = ({ navigate }) => {
       {listRated.length > 0 ? (
         <>
           {listRated.map((rated) => (
-            <div
-              onClick={() => {navigate(`/${rated.id}`)}}
+            <Link
+              to={`/${rated.id}`}
               className="home_container_ratedmovie_card"
               key={rated.id}
             >
@@ -39,7 +40,7 @@ export const TopRated = ({ navigate }) => {
               <h2 className="home_container_ratedmovie_card-title">
                 {rated.title}
               </h2>
-            </div>
+            </Link>
           ))}
         </>
       ) : <SkeletonHomeTopRated />}

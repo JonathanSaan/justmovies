@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import { IoIosArrowForward } from "react-icons/io";
@@ -10,8 +10,6 @@ import { Popular } from "./Popular";
 import "./style.scss";
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Header />
@@ -25,7 +23,7 @@ const Home = () => {
               <h1 className="home_container_fade-title">Most Popular</h1>
             </div>
           </Fade>
-          <Popular navigate={navigate} />
+          <Popular />
           <Fade bottom>
             <div className="home_container_fade">
               <h1 className="home_container_fade-title">New Movies</h1>
@@ -38,7 +36,7 @@ const Home = () => {
             </div>
           </Fade>
           <div className="home_container_newmovie">
-            <Movies navigate={navigate} />
+            <Movies />
           </div>
           <Fade bottom>
             <div className="home_container_fade">
@@ -52,7 +50,7 @@ const Home = () => {
             </div>
           </Fade>
           <div className="home_container_ratedmovie">
-            <TopRated navigate={navigate} />
+            <TopRated />
           </div>
         </div>
       </div>

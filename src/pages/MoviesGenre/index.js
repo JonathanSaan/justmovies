@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Header from "../../components/Header";
@@ -11,7 +11,6 @@ import APIKey from "../../mocks/api";
 import "./style.scss";
 
 const MoviesGenre = () => {
-  const navigate = useNavigate();
   const { id, genre } = useParams();
   const page = new URLSearchParams(window.location.search).get('page') ? parseInt(new URLSearchParams(window.location.search).get('page')) : 1;
 
@@ -35,7 +34,7 @@ const MoviesGenre = () => {
   const paginate = (event, value) => {
     const nextPage = value > 1 ? value : 1;
     const route = `/genre/${id}/${genre}?page=${nextPage}`;
-    navigate(route, { replace: true });
+    Link(route, { replace: true });
 
     window.scrollTo({ top: 1600, behavior: "smooth" });
   };
@@ -55,8 +54,8 @@ const MoviesGenre = () => {
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div
-                  onClick={() => {navigate(`/${movie.id}`)}}
+                <Link
+                  to={`/${movie.id}`}
                   className="genre_containergenre_card"
                   key={movie.id}
                 >
@@ -69,7 +68,7 @@ const MoviesGenre = () => {
                   <h2 className="genre_containergenre_card-title">
                     {movie.title}
                   </h2>
-                </div>
+                </Link>
               ))}
             </>
           ) : <SkeletonMoviesGenre />}

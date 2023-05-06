@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -17,8 +17,6 @@ import Header from "../../components/Header";
 import "./style.scss";
 
 const Details = () => {
-  const navigate = useNavigate();
-
   const { details } = useParams();
 
   const [detailsMovie, setDetailsMovie] = useState([]);
@@ -198,7 +196,7 @@ const Details = () => {
                 {movieSimilar.length > 0 ? (
                   <Slider {...detailscarouselsetting} className="carousel2">
                     {movieSimilar.map((similar) => (
-                      <div onClick={() => { navigate(`/${similar.id}`) }}
+                      <Link to={`/${similar.id}`}
                         className="item"
                         key={similar.id}
                       >
@@ -208,7 +206,7 @@ const Details = () => {
                           alt={similar.title}
                         />
                         <p>{similar.title}</p>
-                      </div>
+                      </Link>
                     ))}
                   </Slider>
                 ) : (

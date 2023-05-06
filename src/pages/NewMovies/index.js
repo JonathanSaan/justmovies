@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Header from "../../components/Header";
@@ -55,8 +55,8 @@ const NewMovies = () => {
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div 
-                  onClick={() => {navigate(`/${movie.id}`)}}
+                <Link 
+                  to={`/${movie.id}`}
                   className="newmovies_container_card"
                   key={movie.id}
                 >
@@ -67,7 +67,7 @@ const NewMovies = () => {
                     alt={movie.title ? movie.title : "a new movie"}
                   />
                   <h2 className="newmovies_container_card-title">{movie.title}</h2>
-                </div>
+                </Link>
               ))}
             </>
           ) : <SkeletonNewMovies />}

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { SkeletonHomeMovies } from "../../components/Skeleton";
 import APIKey from "../../mocks/api";
 
-export const Movies = ({ navigate }) => {
+export const Movies = () => {
   const [listMovies, setListMovies] = useState([]);
 
   useEffect(() => {
@@ -25,21 +26,23 @@ export const Movies = ({ navigate }) => {
       {listMovies.length > 0 ? (
         <>
           {listMovies.map((movie) => (
-            <div
-              onClick={() => {navigate(`/${movie.id}`)}}
+            <Link
+              to={`/${movie.id}`}
               className="home_container_newmovie_card"
               key={movie.id}
             >
-              <img
-                loading="lazy"
-                className="home_container_newmovie_card-image"
-                src={movie.poster_path ? Image_path + movie.poster_path : imageError}
-                alt={movie.title}
-              />
-              <h2 className="home_container_newmovie_card-title">
-                {movie.title}
-              </h2>
-            </div>
+              
+                <img
+                  loading="lazy"
+                  className="home_container_newmovie_card-image"
+                  src={movie.poster_path ? Image_path + movie.poster_path : imageError}
+                  alt={movie.title}
+                />
+                <h2 className="home_container_newmovie_card-title">
+                  {movie.title}
+                </h2>
+              
+            </Link>
           ))}
         </>
       ) : <SkeletonHomeMovies />}

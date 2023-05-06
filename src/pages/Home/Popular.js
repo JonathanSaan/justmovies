@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -10,7 +11,7 @@ import APIKey from "../../mocks/api";
 import { SkeletonHomePopular } from "../../components/Skeleton";
 import { popularcarouselsetting } from "../../mocks/carouselsettings";
 
-export const Popular = ({ navigate }) => {
+export const Popular = () => {
   const [listPopular, setListPopular] = useState([]);
 
   useEffect(() => {
@@ -31,8 +32,8 @@ export const Popular = ({ navigate }) => {
       {listPopular.length > 0 ? (
         <Slider {...popularcarouselsetting} className="home_container_popular">
           {listPopular.map((popular) => (
-            <div
-              onClick={() => {navigate(`/${popular.id}`)}}
+            <Link
+              to={`/${popular.id}`}
               className="home_container_popular_card"
               key={popular.id}
             >
@@ -45,7 +46,7 @@ export const Popular = ({ navigate }) => {
               <h2 className="home_container_popular_card-title">
                 {popular.title}
               </h2>
-            </div>
+            </Link>
           ))}
         </Slider>
       ) : <SkeletonHomePopular popularcarouselsetting={popularcarouselsetting} />}
