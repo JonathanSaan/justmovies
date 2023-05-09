@@ -49,7 +49,7 @@ export const Popular = () => {
             </Link>
           ))}
         </Slider>
-      ) : <SkeletonHomePopular popularcarouselsetting={popularcarouselsetting} />}
+      ) : <SkeletonHomePopular />}
     </>
   );
 };
