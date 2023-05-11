@@ -169,7 +169,6 @@ export const SkeletonMovieDetails = () => {
       </div>
 
       <div className="details_container_movie-synopsis">
-        <hr />
         <Skeleton
           className="details_container_movie-synopsis-paragraph"
           variant="text"

@@ -128,8 +128,9 @@
       width: 100%;
 
       .details_container_movie-containervideo-video {
+        min-height: 15rem;
         height: 30vw;
-        width: 50vw;
+        min-width: 50vw;
       }
     }
 
@@ -289,10 +290,11 @@
         }
       }
 
-      .details_container_movie-containervideo
-        > .details_container_movie-containervideo-video {
-        height: 55vw;
-        width: 90vw;
+      .details_container_movie-containervideo {
+         .details_container_movie-containervideo-video {
+    	   height: 45vw;
+    	   min-width: 75vw;
+  		 }
       }
 
       .AllTab > .Tabs {
