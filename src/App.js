@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import { Analytics } from "@vercel/analytics/react";
 import axios from "axios";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/genre/:id/:genre?page=:page" element={<MoviesGenre />} />
         </Routes>
       </Router>
+      <Analytics debug={false} />
     </SkeletonTheme>
   );
 }
