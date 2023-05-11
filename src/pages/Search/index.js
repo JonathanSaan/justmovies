@@ -45,7 +45,7 @@ const Search = () => {
                   key={movie.id}
                 >
                   <div className="search_container_moviefound_card_containerimage">
-                    <Link to={`/${movie.id}`}>
+                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`}>
                       {movie.poster_path && (
                         <img
                           loading="lazy"
@@ -55,7 +55,7 @@ const Search = () => {
                         />
                       )}
                     </Link>
-                    <Link to={`/${movie.id}`}>
+                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`}>
                       {movie.poster_path === null && (
                         <img
                           loading="lazy"
