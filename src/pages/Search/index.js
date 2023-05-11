@@ -40,33 +40,37 @@ const Search = () => {
           {searchesFound.length > 0 ? (
             <div className="search_container_moviefound">
               {searchesFound.map((movie) => (
-                <Link
+                <div
                   className="search_container_moviefound_card"
-                  to={`/${movie.id}`}
+                  key={movie.id}
                 >
-                  <div className="search_container_moviefound_card_containerimage">
-                    {movie.poster_path && (
-                      <img
-                        loading="lazy"
-                        className="search_container_moviefound_card_containerimage-image"
-                        src={movie.poster_path ? imagePath + movie.poster_path : imageError}
-                        alt={movie.title}
-                      />
-                    )}
+                  <Link to={`/${movie.id}`}>
+                    <div className="search_container_moviefound_card_containerimage">
+                      {movie.poster_path && (
+                        <img
+                          loading="lazy"
+                          className="search_container_moviefound_card_containerimage-image"
+                          src={movie.poster_path ? imagePath + movie.poster_path : imageError}
+                          alt={movie.title}
+                        />
+                      )}
 
-                    {movie.poster_path === null && (
-                      <img
-                        loading="lazy"
-                        className="search_container_moviefound_card_containerimage-image"
-                        src={imageError}
-                        alt={imageError}
-                      />
-                    )}
-                  </div>
+                      {movie.poster_path === null && (
+                        <img
+                          loading="lazy"
+                          className="search_container_moviefound_card_containerimage-image"
+                          src={imageError}
+                          alt={imageError}
+                        />
+                      )}
+                    </div>
+                  </Link>
                   <div className="search_container_moviefound_card_description">
-                    <h1 className="search_container_moviefound_card_description-title">
-                      {movie.title}
-                    </h1>
+                    <Link to={`/${movie.id}`}>
+                      <h1 className="search_container_moviefound_card_description-title">
+                        {movie.title}
+                      </h1>
+                    </Link>
                     <p className="search_container_moviefound_card_description-synopsis">
                       {movie.overview.length > 150 ? (
                         `${movie.overview.substring(0, 150)}...`
@@ -87,7 +91,7 @@ const Search = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           ) : (
