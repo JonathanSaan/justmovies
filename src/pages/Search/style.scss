@@ -26,12 +26,12 @@
 
       .search_container_moviefound_card {
         display: flex;
-        cursor: pointer;
         margin: 1em 0;
         height: 12rem;
         border-bottom: .5px solid #3e3e3eca;
 
         .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
+          cursor: pointer;
           height: 11rem;
           min-width: 8.5rem;
           margin: 0 1rem 0 0;
@@ -42,6 +42,7 @@
           flex-direction: column;
 
           .search_container_moviefound_card_description-title {
+        	cursor: pointer;
             color: #fff;
             font-size: 1.2rem;
             max-height: 3rem;
