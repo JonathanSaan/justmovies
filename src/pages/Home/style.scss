@@ -130,10 +130,12 @@
       min-height: 20rem;
 
       .home_container_ratedmovie_card {
-        margin: 0 .5vw 3em .5vw;
+        cursor: pointer;
+        margin: 0 auto 3em auto;
+        align-items: center;
+        flex-direction: column;
         height: 19.5vw;
         width: 12vw;
-        cursor: pointer;
 
         .home_container_ratedmovie_card-image {
           height: 18vw;
@@ -151,6 +153,7 @@
         }
 
         &:hover {
+          font-weight: 400;
           transition: 350ms;
           transform: scale(1.08);
         }
@@ -185,6 +188,7 @@
           }
 
           .home_container_popular_card-title {
+            margin: 6px 0 0 0;
             max-width: 8em;
           }
         }
@@ -205,6 +209,7 @@
           }
 
           .home_container_newmovie_card-title {
+          	margin: 6px 0 0 0;
             max-width: 8em;
           }
         }
@@ -225,6 +230,7 @@
           }
 
           .home_container_ratedmovie_card-title {
+          	margin: 6px 0 0 0;
             max-width: 8em;
           }
         }
