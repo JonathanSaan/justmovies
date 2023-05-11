@@ -44,8 +44,8 @@ const Search = () => {
                   className="search_container_moviefound_card"
                   key={movie.id}
                 >
-                  <Link to={`/${movie.id}`}>
-                    <div className="search_container_moviefound_card_containerimage">
+                  <div className="search_container_moviefound_card_containerimage">
+                    <Link to={`/${movie.id}`}>
                       {movie.poster_path && (
                         <img
                           loading="lazy"
@@ -54,7 +54,8 @@ const Search = () => {
                           alt={movie.title}
                         />
                       )}
-
+                    </Link>
+                    <Link to={`/${movie.id}`}>
                       {movie.poster_path === null && (
                         <img
                           loading="lazy"
@@ -63,8 +64,8 @@ const Search = () => {
                           alt={imageError}
                         />
                       )}
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                   <div className="search_container_moviefound_card_description">
                     <Link to={`/${movie.id}`}>
                       <h1 className="search_container_moviefound_card_description-title">
