@@ -37,7 +37,7 @@
       }
 
       .details_container_movie-details {
-      	flex-direction: row;
+        flex-direction: row;
         margin: 0 0 0 auto;
         padding: 0 0 0 1rem;
         width: 90%;
@@ -128,6 +128,7 @@
       width: 100%;
 
       .details_container_movie-containervideo-video {
+        border: none;
         min-height: 15rem;
         height: 30vw;
         min-width: 50vw;
@@ -197,8 +198,10 @@
             .item {
               cursor: pointer;
               margin: 1vw 10px;
-              min-height: 14vw;
-              max-width: 8.5vw;
+              min-height: 10rem;
+              height: 14vw;
+              min-width: 7rem;
+              max-width: 10vw;
 
               .ImageLoading {
                 height: 12vw;
@@ -291,36 +294,34 @@
       }
 
       .details_container_movie-containervideo {
-         .details_container_movie-containervideo-video {
-    	   height: 45vw;
-    	   min-width: 75vw;
-  		 }
+        .details_container_movie-containervideo-video {
+          height: 45vw;
+          min-width: 75vw;
+        }
       }
 
       .AllTab > .Tabs {
         width: 100%;
         margin: 0 0 8% 0;
 
-        .TabPanel > .carousel1,
-        .carousel2 {
-          margin: 2rem 0 0 0;
-          width: 90vw;
+        .TabPanel {
+          .carousel1,
+          .carousel2 {
+            margin: 1rem 0 0 0;
+            width: 90vw;
+            
+            .item {
+              padding: .4rem 0 0 0;
+              max-width: 18vw;
 
-          .item {
-            height: 29vw;
-            min-width: 16vw;
+              .ImageLoading {
+                height: 90%;
+                min-width: 100%;
+              }
 
-            .ImageLoading {
-              height: 25vw;
-              min-width: 100%;
-            }
-
-            img {
-              min-height: 25vw;
-            }
-
-            p {
-              max-width: 10rem;
+              img {
+                height: 90%;
+              }
             }
           }
         }
