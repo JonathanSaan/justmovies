@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Header from "../../components/Header";
+import resetComponents from "../../utils/ResetComponents";
 import APIKey from "../../mocks/api";
 import "./style.scss";
 
@@ -15,11 +16,11 @@ const Search = () => {
   const [searchesFound, setSearchesFound] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const load = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=1&include_adult=false`);
       setSearchesFound(respost.data.results);
     };
+    resetComponents();
     load();
   }, [searched]);
 
@@ -27,7 +28,7 @@ const Search = () => {
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>Search result for {searched} - justmovies</title>
@@ -72,7 +73,7 @@ const Search = () => {
                         {movie.title}
                       </h1>
                     </Link>
-                    <p className="search_container_moviefound_card_description-synopsis">
+                    <span className="search_container_moviefound_card_description-synopsis">
                       {movie.overview.length > 150 ? (
                         `${movie.overview.substring(0, 150)}...`
                       ) : (
@@ -80,7 +81,7 @@ const Search = () => {
                           {movie.overview}
                         </p>
                       )}
-                    </p>
+                    </span>
                     <div className="search_container_moviefound_card_description_vote">
                       <IoIosStar
                         className="search_container_moviefound_card_description_vote-icon"
@@ -104,7 +105,7 @@ const Search = () => {
           )}
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

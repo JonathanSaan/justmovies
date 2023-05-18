@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Fade from "react-reveal/Fade";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -11,7 +11,7 @@ import "./style.scss";
 
 const Home = () => {
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>justmovies</title>
@@ -54,7 +54,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

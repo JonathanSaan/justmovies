@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Header from "../../components/Header";
 import "./style.scss";
@@ -11,7 +11,7 @@ const Categories = ({ category }) => {
   }, []);
 
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>genre - justmovies</title>
@@ -20,7 +20,7 @@ const Categories = ({ category }) => {
         <div className="container_category">
           <h1 className="container_category-title">Genre</h1>
           {category.map((genre) => (
-            <div className="container_category_genre">
+            <div className="container_category_genre" key={genre.id}>
               <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
                 <button className="container_category_genre-button">
                   {genre.name}
@@ -30,7 +30,7 @@ const Categories = ({ category }) => {
           ))}
         </div>
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

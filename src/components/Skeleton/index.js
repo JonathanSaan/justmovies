@@ -204,7 +204,7 @@ export const SkeletonMovieDetails = () => {
               {Array(20)
                 .fill(1)
                 .map((card, index) => (
-                  <div className="item">
+                  <div className="item" key={index}>
                     <Skeleton className="ImageLoading" variant="rectangular" />
                     <Skeleton className="Text" variant="text" count={1} />
                   </div>
@@ -217,7 +217,7 @@ export const SkeletonMovieDetails = () => {
               {Array(20)
                 .fill(1)
                 .map((card, index) => (
-                  <div className="item">
+                  <div className="item" key={index}>
                     <Skeleton className="ImageLoading" variant="rectangular" />
                     <Skeleton className="Text" variant="text" count={1} />
                   </div>

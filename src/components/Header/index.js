@@ -8,15 +8,14 @@ import "./style.scss";
 const Header = () => {
   let navigate = useNavigate();
 
-  const [TypedSearch, SetTypedSearch] = useState();
+  const [TypedSearch, SetTypedSearch] = useState("");
 
   const SearchMovie = (e) => {
-    if (TypedSearch === "") {
-      return e;
-    }
-
     e.preventDefault();
-    SetTypedSearch(TypedSearch);
+    
+    if (TypedSearch === "") {
+      return;
+    }
     navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
   };
   

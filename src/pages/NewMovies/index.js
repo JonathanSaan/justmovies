@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Header from "../../components/Header";
+import resetComponents from "../../utils/ResetComponents";
 import { SkeletonNewMovies } from "../../components/Skeleton";
 import Pagination from "../../components/Pagination";
 import APIKey from "../../mocks/api";
@@ -19,16 +20,16 @@ const NewMovies = () => {
   const [totalPage, setTotalPage] = useState(0);
   
   useEffect(() => {
-    window.scrollTo(0, 0);
     const LoadMovies = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=${page}`);
       setTotalPage(respost.data.total_pages);
       setListMovies(respost.data.results.slice(0, 18));
-  
+      
       if (respost.data.total_pages > 500) {
         return setTotalPage(500);
       }
     };
+    resetComponents(setListMovies);
     LoadMovies();
   }, [page]);
 
@@ -44,7 +45,7 @@ const NewMovies = () => {
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
  
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>new movies - justmovies</title>
@@ -55,26 +56,26 @@ const NewMovies = () => {
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <Link 
-                  to={`/${movie.id}`}
-                  className="newmovies_container_card"
-                  key={movie.id}
-                >
-                  <img
-                    loading="lazy"
-                    className="newmovies_container_card-image"
-                    src={movie.poster_path ? Image_path + movie.poster_path : imageError}
-                    alt={movie.title ? movie.title : "a new movie"}
-                  />
-                  <h2 className="newmovies_container_card-title">{movie.title}</h2>
-                </Link>
+                <div className="newmovies_container_card" key={movie.id}>
+                  <Link to={`/${movie.id}`}>
+                    <img
+                      loading="lazy"
+                      className="newmovies_container_card-image"
+                      src={movie.poster_path ? Image_path + movie.poster_path : imageError}
+                      alt={movie.title ? movie.title : "a new movie"}
+                    />
+                  </Link>
+                  <Link to={`/${movie.id}`}>
+                    <h2 className="newmovies_container_card-title">{movie.title}</h2>
+                  </Link>
+                </div>
               ))}
             </>
           ) : <SkeletonNewMovies />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

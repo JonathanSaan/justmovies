@@ -32,10 +32,10 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/new-movies" element={<NewMovies />} />
-          <Route exact path="/new-movies?page=:page" element={<NewMovies />} />
-          <Route exact path="/top-rated" element={<TopRated />} />
-          <Route exact path="/top-rated?page=:page" element={<TopRated />} />
+          <Route path="/new-movies" element={<NewMovies />} />
+          <Route path="/new-movies?page=:page" element={<NewMovies />} />
+          <Route path="/top-rated" element={<TopRated />} />
+          <Route path="/top-rated?page=:page" element={<TopRated />} />
           <Route path="/search/" element={<Home />} />
           <Route path="/search/:searched" element={<Search />} />
           <Route path="/:details" element={<Details />} />

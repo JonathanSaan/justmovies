@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { IoIosStar } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import APIKey from "../../mocks/api";
+import resetComponents from "../../utils/ResetComponents";
 import { detailscarouselsetting } from "../../mocks/carouselsettings";
 import { SkeletonMovieDetails } from "../../components/Skeleton";
 import Header from "../../components/Header";
@@ -31,24 +32,8 @@ const Details = () => {
     setActiveTab(`tab${index}`);
   };
 
-  const resetComponents = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-    setDetailsMovie([]);
-    setGenres([]);
-    setYearMovie([]);
-    setTrailer([]);
-    setCharacters([]);
-    setMovieSimilar([]);
-    setActiveTab("tab1");
-  };
-
   useEffect(() => {
     const load = async () => {
-      resetComponents();
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/${details}?api_key=${APIKey}&language=en-US`);
       setDetailsMovie(respost.data);
       setGenres(respost.data.genres);
@@ -66,6 +51,7 @@ const Details = () => {
       const dataSimilar = await axios.get(`https://api.themoviedb.org/3/movie/${details}/similar?api_key=${APIKey}&language=en-US&page=1`);
       setMovieSimilar(dataSimilar.data.results);
     };
+    resetComponents(setDetailsMovie, setGenres, setYearMovie, setTrailer, setCharacters, setMovieSimilar, setActiveTab("tab1"));
     load();
   }, [details]);
 
@@ -74,7 +60,7 @@ const Details = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>
@@ -90,13 +76,13 @@ const Details = () => {
         ></div>
 
         {Object.keys(detailsMovie).length > 0 ? (
-          <div className="details_container">
+          <div className="details_container" key={detailsMovie.id}>
             <div className="details_container_movie">
               <img
                 loading="lazy"
                 className="details_container_movie-image"
                 src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError}
-                alt={detailsMovie.title}
+                alt={detailsMovie.title ? detailsMovie.title : "details about movie"}
               />
 
               <span className="details_container_movie-details">
@@ -123,7 +109,7 @@ const Details = () => {
 
                 <div className="details_container_movie-details_genres">
                   {genres.map((genre) => (
-                    <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
+                    <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`} key={genre.id}>
                       <button className="details_container_movie-details_genres-button">
                         {genre.name}
                       </button>
@@ -143,12 +129,11 @@ const Details = () => {
               {trailer.key && (
                 <iframe
                   className="details_container_movie-containervideo-video"
+                  type="text/html"
                   src={`https://youtube.com/embed/${trailer.key}`}
                   target="_parent"
-                  frameborder="0"
                   title="trailer"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"
                 ></iframe>
               )}
             </div>
@@ -176,7 +161,7 @@ const Details = () => {
                         <img
                           loading="lazy"
                           src={Character.profile_path ? imagePath + Character.profile_path : imageError}
-                          alt={Character.name}
+                          alt={Character.name ? Character.name : "a character"}
                         />
                         <p>{Character.name}</p>
                       </div>
@@ -190,9 +175,9 @@ const Details = () => {
                       <div className="item" key={similar.id}>
                         <Link to={`/${similar.id}`} draggable="false">
                           <img
-                            src={similar.poster_path ? imagePath + similar.poster_path : imageError}
                             loading="lazy"
-                            alt={similar.title}
+                            src={similar.poster_path ? imagePath + similar.poster_path : imageError}
+                            alt={similar.title ? similar.title : "a similar movie"}
                           />
                           <p>{similar.title}</p>
                         </Link>
@@ -207,7 +192,7 @@ const Details = () => {
           <SkeletonMovieDetails />
         )}
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

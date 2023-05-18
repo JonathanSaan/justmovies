@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Header from "../../components/Header";
+import resetComponents from "../../utils/ResetComponents";
 import { SkeletonTopRated } from "../../components/Skeleton";
 import Pagination from "../../components/Pagination";
 import APIKey from "../../mocks/api";
@@ -19,16 +20,16 @@ const TopRated = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const LoadTopRated = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=${page}`);
       setTotalPage(respost.data.total_pages);
       setListRated(respost.data.results.slice(0, 18));
-  
+      
       if (respost.data.total_pages > 500) {
         return setTotalPage(500);
       }
     };
+    resetComponents(setListRated);
     LoadTopRated();
   }, [page]);
 
@@ -44,7 +45,7 @@ const TopRated = () => {
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <Helmet>
         <title>top rated - justmovies</title>
@@ -55,26 +56,26 @@ const TopRated = () => {
           {listRated.length > 0 ? (
             <>
               {listRated.map((rated) => (
-                <Link
-                  to={`/${rated.id}`}
-                  className="ratedmovie_container_card"
-                  key={rated.id}
-                >
-                  <img
-                    loading="lazy"
-                    className="ratedmovie_container_card-image"
-                    src={rated.poster_path ? Image_path + rated.poster_path : imageError}
-                    alt={rated.name}
-                  />
-                  <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
-                </Link>
+                <div className="ratedmovie_container_card" key={rated.id}>
+                  <Link to={`/${rated.id}`}>
+                    <img
+                      loading="lazy"
+                      className="ratedmovie_container_card-image"
+                      src={rated.poster_path ? Image_path + rated.poster_path : imageError}
+                      alt={rated.title ? rated.title : "a top rated movie"}
+                    />
+                  </Link>
+                  <Link to={`/${rated.id}`}>
+                    <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
+                  </Link>
+                </div>
               ))}
             </>
           ) : <SkeletonTopRated />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
       </div>
-    </>
+    </HelmetProvider>
   );
 };
 

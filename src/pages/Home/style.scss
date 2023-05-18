@@ -76,7 +76,6 @@
           font-size: 95%;
           margin: 15px 0 0 0;
           width: 100%;
-          max-width: 12.5vw;
         }
 
         &:hover {
@@ -99,6 +98,7 @@
         flex-direction: column;
         height: 19.5vw;
         width: 12vw;
+        min-width: 8rem;
 
         .home_container_newmovie_card-image {
           height: 18vw;
@@ -136,6 +136,7 @@
         flex-direction: column;
         height: 19.5vw;
         width: 12vw;
+        min-width: 8rem;
 
         .home_container_ratedmovie_card-image {
           height: 18vw;
@@ -181,7 +182,7 @@
         .home_container_popular_card {
           padding: 0 1%;
           height: 13em;
-          min-width: 6.7rem;
+          min-width: 7rem;
 
           .home_container_popular_card-image {
             height: 10em;
@@ -189,7 +190,6 @@
 
           .home_container_popular_card-title {
             margin: 6px 0 0 0;
-            max-width: 8em;
           }
         }
       }
