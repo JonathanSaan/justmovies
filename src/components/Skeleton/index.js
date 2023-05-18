@@ -15,8 +15,8 @@ export const SkeletonHomePopular = () => {
     <Slider {...popularcarouselsetting} className="home_container_popular">
       {Array(20)
         .fill(1)
-        .map(() => (
-          <div className="home_container_popular_card">
+        .map((skeleton, index) => (
+          <div className="home_container_popular_card" key={index}>
             <Skeleton
               className="home_container_popular_card-image"
               variant="rectangular"
@@ -36,8 +36,8 @@ export const SkeletonHomeMovies = () => {
     <>
       {Array(12)
         .fill(1)
-        .map(() => (
-          <div className="home_container_newmovie_card">
+        .map((skeleton, index) => (
+          <div className="home_container_newmovie_card" key={index}>
             <Skeleton
               className="home_container_newmovie_card-image"
               variant="rectangular"
@@ -57,8 +57,8 @@ export const SkeletonHomeTopRated = () => {
     <>
       {Array(12)
         .fill(1)
-        .map(() => (
-          <div className="home_container_ratedmovie_card">
+        .map((skeleton, index) => (
+          <div className="home_container_ratedmovie_card" key={index}>
             <Skeleton
               className="home_container_ratedmovie_card-image"
               variant="rectangular"
@@ -79,8 +79,8 @@ export const SkeletonMoviesGenre = () => {
     <>
       {Array(18)
         .fill(1)
-        .map(() => (
-          <div className="genre_containergenre_card">
+        .map((skeleton, index) => (
+          <div className="genre_containergenre_card" key={index}>
             <Skeleton
               className="genre_containergenre_card-image"
               variant="rectangular"
@@ -101,8 +101,8 @@ export const SkeletonNewMovies = () => {
     <>
       {Array(18)
         .fill(1)
-        .map(() => (
-          <div className="newmovies_container_card">
+        .map((skeleton, index) => (
+          <div className="newmovies_container_card" key={index}>
             <Skeleton
               className="newmovies_container_card-image"
               variant="rectangular"
@@ -123,8 +123,8 @@ export const SkeletonTopRated = () => {
     <>
       {Array(18)
         .fill(1)
-        .map(() => (
-          <div className="ratedmovie_container_card">
+        .map((skeleton, index) => (
+          <div className="ratedmovie_container_card" key={index}>
             <Skeleton
               className="ratedmovie_container_card-image"
               variant="rectangular"
