@@ -35,15 +35,13 @@ export const Popular = () => {
         <Slider {...popularcarouselsetting} className="home_container_popular">
           {listPopular.map((popular) => (
             <div className="home_container_popular_card" key={popular.id}>
-              <Link to={`/${popular.id}`}>
+              <Link to={`/${popular.id}`} draggable="false">
                 <img
                   loading="lazy"
                   className="home_container_popular_card-image"
                   src={popular.poster_path ? Image_path + popular.poster_path : imageError}
                   alt={popular.title}
                 />
-              </Link>
-              <Link to={`/${popular.id}`}>
                 <h2 className="home_container_popular_card-title">
                   {popular.title}
                 </h2>

@@ -188,14 +188,12 @@ const Details = () => {
                   <Slider {...detailscarouselsetting} className="carousel2">
                     {movieSimilar.map((similar) => (
                       <div className="item" key={similar.id}>
-                        <Link to={`/${similar.id}`}>
+                        <Link to={`/${similar.id}`} draggable="false">
                           <img
                             src={similar.poster_path ? imagePath + similar.poster_path : imageError}
                             loading="lazy"
                             alt={similar.title}
                           />
-                        </Link>
-                        <Link to={`/${similar.id}`}>
                           <p>{similar.title}</p>
                         </Link>
                       </div>
