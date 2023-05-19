@@ -86,21 +86,23 @@
 @media screen and (max-width: 768px) {
   .genre {
     .genre_containergenre {
-      width: 80%;
+      width: 90%;
 
       .genre_containergenre_card {
-        margin: 0 auto;
-        height: 13em;
-        width: 6.6em;
+        height: 27vw;
+        min-height: 10rem;
+        margin: 0 auto 6vw auto;
+        width: 23vw;
+        min-width: 8rem;
 
         .genre_containergenre_card-image {
-          height: 10em;
-          width: 6.7em;
+          height: 90%;
+          width: 100%;
         }
 
         .genre_containergenre_card-title {
-          max-width: 8em;
           font-size: .8rem;
+          max-width: 100%;
         }
       }
     }

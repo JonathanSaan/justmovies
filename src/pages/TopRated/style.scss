@@ -17,12 +17,12 @@
 
     .ratedmovie_container-title {
       margin: 2rem 0;
+      padding: 5px 0 0 8px;
       width: 100%;
       color: #fff;
       font-size: 1.5rem;
       align-items: center;
       border-left: 2px solid gray;
-      padding: 5px 0 0 8px;
     }
 
     .ratedmovie_container_card {
@@ -40,8 +40,8 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 12vw;
         margin: 5px 0;
+        max-width: 12vw;
         color: #fff;
         align-items: center;
         font-weight: 500;
@@ -82,21 +82,23 @@
 @media screen and (max-width: 768px) {
   .ratedmovie {
     .ratedmovie_container {
-      width: 80%;
+      width: 90%;
 
       .ratedmovie_container_card {
-        margin: 0 auto;
-        height: 13em;
-        width: 6.6em;
+        height: 27vw;
+        min-height: 10rem;
+        margin: 0 auto 6vw auto;
+        width: 23vw;
+        min-width: 8rem;
 
         .ratedmovie_container_card-image {
-          height: 10em;
-          width: 6.7em;
+          height: 90%;
+          width: 100%;
         }
 
         .ratedmovie_container_card-title {
-          max-width: 8em;
           font-size: .8rem;
+          max-width: 100%;
         }
       }
     }
