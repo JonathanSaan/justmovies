@@ -64,9 +64,8 @@
         .home_container_popular_card-image {
           min-height: 8rem;
           height: 18vw;
-          max-width: 12vw;
+          width: 100%;
           border-radius: 5px;
-          pointer-events: none;
         }
 
         .home_container_popular_card-title {
@@ -104,7 +103,7 @@
         .home_container_newmovie_card-image {
           min-height: 8rem;
           height: 18vw;
-          max-width: 12vw;
+          width: 100%;
           border-radius: 5px;
         }
 
@@ -142,7 +141,7 @@
         max-width: 12vw;
 
         .home_container_ratedmovie_card-image {
-          max-width: 12vw;
+          width: 100%;
           height: 18vw;
           border-radius: 5px;
         }
