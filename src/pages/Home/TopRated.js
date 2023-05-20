@@ -33,8 +33,8 @@ export const TopRated = () => {
                 <img
                   loading="lazy"
                   className="home_container_ratedmovie_card-image"
-                  width="640"
-                  height="480"
+                  height="750"
+                  width="500"
                   src={rated.poster_path ? Image_path + rated.poster_path : imageError}
                   alt={rated.name ? rated.name : "a top rated movie"}
                 />

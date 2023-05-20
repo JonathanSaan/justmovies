@@ -113,7 +113,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           margin: 10px 0 0 0;
-          max-width: 12vw;
+          width: 100%;
           color: #fff;
           font-size: 95%;
         }
@@ -152,7 +152,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           margin: 10px 0 0 0;
-          max-width: 12vw;
+          width: 100%;
           color: #fff;
           font-size: 95%;
         }
@@ -216,7 +216,6 @@
 
           .home_container_newmovie_card-title {
           	margin: 6px 0 0 0;
-            max-width: 8em;
           }
         }
       }
@@ -237,7 +236,6 @@
 
           .home_container_ratedmovie_card-title {
           	margin: 6px 0 0 0;
-            max-width: 8em;
           }
         }
       }
