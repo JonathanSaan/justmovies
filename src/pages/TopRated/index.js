@@ -57,11 +57,13 @@ const TopRated = () => {
             <>
               {listRated.map((rated) => (
                 <div className="ratedmovie_container_card" key={rated.id}>
-                  <Link to={`/${rated.id}`}>
+                  <Link to={`/${rated.id}`} aria-label={rated.title}>
                     <img
                       loading="lazy"
                       className="ratedmovie_container_card-image"
                       src={rated.poster_path ? Image_path + rated.poster_path : imageError}
+                      width="640"
+                      height="480"
                       alt={rated.title ? rated.title : "a top rated movie"}
                     />
                   </Link>

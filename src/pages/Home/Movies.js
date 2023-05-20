@@ -29,12 +29,14 @@ export const Movies = () => {
         <>
           {listMovies.map((movie) => (
             <div className="home_container_newmovie_card" key={movie.id}>
-              <Link to={`/${movie.id}`}>
+              <Link to={`/${movie.id}`} aria-label={movie.title}>
                 <img
                   loading="lazy"
                   className="home_container_newmovie_card-image"
+                  width="640"
+                  height="480"
                   src={movie.poster_path ? Image_path + movie.poster_path : imageError}
-                  alt={movie.title}
+                  alt={movie.title ? movie.title : "a movie"}
                 />
               </Link>
               <Link to={`/${movie.id}`}>

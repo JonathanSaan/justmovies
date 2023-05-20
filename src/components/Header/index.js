@@ -31,7 +31,7 @@ const Header = () => {
             onChange={(e) => SetTypedSearch(e.target.value)}
           />
 
-          <button type="submit" className="header_search-from_button">
+          <button type="submit" className="header_search-from_button" aria-label="search">
             <IoIosSearch size={28} color="#FFF" />
           </button>
         </form>

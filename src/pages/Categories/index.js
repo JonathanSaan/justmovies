@@ -21,7 +21,7 @@ const Categories = ({ category }) => {
           <h1 className="container_category-title">Genre</h1>
           {category.map((genre) => (
             <div className="container_category_genre" key={genre.id}>
-              <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}>
+              <Link to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`} aria-label={genre.name}>
                 <button className="container_category_genre-button">
                   {genre.name}
                 </button>

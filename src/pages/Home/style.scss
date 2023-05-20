@@ -58,12 +58,13 @@
         margin: 1vw 10px;
         min-height: 8rem;
         height: 20vw;
-        max-width: 12.2vw;
+        min-width: 9vw;
+        max-width: 12vw;
 
         .home_container_popular_card-image {
           min-height: 8rem;
           height: 18vw;
-          min-width: 12vw;
+          max-width: 12vw;
           border-radius: 5px;
           pointer-events: none;
         }
@@ -98,10 +99,12 @@
         flex-direction: column;
         height: 19.5vw;
         width: 12vw;
-        min-width: 8rem;
+        max-width: 12vw;
 
         .home_container_newmovie_card-image {
+          min-height: 8rem;
           height: 18vw;
+          max-width: 12vw;
           border-radius: 5px;
         }
 
@@ -136,9 +139,10 @@
         flex-direction: column;
         height: 19.5vw;
         width: 12vw;
-        min-width: 8rem;
+        max-width: 12vw;
 
         .home_container_ratedmovie_card-image {
+          max-width: 12vw;
           height: 18vw;
           border-radius: 5px;
         }
@@ -181,11 +185,13 @@
 
         .home_container_popular_card {
           padding: 0 1%;
-          height: 13em;
-          min-width: 7rem;
+          height: 11em;
+          min-width: 8.2rem;
 
           .home_container_popular_card-image {
-            height: 10em;
+            min-height: 10em;
+            height: 80%;
+            width: 100%;
           }
 
           .home_container_popular_card-title {
@@ -204,7 +210,8 @@
           width: auto;
 
           .home_container_newmovie_card-image {
-            height: 10em;
+            min-height: 10em;
+            height: 90%;
             width: 100%;
           }
 
@@ -225,7 +232,8 @@
           width: auto;
 
           .home_container_ratedmovie_card-image {
-            height: 10em;
+            min-height: 10em;
+            height: 90%;
             width: 100%;
           }
 

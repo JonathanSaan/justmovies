@@ -81,6 +81,8 @@ const Details = () => {
               <img
                 loading="lazy"
                 className="details_container_movie-image"
+                width="640"
+                height="480"
                 src={detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError}
                 alt={detailsMovie.title ? detailsMovie.title : "details about movie"}
               />
@@ -160,6 +162,8 @@ const Details = () => {
                       <div className="item" key={Character.id}>
                         <img
                           loading="lazy"
+                          width="640"
+                          height="480"
                           src={Character.profile_path ? imagePath + Character.profile_path : imageError}
                           alt={Character.name ? Character.name : "a character"}
                         />
@@ -173,9 +177,11 @@ const Details = () => {
                   <Slider {...detailscarouselsetting} className="carousel2">
                     {movieSimilar.map((similar) => (
                       <div className="item" key={similar.id}>
-                        <Link to={`/${similar.id}`} draggable="false">
+                        <Link to={`/${similar.id}`} aria-label={similar.title} draggable="false">
                           <img
                             loading="lazy"
+                            width="640"
+                            height="480"
                             src={similar.poster_path ? imagePath + similar.poster_path : imageError}
                             alt={similar.title ? similar.title : "a similar movie"}
                           />

@@ -29,12 +29,14 @@ export const TopRated = () => {
         <>
           {listRated.map((rated) => (
             <div className="home_container_ratedmovie_card" key={rated.id}>
-              <Link to={`/${rated.id}`}>
+              <Link to={`/${rated.id}`} aria-label={rated.name}>
                 <img
                   loading="lazy"
                   className="home_container_ratedmovie_card-image"
+                  width="640"
+                  height="480"
                   src={rated.poster_path ? Image_path + rated.poster_path : imageError}
-                  alt={rated.name}
+                  alt={rated.name ? rated.name : "a top rated movie"}
                 />
               </Link>
               <Link to={`/${rated.id}`}>

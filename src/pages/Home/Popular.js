@@ -32,12 +32,14 @@ export const Popular = () => {
       {listPopular.length > 0 ? (
         <Slider {...popularcarouselsetting} className="home_container_popular">
           {listPopular.map((popular) => (
-            <Link to={`/${popular.id}`} className="home_container_popular_card" key={popular.id} draggable="false">
+            <Link to={`/${popular.id}`} className="home_container_popular_card" key={popular.id} aria-label={popular.title} draggable="false">
               <img
                 loading="lazy"
                 className="home_container_popular_card-image"
+                width="640"
+                height="480"
                 src={popular.poster_path ? Image_path + popular.poster_path : imageError}
-                alt={popular.title}
+                alt={popular.title ? popular.title : "a popular movie"}
               />
               <h2 className="home_container_popular_card-title">
                 {popular.title}

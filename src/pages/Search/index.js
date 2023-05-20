@@ -46,29 +46,33 @@ const Search = () => {
                   key={movie.id}
                 >
                   <div className="search_container_moviefound_card_containerimage">
-                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`}>
+                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`} aria-label={movie.title}>
                       {movie.poster_path && (
                         <img
                           loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
+                          width="640"
+                          height="480"
                           src={movie.poster_path ? imagePath + movie.poster_path : imageError}
                           alt={movie.title}
                         />
                       )}
                     </Link>
-                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`}>
+                    <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`} aria-label={movie.title}>
                       {movie.poster_path === null && (
                         <img
                           loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
+                          width="640"
+                          height="480"
                           src={imageError}
-                          alt={imageError}
+                          alt="error"
                         />
                       )}
                     </Link>
                   </div>
                   <div className="search_container_moviefound_card_description">
-                    <Link to={`/${movie.id}`}>
+                    <Link to={`/${movie.id}`} aria-label={movie.title}>
                       <h1 className="search_container_moviefound_card_description-title">
                         {movie.title}
                       </h1>

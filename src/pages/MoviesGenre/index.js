@@ -62,10 +62,12 @@ const MoviesGenre = () => {
             <>
               {listMovies.map((movie) => (
                 <div className="genre_containergenre_card" key={movie.id}>
-                  <Link to={`/${movie.id}`}>
+                  <Link to={`/${movie.id}`} aria-label={movie.title}>
                     <img
                       loading="lazy"
                       className="genre_containergenre_card-image"
+                      width="640"
+                      height="480"
                       src={movie.poster_path ? Image_path + movie.poster_path : imageError}
                       alt={movie.title ? movie.title : "a movie"}
                     />
