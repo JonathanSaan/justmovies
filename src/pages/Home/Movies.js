@@ -33,8 +33,8 @@ export const Movies = () => {
                 <img
                   loading="lazy"
                   className="home_container_newmovie_card-image"
-                  height="680"
-                  width="440"
+                  height="333"
+                  width="112"
                   src={movie.poster_path ? Image_path + movie.poster_path : imageError}
                   alt={movie.title ? movie.title : "a movie"}
                 />
