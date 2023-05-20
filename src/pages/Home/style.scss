@@ -204,10 +204,9 @@
         min-height: 30rem;
 
         .home_container_newmovie_card {
-          margin: 0 auto 2rem auto;
-          min-height: 11em;
-          height: 30vw;
-          width: auto;
+          margin: 0 auto 2rem;
+          height: 11em;
+          min-width: 8.2rem;
 
           .home_container_newmovie_card-image {
             min-height: 10em;
@@ -226,10 +225,9 @@
         min-height: 30rem;
 
         .home_container_ratedmovie_card {
-          margin: 0 auto 2rem auto;
-          min-height: 11em;
-          height: 30vw;
-          width: auto;
+          margin: 0 auto 2rem;
+          height: 11em;
+          min-width: 8.2rem;
 
           .home_container_ratedmovie_card-image {
             min-height: 10em;
