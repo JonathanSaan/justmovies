@@ -62,8 +62,8 @@ const TopRated = () => {
                       loading="lazy"
                       className="ratedmovie_container_card-image"
                       src={rated.poster_path ? Image_path + rated.poster_path : imageError}
-                      width="640"
-                      height="480"
+                      height="680"
+                      width="440"
                       alt={rated.title ? rated.title : "a top rated movie"}
                     />
                   </Link>

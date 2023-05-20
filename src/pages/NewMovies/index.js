@@ -61,8 +61,8 @@ const NewMovies = () => {
                     <img
                       loading="lazy"
                       className="newmovies_container_card-image"
-                      width="640"
-                      height="480"
+                      height="680"
+                      width="440"
                       src={movie.poster_path ? Image_path + movie.poster_path : imageError}
                       alt={movie.title ? movie.title : "a new movie"}
                     />

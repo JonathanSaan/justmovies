@@ -63,8 +63,8 @@ const Search = () => {
                         <img
                           loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
-                          width="640"
-                          height="480"
+                          height="680"
+                          width="440"
                           src={imageError}
                           alt="error"
                         />

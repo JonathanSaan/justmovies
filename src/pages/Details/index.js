@@ -180,6 +180,8 @@ const Details = () => {
                         <Link to={`/${similar.id}`} aria-label={similar.title} draggable="false">
                           <img
                             loading="lazy"
+                            height="680"
+                            width="440"
                             src={similar.poster_path ? imagePath + similar.poster_path : imageError}
                             alt={similar.title ? similar.title : "a similar movie"}
                           />
