@@ -36,8 +36,6 @@ export const Popular = () => {
               <img
                 loading="lazy"
                 className="home_container_popular_card-image"
-                height="750"
-                width="500"
                 src={popular.poster_path ? Image_path + popular.poster_path : imageError}
                 alt={popular.title ? popular.title : "a popular movie"}
               />
