@@ -36,8 +36,7 @@ function App() {
           <Route path="/new-movies?page=:page" element={<NewMovies />} />
           <Route path="/top-rated" element={<TopRated />} />
           <Route path="/top-rated?page=:page" element={<TopRated />} />
-          <Route path="/search/" element={<Home />} />
-          <Route path="/search/:searched" element={<Search />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/:details" element={<Details />} />
 
           <Route path="/genre" element={<Categories category={category} />} />

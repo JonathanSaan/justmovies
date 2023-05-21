@@ -16,7 +16,7 @@ const Header = () => {
     if (TypedSearch === "") {
       return;
     }
-    navigate(`/search/${TypedSearch.replaceAll(" ", "+")}`);
+    navigate(`/search?q=${TypedSearch.replaceAll(" ", "+")}`);
   };
   
   return (

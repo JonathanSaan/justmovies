@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
@@ -11,18 +11,21 @@ import APIKey from "../../mocks/api";
 import "./style.scss";
 
 const Search = () => {
-  const { searched } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searched = searchParams.get("q");
 
   const [searchesFound, setSearchesFound] = useState([]);
 
   useEffect(() => {
     const load = async () => {
-      const respost = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=1&include_adult=false`);
-      setSearchesFound(respost.data.results);
+      const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=1&include_adult=false`);
+      setSearchesFound(response.data.results);
     };
     resetComponents();
     load();
   }, [searched]);
+
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
@@ -36,7 +39,7 @@ const Search = () => {
       <div className="search">
         <div className="search_container">
           <h1 className="search_container-title">
-            Results found: {searched.replaceAll("+", " ")}
+            Results found: {searched}
           </h1>
           {searchesFound.length > 0 ? (
             <div className="search_container_moviefound">
@@ -51,8 +54,8 @@ const Search = () => {
                         <img
                           loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
-                          width="640"
-                          height="480"
+                          height="280"
+                          width="120"
                           src={movie.poster_path ? imagePath + movie.poster_path : imageError}
                           alt={movie.title}
                         />
@@ -63,8 +66,8 @@ const Search = () => {
                         <img
                           loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
-                          height="680"
-                          width="440"
+                          height="280"
+                          width="120"
                           src={imageError}
                           alt="error"
                         />
