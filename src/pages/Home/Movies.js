@@ -31,7 +31,6 @@ export const Movies = () => {
             <div className="home_container_newmovie_card" key={movie.id}>
               <Link to={`/${movie.id}`} aria-label={movie.title}>
                 <img
-                  loading="lazy"
                   className="home_container_newmovie_card-image"
                   height="333"
                   width="112"

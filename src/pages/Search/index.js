@@ -52,7 +52,6 @@ const Search = () => {
                     <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`} aria-label={movie.title}>
                       {movie.poster_path && (
                         <img
-                          loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
                           height="280"
                           width="120"
@@ -64,7 +63,6 @@ const Search = () => {
                     <Link className="search_container_moviefound_card_containerimage" to={`/${movie.id}`} aria-label={movie.title}>
                       {movie.poster_path === null && (
                         <img
-                          loading="lazy"
                           className="search_container_moviefound_card_containerimage-image"
                           height="280"
                           width="120"

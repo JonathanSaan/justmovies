@@ -79,7 +79,6 @@ const Details = () => {
           <div className="details_container" key={detailsMovie.id}>
             <div className="details_container_movie">
               <img
-                loading="lazy"
                 className="details_container_movie-image"
                 width="640"
                 height="480"

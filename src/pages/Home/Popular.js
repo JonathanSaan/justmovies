@@ -34,7 +34,6 @@ export const Popular = () => {
           {listPopular.map((popular) => (
             <Link to={`/${popular.id}`} className="home_container_popular_card" key={popular.id} aria-label={popular.title} draggable="false">
               <img
-                loading="lazy"
                 className="home_container_popular_card-image"
                 height="333"
                 width="112"
