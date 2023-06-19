@@ -10,5 +10,8 @@
 🌑 [Live Demo](https://justmovies.vercel.app/)
 
 ## Built with
-* ReactJs
-* Styled Components
+* React.Js
+* MongoDB
+* Node.Js
+* Express.js
+* Material UI

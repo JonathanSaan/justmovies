@@ -1,0 +1,26 @@
+.error {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #f3f3f3;
+
+  .error-title {
+    font-size: 6.5vw;
+  }
+  .error-subtitle {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .error {
+    .error-title {
+      font-size: 20vw;
+    }
+    .error-subtitle {
+      font-size: 6vw;
+    }
+  }
+}

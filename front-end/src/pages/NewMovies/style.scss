@@ -1,0 +1,126 @@
+.newmovies {
+  background-color: #191b1c;
+  padding: 4rem 0 6rem 0;
+  min-height: 100vh;
+
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+
+  .newmovies_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    min-height: 20rem;
+    min-width: 50rem;
+    max-width: 78vw;
+
+    .newmovies_container-title {
+      margin: 2rem 0 2rem -1.2rem;
+      padding: 5px 0 0 8px;
+      width: 100%;
+      color: #f3f3f3;
+      font-size: 1.5rem;
+      align-items: center;
+      border-left: 2px solid #808080;
+    }
+
+    .newmovies_container_card {
+      cursor: pointer;
+      margin: 0 0 3em .9vw;
+      height: 19.5vw;
+
+      .newmovies_container_card-image {
+        color: transparent;
+        min-width: 7.7rem;
+        height: 18vw;
+        width: 12vw;
+        border-radius: 5px;
+      }
+
+      .newmovies_container_card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: .6vw 0 0 0;
+        min-width: 7.7rem;
+        width: 12vw;
+        color: #f3f3f3;
+        font-size: 95%;
+      }
+
+      &:hover {
+        transition: 350ms;
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  ul {
+    margin: -1em 0 0 0;
+
+    li {
+      width: 4vw;
+
+      div {
+        font-size: 1rem;
+        color: #f3f3f3;
+      }
+
+      .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+        background-color: #202020;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 1.2vw 1vw;
+        color: #f3f3f3;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .newmovies {
+    padding: 4rem 0;
+    
+    .newmovies_container {
+      min-width: 0;
+      max-width: 87vw;
+      
+      .newmovies_container_card {
+        height: 27vw;
+        min-height: 10rem;
+        margin: 0 auto 3rem auto;
+        width: 23vw;
+        min-width: 8rem;
+
+        .newmovies_container_card-image {
+          min-height: 10em;
+          height: 90%;
+          width: 95%;
+        }
+
+        .newmovies_container_card-title {
+          margin: 6px 0 0 0;
+          width: 95%;
+          font-size: .8rem;
+        }
+      }
+    }
+
+    ul {
+      width: 65vw;
+      margin: -3em 0 0 -4vw;
+
+      li {
+        margin: 0 auto;
+
+        button {
+          padding: 1vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.search {
+  background-color: #191b1c;
+  min-height: 100vh;
+  padding: 6rem 0;
+
+  .search_container {
+    margin: 0 auto;
+    width: 80%;
+
+    .search_container-title {
+      color: #f3f3f3;
+      font-size: 1.5rem;
+      align-items: center;
+      border-left: 2px solid #808080;
+      margin: .5rem 0 0 0;
+      padding: 5px 0 0 8px;
+    }
+
+    .search_container_moviefound {
+      width: 60vw;
+      margin: .5rem 0 0 1.5rem;
+
+      a {
+        outline: none;
+        text-decoration: none;
+      }
+
+      .search_container_moviefound_card {
+        display: flex;
+        margin: 1em 0;
+        padding: 1rem 0 0 0;
+        min-height: 13rem;
+        height: 12vw;
+        border-top: .5px solid #3e3e3eca;
+
+        .search_container_moviefound_card_containerimage
+          > .search_container_moviefound_card_containerimage-image {
+          color: transparent;
+          cursor: pointer;
+          min-height: 12rem;
+          height: 11vw;
+          min-width: 10rem;
+          width: 9vw;
+        }
+
+        .search_container_moviefound_card_description {
+          display: flex;
+          margin: 0 0 0 1rem;
+          flex-direction: column;
+
+          .search_container_moviefound_card_description-title {
+            cursor: pointer;
+            color: #f3f3f3;
+            font-size: 1.2rem;
+            max-height: 3rem;
+          }
+
+          .search_container_moviefound_card_description-synopsis {
+            margin: .5rem 0 0 0;
+            color: #808080;
+            height: 7rem;
+            font-size: 1rem;
+          }
+
+          .search_container_moviefound_card_description_vote {
+            display: flex;
+            cursor: default;
+            align-items: center;
+            margin: auto 0 .5vw 0;
+            height: 1rem;
+            width: 2.8rem;
+            color: #f3f3f3;
+
+            .search_container_moviefound_card_description_vote-icon {
+              margin: 0 .3rem 0 0;
+            }
+          }
+        }
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
+
+    .search_container-movienoFound {
+      margin: 1.5rem 0 0 .5rem;
+
+      .search_container-movienoFound-title {
+        font-size: 2.3rem;
+        color: #808080;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search { 
+    padding: 6rem 0 2rem 0;
+
+    .search_container {
+     margin: 0 0 0 3vw;
+ 
+     .search_container-title {
+       font-size: 1rem;
+     }
+ 
+     .search_container_moviefound {
+       margin: 0 0 0 .5rem;
+       width: 90vw;
+ 
+       .search_container_moviefound_card {
+         .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
+           min-width: 9rem;
+         }
+ 
+         .search_container_moviefound_card_description {
+           .search_container_moviefound_card_description-title {
+             font-size: 1rem;
+           }
+ 
+           .search_container_moviefound_card_description-synopsis {
+             font-size: .8rem;
+           }
+           .search_container_moviefound_card_description_vote {
+             width: 2.7rem;
+           }
+         }
+       }
+     }
+ 
+     .search_container-movienoFound {
+       margin: 1rem 0 0 1rem;
+ 
+       .search_container-movienoFound-title {
+         font-size: 1.3rem;
+       }
+     }
+   }
+  }
+}

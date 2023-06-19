@@ -1,0 +1,71 @@
+.settings {
+  margin: 0 auto;
+  padding: 7rem 0 2rem 0;
+  min-height: 100vh;
+  width: 80%;
+
+  .settings-title {
+    color: #f3f3f3;
+    font-size: 1.5em;
+    border-left: 2px solid #808080;
+    padding: 5px 0 0 8px;
+  }
+
+  .settings-subtitle {
+    color: #d3d3d3f9;
+    margin: 2rem 0 1rem 2rem;
+  }
+
+  .settings_form {
+    display: flex;
+    margin: 0 4rem;
+    flex-direction: column;
+
+    .settings_form-image {
+      margin: .5rem 6rem;
+      height: 10rem;
+      width: 10rem;
+      border-radius: 100%;
+    }
+    .settings_form-input {
+      margin: 1rem 0;
+      height: 3.5rem;
+      min-width: 23rem;
+      width: 20%;
+    }
+    .settings_form-input.description {
+      min-height: 8rem;
+      width: 100%;
+    }
+
+    .settings_form-submit {
+      cursor: pointer;
+      background-color: #808080;
+      border: none;
+      border-radius: .4rem;
+      margin: 1rem 0 3rem 0;
+      height: 3.5rem;
+      min-width: 23rem;
+      width: 20%;
+
+      &:hover {
+        filter: Brightness(.8);
+        transition: 200ms;
+      }
+    }
+    .settings_form-submit.description {
+      margin: 0 0 3rem auto;
+    }
+    .settings_form-submit.delete {
+      margin: .5rem 0 3rem 0;
+      background-color: #95141f;
+      color: #f3f3f3;
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .settings {
+    width: 95%;
+  }
+}
