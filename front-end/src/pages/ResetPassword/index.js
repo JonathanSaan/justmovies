@@ -122,7 +122,7 @@ const ResetPassword = () => {
             </ThemeProvider>
 
             <button type="submit" className="resetpassword_right_form-submit">
-              Sign in
+              Save Password
             </button>
           </form>
         </div>
