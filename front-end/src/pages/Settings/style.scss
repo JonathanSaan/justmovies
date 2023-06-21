@@ -67,5 +67,17 @@
 @media screen and (max-width: 786px) {
   .settings {
     width: 95%;
+
+    .settings-subtitle {
+      margin: 2rem 0 1rem 1rem;
+    }
+
+    .settings_form {
+      margin: 0 4rem 0 2rem;
+
+      .settings_form-input, .settings_form-submit, .settings_form-submit.description {
+        width: auto;
+      }
+    }
   }
 }
