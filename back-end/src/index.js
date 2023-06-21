@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 connetcDatabase();
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: process.env.SERVER_FRONT_URL }));
 
 app.use(express.json());
 app.use("/", authRoute);
