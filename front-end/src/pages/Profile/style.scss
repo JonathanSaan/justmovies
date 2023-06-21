@@ -36,7 +36,7 @@
     .profile_container_favorites {
       position: absolute;
       margin: 20rem 0 0 0;
-      
+
       .profile_container_favorites-title {
         color: #f3f3f3;
         font-size: 130%;
@@ -53,20 +53,20 @@
         margin: 0 0 0 2rem;
         width: 79vw;
 
-        .profile_container_favorites_container-item {
+        .profile_container_favorites_container_item {
           margin: 0 2.5vw 3rem 1vw;
           min-height: 17rem;
           height: 18vw;
           min-width: 12rem;
           width: 12vw;
-  
-          img{
+
+          .profile_container_favorites_container_item-image {
             color: transparent;
             border-radius: 5px;
             height: 90%;
             width: 100%;
           }
-          h2 {
+          .profile_container_favorites_container_item-title {
             color: #f3f3f3;
             white-space: nowrap;
             overflow: hidden;
@@ -108,11 +108,11 @@
 
     .profile_container_detail {
       text-align: center;
-      
+
       .profile_container_detail-description {
         margin: 1rem 0 0 0;
       }
-    } 
+    }
 
     .profile_container_favorites {
       margin: 26rem 0 0 0;
@@ -123,7 +123,7 @@
         width: 95%;
         justify-content: space-between;
 
-        .profile_container_favorites_container-item {
+        .profile_container_favorites_container_item {
           margin: 0 0 2rem 0;
           min-height: 13rem;
           height: 37vw;
@@ -133,13 +133,13 @@
       }
     }
   }
-}   
+}
 
 @media screen and (max-width: 465px) {
   .profile > .profile_container > .profile_container_favorites > .profile_container_favorites_container {
     width: 90%;
 
-    .profile_container_favorites_container-item {
+    .profile_container_favorites_container_item {
       margin: 0 0 2rem 0;
       height: 47vw;
       width: 35vw;
@@ -148,7 +148,7 @@
 }
 
 @media screen and (max-width: 322px) {
-  .profile > .profile_container > .profile_container_favorites > .profile_container_favorites_container > .profile_container_favorites_container-item {
+  .profile > .profile_container > .profile_container_favorites > .profile_container_favorites_container > .profile_container_favorites_container_item {
     margin: 0 auto 2rem auto;
     min-height: 18rem;
     height: 77vw;

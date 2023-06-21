@@ -1,92 +1,91 @@
 .resetpassword {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+
+  .resetpassword_left {
     display: flex;
-    min-height: 100vh;
-    flex-direction: row;
-  
-    .resetpassword_left {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-  
-      .resetpassword_left-image {
-        pointer-events: none;
-        color: transparent;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .resetpassword_left-image {
+      pointer-events: none;
+      color: transparent;
+      transform: translateY(0);
+      min-height: 13rem;
+      height: 15vw;
+      min-width: 18rem;
+      width: 20vw;
+      animation: float 5s ease-out infinite;
+    }
+    @keyframes float {
+      0% {
         transform: translateY(0);
-        min-height: 13rem;
-        height: 15vw;
-        min-width: 18rem;
-        width: 20vw;
-        animation: float 5s ease-out infinite;
       }
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-3rem);
-        }
-        100% {
-          transform: translateY(0);
-        }
+      50% {
+        transform: translateY(-3rem);
+      }
+      100% {
+        transform: translateY(0);
       }
     }
-  
-    .resetpassword_right {
+  }
+
+  .resetpassword_right {
+    display: flex;
+    padding: 4rem 0;
+    min-width: 23rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #d3d3d3f9;
+
+    .resetpassword_right_form {
       display: flex;
-      padding: 4rem 0;
-      min-width: 23rem;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
-      color: #d3d3d3f9;
-  
-      .resetpassword_right_form {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-  
-        .resetpassword_right_form-title {
-          margin: 1rem auto;
-        }
-        .resetpassword_right_form-input {
-          background-color: #3e3e3eca;
-          border-radius: .4rem;
-          margin: 1.5rem 0 0 0;
-          height: auto;
-          min-width: 23rem;
-          width: 23vw;
-          caret-color: #d3d3d3f9;
-        }
-        .resetpassword_right_form-submit {
-          cursor: pointer;
-          background-color: #808080;
-          border: none;
-          border-radius: .4rem;
-          margin: 2rem 0 3rem 0;
-          height: 3.5rem;
-          min-width: 23rem;
-          width: 23vw;
-  
-          &:hover {
-            filter: Brightness(.8);
-            transition: 200ms;
-          }
+
+      .resetpassword_right_form-title {
+        margin: 1rem auto;
+      }
+      .resetpassword_right_form-input {
+        background-color: #3e3e3eca;
+        border-radius: .4rem;
+        margin: 1.5rem 0 0 0;
+        height: auto;
+        min-width: 23rem;
+        width: 23vw;
+        caret-color: #d3d3d3f9;
+      }
+      .resetpassword_right_form-submit {
+        cursor: pointer;
+        background-color: #808080;
+        border: none;
+        border-radius: .4rem;
+        margin: 2rem 0 3rem 0;
+        height: 3.5rem;
+        min-width: 23rem;
+        width: 23vw;
+
+        &:hover {
+          filter: Brightness(.8);
+          transition: 200ms;
         }
       }
     }
   }
-  
-  @media screen and (max-width: 710px) {
-    .resetpassword {
-      .resetpassword_left {
-        display: none;
-      }
-      .resetpassword_right {
-        min-width: 0;
-      }
+}
+
+@media screen and (max-width: 710px) {
+  .resetpassword {
+    .resetpassword_left {
+      display: none;
+    }
+    .resetpassword_right {
+      min-width: 0;
     }
   }
-  
+}

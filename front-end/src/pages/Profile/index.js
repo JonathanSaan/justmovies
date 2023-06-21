@@ -57,10 +57,10 @@ const Profile = () => {
                 {profileData.favorites.map((favorite) => ( 
                   <div key={favorite.id} className="profile_container_favorites_container-item">
                     <Link to={`/movies/${favorite.movieId}`}>
-                      <img src={favorite.movieImage} alt={favorite.movieTitle} />
+                      <img className="profile_container_favorites_container_item-image" src={favorite.movieImage} alt={favorite.movieTitle} />
                     </Link>
                     <Link to={`/movies/${favorite.movieId}`}>
-                      <h2>{favorite.movieTitle}</h2>
+                      <h2 className="profile_container_favorites_container_item-title">{favorite.movieTitle}</h2>
                     </Link>
                   </div>
                 ))}
