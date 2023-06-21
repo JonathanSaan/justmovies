@@ -38,7 +38,7 @@ const ResetPassword = () => {
   
   const onSubmit = async (e) => {
     try {
-      await axios.post(`${process.env.SERVER_BACK_URL}/reset-password/${id}/${token}`, e);
+      await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL }/reset-password/${id}/${token}`, e);
 
       Notification("success", "Password successfully updated!");
       setTimeout(() => {

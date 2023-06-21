@@ -17,7 +17,7 @@ const Profile = () => {
   useEffect(() => {
     const load = async () => {
       try {
-        const response = await axios.get(`${process.env.SERVER_BACK_URL}/profile/${username}`);
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL }/profile/${username}`);
         setProfileData(response.data.user);
       } catch (err) {
         resetComponents(() => setProfileData());

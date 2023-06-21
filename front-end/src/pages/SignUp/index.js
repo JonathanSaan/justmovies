@@ -37,7 +37,7 @@ const SignUp = () => {
 
   const onSubmit = async (e) => {
     try {
-      await axios.post(`${process.env.SERVER_BACK_URL}/sign-up`, e);
+      await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-up`, e);
       
       navigate("/sign-in");
     } catch (err) {

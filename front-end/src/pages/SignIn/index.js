@@ -39,7 +39,7 @@ const SignIn = () => {
   
   const onSubmit = async (e) => {
     try {
-      const response = await axios.post(`${process.env.SERVER_BACK_URL}/sign-in`, e);
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-in`, e);
       const { token, user } = response.data;
 
       sessionStorage.setItem("token", token);

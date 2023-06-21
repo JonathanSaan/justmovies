@@ -47,7 +47,7 @@ const Settings = () => {
 
   const handleChangeDescription = async (e) => {
     try {
-      await axios.patch(`${process.env.SERVER_BACK_URL}/profile/settings/description/${id}`, e, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/description/${id}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +61,7 @@ const Settings = () => {
 
   const handleChangePassword = async (e) => {
     try {
-      await axios.patch(`${process.env.SERVER_BACK_URL}/profile/settings/password/${id}`, e, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/password/${id}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -77,7 +77,7 @@ const Settings = () => {
   };
 
   const handleDeleteAccount = async () => {
-    await axios.delete(`${process.env.SERVER_BACK_URL}/profile/settings/${id}`, {
+    await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

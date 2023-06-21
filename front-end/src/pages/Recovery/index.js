@@ -14,9 +14,8 @@ const Recovery = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (e) => {
-    const serverBACK = process.env.SERVER_BACK_URL || "http://localhost:8000";
     try {
-      await axios.post(`${serverBACK}/recovery`, e);
+      await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/recovery`, e);
       
       Notification("success", "Password reset email sent");
     } catch (err) {
