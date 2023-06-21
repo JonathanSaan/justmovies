@@ -55,7 +55,7 @@ const Profile = () => {
               <h1 className="profile_container_favorites-title">Movies favorites ({profileData.favorites.length})</h1>
               <div className="profile_container_favorites_container">
                 {profileData.favorites.map((favorite) => ( 
-                  <div key={favorite.id} className="profile_container_favorites_container-item">
+                  <div key={favorite.id} className="profile_container_favorites_container_item">
                     <Link to={`/movies/${favorite.movieId}`}>
                       <img className="profile_container_favorites_container_item-image" src={favorite.movieImage} alt={favorite.movieTitle} />
                     </Link>
