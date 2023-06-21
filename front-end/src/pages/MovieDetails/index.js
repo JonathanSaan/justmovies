@@ -42,11 +42,10 @@ const MovieDetails = () => {
   
   const handleFavorite = async (e) => {
     e.preventDefault();
-    const serverBACK = process.env.SERVER_BACK_URL || "http://localhost:8000";
 
     if(favorited) {
       try {
-        await axios.delete(`${serverBACK}/movies/removeFavorite/${detailsMovie.id}`, {
+        await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/movies/removeFavorite/${detailsMovie.id}`, {
           data: {
             userFrom: id,
             movieId: detailsMovie.id,
@@ -66,7 +65,7 @@ const MovieDetails = () => {
     }
     
     try {
-      await axios.post(`${serverBACK}/movies/addFavorite/${detailsMovie.id}`,
+      await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/movies/addFavorite/${detailsMovie.id}`,
       {
         userFrom: id,
         movieId: detailsMovie.id,
@@ -122,8 +121,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     const checkFavoriteStatus = async () => {
-      const serverBACK = process.env.SERVER_BACK_URL || "http://localhost:8000";
-      const response = await axios.get(`${serverBACK}/profile/${profile.username}`);
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${profile.username}`);
       const favorites = response.data.user.favorites;
       const isFavorited = favorites.some((movie) => parseInt(movie.movieId) === parseInt(detailsMovie.id));
       setFavorited(isFavorited);
