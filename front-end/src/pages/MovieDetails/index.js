@@ -121,16 +121,18 @@ const MovieDetails = () => {
 
   useEffect(() => {
     const checkFavoriteStatus = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${profile.username}`);
-      const favorites = response.data.user.favorites;
-      const isFavorited = favorites.some((movie) => parseInt(movie.movieId) === parseInt(detailsMovie.id));
-      setFavorited(isFavorited);
+      if (profile && detailsMovie.id) {
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${profile.username}`);
+        const favorites = response.data.user.favorites;
+        const isFavorited = favorites.some((movie) => parseInt(movie.movieId) === parseInt(detailsMovie.id));
+        setFavorited(isFavorited);
+      }
     }
 
-    if (detailsMovie.id) {
+    if (profile && detailsMovie.id) {
       checkFavoriteStatus();
     }
-  }, [detailsMovie, profile.username]);
+  }, [detailsMovie, profile]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
