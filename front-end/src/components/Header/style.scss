@@ -19,6 +19,7 @@ html {
   width: 100%;
   align-items: center;
   background-color: #0c0c0ce7;
+  backdrop-filter: blur(4px);
   z-index: 4;
 
   .header-menu {
