@@ -109,6 +109,10 @@ export const recovery = async (req, res) => {
     const { email } = req.body;
     
     const user = await findByEmail(email);
+    
+    if (!email) {
+      return res.status(400).send({ message: "Fill in the field" });
+    }
 
     if (!user) {
       return res.status(400).send({ message: "This email is not registered in our system" });
