@@ -160,7 +160,7 @@ export const resetPassword = async (req, res) => {
     }
 
     if (!token) {
-      return res.status(400).send({ message: "Repeat all again." });
+      return res.status(400).send({ message: "Invalid token." });
     }
 
     await updatePasswordService(id, password.trim(), repeatPassword.trim());
