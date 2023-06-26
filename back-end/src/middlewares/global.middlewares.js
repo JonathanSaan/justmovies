@@ -46,6 +46,12 @@ export const validToken = async (req, res, next) => {
       }
 
       req.userId = user._id;
+
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+      if (decoded.exp < currentTimestamp) {
+        return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
+      }
+
       return next();
     });
   } catch (err) {

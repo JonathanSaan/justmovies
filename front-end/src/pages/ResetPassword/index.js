@@ -46,6 +46,9 @@ const ResetPassword = () => {
       }, 6500); 
     } catch (err) {
       Notification("error", err.response.data.message);
+      setTimeout(() => {
+        navigate("/recovery");
+      }, 6500); 
     }
   };
 
