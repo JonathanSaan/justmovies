@@ -45,10 +45,14 @@ const ResetPassword = () => {
         navigate("/sign-in");
       }, 6500); 
     } catch (err) {
+      if (!token) {
+        Notification("error", "Session expired. Please repeat the protocol.");
+        setTimeout(() => {
+          navigate("/recovery");
+        }, 6500); 
+      }
+
       Notification("error", err.response.data.message);
-      setTimeout(() => {
-        navigate("/recovery");
-      }, 6500); 
     }
   };
 
