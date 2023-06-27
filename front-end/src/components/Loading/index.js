@@ -1,5 +1,5 @@
 import "./style.scss";
-import { CircularProgress } from "react-cssfx-loading";
+import CircularProgress from "react-cssfx-loading";
 
 const Loading = () => {
   return (

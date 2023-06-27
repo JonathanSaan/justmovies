@@ -3,12 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import {
-  ThemeProvider,
-  TextField,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
+import ThemeProvider from "@mui/material";
+import TextField from "@mui/material/TextField"
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
 import { ToastContainer } from "react-toastify";
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from "react-icons/md";
 import { Helmet, HelmetProvider } from "react-helmet-async";
