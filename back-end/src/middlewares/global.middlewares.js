@@ -44,14 +44,13 @@ export const validToken = async (req, res, next) => {
       if (error || !user || !user.id) {
         return res.status(404).send({ message: "Invalid token!" });
       }
-
-      req.userId = user._id;
-
+      
       const currentTimestamp = Math.floor(Date.now() / 1000);
       if (decoded.exp < currentTimestamp) {
         return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
       }
-
+      
+      req.userId = user._id;
       return next();
     });
   } catch (err) {

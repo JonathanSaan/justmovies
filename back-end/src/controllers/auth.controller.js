@@ -140,7 +140,7 @@ export const recovery = async (req, res) => {
 export const resetPassword = async (req, res) => {
   try {
     const { password, repeatPassword } = req.body;
-    const { id, token } = req.params;
+    const { id } = req.params;
 
     if ( !password || !repeatPassword ) {
       return res.status(400).send({ message: "Fill in all the fields." });
@@ -157,10 +157,6 @@ export const resetPassword = async (req, res) => {
     
 	  if (password.length < 8 || repeatPassword.length < 8) {
       return res.status(400).send({ message: "Passwords must have at least 8 characters." });
-    }
-
-    if (!token) {
-      return res.status(400).send({ message: "Invalid token." });
     }
 
     await updatePasswordService(id, password.trim(), repeatPassword.trim());
