@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import ThemeProvider from "@mui/material";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import TextField from "@mui/material/TextField"
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";

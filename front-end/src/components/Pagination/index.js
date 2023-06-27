@@ -1,4 +1,4 @@
-import { Pagination as Paginate } from "@mui/material/Pagination";
+import { Pagination as Paginate } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 const Pagination = ({ page, totalPage, paginate }) => {

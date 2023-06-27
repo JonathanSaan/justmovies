@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import ThemeProvider from "@mui/material";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import TextField from "@mui/material/TextField";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
