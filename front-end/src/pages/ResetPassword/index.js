@@ -45,7 +45,7 @@ const ResetPassword = () => {
         navigate("/sign-in");
       }, 6500); 
     } catch (err) {
-      if (!token) {
+      if (err.response && err.response.status === 401) {
         Notification("error", "Session expired. Please repeat the protocol.");
         setTimeout(() => {
           navigate("/recovery");
