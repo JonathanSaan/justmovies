@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
-import { loginService, generateTokenService, createService, findByUsernameService, findByEmailService, validTokenService } from "../services/auth.service.js";
+import { loginService, generateTokenService, createService, findByUsernameService, findByEmailService, validateService } from "../services/auth.service.js";
 import { updatePasswordService } from "../services/user.service.js";
 import transporter from "../helpers/sendEmail.js";
 
