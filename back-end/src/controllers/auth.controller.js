@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
-import { loginService, generateToken, createService, findByUsername, findByEmail } from "../services/auth.service.js";
+import { loginService, generateTokenService, createService, findByUsernameService, findByEmailService, validTokenService } from "../services/auth.service.js";
 import { updatePasswordService } from "../services/user.service.js";
 import transporter from "../helpers/sendEmail.js";
 
@@ -32,7 +32,7 @@ export const login = async (req, res) => {
       return res.status(404).send({ message: "User or Password not found" });
     }
 
-    const token = generateToken(user.id, "24hr");
+    const token = generateTokenService(user.id, "24hr");
 
     res.send({
       user: {
@@ -76,12 +76,12 @@ export const register = async (req, res) => {
       return res.status(400).send({ message: "The password must contain at least one special character." });
     }
     
-    const existingUsername = await findByUsername(username);
+    const existingUsername = await findByUsernameService(username);
     if (existingUsername) {
       return res.status(400).send({ message: "Username is already in use. Please choose a different username." });
     }
 
-    const existingEmail = await findByEmail(email);
+    const existingEmail = await findByEmailService(email);
     if (existingEmail) {
       return res.status(400).send({ message: "Email is already in use. Please choose a different email." });
     }
@@ -108,7 +108,7 @@ export const recovery = async (req, res) => {
   try {
     const { email } = req.body;
     
-    const user = await findByEmail(email);
+    const user = await findByEmailService(email);
     
     if (!email) {
       return res.status(400).send({ message: "Fill in the field" });
@@ -118,7 +118,7 @@ export const recovery = async (req, res) => {
       return res.status(400).send({ message: "This email is not registered in our system" });
     }
     
-    const resetToken = generateToken(user.id, "1hr");
+    const resetToken = generateTokenService(user.id, "1hr");
     
     const resetLink = `${process.env.SERVER_FRONT_URL}/reset-password/id=${user.id}/token=${resetToken}`;
 
@@ -140,7 +140,9 @@ export const recovery = async (req, res) => {
 export const resetPassword = async (req, res) => {
   try {
     const { password, repeatPassword } = req.body;
-    const { id } = req.params;
+    const { id, token } = req.params;
+
+    await validateService(req, res, token);
 
     if ( !password || !repeatPassword ) {
       return res.status(400).send({ message: "Fill in all the fields." });

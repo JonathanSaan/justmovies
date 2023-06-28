@@ -6,11 +6,25 @@ export const loginService = (email) =>
 
 export const createService = (body) => User.create(body);
 
-export const generateToken = (id, hr) =>
+export const generateTokenService = (id, hr) =>
   jvt.sign({ id: id }, process.env.SECRET_JVT, { expiresIn: hr });
 
-export const findByUsername = (username) => User.findOne({ username });
+export const findByUsernameService = (username) => User.findOne({ username });
 
-export const findByEmail = (email) => User.findOne({ email });
+export const findByEmailService = (email) => User.findOne({ email });
 
-export const findById = (id) => User.findOne({ id });
+export const validateService = async (req, res, token) => {
+  const decoded = jvt.verify(token, process.env.SECRET_JVT);
+  const user = await User.findById(decoded.id);
+
+  if (!user || !user.id) {
+    return res.status(404).send({ message: "Invalid token!" });
+  }
+
+  const currentTimestamp = Math.floor(Date.now() / 1000);
+  if (decoded.exp < currentTimestamp) {
+    return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
+  }
+
+  req.userId = user._id;
+};

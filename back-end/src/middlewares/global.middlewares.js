@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import jvt from "jsonwebtoken";
-import { findByUsernameService, findByIdService } from "../services/user.service.js";
+import { findByUsernameService } from "../services/user.service.js";
 
 export const validId = async (req, res, next) => {
   try {
@@ -29,30 +28,6 @@ export const validUser = async (req, res, next) => {
     req.user = user;
 
     next();
-  } catch (err) {
-    res.status(500).send({ message: err.message });
-  }
-};
-
-export const validToken = async (req, res, next) => {
-  try {
-    const token = req.params.token;
-
-    jvt.verify(token, process.env.SECRET_JVT, async (error, decoded) => {
-      const user = await findByIdService(decoded.id);
-
-      if (error || !user || !user.id) {
-        return res.status(404).send({ message: "Invalid token!" });
-      }
-      
-      const currentTimestamp = Math.floor(Date.now() / 1000);
-      if (decoded.exp < currentTimestamp) {
-        return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
-      }
-      
-      req.userId = user._id;
-      return next();
-    });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
