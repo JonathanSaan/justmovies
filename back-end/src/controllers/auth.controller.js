@@ -165,6 +165,9 @@ export const resetPassword = async (req, res) => {
     
     res.status(200).send({ message: "Password successfully updated!" });
   } catch (err) {
+    if (err.name === "TokenExpiredError") {
+      return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
+    }
     res.status(500).send(err.message);
   }
 }
