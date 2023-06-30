@@ -9,7 +9,10 @@
   }
 
   .ratedmovie_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0 auto;
     min-height: 20rem;
@@ -22,6 +25,8 @@
       width: 100%;
       color: #f3f3f3;
       font-size: 1.5rem;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       border-left: 2px solid #808080;
     }
@@ -42,6 +47,7 @@
       .ratedmovie_container_card-title {
         white-space: nowrap;
         overflow: hidden;
+        -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         margin: .6vw 0 0 0;
         min-width: 7.7rem;
@@ -51,7 +57,11 @@
       }
 
       &:hover {
+        -webkit-transition: 350ms;
+        -o-transition: 350ms;
         transition: 350ms;
+        -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
         transform: scale(1.08);
       }
     }
@@ -84,7 +94,7 @@
 @media screen and (max-width: 768px) {
   .ratedmovie {
     padding: 4rem 0;
-    
+
     .ratedmovie_container {
       min-width: 0;
       max-width: 87vw;

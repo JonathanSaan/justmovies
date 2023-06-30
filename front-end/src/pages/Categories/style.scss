@@ -3,7 +3,12 @@
   padding: 5rem 0 2rem 0;
 
   .container_category {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin: 0 auto;
     min-height: 100vh;
@@ -28,7 +33,7 @@
         margin: .3rem 0;
 
         &:hover {
-          background-color: #0C0C0C;
+          background-color: #0c0c0c;
         }
       }
     }

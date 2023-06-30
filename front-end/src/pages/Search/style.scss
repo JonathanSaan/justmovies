@@ -10,6 +10,8 @@
     .search_container-title {
       color: #f3f3f3;
       font-size: 1.5rem;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       border-left: 2px solid #808080;
       margin: .5rem 0 0 0;
@@ -26,6 +28,8 @@
       }
 
       .search_container_moviefound_card {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 1em 0;
         padding: 1rem 0 0 0;
@@ -44,8 +48,13 @@
         }
 
         .search_container_moviefound_card_description {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin: 0 0 0 1rem;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
 
           .search_container_moviefound_card_description-title {
@@ -63,8 +72,12 @@
           }
 
           .search_container_moviefound_card_description_vote {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             cursor: default;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             margin: auto 0 .5vw 0;
             height: 1rem;
@@ -95,47 +108,48 @@
 }
 
 @media screen and (max-width: 768px) {
-  .search { 
+  .search {
     padding: 6rem 0 2rem 0;
 
     .search_container {
-     margin: 0 0 0 3vw;
- 
-     .search_container-title {
-       font-size: 1rem;
-     }
- 
-     .search_container_moviefound {
-       margin: 0 0 0 .5rem;
-       width: 90vw;
- 
-       .search_container_moviefound_card {
-         .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
-           min-width: 9rem;
-         }
- 
-         .search_container_moviefound_card_description {
-           .search_container_moviefound_card_description-title {
-             font-size: 1rem;
-           }
- 
-           .search_container_moviefound_card_description-synopsis {
-             font-size: .8rem;
-           }
-           .search_container_moviefound_card_description_vote {
-             width: 2.7rem;
-           }
-         }
-       }
-     }
- 
-     .search_container-movienoFound {
-       margin: 1rem 0 0 1rem;
- 
-       .search_container-movienoFound-title {
-         font-size: 1.3rem;
-       }
-     }
-   }
+      margin: 0 0 0 3vw;
+
+      .search_container-title {
+        font-size: 1rem;
+      }
+
+      .search_container_moviefound {
+        margin: 0 0 0 .5rem;
+        width: 90vw;
+
+        .search_container_moviefound_card {
+          .search_container_moviefound_card_containerimage
+            > .search_container_moviefound_card_containerimage-image {
+            min-width: 9rem;
+          }
+
+          .search_container_moviefound_card_description {
+            .search_container_moviefound_card_description-title {
+              font-size: 1rem;
+            }
+
+            .search_container_moviefound_card_description-synopsis {
+              font-size: .8rem;
+            }
+            .search_container_moviefound_card_description_vote {
+              width: 2.7rem;
+            }
+          }
+        }
+      }
+
+      .search_container-movienoFound {
+        margin: 1rem 0 0 1rem;
+
+        .search_container-movienoFound-title {
+          font-size: 1.3rem;
+        }
+      }
+    }
   }
 }

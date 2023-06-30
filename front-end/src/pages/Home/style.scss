@@ -13,21 +13,33 @@
     }
 
     .home_container_fade {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
 
       .home_container_fade-title {
         color: #f3f3f3;
         font-size: 170%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         border-left: 2px solid #808080;
         padding: 5px 0 0 8px;
       }
 
       .home_container_fade-button {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         cursor: pointer;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 9px 6px 9px 12px;
         background-color: #202020;
@@ -41,14 +53,21 @@
         }
 
         &:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
           transform: scale(1.1);
+          -webkit-transition: 300ms;
+          -o-transition: 300ms;
           transition: 300ms;
         }
       }
     }
 
     .home_container_popular {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      cursor: -webkit-grab;
       cursor: grab;
       overflow: hidden;
       margin: 1.4rem 0 5vw .7rem;
@@ -77,6 +96,7 @@
           color: #f3f3f3;
           white-space: nowrap;
           overflow: hidden;
+          -o-text-overflow: ellipsis;
           text-overflow: ellipsis;
           font-size: 120%;
           margin: .7vw 0 0 0;
@@ -84,15 +104,24 @@
         }
 
         &:hover {
+          -webkit-transition: 350ms;
+          -o-transition: 350ms;
           transition: 350ms;
+          -webkit-transform: scale(1.06);
+          -ms-transform: scale(1.06);
           transform: scale(1.06);
         }
       }
     }
 
     .home_container_newmovie {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
       justify-content: space-evenly;
       margin: 0 auto;
       padding: 2rem 0 3rem 1rem;
@@ -118,6 +147,7 @@
           color: #f3f3f3;
           white-space: nowrap;
           overflow: hidden;
+          -o-text-overflow: ellipsis;
           text-overflow: ellipsis;
           font-size: 120%;
           margin: .6vw 0 0 0;
@@ -125,15 +155,24 @@
         }
 
         &:hover {
+          -webkit-transition: 350ms;
+          -o-transition: 350ms;
           transition: 350ms;
+          -webkit-transform: scale(1.06);
+          -ms-transform: scale(1.06);
           transform: scale(1.06);
         }
       }
     }
 
     .home_container_ratedmovie {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
       justify-content: space-evenly;
       margin: 0 auto;
       padding: 2rem 0 3rem 1rem;
@@ -159,6 +198,7 @@
           color: #f3f3f3;
           white-space: nowrap;
           overflow: hidden;
+          -o-text-overflow: ellipsis;
           text-overflow: ellipsis;
           font-size: 120%;
           margin: .6vw 0 0 0;
@@ -166,7 +206,11 @@
         }
 
         &:hover {
+          -webkit-transition: 350ms;
+          -o-transition: 350ms;
           transition: 350ms;
+          -webkit-transform: scale(1.06);
+          -ms-transform: scale(1.06);
           transform: scale(1.06);
         }
       }
@@ -192,7 +236,7 @@
         max-width: 96vw;
 
         .home_container_popular_card {
-      	  margin: .8rem 5px 10vw 5px;
+          margin: .8rem 5px 10vw 5px;
           padding: 0 1%;
           min-height: 11rem;
           height: 30vw;
@@ -215,22 +259,22 @@
         margin: 0;
         padding: 2rem 0 3rem 0;
         min-height: 30rem;
-		    max-width: 95vw;
-		
+        max-width: 95vw;
+
         .home_container_newmovie_card {
           margin: 0 0 7vw 0;
           min-height: 11rem;
           height: 30vw;
           min-width: 8rem;
           width: 20vw;
-		  
+
           .home_container_newmovie_card-image {
             min-height: 10em;
             height: 90%;
           }
 
           .home_container_newmovie_card-title {
-          	margin: 6px 0 0 0;
+            margin: 6px 0 0 0;
           }
         }
       }
@@ -239,8 +283,8 @@
         margin: 0;
         padding: 2rem 0 3rem 0;
         min-height: 30rem;
-		    max-width: 95vw;
-		
+        max-width: 95vw;
+
         .home_container_ratedmovie_card {
           margin: 0 0 7vw 0;
           min-height: 11rem;
@@ -254,7 +298,7 @@
           }
 
           .home_container_ratedmovie_card-title {
-          	margin: 6px 0 0 0;
+            margin: 6px 0 0 0;
           }
         }
       }

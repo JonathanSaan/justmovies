@@ -3,6 +3,7 @@ html {
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: sans-serif;
   text-decoration: none;
@@ -11,14 +12,19 @@ html {
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: fixed;
   padding: 0 .7rem;
   min-height: 4.5rem;
   height: 3vw;
   width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #0c0c0ce7;
+  -webkit-backdrop-filter: blur(.2rem);
   backdrop-filter: blur(.2rem);
   z-index: 4;
 
@@ -29,9 +35,15 @@ html {
   }
 
   .header_search_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 0 0 auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     .header_search_form-search {
@@ -42,6 +54,8 @@ html {
       font-size: 80%;
       border-radius: .3rem;
       background-color: #3e3e3eca;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       color: #d3d3d3f9;
       border: none;
@@ -56,10 +70,16 @@ html {
     }
 
     .header_search_form_dropdown {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       position: absolute;
+      -webkit-box-shadow: 0px 5px 41px -0px #0c0c0ce7;
       box-shadow: 0px 5px 41px -0px #0c0c0ce7;
       top: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       margin: 5rem .6rem 0 0;
       width: 30vw;
@@ -67,6 +87,8 @@ html {
       border-radius: .4rem;
 
       .header_search_form_dropdown_card {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         padding: .5rem .5rem 1rem .5rem;
 
@@ -77,8 +99,13 @@ html {
         }
 
         .header_search_form_dropdown_card_description {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin: 0 0 0 .7rem;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
 
           .header_search_form_dropdown_card_description-title {
@@ -86,7 +113,7 @@ html {
             font-size: 1rem;
             text-decoration: none;
           }
-  
+
           .header_search_form_dropdown_card_description-synopsis {
             margin: .2rem 0 0 0;
             color: #808080;
@@ -95,7 +122,11 @@ html {
         }
 
         .header_search_form_dropdown_card_description_vote {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           margin: auto 0 0 0;
           height: 1rem;
@@ -108,7 +139,10 @@ html {
         }
 
         &:hover {
+          -webkit-filter: Brightness(.8);
           filter: Brightness(.8);
+          -webkit-transition: 300ms;
+          -o-transition: 300ms;
           transition: 300ms;
         }
       }

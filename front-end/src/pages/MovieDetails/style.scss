@@ -1,4 +1,6 @@
 .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 10rem 0 0 0;
   min-height: 100vh;
@@ -8,6 +10,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     position: absolute;
+    -webkit-filter: opacity(20%);
     filter: opacity(20%);
     margin: 4.5rem 0 -26rem 0;
     height: 32rem;
@@ -17,17 +20,26 @@
     bottom: 0;
     left: 0;
     z-index: -1;
+    -webkit-box-shadow: inset 0px -50px 27px -18px #191b1c;
     box-shadow: inset 0px -50px 27px -18px #191b1c;
   }
 
   .details_container {
+    -webkit-filter: opacity(100%);
     filter: opacity(100%);
     margin: 0 auto;
     width: 65%;
 
     .details_container_movie {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
       width: 100%;
 
@@ -42,6 +54,9 @@
       }
 
       .details_container_movie-details {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         margin: 0 0 0 auto;
         padding: 0 0 0 1rem;
@@ -64,13 +79,25 @@
         }
 
         span {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
 
           .details_container_movie-details_votes {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -ms-flex-pack: distribute;
             justify-content: space-around;
             margin: .5rem 0;
             padding: 7px 5px;
@@ -78,16 +105,20 @@
             border: 1px solid #808080;
             color: #f3f3f3;
             background-color: #191b1c;
-  
+
             .details_container_movie-details_votes-icon {
               width: 1.2rem;
             }
           }
 
           .details_container_movie-details-favorite {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             cursor: pointer;
             margin: 0 0 0 .8rem;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             background-color: transparent;
             border: none;
@@ -110,7 +141,7 @@
             white-space: nowrap;
 
             &:hover {
-              background-color: #0C0C0C;
+              background-color: #0c0c0c;
             }
           }
         }
@@ -135,7 +166,11 @@
     }
 
     .details_container_movie-containervideo {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       margin: 10% 0;
       width: 100%;
@@ -171,12 +206,16 @@
         height: 2rem;
 
         .TabList {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           list-style-type: none;
           color: #f3f3f3;
           border: none;
 
           .active {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             border-end-end-radius: 3px;
             border-end-start-radius: 3px;
@@ -199,11 +238,13 @@
 
         .TabPanel {
           .carousel1 > div {
+            cursor: -webkit-grab !important;
             cursor: grab !important;
           }
 
           .carousel1,
           .carousel2 {
+            cursor: -webkit-grab;
             cursor: grab;
             margin: 20px auto 5vw auto;
             height: 15vw;
@@ -235,6 +276,7 @@
                 color: #f3f3f3;
                 white-space: nowrap;
                 overflow: hidden;
+                -o-text-overflow: ellipsis;
                 text-overflow: ellipsis;
                 width: 100%;
                 font-size: 85%;
@@ -247,7 +289,11 @@
               }
 
               &:hover {
+                -webkit-transition: 350ms;
+                -o-transition: 350ms;
                 transition: 350ms;
+                -webkit-transform: scale(1.06);
+                -ms-transform: scale(1.06);
                 transform: scale(1.06);
               }
             }
@@ -256,12 +302,18 @@
       }
     }
   }
-  
+
   .details_noFound {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: -10rem auto 0 auto;
     color: #f3f3f3;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
@@ -335,12 +387,12 @@
           .carousel2 {
             margin: 1rem 0 0 0;
             width: 90vw;
-            
+
             .item {
               padding: .4rem 0 0 0;
               min-height: 12rem;
               min-width: 8rem;
-              
+
               p {
                 font-size: 80%;
               }

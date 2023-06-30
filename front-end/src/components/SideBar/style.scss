@@ -11,8 +11,14 @@
 }
 
 .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 2.5rem 0 0 0;
 }
@@ -23,8 +29,12 @@
 }
 
 .Buttons-Sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-transform: capitalize;
   margin: .5em auto 0 auto;
@@ -38,22 +48,22 @@
 
   .Icon {
     width: 1.8rem;
-    height: 1.8rem; 
+    height: 1.8rem;
   }
-  
+
   .Button-Label {
     padding: 0 0 0 .5rem;
   }
-  
+
   &:hover {
     background-color: #d3d3d3f9;
-    color: #0C0C0C;
+    color: #0c0c0c;
   }
 }
 
 .active {
   background-color: #d3d3d3f9;
-  color: #0C0C0C;
+  color: #0c0c0c;
 }
 
 .bm-cross-button {
@@ -79,7 +89,7 @@
 .bm-item-list {
   color: #b8b7ad;
   text-transform: uppercase;
-  padding: 0.8em;
+  padding: .8em;
 }
 
 .bm-item {

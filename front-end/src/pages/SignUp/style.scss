@@ -1,51 +1,101 @@
 .signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
 
   .signup_left {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 
     .signup_left-image {
       pointer-events: none;
       color: transparent;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
       transform: translateY(0);
       min-height: 13rem;
       height: 15vw;
       min-width: 18rem;
       width: 20vw;
+      -webkit-animation: float 5s ease-out infinite;
       animation: float 5s ease-out infinite;
     }
-    @keyframes float {
+    @-webkit-keyframes float {
       0% {
+        -webkit-transform: translateY(0);
         transform: translateY(0);
       }
       50% {
+        -webkit-transform: translateY(-3rem);
         transform: translateY(-3rem);
       }
       100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+    @keyframes float {
+      0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      50% {
+        -webkit-transform: translateY(-3rem);
+        transform: translateY(-3rem);
+      }
+      100% {
+        -webkit-transform: translateY(0);
         transform: translateY(0);
       }
     }
   }
 
   .signup_right {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 4rem 0;
     min-width: 23rem;
     width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     color: #d3d3d3f9;
 
     .signup_right_form {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
       align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
       .signup_right_form-title {
@@ -71,7 +121,10 @@
         width: 23vw;
 
         &:hover {
+          -webkit-filter: Brightness(.8);
           filter: Brightness(.8);
+          -webkit-transition: 200ms;
+          -o-transition: 200ms;
           transition: 200ms;
         }
       }
