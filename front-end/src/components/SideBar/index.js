@@ -16,6 +16,10 @@ const SideBar = () => {
     localStorage.clear();
     sessionStorage.clear();
   };
+  
+  if (!profileString) {
+    handleSignOut();
+  };
 
   return (
     <Menu
