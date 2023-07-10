@@ -4,6 +4,7 @@ import Fade from "react-reveal/Fade";
 import { IoIosArrowForward } from "react-icons/io";
 
 import Header from "../../components/Header";
+import Footer from "../../components/Footer"; 
 import { Movies } from "./Movies";
 import { TopRated } from "./TopRated";
 import { Popular } from "./Popular";
@@ -53,6 +54,7 @@ const Home = () => {
             <TopRated />
           </div>
         </div>
+        <Footer />
       </div>
     </HelmetProvider>
   );
