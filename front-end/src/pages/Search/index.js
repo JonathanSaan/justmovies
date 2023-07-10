@@ -20,27 +20,35 @@ const Search = () => {
 
   const [searchesFound, setSearchesFound] = useState([]);
   const [hasMoreResults, setHasMoreResults] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
     const newSearchesFound = [];
-    const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=${offset.current}&include_adult=false`);
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=${offset.current}&include_adult=false`
+    );
     newSearchesFound.push(...response.data.results);
-    setSearchesFound((oldSearchesFound) => [...oldSearchesFound, ...newSearchesFound]);
+    setSearchesFound((oldSearchesFound) => [
+      ...oldSearchesFound,
+      ...newSearchesFound,
+    ]);
     offset.current += 1;
-    
+
     if (response.data.results.length === 0) {
       setHasMoreResults(false);
     }
+    setLoading(false);
   }, [searched]);
 
   useEffect(() => {
-  	setHasMoreResults(true);
+    setHasMoreResults(true);
     resetComponents(setSearchesFound, offset);
     load();
   }, [searched, load]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  const imageError =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
     <HelmetProvider>
@@ -51,7 +59,9 @@ const Search = () => {
       <div className="search">
         <div className="search_container">
           <h1 className="search_container-title">Results found: {searched}</h1>
-          {searchesFound.length > 0 ? (
+          {loading ? (
+            null
+          ) : searchesFound.length > 0 ? (
             <div className="search_container_moviefound">
               <InfiniteScroll
                 dataLength={searchesFound.length}
