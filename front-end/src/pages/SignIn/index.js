@@ -14,11 +14,14 @@ import { ToastContainer } from "react-toastify";
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from "react-icons/md";
 
 import Header from "../../components/Header";
+import usePrompt from "../../utils/usePrompt";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
 import "./style.scss";
 
 const SignIn = () => {
+  usePrompt();
+  
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const [rememberMe, setRememberMe] = useState(false);
@@ -54,6 +57,8 @@ const SignIn = () => {
       Notification("error", err.response.data.message);
     }
   };
+
+  usePrompt();
 
   return (
     <HelmetProvider>
