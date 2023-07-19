@@ -23,6 +23,7 @@ const Search = () => {
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
+    setLoading(true);
     const newSearchesFound = [];
     const response = await axios.get(
       `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=${offset.current}&include_adult=false`
