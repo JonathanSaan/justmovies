@@ -74,6 +74,7 @@
     padding: 4rem 0;
     min-width: 23rem;
     width: 100%;
+    text-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -148,8 +149,19 @@
     .signin_left {
       display: none;
     }
+    
     .signin_right {
-      min-width: 0;
+      min-width: 85vw;
+      
+      .signin_right_form {
+        .signin_right_form-input {
+          min-width: 85vw;
+        }
+        
+        .signin_right_form-submit {
+          min-width: 85vw;
+        }
+      }
     }
   }
 }

@@ -74,6 +74,7 @@
     padding: 4rem 0;
     min-width: 23rem;
     width: 100%;
+    text-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -137,8 +138,19 @@
     .resetpassword_left {
       display: none;
     }
+    
     .resetpassword_right {
-      min-width: 0;
+      min-width: 85vw;
+        
+      .resetpassword_right_form {
+        .resetpassword_right_form-input {
+          min-width: 85vw;
+        }
+        
+        .resetpassword_right_form-submit {
+          min-width: 85vw;
+        }
+      }
     }
   }
 }

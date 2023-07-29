@@ -76,6 +76,7 @@
     display: flex;
     min-width: 23rem;
     width: 100%;
+    text-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -143,8 +144,19 @@
     .recovery_left {
       display: none;
     }
+    
     .recovery_right {
-      min-width: 0;
+      min-width: 85vw;
+      
+      .recovery_right_form {
+        .recovery_right_form-input {
+          min-width: 85vw;
+        }
+        
+        .recovery_right_form-submit {
+          min-width: 85vw;
+        }
+      }
     }
   }
 }
