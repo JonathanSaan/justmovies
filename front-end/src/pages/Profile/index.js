@@ -32,6 +32,8 @@ const Profile = () => {
       <Header />
       <Helmet>
         <title>{username}'s Profile - justmovies</title>
+        <meta name="description" content={`Check out ${username}'s profile on justmovies. View their favorite movies and more!`} />
+        <meta name="keywords" content={`profile, ${username}, favorite movies, ${username}'s profile`} />
       </Helmet>
       <div className="profile">
         {loading ? (

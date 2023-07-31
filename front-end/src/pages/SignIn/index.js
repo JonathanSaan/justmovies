@@ -65,6 +65,8 @@ const SignIn = () => {
       <Header />
       <Helmet>
         <title>sign in - justmovies</title>
+        <meta name="description" content="Sign in to justmovies to access your account securely and enjoy our exclusive movie collection." />
+        <meta name="keywords" content="sign in, signin, login, form, access account, user login, secure login, member login" />
       </Helmet>
       <div className="signin">
         <div className="signin_left">

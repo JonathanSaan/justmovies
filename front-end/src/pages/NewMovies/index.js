@@ -49,6 +49,8 @@ const NewMovies = () => {
       <Header />
       <Helmet>
         <title>new movies - justmovies</title>
+        <meta name="description" content="Discover the latest new movies on justmovies. Explore the newest releases and find your next favorite film." />
+        <meta name="keywords" content="new movies, latest releases" />
       </Helmet>
       <div className="newmovies">
         <div className="newmovies_container">

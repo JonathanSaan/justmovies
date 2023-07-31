@@ -56,6 +56,8 @@ const Search = () => {
       <Header />
       <Helmet>
         <title>Search result for {searched} - justmovies</title>
+        <meta name="description" content={`Search result for ${searched} on justmovies. Browse and discover movies matching your search query.`} />
+        <meta name="keywords" content={`search, movies, results, ${searched}`} />
       </Helmet>
       <div className="search">
         <div className="search_container">

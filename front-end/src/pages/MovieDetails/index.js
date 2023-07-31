@@ -141,9 +141,10 @@ const MovieDetails = () => {
     <HelmetProvider>
       <Header />
       <Helmet>
-        <title>
-          {detailsMovie.title ? `${detailsMovie.title} - ` : ""}justmovies
-        </title>
+        <title>{detailsMovie.title ? `${detailsMovie.title} - ` : ""}justmovies</title>
+        <meta name="description" content={detailsMovie.overview} />
+        <meta name="keywords" content={`movie, ${detailsMovie.title}, ${detailsMovie.genres.join(", ")}, trailer, characters, similar movies`} />
+        <meta property="og:image" content={imagePath + detailsMovie.poster_path} />
       </Helmet>
       <div className="details">
         {loading ? (

@@ -29,6 +29,8 @@ const Recovery = () => {
       <Header />
       <Helmet>
         <title>Recovery - justmovies</title>
+        <meta name="description" content="Forgot your password? No worries. Enter your email to receive a password reset link." />
+        <meta name="keywords" content="password reset, forgot password, account recovery" />
       </Helmet>
       <div className="recovery">
         <div className="recovery_left">

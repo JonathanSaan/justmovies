@@ -51,6 +51,9 @@ const SignUp = () => {
       <Header />
       <Helmet>
         <title>sign up - justmovies</title>
+        <meta name="description" content="Sign up for a justmovies account to save your favorite movies to your favorites list. Join now to curate your movie collection!">
+        <meta name="keywords" content="sign up, signup, form, create account, register, join justmovies, movie account">
+</Helmet>
       </Helmet>
       <div className="signup">
         <div className="signup_left">

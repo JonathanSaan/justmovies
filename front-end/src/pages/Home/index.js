@@ -21,13 +21,13 @@ const Home = () => {
         <div className="home_container">
           <Fade bottom>
             <div className="home_container_fade">
-              <h1 className="home_container_fade-title">Most Popular</h1>
+              <h2 className="home_container_fade-title">Most Popular</h2>
             </div>
           </Fade>
           <Popular />
           <Fade bottom>
             <div className="home_container_fade">
-              <h1 className="home_container_fade-title">New Movies</h1>
+              <h2 className="home_container_fade-title">New Movies</h2>
               <Link to={`/new-movies`}>
                 <button className="home_container_fade-button">
                   See all
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
           <Fade bottom>
             <div className="home_container_fade">
-              <h1 className="home_container_fade-title">Top Rated</h1>
+              <h2 className="home_container_fade-title">Top Rated</h2>
               <Link to={`/top-rated`}>
                 <button className="home_container_fade-button">
                   See all

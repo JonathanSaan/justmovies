@@ -26,6 +26,8 @@ const Categories = () => {
       <Header />
       <Helmet>
         <title>genre - justmovies</title>
+        <meta name="description" content="Explore movie genres on justmovies. Browse through a variety of movie genres and find your favorite movies." />
+        <meta name="keywords" content="movie genres, movie categories, justmovies genres" />
       </Helmet>
       <div className="category">
         <div className="container_category">

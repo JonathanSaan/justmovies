@@ -51,7 +51,9 @@ const MoviesGenre = () => {
     <HelmetProvider>
       <Header />
       <Helmet>
-        <title>{genre} - justmovies</title>
+        <title>{genre.replace(/-/g, " ")} - justmovies</title>
+        <meta name="description" content={`Explore ${genre.replace(/-/g, " ")} movies on justmovies. Browse through a variety of ${genre.replace(/-/g, " ")} movies and find your favorites.`} />
+        <meta name="keywords" content={`movies genre, movie category, justmovies genre, ${genre.replace(/-/g, " ")}`} />
       </Helmet>
       <div className="genre">
         <div className="genre_containergenre">

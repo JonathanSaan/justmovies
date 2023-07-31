@@ -92,6 +92,8 @@ const Settings = () => {
       <Header />
       <Helmet>
         <title>settings - justmovies</title>
+        <meta name="description" content="Update your profile settings on justmovies. Change your description, update your password, or delete your account." />
+        <meta name="keywords" content="settings, profile settings, update description, change password, delete account, justmovies" />
       </Helmet>
       <div className="settings">
         <h1 className="settings-title">Settings</h1>

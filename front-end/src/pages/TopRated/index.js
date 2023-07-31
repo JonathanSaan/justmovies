@@ -49,6 +49,8 @@ const TopRated = () => {
       <Header />
       <Helmet>
         <title>top rated - justmovies</title>
+        <meta name="description" content="Discover the top-rated movies on justmovies. Check out the best-rated movies of all time and find new favorites." />
+        <meta name="keywords" content="top-rated movies, best-rated movies, highest-rated films" />
       </Helmet>
       <div className="ratedmovie">
         <div className="ratedmovie_container">
