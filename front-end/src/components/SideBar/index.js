@@ -27,7 +27,7 @@ const SideBar = () => {
       isOpen={false}
       pageWrapId={"page-wrap"}
       outerContainerId={"outer-container"}
-      customBurgerIcon={<IoMenu className="bm-burger-bars" size={75} />}
+      customBurgerIcon={<IoMenu className="bm-burger-bars" />}
     >
       <div>
         <h1 className="h1-sidebar">general</h1>
