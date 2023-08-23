@@ -3,25 +3,25 @@
 ## Home Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot1.jpg)
 
-## Detail Movie
+## Detail Movie Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot2.jpg)
 
-## Genre
+## Genre Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot6.jpg)
 
-## Sign in
+## Sign in Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot3.jpg)
 
-## Sign up
+## Sign up Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot4.jpg)
 
-## Recovery
+## Recovery Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot5.jpg)
 
-## Profile
+## Profile Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot7.jpg)
 
-## Profile setting
+## Profile setting Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot8.jpg)
 
 ## Demo
