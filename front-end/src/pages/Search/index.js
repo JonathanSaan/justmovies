@@ -23,33 +23,31 @@ const Search = () => {
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
-    setLoading(true);
-    const newSearchesFound = [];
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=${offset.current}&include_adult=false`
-    );
-    newSearchesFound.push(...response.data.results);
+    const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&language=en-US&query=${searched}&page=${offset.current}&include_adult=false`);
+    
     setSearchesFound((oldSearchesFound) => [
       ...oldSearchesFound,
-      ...newSearchesFound,
+      ...response.data.results,
     ]);
     offset.current += 1;
 
     if (response.data.results.length === 0) {
       setHasMoreResults(false);
     }
+    
     setLoading(false);
   }, [searched]);
 
   useEffect(() => {
+    setLoading(true);
     setHasMoreResults(true);
+    setSearchesFound([]);
     resetComponents(setSearchesFound, offset);
     load();
   }, [searched, load]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
+  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
   return (
     <HelmetProvider>

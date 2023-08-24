@@ -9,7 +9,7 @@
 
     .search_container-title {
       color: #f3f3f3;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
@@ -37,8 +37,7 @@
         height: 12vw;
         border-top: .5px solid #3e3e3eca;
 
-        .search_container_moviefound_card_containerimage
-          > .search_container_moviefound_card_containerimage-image {
+        .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
           color: transparent;
           cursor: pointer;
           min-height: 12rem;
@@ -115,7 +114,7 @@
       margin: 0 0 0 3vw;
 
       .search_container-title {
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
 
       .search_container_moviefound {
