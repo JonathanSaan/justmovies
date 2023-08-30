@@ -42,6 +42,7 @@ const MovieDetails = () => {
   
   const handleFavorite = async (e) => {
     e.preventDefault();
+    document.body.style.cursor = "wait";
 
     if(favorited) {
       try {
@@ -57,8 +58,10 @@ const MovieDetails = () => {
           },
         });
         Notification("success", "Movie removed from favorites");
+        document.body.style.cursor = "default";
         setFavorited(!favorited);
       } catch (err) {
+        document.body.style.cursor = "default";
         Notification("error", err.response.data.message);
       }
       return;
@@ -78,8 +81,10 @@ const MovieDetails = () => {
         },
       });
       Notification("success", "Movie added to favorites");
+      document.body.style.cursor = "default";
       setFavorited(!favorited);
     } catch (err) {
+      document.body.style.cursor = "default";
       Notification("error", err.response.data.message);
     }
   };

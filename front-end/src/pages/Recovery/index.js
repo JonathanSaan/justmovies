@@ -16,10 +16,13 @@ const Recovery = () => {
 
   const onSubmit = async (e) => {
     try {
+      document.body.style.cursor = "wait";
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/recovery`, e);
       
       Notification("success", "Password reset email sent");
+      document.body.style.cursor = "default";
     } catch (err) {
+      document.body.style.cursor = "default";
       Notification("error", err.response.data.message);
     }
   };

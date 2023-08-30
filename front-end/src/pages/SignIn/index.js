@@ -40,6 +40,7 @@ const SignIn = () => {
   
   const onSubmit = async (e) => {
     try {
+      document.body.style.cursor = "wait";
       const response = await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-in`, e);
       const { token, user } = response.data;
 
@@ -51,9 +52,11 @@ const SignIn = () => {
         localStorage.setItem("user", JSON.stringify(user));
         sessionStorage.clear();
       }
-
+      
+	  document.body.style.cursor = "default";
       navigate("/");
     } catch (err) {
+      document.body.style.cursor = "default";
       Notification("error", err.response.data.message);
     }
   };

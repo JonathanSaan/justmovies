@@ -38,10 +38,13 @@ const SignUp = () => {
 
   const onSubmit = async (e) => {
     try {
+      document.body.style.cursor = "wait";
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-up`, e);
       
+      document.body.style.cursor = "default";
       navigate("/sign-in");
     } catch (err) {
+      document.body.style.cursor = "default";
       Notification("error", err.response.data.message);
     }
   };
