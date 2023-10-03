@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { IoIosStar, IoIosSearch } from "react-icons/io";
@@ -10,6 +10,7 @@ import "./style.scss";
 
 const Header = () => {
   let navigate = useNavigate();
+  const refOne = useRef(null);
   const [searchesDropdown, setSearchesDropdown] = useState([]);
   const [typedSearch, setTypedSearch] = useState("");
 
@@ -34,7 +35,17 @@ const Header = () => {
     navigate(`/search?q=${typedSearch.replaceAll(" ", "+")}`);
     resetComponents(setSearchesDropdown);
   };
-
+  
+  const handleOutsideDropdownClick = (e) => {
+  	if (refOne.current && !refOne.current.contains(e.target)) {
+  	  setSearchesDropdown([]);
+  	}
+  }
+  
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideDropdownClick, true);
+  }, []);
+  
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
 
@@ -59,7 +70,7 @@ const Header = () => {
             <IoIosSearch size={28} color="#FFF" />
           </button>
           {typedSearch && searchesDropdown.length > 0 && (
-            <div className="header_search_form_dropdown">
+            <div className="header_search_form_dropdown" onSubmit={handleOutsideDropdownClick} ref={refOne}>
               {searchesDropdown
                 .filter((movie) => {
                   const searchTerm = typedSearch.toLowerCase();
