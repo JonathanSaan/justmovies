@@ -196,7 +196,7 @@ const MovieDetails = () => {
                         {detailsMovie.vote_average.toFixed(1)}
                       </p>
                     </div>
-                    <button onClick={handleFavorite} className="details_container_movie-details-favorite">
+                    <button onClick={handleFavorite} title="Add to favorites" className="details_container_movie-details-favorite">
                       {favorited ? <AiFillHeart size={25} color="#FF0043" /> : <AiFillHeart size={25} color="#808080" />}
                     </button>
                   </span>
