@@ -15,6 +15,7 @@ import Header from "../../components/Header";
 import usePrompt from "../../utils/usePrompt";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const SignUp = () => {
@@ -25,7 +26,8 @@ const SignUp = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showRepeatedPassword, setShowRepeatedPassword] = useState(false);
-
+  const [loadingButton, setLoadingButton] = useState(false);
+	
   const handleClickShowPassword = (event) => {
     if (event === "password") {
       return setShowPassword(!showPassword);
@@ -38,13 +40,13 @@ const SignUp = () => {
 
   const onSubmit = async (e) => {
     try {
-      document.body.style.cursor = "wait";
+      setLoadingButton(true)
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-up`, e);
       
-      document.body.style.cursor = "default";
+      setLoadingButton(false)
       navigate("/sign-in");
     } catch (err) {
-      document.body.style.cursor = "default";
+      setLoadingButton(false)
       Notification("error", err.response.data.message);
     }
   };
@@ -145,10 +147,7 @@ const SignUp = () => {
                 }}
               />
             </ThemeProvider>
-
-            <button type="submit" className="signup_right_form-submit">
-              Sign up
-            </button>
+			<LoadingButton styleButton="signup_right_form-submit" loading={loadingButton} message="Sign up" />
           </form>
           <p>
             Already have an account?{" "}

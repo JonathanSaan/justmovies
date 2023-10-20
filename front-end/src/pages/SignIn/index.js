@@ -17,6 +17,7 @@ import Header from "../../components/Header";
 import usePrompt from "../../utils/usePrompt";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const SignIn = () => {
@@ -25,6 +26,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const [rememberMe, setRememberMe] = useState(false);
+  const [loadingButton, setLoadingButton] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
@@ -40,7 +42,7 @@ const SignIn = () => {
   
   const onSubmit = async (e) => {
     try {
-      document.body.style.cursor = "wait";
+      setLoadingButton(true)
       const response = await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/sign-in`, e);
       const { token, user } = response.data;
 
@@ -53,10 +55,10 @@ const SignIn = () => {
         sessionStorage.clear();
       }
       
-	  document.body.style.cursor = "default";
+      setLoadingButton(false)
       navigate("/");
     } catch (err) {
-      document.body.style.cursor = "default";
+      setLoadingButton(false)
       Notification("error", err.response.data.message);
     }
   };
@@ -136,10 +138,7 @@ const SignIn = () => {
               }
               label="Remember me"
             />
-
-            <button type="submit" className="signin_right_form-submit">
-              Sign in
-            </button>
+			<LoadingButton styleButton="signin_right_form-submit" loading={loadingButton} message="Sign in" />
           </form>
           <p>
             Do not have an account?{" "}

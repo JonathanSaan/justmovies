@@ -14,6 +14,7 @@ import { MdOutlineVisibility, MdOutlineVisibilityOff } from "react-icons/md";
 import Header from "../../components/Header";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const ResetPassword = () => {
@@ -23,7 +24,8 @@ const ResetPassword = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showRepeatedPassword, setShowRepeatedPassword] = useState(false);
-
+  const [loadingButton, setLoadingButton] = useState(false);
+  
   const handleClickShowPassword = (event) => {
     if (event === "password") {
       return setShowPassword(!showPassword);
@@ -36,13 +38,17 @@ const ResetPassword = () => {
   
   const onSubmit = async (e) => {
     try {
+      setLoadingButton(true)
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL }/reset-password/${id}/${token}`, e);
-
+	  
+	  setLoadingButton(false)
       Notification("success", "Password successfully updated!");
       setTimeout(() => {
         navigate("/sign-in");
       }, 6500); 
     } catch (err) {
+      setLoadingButton(false)
+      
       if (err.response && err.response.status === 401) {
         Notification("error", "Session expired. Please repeat the protocol.");
         setTimeout(() => {
@@ -50,7 +56,6 @@ const ResetPassword = () => {
         }, 6500); 
         return;
       }
-
       Notification("error", err.response.data.message);
     }
   };
@@ -126,10 +131,8 @@ const ResetPassword = () => {
                 }}
               />
             </ThemeProvider>
-
-            <button type="submit" className="resetpassword_right_form-submit">
-              Save Password
-            </button>
+			
+			<LoadingButton styleButton="resetpassword_right_form-submit" loading={loadingButton} message="Save Password" />
           </form>
         </div>
         <ToastContainer />

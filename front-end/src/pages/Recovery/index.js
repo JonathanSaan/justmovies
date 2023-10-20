@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
@@ -9,20 +11,22 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const Recovery = () => { 
   const { register, handleSubmit } = useForm();
-
+  const [loadingButton, setLoadingButton] = useState(false);
+  
   const onSubmit = async (e) => {
     try {
-      document.body.style.cursor = "wait";
+      setLoadingButton(true)
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/recovery`, e);
       
+      setLoadingButton(false)
       Notification("success", "Password reset email sent");
-      document.body.style.cursor = "default";
     } catch (err) {
-      document.body.style.cursor = "default";
+      setLoadingButton(false)
       Notification("error", err.response.data.message);
     }
   };
@@ -61,9 +65,7 @@ const Recovery = () => {
                 }}
               />
             </ThemeProvider>
-            <button type="submit" className="recovery_right_form-submit">
-              Email me some help
-            </button>
+            <LoadingButton styleButton="recovery_right_form-submit" loading={loadingButton} message="Email me some help" />
       	  </form>
           <Link to="/sign-in" className="recovery_right-link">
             Back to Sign in
