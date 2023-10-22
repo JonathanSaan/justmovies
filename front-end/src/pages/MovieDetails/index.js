@@ -17,6 +17,7 @@ import Notification from "../../utils/Notification";
 import { detailscarouselsetting } from "../../mocks/carouselsettings";
 import { SkeletonMovieDetails } from "../../components/Skeleton";
 import Header from "../../components/Header";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const MovieDetails = () => {
@@ -27,6 +28,7 @@ const MovieDetails = () => {
   const id = profile ? profile.id : null;
 
   const [loading, setLoading] = useState(true);
+  const [loadingButton, setLoadingButton] = useState(false);
   const [detailsMovie, setDetailsMovie] = useState({});
   const [favorited, setFavorited] = useState(false);
   const [yearMovie, setYearMovie] = useState([]);
@@ -42,10 +44,11 @@ const MovieDetails = () => {
   
   const handleFavorite = async (e) => {
     e.preventDefault();
-    document.body.style.cursor = "wait";
+    setLoadingButton(true)
 
     if(favorited) {
       try {
+        setLoadingButton(true)
         await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/movies/removeFavorite/${detailsMovie.id}`, {
           data: {
             userFrom: id,
@@ -57,11 +60,11 @@ const MovieDetails = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        setLoadingButton(false)
         Notification("success", "Movie removed from favorites");
-        document.body.style.cursor = "default";
         setFavorited(!favorited);
       } catch (err) {
-        document.body.style.cursor = "default";
+        setLoadingButton(false)
         Notification("error", err.response.data.message);
       }
       return;
@@ -80,11 +83,11 @@ const MovieDetails = () => {
           Authorization: `Bearer ${token}`,
         },
       });
+      setLoadingButton(false)
       Notification("success", "Movie added to favorites");
-      document.body.style.cursor = "default";
       setFavorited(!favorited);
     } catch (err) {
-      document.body.style.cursor = "default";
+      setLoadingButton(false)
       Notification("error", err.response.data.message);
     }
   };
@@ -196,9 +199,7 @@ const MovieDetails = () => {
                         {detailsMovie.vote_average.toFixed(1)}
                       </p>
                     </div>
-                    <button onClick={handleFavorite} title="Add to favorites" className="details_container_movie-details-favorite">
-                      {favorited ? <AiFillHeart size={25} color="#FF0043" /> : <AiFillHeart size={25} color="#808080" />}
-                    </button>
+                    <LoadingButton styleButton="details_container_movie-details-favorite" event={handleFavorite} loading={loadingButton} message={favorited ? <AiFillHeart size={25} color="#FF0043" /> : <AiFillHeart size={25} color="#808080" />} />
                   </span>
 
                   <hr />

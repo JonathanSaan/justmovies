@@ -1,16 +1,16 @@
 import { CircularProgress } from "react-cssfx-loading";
 
-const LoadingButton = ({ styleButton, loading, message }) => {
+const LoadingButton = ({ event, styleButton, loading, message }) => {
   return (
-    <button type="submit" className={styleButton} >
-    	{loading ? <Icone /> : message}
+    <button onClick={event ? event : null} type="submit" className={styleButton} >
+    	{loading ? <Icone event={event} /> : message}
     </button>
   );
 };
 
-const Icone = () => { 
+const Icone = ({ event }) => { 
   return ( 
-  	<CircularProgress color="#000000" height="2em" width="2em" /> 
+  	<CircularProgress color={event ? "#808080" : "#000000"} height="2em" width="2em" /> 
   )
 }
 
