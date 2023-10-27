@@ -14,6 +14,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../components/Header";
 import Notification from "../../utils/Notification";
 import CustomTextField from "../../utils/CustomTextField";
+import LoadingButton from "../../components/LoadingButton";
 import "./style.scss";
 
 const Settings = () => {
@@ -24,6 +25,10 @@ const Settings = () => {
   const profileString = localStorage.getItem("user") || sessionStorage.getItem("user");
   const profile = profileString ? JSON.parse(profileString) : null;
   const id = profile ? profile.id : null;
+
+  const [isLoadingButton1, setIsLoadingButton1] = useState(false);
+  const [isLoadingButton2, setIsLoadingButton2] = useState(false);
+  const [isLoadingButton3, setIsLoadingButton3] = useState(false);
 
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -45,42 +50,50 @@ const Settings = () => {
 
   const handleChangeDescription = async (e) => {
     try {
+      setIsLoadingButton1(true);
       await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/description/${id}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-
+      
+      setIsLoadingButton1(false)
       Notification("success", "Description successfully updated!");
     } catch (err) {
+      setIsLoadingButton1(false)
       Notification("error", err.response.data.message);
     }
   };
 
   const handleChangePassword = async (e) => {
     try {
+      setIsLoadingButton2(true)
       await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/password/${id}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
+      setIsLoadingButton2(false)
       Notification("success", "Password successfully updated!");
       setTimeout(() => {
         navigate("/");
       }, 6500); 
     } catch (err) {
+      setIsLoadingButton2(false)
       Notification("error", err.response.data.message);
     }
   };
 
   const handleDeleteAccount = async () => {
+    setIsLoadingButton3(true)
     await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
+    setIsLoadingButton3(false)
     localStorage.clear();
     sessionStorage.clear();
 
@@ -116,9 +129,8 @@ const Settings = () => {
               }}
             />
           </ThemeProvider>
-          <button type="submit" className="settings_form-submit description">
-            Change description
-          </button>
+
+          <LoadingButton styleButton="settings_form-submit description" loading={isLoadingButton1} message="Change description" />
         </form>
         <h2 className="settings-subtitle">Change password</h2>
         <form
@@ -205,19 +217,11 @@ const Settings = () => {
               }}
             />
           </ThemeProvider>
-          <button type="submit" className="settings_form-submit">
-            Change password
-          </button>
+          <LoadingButton styleButton="settings_form-submit" loading={isLoadingButton2} message="Change password" />
         </form>
         <h2 className="settings-subtitle">Delete account</h2>
-        <form className="settings_form">
-          <button
-            type="submit"
-            className="settings_form-submit delete"
-            onClick={handleDeleteAccount}
-          >
-            Delete
-          </button>
+        <form className="settings_form" onSubmit={handleSubmit(handleDeleteAccount)}>
+          <LoadingButton styleButton="settings_form-submit delete" loading={isLoadingButton3} message="Delete" />
         </form>
         <ToastContainer />
       </div>
