@@ -19,10 +19,10 @@
 ![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot5.jpg)
 
 ## Profile Page
-![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot7.jpg)
+![img](https://github.com/JonathanSaan/justmovies/blob/659929e24b2b103de3f727d23973c8e110f1dfe9/screenshots/screenshot7.png)
 
 ## Profile setting Page
-![img](https://github.com/JonathanSaan/justmovies/blob/4a134811f2ed329464ef745fea1273a17cdeb0bb/screenshots/screenshot8.jpg)
+![img](https://github.com/JonathanSaan/justmovies/blob/659929e24b2b103de3f727d23973c8e110f1dfe9/screenshots/screenshot8.png)
 
 ## Demo
 🌑 [Live Demo](https://justmovies.vercel.app/)
