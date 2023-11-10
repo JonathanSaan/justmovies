@@ -57,8 +57,11 @@
     }
 
     .settings_form-input {
+      background-color: #3e3e3eca;
+      border-radius: .4rem;
       margin: 1rem 0;
-      height: 3.5rem;
+      min-height: 3.5rem;
+      height: auto;
       min-width: 23rem;
       width: 20%;
     }
@@ -105,7 +108,15 @@
     }
 
     .settings_form {
-      margin: 0 4rem 0 2rem;
+      margin: 0 5vw 0 3vw;
+
+      &.image {
+        flex-direction: column;
+
+        .settings_form-image {
+          margin: 1rem auto 3rem auto;
+        }
+       }
 
       .settings_form-input,
       .settings_form-submit,

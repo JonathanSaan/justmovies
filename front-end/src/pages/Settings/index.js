@@ -172,9 +172,7 @@ const Settings = () => {
       <main className="settings">
         <h1 className="settings-title">Settings</h1>
         <h2 className="settings-subtitle">Change picture</h2>
-        <div 
-          className="settings_form image"
-        >
+        <div className="settings_form image">
           {loadingPhoto ? ( 
             <SkeletonProfileSettings />
           ) : (
@@ -200,7 +198,7 @@ const Settings = () => {
           <ThemeProvider theme={CustomTextField}>
             <TextField
               multiline={true}
-              rows={3}
+              rows={4}
               type="text"
               className="settings_form-input description"
               label="Description"
