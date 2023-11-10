@@ -22,7 +22,7 @@
 ![img](https://github.com/JonathanSaan/justmovies/blob/659929e24b2b103de3f727d23973c8e110f1dfe9/screenshots/screenshot7.png)
 
 ## Profile setting Page
-![img](https://github.com/JonathanSaan/justmovies/blob/659929e24b2b103de3f727d23973c8e110f1dfe9/screenshots/screenshot8.png)
+![img](https://github.com/JonathanSaan/justmovies/blob/06fc66b88a80b47ecdb9ac3d011ae6233956b30e/screenshots/screenshot8.png)
 
 ## Demo
 🌑 [Live Demo](https://justmovies.vercel.app/)
