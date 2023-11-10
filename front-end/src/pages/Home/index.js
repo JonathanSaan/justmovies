@@ -17,7 +17,7 @@ const Home = () => {
       <Helmet>
         <title>justmovies</title>
       </Helmet>
-      <div className="home">
+      <main className="home">
         <div className="home_container">
           <Fade bottom>
             <div className="home_container_fade">
@@ -55,7 +55,7 @@ const Home = () => {
           </div>
         </div>
         <Footer />
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

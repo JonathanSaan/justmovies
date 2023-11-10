@@ -57,7 +57,7 @@ const Search = () => {
         <meta name="description" content={`Search result for ${searched} on justmovies. Browse and discover movies matching your search query.`} />
         <meta name="keywords" content={`search, movies, results, ${searched}`} />
       </Helmet>
-      <div className="search">
+      <main className="search">
         <div className="search_container">
           <h1 className="search_container-title">Results found: {searched}</h1>
           {loading ? (
@@ -147,7 +147,7 @@ const Search = () => {
             </div>
           )}
         </div>
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

@@ -81,7 +81,7 @@ const SignIn = () => {
             alt="cassette tape"
           />
         </div>
-        <div className="signin_right">
+        <main className="signin_right">
           <form className="signin_right_form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="signin_right_form-title">Sign in</h1>
             <ThemeProvider theme={CustomTextField}>
@@ -151,7 +151,7 @@ const SignIn = () => {
               Forgot password?
             </Link>
           </p>
-        </div>
+        </main>
         <ToastContainer />
       </div>
     </HelmetProvider>

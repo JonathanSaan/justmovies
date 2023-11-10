@@ -52,7 +52,7 @@ const TopRated = () => {
         <meta name="description" content="Discover the top-rated movies on justmovies. Check out the best-rated movies of all time and find new favorites." />
         <meta name="keywords" content="top-rated movies, best-rated movies, highest-rated films" />
       </Helmet>
-      <div className="ratedmovie">
+      <main className="ratedmovie">
         <div className="ratedmovie_container">
           <h1 className="ratedmovie_container-title">Top Rated</h1>
           {listRated.length > 0 ? (
@@ -78,7 +78,7 @@ const TopRated = () => {
           ) : <SkeletonTopRated />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

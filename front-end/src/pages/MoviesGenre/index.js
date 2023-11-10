@@ -55,7 +55,7 @@ const MoviesGenre = () => {
         <meta name="description" content={`Explore ${genre.replace(/-/g, " ")} movies on justmovies. Browse through a variety of ${genre.replace(/-/g, " ")} movies and find your favorites.`} />
         <meta name="keywords" content={`movies genre, movie category, justmovies genre, ${genre.replace(/-/g, " ")}`} />
       </Helmet>
-      <div className="genre">
+      <main className="genre">
         <div className="genre_containergenre">
           <h1 className="genre_containergenre-title">
             {genre.replace(/-/g, " ")}
@@ -85,7 +85,7 @@ const MoviesGenre = () => {
           )}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

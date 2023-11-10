@@ -35,7 +35,7 @@ const Profile = () => {
         <meta name="description" content={`Check out ${username}'s profile on justmovies. View their favorite movies and more!`} />
         <meta name="keywords" content={`profile, ${username}, favorite movies, ${username}'s profile`} />
       </Helmet>
-      <div className="profile">
+      <main className="profile">
         {loading ? (
           <SkeletonProfile />
         ) : profileData ? (
@@ -74,7 +74,7 @@ const Profile = () => {
             <h1>Profile no found</h1>
           </div>
         )}
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

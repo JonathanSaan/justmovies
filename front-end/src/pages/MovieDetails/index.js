@@ -154,7 +154,7 @@ const MovieDetails = () => {
         <meta name="keywords" content={`movie, ${detailsMovie.title}, trailer, characters, similar movies`} />
         <meta property="og:image" content={imagePath + detailsMovie.poster_path} />
       </Helmet>
-      <div className="details">
+      <main className="details">
         {loading ? (
           <SkeletonMovieDetails />
         ) : Object.keys(detailsMovie).length > 0 ? (
@@ -311,7 +311,7 @@ const MovieDetails = () => {
           </div>
         )}
         <ToastContainer />
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

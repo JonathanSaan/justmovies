@@ -52,7 +52,7 @@ const NewMovies = () => {
         <meta name="description" content="Discover the latest new movies on justmovies. Explore the newest releases and find your next favorite film." />
         <meta name="keywords" content="new movies, latest releases" />
       </Helmet>
-      <div className="newmovies">
+      <main className="newmovies">
         <div className="newmovies_container">
           <h1 className="newmovies_container-title">New Movies</h1>
           {listMovies.length > 0 ? (
@@ -78,7 +78,7 @@ const NewMovies = () => {
           ) : <SkeletonNewMovies />}
         </div>
         <Pagination page={page} totalPage={totalPage} paginate={paginate} />
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

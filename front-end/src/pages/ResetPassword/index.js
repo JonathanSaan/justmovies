@@ -74,7 +74,7 @@ const ResetPassword = () => {
             alt="cassette tape"
           />
         </div>
-        <div className="resetpassword_right">
+        <main className="resetpassword_right">
           <form className="resetpassword_right_form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="resetpassword_right_form-title">Reset password</h1>
             <ThemeProvider theme={CustomTextField}>
@@ -134,7 +134,7 @@ const ResetPassword = () => {
 			
 			<LoadingButton styleButton="resetpassword_right_form-submit" loading={loadingButton} message="Save Password" />
           </form>
-        </div>
+        </main>
         <ToastContainer />
       </div>
     </HelmetProvider>

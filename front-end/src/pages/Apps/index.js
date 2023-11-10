@@ -10,9 +10,9 @@ const Apps = () => {
       <Helmet>
         <title>Official justmovies Apps Download</title>
       </Helmet>
-      <div className="apps">
+      <main className="apps">
         <h1>coming soon.</h1>
-      </div>
+      </main>
     </HelmetProvider>
   )
 }

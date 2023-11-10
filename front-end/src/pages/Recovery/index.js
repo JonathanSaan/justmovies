@@ -47,7 +47,7 @@ const Recovery = () => {
             alt="cassette tape"
           />
         </div>
-        <div className="recovery_right">
+        <main className="recovery_right">
       	  <form className="recovery_right_form" onSubmit={handleSubmit(onSubmit)}>
       	  	<h1 className="recovery_right_form-title">Recovery</h1>
       	    <ThemeProvider theme={CustomTextField}>
@@ -70,7 +70,7 @@ const Recovery = () => {
           <Link to="/sign-in" className="recovery_right-link">
             Back to Sign in
           </Link>
-        </div>
+        </main>
         <ToastContainer />
       </div>
     </HelmetProvider>

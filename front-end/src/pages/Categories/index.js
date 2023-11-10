@@ -29,7 +29,7 @@ const Categories = () => {
         <meta name="description" content="Explore movie genres on justmovies. Browse through a variety of movie genres and find your favorite movies." />
         <meta name="keywords" content="movie genres, movie categories, justmovies genres" />
       </Helmet>
-      <div className="category">
+      <main className="category">
         <div className="container_category">
           <h1 className="container_category-title">Genre</h1>
           {category &&
@@ -46,7 +46,7 @@ const Categories = () => {
               </div>
             ))}
         </div>
-      </div>
+      </main>
     </HelmetProvider>
   );
 };

@@ -10,10 +10,10 @@ const Error = () => {
       <Helmet>
         <title>justmovies</title>
       </Helmet>
-      <div className="error">
+      <main className="error">
         <h1 className="error-title">404</h1>
         <h2 className="error-subtitle">Page not found. </h2>
-      </div>
+      </main>
     </HelmetProvider>
   );
 };
