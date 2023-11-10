@@ -1,6 +1,8 @@
 import {
   findByUsernameService,
   findByIdService,
+  updateAvatarService,
+  deleteAvatarService,
   updateDescriptionService,
   updatePasswordService,
   eraseService,
@@ -25,6 +27,35 @@ export const findByUsername = async (req, res) => {
         __v: user.__v,
       },
     });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+};
+
+export const updateAvatar = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { avatar } = req.body;
+
+    if (!avatar) {
+      return res.status(400).send({ message: "Submit Avatar" });
+    }
+
+    await updateAvatarService(id, avatar);
+
+    res.send({ message: "Avatar successfully updated!" });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+};
+
+export const deleteAvatar = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await deleteAvatarService(id);
+
+    res.send({ message: "Avatar successfully deleted!" });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
@@ -97,7 +128,7 @@ export const erase = async (req, res) => {
       return res.status(404).send({ message: "User not found." });
     }
 
-    res.send({ message: "User deleted successfully." });
+    res.send({ message: "User successfully deleted!" });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }

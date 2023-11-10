@@ -19,6 +19,7 @@
     "react-burger-menu": "^3.0.9",
     "react-cssfx-loading": "^2.1.0",
     "react-dom": "^18.1.0",
+    "react-file-base64": "^1.0.3",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.3.0",
     "react-hook-form": "^7.43.9",

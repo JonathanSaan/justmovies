@@ -26,12 +26,36 @@
     -ms-flex-direction: column;
     flex-direction: column;
 
-    .settings_form-image {
-      margin: .5rem 6rem;
-      height: 10rem;
-      width: 10rem;
-      border-radius: 100%;
+    &.image {
+      display: flex;
+      flex-direction: row;
+
+      .settings_form-image {
+        color: transparent;
+        margin: 1rem 5rem 3rem 0;
+        height: 17rem;
+        width: 17rem;
+        border-radius: 100%;
+      }
+
+      .settings_form_right {
+        display: flex;
+        flex-direction: column;
+
+        .settings_form_right-upload input[type="file"] {
+          background-color: #3e3e3eca;
+          color: #d3d3d3f9;
+          margin: 2rem 0 4rem 0;
+          height: 1.6rem;
+          width: 100%;
+          font-size: 1rem;
+        }
+        .settings_form-submit {
+          margin: 1rem 0 0 0;
+        }
+      }
     }
+
     .settings_form-input {
       margin: 1rem 0;
       height: 3.5rem;
@@ -47,15 +71,15 @@
       cursor: pointer;
       background-color: #808080;
       border: none;
-      border-radius: .4rem;
+      border-radius: 0.4rem;
       margin: 1rem 0 3rem 0;
       height: 3.5rem;
       min-width: 23rem;
       width: 20%;
 
       &:hover {
-        -webkit-filter: Brightness(.8);
-        filter: Brightness(.8);
+        -webkit-filter: Brightness(0.8);
+        filter: Brightness(0.8);
         -webkit-transition: 200ms;
         -o-transition: 200ms;
         transition: 200ms;
@@ -65,7 +89,7 @@
       margin: 0 0 3rem auto;
     }
     .settings_form-submit.delete {
-      margin: .5rem 0 3rem 0;
+      margin: 0.5rem 0 3rem 0;
       background-color: #95141f;
       color: #f3f3f3;
     }

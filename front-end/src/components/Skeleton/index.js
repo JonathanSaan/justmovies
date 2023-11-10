@@ -254,3 +254,5 @@ export const SkeletonProfile = () => {
     </div>
   );
 }
+
+export const SkeletonProfileSettings = () => <Skeleton className="settings_form-image" />;
