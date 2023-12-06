@@ -111,9 +111,9 @@ const Search = () => {
                     </div>
                     <div className="search_container_moviefound_card_description">
                       <Link to={`/movies/${movie.id}`} aria-label={movie.title}>
-                        <h1 className="search_container_moviefound_card_description-title">
+                        <h2 className="search_container_moviefound_card_description-title">
                           {movie.title}
-                        </h1>
+                        </h2>
                       </Link>
                       <span className="search_container_moviefound_card_description-synopsis">
                         {movie.overview.length > 150 ? (

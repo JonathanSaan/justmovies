@@ -49,12 +49,12 @@ const Profile = () => {
               <h1 className="profile_container_detail-title">
                 {profileData.username}
               </h1>
-              <h2 className="profile_container_detail-description">
+              <p className="profile_container_detail-description">
                 "{profileData.description}"
-              </h2>
+              </p>
             </div>
             <div className="profile_container_favorites">
-              <h1 className="profile_container_favorites-title">Movies favorites ({profileData.favorites.length})</h1>
+              <h2 className="profile_container_favorites-title">Movies favorites ({profileData.favorites.length})</h2>
               <div className="profile_container_favorites_container">
                 {profileData.favorites.map((favorite) => ( 
                   <div key={favorite.id} className="profile_container_favorites_container_item">
@@ -62,7 +62,7 @@ const Profile = () => {
                       <img className="profile_container_favorites_container_item-image" src={favorite.movieImage} alt={favorite.movieTitle} />
                     </Link>
                     <Link to={`/movies/${favorite.movieId}`}>
-                      <h2 className="profile_container_favorites_container_item-title">{favorite.movieTitle}</h2>
+                      <h3 className="profile_container_favorites_container_item-title">{favorite.movieTitle}</h3>
                     </Link>
                   </div>
                 ))}

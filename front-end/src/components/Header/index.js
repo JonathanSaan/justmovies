@@ -97,9 +97,9 @@ const Header = () => {
                         alt={movie.title}
                       />
                       <div className="header_search_form_dropdown_card_description">
-                        <h1 className="header_search_form_dropdown_card_description-title">
+                        <h2 className="header_search_form_dropdown_card_description-title">
                           {movie.title}
-                        </h1>
+                        </h2>
                         <span className="header_search_form_dropdown_card_description-synopsis">
                           {movie.overview.length > 30 ? (
                             `${movie.overview.substring(0, 30)}...`
@@ -129,7 +129,7 @@ const Header = () => {
                 onClick={onChange}
                 className="header_search_form_dropdown-title"
               >
-                <h1>See more</h1>
+                <h3>See more</h3>
               </Link>
             </div>
           )}
