@@ -58,8 +58,12 @@ html {
       -ms-flex-align: center;
       align-items: center;
       color: #d3d3d3f9;
-      border: none;
+      border: 1px solid #3e3e3eca;
       outline: none;
+      
+      &:hover, &:focus {
+        border: 1px solid #d3d3d3f9;
+      }
     }
 
     .header_search_form-button {
