@@ -23,17 +23,25 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-
+	
+    .signin_left-backimage {
+      filter: brightness(80%) blur(.3rem);
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+    }
     .signin_left-image {
+      position: absolute;
       pointer-events: none;
       color: transparent;
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
       transform: translateY(0);
+      margin: 6rem 0 0 0;
       min-height: 13rem;
-      height: 15vw;
+      height: 17vw;
       min-width: 18rem;
-      width: 20vw;
+      width: 22vw;
       -webkit-animation: float 5s ease-out infinite;
       animation: float 5s ease-out infinite;
     }
@@ -71,9 +79,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 4rem 0;
-    min-width: 23rem;
-    width: 100%;
+    padding: 4.5rem 0 0 0;
+    min-width: 36rem;
+    width: 65%;
     text-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -85,7 +93,9 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    background-color: #191b1c;
     color: #d3d3d3f9;
+    z-index: 3;
 
     .signin_right_form {
       display: -webkit-box;
@@ -108,7 +118,7 @@
         margin: 1.5rem 0 0 0;
         height: auto;
         min-width: 23rem;
-        width: 23vw;
+        width: 24vw;
         caret-color: #d3d3d3f9;
       }
       .signin_right_form-checkbox {
@@ -122,7 +132,7 @@
         margin: .7rem 0 3rem 0;
         height: 3.5rem;
         min-width: 23rem;
-        width: 23vw;
+        width: 24vw;
 
         &:hover {
           -webkit-filter: Brightness(.8);
@@ -144,14 +154,16 @@
   }
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 829px) {
   .signin {
     .signin_left {
       display: none;
     }
     
     .signin_right {
+      padding: 4rem 0;
       min-width: 85vw;
+      width: 100%;
       
       .signin_right_form {
         .signin_right_form-input {

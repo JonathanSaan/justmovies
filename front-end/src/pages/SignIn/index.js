@@ -76,6 +76,11 @@ const SignIn = () => {
       <div className="signin">
         <div className="signin_left">
           <img
+            className="signin_left-backimage"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLfvYCokO1LyFbnwqdctvvmiuVdWXYQtn8g&usqp=CAU"
+            alt="movie theater"
+          />
+          <img
             className="signin_left-image"
             src="/cassette-tape.png"
             alt="cassette tape"

@@ -42,6 +42,11 @@ const Recovery = () => {
       <div className="recovery">
         <div className="recovery_left">
           <img
+            className="recovery_left-backimage"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLfvYCokO1LyFbnwqdctvvmiuVdWXYQtn8g&usqp=CAU"
+            alt="movie theater"
+          />
+          <img
             className="recovery_left-image"
             src="/cassette-tape.png"
             alt="cassette tape"
