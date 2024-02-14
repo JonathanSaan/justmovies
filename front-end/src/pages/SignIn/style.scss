@@ -122,7 +122,11 @@
         caret-color: #d3d3d3f9;
       }
       .signin_right_form-checkbox {
-        margin: 1rem 0 0 0;
+        margin: .7rem 0 0 0;
+        
+        .MuiFormControlLabel-label {
+    	  margin: .3rem 0 0 0;
+  		}
       }
       .signin_right_form-submit {
         cursor: pointer;
@@ -159,19 +163,20 @@
     .signin_left {
       display: none;
     }
-    
+
     .signin_right {
       padding: 4rem 0;
       min-width: 85vw;
       width: 100%;
-      
+
       .signin_right_form {
-        .signin_right_form-input {
-          min-width: 85vw;
-        }
-        
+        .signin_right_form-input,
         .signin_right_form-submit {
           min-width: 85vw;
+        }
+
+        .signin_right_form-checkbox {
+          margin: 1rem 0 .3rem 0;
         }
       }
     }

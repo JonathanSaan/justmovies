@@ -152,17 +152,14 @@
     .recovery_left {
       display: none;
     }
-    
+
     .recovery_right {
       padding: 4rem 0;
       min-width: 85vw;
       width: 100%;
-      
+
       .recovery_right_form {
-        .recovery_right_form-input {
-          min-width: 85vw;
-        }
-        
+        .recovery_right_form-input,
         .recovery_right_form-submit {
           min-width: 85vw;
         }
@@ -170,3 +167,4 @@
     }
   }
 }
+
