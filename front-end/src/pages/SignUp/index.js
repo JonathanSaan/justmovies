@@ -63,7 +63,7 @@ const SignUp = () => {
         <div className="signup_left">
           <img
             className="signup_left-backimage"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLfvYCokO1LyFbnwqdctvvmiuVdWXYQtn8g&usqp=CAU"
+            src="movie-theater.jpg"
             alt="movie theater"
           />
           <img
