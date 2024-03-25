@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connetcDatabase = () => {
+const connectDatabase = () => {
   console.log("Wait connecting to the database");
 
   mongoose
@@ -14,4 +14,4 @@ const connetcDatabase = () => {
     );
 };
 
-export default connetcDatabase;
+export default connectDatabase;
