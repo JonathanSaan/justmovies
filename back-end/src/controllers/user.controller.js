@@ -11,22 +11,10 @@ import {
 export const findByUsername = async (req, res) => {
   try {
     const { username } = req.params;
+    
     const user = await findByUsernameService(username);
 
-    if (!user) {
-      return res.status(404).send({ message: "User not found" });
-    }
-
-    res.send({
-      user: {
-        id: user._id,
-        username: user.username,
-        description: user.description,
-        avatar: user.avatar,
-        favorites: user.favorites,
-        __v: user.__v,
-      },
-    });
+    res.send(user);
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
