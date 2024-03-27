@@ -4,6 +4,8 @@ import User from "../models/User.js";
 export const findByUsernameService = async (username) => {
   const user = await User.findOne({ username });
 
+  if (!user) return null;
+
   const userDetails = {
     user: {
       id: user._id,
