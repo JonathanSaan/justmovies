@@ -1,8 +1,5 @@
-import redis from "redis";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
-
-const client = redis.createClient(6379);
 
 export const findByUsernameService = async (username) => {
   const user = await User.findOne({ username });
@@ -17,8 +14,6 @@ export const findByUsernameService = async (username) => {
       __v: user.__v,
     },
   };
-  
-  client.setEx(username, 20, userDetails);
   
   return userDetails;
 };
