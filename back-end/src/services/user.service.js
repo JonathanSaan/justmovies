@@ -18,7 +18,7 @@ export const findByUsernameService = async (username) => {
     },
   };
   
-  client.setEx(username, 20, userDetails);
+  client.setEx(username, 20, JSON.stringify(userDetails));
   
   return userDetails;
 };
