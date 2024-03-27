@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
+import client from "../helpers/redis.js";
 
 export const findByUsernameService = async (username) => {
   const user = await User.findOne({ username });
@@ -16,6 +17,8 @@ export const findByUsernameService = async (username) => {
       __v: user.__v,
     },
   };
+  
+  client.setEx(username, 20, userDetails);
   
   return userDetails;
 };

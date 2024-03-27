@@ -1,8 +1,6 @@
-import redis from "redis";
 import mongoose from "mongoose";
 import { findByUsernameService } from "../services/user.service.js";
-
-const client = redis.createClient(6379);
+import client from "../helpers/redis.js";
 
 export const validId = async (req, res, next) => {
   try {
