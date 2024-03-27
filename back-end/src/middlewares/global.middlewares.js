@@ -21,11 +21,8 @@ export const validId = async (req, res, next) => {
 export const validUser = async (req, res, next) => {
   try {
     const username = req.params.username;
+    
     const user = await findByUsernameService(username);
-
-    if (!username) {
-      return res.status(400).send({ message: "Invalid username" });
-    }
 
     if (!user) {
       return res.status(404).send({ message: "User not found" });
