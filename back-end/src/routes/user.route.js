@@ -6,7 +6,7 @@ import authMiddleware from "../middlewares/auth.middlewares.js";
 
 const router = Router();
 
-router.get("/:username", cache, validUser, findByUsername);
+router.get("/:username", validUser, cache, findByUsername);
 router.patch("/settings/avatar/:id", authMiddleware, validId, updateAvatar);
 router.patch("/settings/delete-avatar/:id", authMiddleware, validId, deleteAvatar);
 router.patch("/settings/description/:id", authMiddleware, validId, updateDescription);

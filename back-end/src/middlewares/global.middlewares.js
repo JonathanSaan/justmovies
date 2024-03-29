@@ -36,22 +36,22 @@ export const validUser = async (req, res, next) => {
 };
 
 export const cache = async (req, res, next) => {
-  const username = req.params.username;
+  try {
+    const username = req.params.username;
   
-  client.get(username, (err, data) => {
-    if (err) {
-      console.error("Error fetching from cache:", err);
-      res.status(500).send({ message: err.message });
-      return;
-    }
+    client.get(username, (err, data) => {
+      if (err) throw err;
     
-    if (data !== null) {
-      console.log("Data is already cached");
-      res.send(JSON.parse(data));
-      return;
-    } 
+      if (data !== null) {
+        console.log("Data is already cached");
+        res.send(JSON.parse(data));
+        return;
+      } 
     
-    console.log("Data is not cached");
-    next();
-  });
+      console.log("Data is not cached");
+      next();
+    });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
 };
