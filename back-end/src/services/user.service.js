@@ -3,6 +3,12 @@ import User from "../models/User.js";
 import client from "../helpers/redis.js";
 
 export const findByUsernameService = async (username) => {
+  const usernameFromCache = await client.get(username);
+  
+  if (usernameFromCache) {
+    return res.send(JSON.parse(usernameFromCache));
+  }
+
   const user = await User.findOne({ username });
 
   if (!user) return null;
