@@ -1,10 +1,10 @@
-import redis from "redis";
 import dotenv from "dotenv";
+import redis from "redis";
 
 dotenv.config();
 
 const client = redis.createClient({
-  host: process.env.REDIS_HOST || "127.0.0.1",
+  host: process.env.REDIS_HOST,
   port: 6379
 });
 
