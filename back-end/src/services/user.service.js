@@ -6,7 +6,7 @@ export const findByUsernameService = async (username) => {
   const usernameFromCache = await client.get(username);
   
   if (usernameFromCache) {
-    return res.send(JSON.parse(usernameFromCache));
+    return JSON.parse(usernameFromCache);
   }
 
   const user = await User.findOne({ username });
