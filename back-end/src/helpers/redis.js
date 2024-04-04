@@ -4,8 +4,7 @@ import redis from "redis";
 dotenv.config();
 
 const client = redis.createClient({
-  host: process.env.REDIS_HOST,
-  port: 6379
+  url: process.env.REDIS_URL_EXTERNAL
 });
 
 client.on("connect", () => {
