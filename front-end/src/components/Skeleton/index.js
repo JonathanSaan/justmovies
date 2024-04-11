@@ -233,20 +233,22 @@ export const SkeletonMovieDetails = () => {
 export const SkeletonProfile = () => {
   return (
     <div className="profile_container">
-      <Skeleton
-        className="profile_container-image"
-      />
-      <div className="profile_container_detail">
+      <div className="profile_container_details">
         <Skeleton
-          className="profile_container_detail-title"
-          variant="text"
-          count={1}
+          className="profile_container_details-image"
         />
-        <Skeleton
-          className="profile_container_detail-description"
-          variant="text"
-          count={1}
-        />
+        <div className="profile_container_details_detail">
+          <Skeleton
+            className="profile_container_details_detail-title"
+            variant="text"
+            count={1}
+          />
+          <Skeleton
+            className="profile_container_details_detail-description"
+            variant="text"
+            count={1}
+          />
+        </div>
       </div>
       <div className="profile_container_favorites">
         <h2 className="profile_container_favorites-title">Movies favorites (0)</h2>

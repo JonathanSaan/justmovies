@@ -3,45 +3,52 @@
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-
+  
   .profile_container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
+    padding: 8rem 5rem 0 5rem;
     margin: 0 auto;
-    padding: 6rem 1rem 0 1rem;
-    width: 80%;
-
-    .profile_container-image {
-      color: transparent;
-      border-radius: 100%;
-      margin: 0 2rem 0 0;
-      height: 18rem;
-      width: 18rem;
-    }
-
-    .profile_container_detail {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-
-      .profile_container_detail-title {
-        min-width: 20rem;
-        font-size: 2rem;
-        color: #f3f3f3;
+    width: 75%;
+	
+	.profile_container_details {
+	  display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+	  
+      .profile_container_details-image {
+        color: transparent;
+        border-radius: 100%;
+        margin: 0 3rem 0 0;
+        height: 15rem;
+        width: 15rem;
       }
-      .profile_container_detail-description {
-        font-size: 1rem;
-        margin: .5rem 0 0 .7rem;
-        color: #d3d3d3f9;
+
+      .profile_container_details_detail {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        .profile_container_details_detail-title {
+          min-width: 20rem;
+          font-size: 2rem;
+          color: #f3f3f3;
+        }
+        .profile_container_details_detail-description {
+          font-size: 1rem;
+          margin: 1rem 0 0 0;
+          color: #d3d3d3f9;
+        }
       }
     }
 
     .profile_container_favorites {
-      position: absolute;
-      margin: 20rem 0 0 0;
-
+      margin: 4rem 0 0 0;
+      
       .profile_container_favorites-title {
         color: #f3f3f3;
         font-size: 130%;
@@ -60,15 +67,11 @@
         justify-content: flex-start;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin: 0 0 0 2rem;
         width: 79vw;
 
         .profile_container_favorites_container_item {
-          margin: 0 2.5vw 3rem 1vw;
-          min-height: 17rem;
-          height: 18vw;
-          min-width: 12rem;
-          width: 12vw;
+          margin: 0 1.2rem;
+          width: 13rem;
 
           .profile_container_favorites_container_item-image {
             color: transparent;
@@ -126,16 +129,16 @@
     padding: 6rem 0 0 0;
     width: 100%;
 
-    .profile_container-image {
+    .profile_container_details-image {
       margin: 0 0 1rem 0;
       height: 16rem;
       width: 16rem;
     }
 
-    .profile_container_detail {
+    .profile_container_details_detail {
       text-align: center;
 
-      .profile_container_detail-description {
+      .profile_container_detail_details-description {
         margin: 1rem 0 0 0;
       }
     }

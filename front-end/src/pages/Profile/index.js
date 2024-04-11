@@ -17,7 +17,7 @@ const Profile = () => {
   useEffect(() => {
     const load = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL }/profile/${username}`);
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${username}`);
         setProfileData(response.data.user);
       } catch (err) {
         resetComponents(() => setProfileData());
@@ -40,18 +40,20 @@ const Profile = () => {
           <SkeletonProfile />
         ) : profileData ? (
           <div className="profile_container">
-            <img
-              className="profile_container-image"
-              src={profileData.avatar}
-              alt="avatar's user"
-            />
-            <div className="profile_container_detail">
-              <h1 className="profile_container_detail-title">
-                {profileData.username}
-              </h1>
-              <p className="profile_container_detail-description">
-                "{profileData.description}"
-              </p>
+            <div className="profile_container_details">
+              <img
+                className="profile_container_details-image"
+                src={profileData.avatar}
+                alt="avatar's user"
+              />
+              <div className="profile_container_details_detail">
+                <h1 className="profile_container_details_detail-title">
+                  {profileData.username}
+                </h1>
+                <p className="profile_container_details_detail-description">
+                  "{profileData.description}"
+                </p>
+              </div>
             </div>
             <div className="profile_container_favorites">
               <h2 className="profile_container_favorites-title">Movies favorites ({profileData.favorites.length})</h2>
