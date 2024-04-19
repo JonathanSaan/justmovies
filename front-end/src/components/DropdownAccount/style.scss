@@ -1,0 +1,55 @@
+.dropdown-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  margin: 0 0 0 1rem;
+  border: none;
+  background-color: transparent;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #323537;
+  color: #f3f3f3;
+  width: 13rem;
+  
+  a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: transparent;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #f3f3f3;
+    padding: .5rem 0;
+    width: 100%;
+    
+    .dropdown-icon {
+      margin: 0 1rem 0 .7rem;
+    }
+    
+    &:hover {
+      background-color: #5a5a5a;
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .dropdown-button {
+    display: none;
+  }
+}

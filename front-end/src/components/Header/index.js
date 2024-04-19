@@ -1,19 +1,36 @@
 import { useState, useRef, useEffect } from "react";
+
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { IoIosStar, IoIosSearch } from "react-icons/io";
+import { MdInstallMobile } from "react-icons/md";
 
 import SideBar from "../SideBar";
+import DropdownAccount from "../DropdownAccount";
+import DropdownCategory from "../DropdownCategory";
 import resetComponents from "../../utils/ResetComponents";
 import APIKey from "../../mocks/api";
 import "./style.scss";
 
 const Header = () => {
   let navigate = useNavigate();
+  const [category, setCategories] = useState([]);
   const refOne = useRef(null);
   const [searchesDropdown, setSearchesDropdown] = useState([]);
   const [typedSearch, setTypedSearch] = useState("");
-
+  
+  const profileString = localStorage.getItem("user") || sessionStorage.getItem("user");
+  const profile = profileString ? JSON.parse(profileString) : null;
+  
+  const handleSignOut = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+  };
+  
+  if (!profileString) {
+    handleSignOut();
+  };
+  
   const onChange = async (e) => {
     const searchTerm = e.target.value;
     setTypedSearch(searchTerm);
@@ -42,8 +59,16 @@ const Header = () => {
   	}
   }
   
+  const LoadGenres = async () => {
+    const respost = await axios.get(
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`
+    );
+    setCategories(respost.data.genres);
+  };
+  
   useEffect(() => {
     document.addEventListener("click", handleOutsideDropdownClick, true);
+    LoadGenres();
   }, []);
   
   const imagePath = "https://image.tmdb.org/t/p/w500";
@@ -51,8 +76,13 @@ const Header = () => {
 
   return (
     <>
-      <SideBar />
+      <SideBar category={category} profile={profile} handleSignOut={handleSignOut} />
       <header className="header">
+        <Link to="/" className="header-title">
+          <img className="header-title-icon" src="/cassette-tape.png" alt="icon" />
+          justmovies
+        </Link>
+        <DropdownCategory category={category} />
         <form className="header_search_form" onSubmit={searchMovie}>
           <input
             type="text"
@@ -134,6 +164,10 @@ const Header = () => {
             </div>
           )}
         </form>
+        <Link to="/apps" className="app-button" title="Install Apps">
+          <MdInstallMobile size={30} color="#f3f3f3" />
+        </Link>
+        <DropdownAccount profile={profile} handleSignOut={handleSignOut} />
       </header>
     </>
   );

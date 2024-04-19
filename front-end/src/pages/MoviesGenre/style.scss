@@ -1,6 +1,6 @@
 .genre {
   background-color: #191b1c;
-  padding: 4rem 0;
+  padding: 5rem 0 4rem 0;
   min-height: 100vh;
 
   a {
@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 768px) {
   .genre {
-    padding: 4rem 0;
+    padding: 6rem 0 4rem 0;
 
     .genre_containergenre {
       min-width: 0;

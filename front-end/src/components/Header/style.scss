@@ -16,9 +16,9 @@ html {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
-  padding: 0 .7rem;
-  min-height: 4.5rem;
-  height: 3vw;
+  padding: 0 2rem;
+  min-height: 5rem;
+  height: 4vw;
   width: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -27,11 +27,20 @@ html {
   -webkit-backdrop-filter: blur(.2rem);
   backdrop-filter: blur(.2rem);
   z-index: 4;
-
-  .header-menu {
-    padding: .5rem 0 0 0;
-    background: none;
-    border: none;
+  
+  .header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3f3f3;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+    .header-title-icon {
+      margin: 0 1rem 0 0;
+      height: 2.8rem;
+    }
   }
 
   .header_search_form {
@@ -68,7 +77,7 @@ html {
 
     .header_search_form-button {
       cursor: pointer;
-      margin: .2rem 1.5rem 0 -2.7rem;
+      margin: .3rem 1.5rem 0 -3rem;
       background: transparent;
       border: none;
     }
@@ -85,7 +94,7 @@ html {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin: 5rem .6rem 0 0;
+      margin: 5rem 3rem 0 0;
       width: 30vw;
       background-color: #333434;
       border-radius: .4rem;
@@ -163,18 +172,42 @@ html {
       }
     }
   }
+  
+  .app-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    margin: 0 .5rem 0 1.5rem;
+    border: none;
+    background-color: transparent;
+  }
 }
 
 @media screen and (max-width: 786px) {
   .header {
+    padding: 0 1rem;
+    
+    .header-title {
+      display: none;
+    }
+    
     .header_search_form {
+      margin: 0 -.8rem 0 auto;
+      
       .header_search_form-search {
         font-size: 1rem;
         width: 50vw;
       }
 
       .header_search_form-button {
-        margin: .2em 2.7em 0 -4em;
+        margin: .2em 2.7em 0 -3.5em;
       }
 
       .header_search_form_dropdown {
@@ -196,6 +229,10 @@ html {
           font-size: .4rem;
         }
       }
+    }
+    
+    .app-button {
+      display: none;
     }
   }
 }

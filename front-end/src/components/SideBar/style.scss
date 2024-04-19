@@ -1,3 +1,34 @@
+.burger {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  background-color: transparent;
+  color: #f3f3f3;
+  border: none;
+  margin: .8rem 0 0 1rem;
+  padding: .2rem 0 0 0;
+  height: 3rem;
+  width: 3rem;
+  z-index: 5;
+}
+
+.close {
+  border: none;
+  background-color: transparent;
+  color: #b8b7ad;
+  cursor: pointer;
+  margin: 1rem 0 .5rem auto;
+  height: 3rem;
+  width: 3rem;
+  z-index: 6;
+}
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  background-color: #191b1c !important;
+  padding: 0 1rem;
+  width: 22rem;
+}
+
 .bm-burger-button {
   position: fixed;
   margin: .4vw 0 0 1rem;
@@ -7,12 +38,6 @@
   width: 2vw;
 }
 
-.bm-burger-bars {
-  background-color: transparent;
-  color: #f3f3f3;
-  height: 100%;
-}
-
 .user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,18 +45,47 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 2.5rem 0 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 2rem 0;
 }
 
-.h1-sidebar {
+.h2-sidebar {
+  color: #b8b7ad;
+  text-transform: uppercase;
+  font-size: 1.8rem;
   cursor: default;
-  margin: 0 0 .8rem -.3rem;
+  margin: 0;
 }
 
-.Buttons-Sidebar {
+.Dropdown-button {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.15em;
+  padding: 0 1rem 0 0;
+  
+  div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    
+    .Icon {
+      margin: 0 .5rem 0 0;
+    }
+  }
+  
+  .Dropdown-button-icon {
+    margin: .3rem 0 0 0;
+  }
+}
+
+.Buttons-Sidebar, .Dropdown-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +96,7 @@
   text-transform: capitalize;
   margin: .5em auto 0 auto;
   padding: 0 .5em;
+  min-height: 3rem;
   height: 3rem;
   width: 100%;
   color: #f3f3f3;
@@ -64,47 +119,21 @@
   }
 }
 
+.dropdown-link {
+  padding: 0 0 0 3.2rem;
+}
+
+.category_list {
+  padding: 0 0 2rem 0;
+}
+
 .active {
   background-color: #d3d3d3f9;
   color: #0c0c0c;
 }
 
-.bm-cross-button {
-  height: 3rem;
-  width: 3rem;
-}
-
-.bm-cross {
-  background: #bdc3c7;
-}
-
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
-
-.bm-menu {
-  background: #191b1c;
-  padding: 2.5em 0 0 0;
-  font-size: 1.15em;
-}
-
-.bm-item-list {
-  color: #b8b7ad;
-  text-transform: uppercase;
-  padding: .8em;
-}
-
-.bm-item {
-  display: inline-block;
-}
-
-.bm-overlay {
-  background: #000000af;
-}
-
 @media screen and (max-width: 786px) {
-  .bm-burger-button {
-    margin: .4rem 0 0 1rem;
+  .burger {
+    display: block;
   }
 }

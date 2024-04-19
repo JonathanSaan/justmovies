@@ -12,7 +12,6 @@ import Settings from "./pages/Settings";
 import Recovery from "./pages/Recovery";
 import NewMovies from "./pages/NewMovies";
 import TopRated from "./pages/TopRated";
-import Categories from "./pages/Categories";
 import MoviesGenre from "./pages/MoviesGenre";
 import Search from "./pages/Search";
 import MovieDetails from "./pages/MovieDetails";
@@ -46,7 +45,6 @@ function App() {
           <Route path="/top-rated" element={<TopRated />} />
           <Route path="/top-rated?page=:page" element={<TopRated />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/genre" element={<Categories />} />
           <Route path="/movies/:details" element={<MovieDetails />} />
           <Route path="/genre/:id/:genre" element={<MoviesGenre />} />
           <Route path="/genre/:id/:genre?page=:page" element={<MoviesGenre />} />
