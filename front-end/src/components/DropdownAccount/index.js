@@ -42,6 +42,7 @@ const DropdownAccount = ({ profile, handleSignOut }) => {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
             mt: 1.5,
+            bgcolor: "#323537",
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,
@@ -65,30 +66,32 @@ const DropdownAccount = ({ profile, handleSignOut }) => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        {profile ? (
-          <>
-            <Link to={`/profile/${profile.username}`}>
-              <AiOutlineUser className="dropdown-icon" size={30} />
-              <span>profile</span>
-            </Link>
+        <div className="menu-account">
+          {profile ? (
+            <>
+              <Link to={`/profile/${profile.username}`}>
+                <AiOutlineUser className="dropdown-icon" size={30} />
+                <span>profile</span>
+              </Link>
 
-            <Link to="/settings">
-              <AiOutlineSetting className="dropdown-icon" size={30} />
-              <span>settings</span>
-            </Link>
+              <Link to="/settings">
+                <AiOutlineSetting className="dropdown-icon" size={30} />
+                <span>settings</span>
+              </Link>
 
-            <Divider />
-            <Link to="/" onClick={handleSignOut}>
+              <Divider />
+              <Link to="/" onClick={handleSignOut}>
+                <MdLogin className="dropdown-icon" size={30} />
+                <span>sign out</span>
+              </Link>
+            </>
+          ) : (
+            <Link to="/sign-in">
               <MdLogin className="dropdown-icon" size={30} />
-              <span>sign out</span>
+              <span>sign in</span>
             </Link>
-          </>
-        ) : (
-          <Link to="/sign-in">
-            <MdLogin className="dropdown-icon" size={30} />
-            <span>sign in</span>
-          </Link>
-        )}
+          )}
+        </div>
       </Menu>
     </>
   );
