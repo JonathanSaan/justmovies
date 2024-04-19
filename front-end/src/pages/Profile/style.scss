@@ -3,7 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  
+
   .profile_container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -13,13 +13,13 @@
     padding: 8rem 0 0 0;
     min-width: 46.2rem;
     width: 65%;
-	
-	.profile_container_details {
-	  display: -webkit-box;
+
+    .profile_container_details {
+      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       flex-direction: row;
-	  
+
       .profile_container_details-image {
         color: transparent;
         border-radius: 100%;
@@ -48,8 +48,8 @@
     }
 
     .profile_container_favorites {
-      margin: 5.5rem 0 0 0;
-      
+      margin: 5rem 0 0 0;
+
       .profile_container_favorites-title {
         color: #f3f3f3;
         font-size: 130%;
@@ -87,7 +87,7 @@
             -o-text-overflow: ellipsis;
             text-overflow: ellipsis;
             font-size: 95%;
-            margin: .6vw 0 0 0;
+            margin: 0.6vw 0 0 0;
           }
 
           &:hover {
@@ -123,9 +123,9 @@
     padding: 9rem 0 0 0;
     min-width: 0;
     width: 100%;
-	
-	.profile_container_details {
-	  -webkit-box-orient: vertical;
+
+    .profile_container_details {
+      -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
@@ -133,7 +133,7 @@
       -ms-flex-align: center;
       align-items: center;
       width: 100%;
-    
+
       .profile_container_details-image {
         margin: 0 0 1rem 0;
         height: 16rem;
@@ -151,7 +151,7 @@
 
     .profile_container_favorites {
       width: 100%;
-      
+
       .profile_container_favorites-title {
         margin: 0 0 2rem 1rem;
       }
