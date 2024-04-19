@@ -32,7 +32,17 @@ const SideBar = ({ category, profile, handleSignOut }) => {
         <RxHamburgerMenu size={40} />
       </button>
       
-      <Drawer open={openSideBar} onClose={toggleDrawer(false)}>
+      <Drawer 
+        open={openSideBar} 
+        PaperProps={{
+          sx: {
+            bgcolor: "#191b1c",
+            padding: "0 1rem",
+  			width: "22rem",
+          }
+        }}
+        onClose={toggleDrawer(false)}
+      >
         <button className="close" onClick={toggleDrawer(false)}>
           <IoIosClose size={40} />
         </button>
@@ -109,7 +119,7 @@ const SideBar = ({ category, profile, handleSignOut }) => {
         </button>
       
         <Collapse in={openList} timeout="auto" unmountOnExit>
-          <List component="div" className="category_list" disablePadding>
+          <List component="div" sx={{padding: "0 0 2rem 0"}} disablePadding>
             {category && category.map((genre) => (
               <NavLink
                 activeclassname="active"
