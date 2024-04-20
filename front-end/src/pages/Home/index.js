@@ -11,6 +11,8 @@ import { Popular } from "./Popular";
 import "./style.scss";
 
 const Home = () => {
+  window.scrollTo(0, 0);
+  
   return (
     <HelmetProvider>
       <Header />

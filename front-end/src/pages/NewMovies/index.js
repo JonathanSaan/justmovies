@@ -20,6 +20,8 @@ const NewMovies = () => {
   const [totalPage, setTotalPage] = useState(0);
   
   useEffect(() => {
+    window.scrollTo({ top: 1600, behavior: "smooth" });
+    
     const LoadMovies = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKey}&language=en-US&page=${page}`);
       setTotalPage(respost.data.total_pages);
@@ -37,8 +39,6 @@ const NewMovies = () => {
     const nextPage = value > 1 ? value : 1;
     const route = `/new-movies?page=${nextPage}`;
     navigate(route, { replace: true });
-
-    window.scrollTo({ top: 1600, behavior: "smooth" });
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";

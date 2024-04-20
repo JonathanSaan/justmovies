@@ -15,14 +15,15 @@ export const Popular = () => {
   const [listPopular, setListPopular] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     const load = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
       setListPopular(respost.data.results);
     };
     load();
+    console.log(listPopular);
   }, []);
+  console.log(listPopular);
+  //backdrop_path
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
   const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
@@ -37,7 +38,7 @@ export const Popular = () => {
                 className="home_container_popular_card-image"
                 height="333"
                 width="112"
-                src={popular.poster_path ? Image_path + popular.poster_path : imageError}
+                src={popular.backdrop_path ? Image_path + popular.backdrop_path : imageError}
                 alt={popular.title ? popular.title : "a popular movie"}
               />
               <h2 className="home_container_popular_card-title">

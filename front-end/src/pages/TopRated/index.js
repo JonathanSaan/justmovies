@@ -20,6 +20,8 @@ const TopRated = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
+    window.scrollTo({ top: 1600, behavior: "smooth" });
+    
     const LoadTopRated = async () => {
       const respost = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=${page}`);
       setTotalPage(respost.data.total_pages);
@@ -37,8 +39,6 @@ const TopRated = () => {
     const nextPage = value > 1 ? value : 1;
     const route = `/top-rated?page=${nextPage}`;
     navigate(route, { replace: true });
-
-    window.scrollTo({ top: 1600, behavior: "smooth" });
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";

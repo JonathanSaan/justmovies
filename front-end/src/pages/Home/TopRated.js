@@ -10,11 +10,8 @@ export const TopRated = () => {
   const [listRated, setListRated] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const load = async () => {
-      const respost = await axios.get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=1`
-      );
+      const respost = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${APIKey}&language=en-US&page=1`);
       setListRated(respost.data.results.slice(0, 12));
     };
     load();

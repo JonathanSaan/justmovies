@@ -21,10 +21,10 @@ const MoviesGenre = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
+    window.scrollTo({ top: 1600, behavior: "smooth" });
+    
     const LoadMoviesGenre = async () => {
-      const respost = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${id}&with_watch_monetization_types=flatrate`
-      );
+      const respost = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${id}&with_watch_monetization_types=flatrate`);
       setTotalPage(respost.data.total_pages);
       setListMovies(respost.data.results.slice(0, 18));
 
@@ -40,8 +40,6 @@ const MoviesGenre = () => {
     const nextPage = value > 1 ? value : 1;
     const route = `/genre/${id}/${genre}?page=${nextPage}`;
     navigate(route, { replace: true });
-
-    window.scrollTo({ top: 1600, behavior: "smooth" });
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
