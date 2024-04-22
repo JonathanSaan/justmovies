@@ -25,7 +25,8 @@
     flex-direction: column;
     
     .signup_left-backimage {
-      filter: brightness(80%) blur(.3rem);
+      -webkit-filter: brightness(80%) blur(.3rem);
+              filter: brightness(80%) blur(.3rem);
       pointer-events: none;
       height: 100%;
       width: 100%;

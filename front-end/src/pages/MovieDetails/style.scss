@@ -125,8 +125,11 @@
         }
 
         .details_container_movie-details_genres {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
           margin: .5rem 0;
 
           .details_container_movie-details_genres-button {
@@ -257,15 +260,21 @@
             border-radius: 5px;
             pointer-events: none;
             z-index: -1;
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -webkit-transition: -webkit-transform .35s ease;
+            transition: -webkit-transform .35s ease;
+            -o-transition: transform .35s ease;
             transition: transform .35s ease;
+            transition: transform .35s ease, -webkit-transform .35s ease;
           }
 
           .item-text {
             color: #f3f3f3;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
             width: 100%;
             font-size: 1rem;
             margin: .8rem 0 0 0;
@@ -274,13 +283,17 @@
             left: 0;
             padding: .5rem;
             background-color: rgba(0, 0, 0, .7);
+            -webkit-transition: opacity .35s ease;
+            -o-transition: opacity .35s ease;
             transition: opacity .35s ease;
             opacity: 0;
           }
 
           &:hover {
             .item-image {
-              transform: scale(1.06);
+              -webkit-transform: scale(1.06);
+                  -ms-transform: scale(1.06);
+                      transform: scale(1.06);
             }
     
             .item-text {

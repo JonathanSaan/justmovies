@@ -27,8 +27,13 @@
     flex-direction: column;
 
     &.image {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
 
       .settings_form-image {
         color: transparent;
@@ -39,8 +44,13 @@
       }
 
       .settings_form_right {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
 
         .settings_form_right-upload input[type="file"] {
           background-color: #3e3e3eca;
@@ -74,15 +84,15 @@
       cursor: pointer;
       background-color: #808080;
       border: none;
-      border-radius: 0.4rem;
+      border-radius: .4rem;
       margin: 1rem 0 3rem 0;
       height: 3.5rem;
       min-width: 23rem;
       width: 20%;
 
       &:hover {
-        -webkit-filter: Brightness(0.8);
-        filter: Brightness(0.8);
+        -webkit-filter: Brightness(.8);
+        filter: Brightness(.8);
         -webkit-transition: 200ms;
         -o-transition: 200ms;
         transition: 200ms;
@@ -92,7 +102,7 @@
       margin: 0 0 3rem auto;
     }
     .settings_form-submit.delete {
-      margin: 0.5rem 0 3rem 0;
+      margin: .5rem 0 3rem 0;
       background-color: #95141f;
       color: #f3f3f3;
     }
@@ -111,7 +121,10 @@
       margin: 0 5vw 0 3vw;
 
       &.image {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
 
         .settings_form-image {
           margin: 1rem auto 3rem auto;
