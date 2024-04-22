@@ -42,8 +42,7 @@ const NewMovies = () => {
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
- 
+  
   return (
     <HelmetProvider>
       <Header />
@@ -53,26 +52,24 @@ const NewMovies = () => {
         <meta name="keywords" content="new movies, latest releases" />
       </Helmet>
       <main className="newmovies">
+        <h1 className="newmovies-title">New Movies</h1>
         <div className="newmovies_container">
-          <h1 className="newmovies_container-title">New Movies</h1>
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div className="newmovies_container_card" key={movie.id}>
-                  <Link to={`/movies/${movie.id}`} aria-label={movie.title}>
+                <Link to={`/movies/${movie.id}`} className="newmovies_container_card" key={movie.id} aria-label={movie.title}>
+                  <div>
                     <img
                       loading="lazy"
                       className="newmovies_container_card-image"
                       height="680"
                       width="440"
-                      src={movie.poster_path ? Image_path + movie.poster_path : imageError}
+                      src={movie.poster_path ? Image_path + movie.poster_path : "/imageError.webp"}
                       alt={movie.title ? movie.title : "a new movie"}
                     />
-                  </Link>
-                  <Link to={`/movies/${movie.id}`}>
                     <h2 className="newmovies_container_card-title">{movie.title}</h2>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ))}
             </>
           ) : <SkeletonNewMovies />}

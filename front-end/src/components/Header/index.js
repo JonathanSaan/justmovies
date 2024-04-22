@@ -32,7 +32,7 @@ const Header = () => {
   };
   
   const onChange = async (e) => {
-    const searchTerm = e.target.value;
+    const searchTerm = e.target.value !== undefined ? e.target.value : "";
     setTypedSearch(searchTerm);
 
     if (searchTerm === "" || searchTerm.length < 2) {
@@ -46,9 +46,11 @@ const Header = () => {
 
   const searchMovie = (e) => {
     e.preventDefault();
+    
     if (typedSearch === "") {
       return;
     }
+    
     navigate(`/search?q=${typedSearch.replaceAll(" ", "+")}`);
     resetComponents(setSearchesDropdown);
   };
@@ -60,9 +62,7 @@ const Header = () => {
   }
   
   const LoadGenres = async () => {
-    const respost = await axios.get(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`
-    );
+    const respost = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${APIKey}&language=en-US`);
     setCategories(respost.data.genres);
   };
   
@@ -72,14 +72,13 @@ const Header = () => {
   }, []);
   
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <>
       <SideBar category={category} profile={profile} handleSignOut={handleSignOut} />
       <header className="header">
         <Link to="/" className="header-title">
-          <img className="header-title-icon" src="/cassette-tape.png" alt="icon" />
+          <img className="header-title-icon" src="/cassette-tape.webp" alt="icon" />
           justmovies
         </Link>
         <DropdownCategory category={category} />
@@ -89,7 +88,7 @@ const Header = () => {
             className="header_search_form-search"
             value={typedSearch}
             placeholder="Search..."
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
           />
 
           <button
@@ -121,9 +120,7 @@ const Header = () => {
                         className="header_search_form_dropdown_card-image"
                         height="85"
                         width="65"
-                        src={
-                          movie.poster_path ? imagePath + movie.poster_path : imageError
-                        }
+                        src={movie.poster_path ? imagePath + movie.poster_path : "/imageError.webp"}
                         alt={movie.title}
                       />
                       <div className="header_search_form_dropdown_card_description">

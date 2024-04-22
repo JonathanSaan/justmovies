@@ -1,7 +1,7 @@
 .search {
   background-color: #191b1c;
   min-height: 100vh;
-  padding: 6rem 0;
+  padding: 8rem 0 10rem 0;
 
   .search_container {
     margin: 0 auto;
@@ -21,11 +21,6 @@
     .search_container_moviefound {
       width: 60vw;
       margin: .5rem 0 0 1.5rem;
-
-      a {
-        outline: none;
-        text-decoration: none;
-      }
 
       .search_container_moviefound_card {
         display: -webkit-box;
@@ -108,7 +103,7 @@
 
 @media screen and (max-width: 768px) {
   .search {
-    padding: 6rem 0 2rem 0;
+    padding: 7rem 0 10rem 0;
 
     .search_container {
       margin: 0 0 0 3vw;

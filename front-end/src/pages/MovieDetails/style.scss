@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10rem 0 0 0;
+  padding: 11rem 0 7rem 0;
   min-height: 100vh;
 
   .details_backdrop {
@@ -47,9 +47,8 @@
         color: transparent;
         border-radius: 5px;
         margin: 0;
-        height: 20rem;
-        min-width: 15rem;
-        width: 15rem;
+        height: 22rem;
+        width: 17rem;
         z-index: 2;
       }
 
@@ -126,7 +125,9 @@
         }
 
         .details_container_movie-details_genres {
-          margin: 5px 0;
+          display: flex;
+          flex-wrap: wrap;
+          margin: .5rem 0;
 
           .details_container_movie-details_genres-button {
             border: .5px solid #808080;
@@ -139,6 +140,9 @@
             padding: 10px;
             min-height: 2rem;
             white-space: nowrap;
+            -webkit-transition: 300ms;
+            -o-transition: 300ms;
+            transition: 300ms;
 
             &:hover {
               background-color: #0c0c0c;
@@ -178,124 +182,109 @@
       .details_container_movie-containervideo-video {
         border: none;
         min-height: 20rem;
-        height: 30vw;
-        min-width: 35rem;
-        width: 55vw;
+        height: 33vw;
+        width: 90%;
       }
-    }
-
-    a {
-      outline: none;
-      text-decoration: none;
     }
 
     ::-webkit-scrollbar {
       display: none;
     }
-
-    .AllTab {
-      margin: 0;
-      height: 18rem;
-
-      .Tabs {
-        list-style-type: none;
-        border-end-end-radius: 8px;
-        border-end-start-radius: 8px;
-        background-color: #202020;
-        padding: 0 0 3rem .4px;
-        height: 2rem;
-
-        .TabList {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          list-style-type: none;
-          color: #f3f3f3;
-          border: none;
-
-          .active {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            border-end-end-radius: 3px;
-            border-end-start-radius: 3px;
-            color: #f3f3f3;
-            background: none;
-            cursor: default;
-            border: none;
-            border-bottom: 1px solid #808080;
-            padding: .7rem;
-            margin: 0 .5rem 0 0;
-            outline: none;
-          }
-
-          .false {
-            margin: 0 .5rem 0 0;
-            padding: .7rem;
-            cursor: pointer;
-          }
+    
+    .swiper-button-next, .swiper-button-prev {
+      --swiper-navigation-size: 1.3rem;
+      margin: -1rem 0;
+      color: #f3f3f3;
+      background-color: #202020;
+      border-radius: 100%;
+      -webkit-transition: 300ms;
+      -o-transition: 300ms;
+      transition: 300ms;
+    }
+    
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background-color: #0c0c0c;
+    }
+    
+    .swiper-button-prev {
+      padding: 1.5rem 1.3rem 1.5rem 1rem;
+      width: 3rem;
+    }
+    
+    .swiper-button-next {
+      padding: 1.5rem 1rem 1.5rem 1.3rem;
+      width: 3rem;
+    }
+    
+    .carousel1 {
+      .item {
+        button {
+          cursor: default;
         }
+      }
+    }
+       
+    .carousel2 {
+      .item {
+        button {
+          cursor: pointer;
+        }
+      }
+    }
+          
+    .carousel1, .carousel2 {
+      cursor: -webkit-grab;
+      cursor: grab;
+      margin: 1.5rem 1rem 0 1rem;
+      padding: .5rem 0 0 0;
+      height: 18.5rem;
 
-        .TabPanel {
-          .carousel1 > div {
-            cursor: -webkit-grab !important;
-            cursor: grab !important;
+      .item {
+        display: block;
+        height: 18rem;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        
+        button {
+          border: none;
+          
+          .item-image {
+            color: transparent;
+            min-height: 18rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: -1;
+            object-fit: cover;
+            transition: transform .35s ease;
           }
 
-          .carousel1,
-          .carousel2 {
-            cursor: -webkit-grab;
-            cursor: grab;
-            margin: 20px auto 5vw auto;
-            height: 15vw;
-            min-height: 7rem;
+          .item-text {
+            color: #f3f3f3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            font-size: 1rem;
+            margin: .8rem 0 0 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: .5rem;
+            background-color: rgba(0, 0, 0, .7);
+            transition: opacity .35s ease;
+            opacity: 0;
+          }
 
-            .item {
-              cursor: pointer;
-              margin: 1vw 10px;
-              min-height: 12rem;
-              height: 15vw;
-              min-width: 8rem;
-              max-width: 10vw;
-
-              .ImageLoading {
-                height: 90%;
-                min-width: 100%;
-              }
-
-              img {
-                color: transparent;
-                height: 90%;
-                width: 100%;
-                border-radius: 5px;
-                pointer-events: none;
-                z-index: -4;
-              }
-
-              p {
-                color: #f3f3f3;
-                white-space: nowrap;
-                overflow: hidden;
-                -o-text-overflow: ellipsis;
-                text-overflow: ellipsis;
-                width: 100%;
-                font-size: 85%;
-                margin: 10px 0 0 0;
-              }
-
-              .Text {
-                margin: 5px 0 0;
-                width: 100%;
-              }
-
-              &:hover {
-                -webkit-transition: 350ms;
-                -o-transition: 350ms;
-                transition: 350ms;
-                -webkit-transform: scale(1.06);
-                -ms-transform: scale(1.06);
-                transform: scale(1.06);
-              }
+          &:hover {
+            .item-image {
+              transform: scale(1.06);
+            }
+    
+            .item-text {
+              opacity: 1;
             }
           }
         }
@@ -320,8 +309,8 @@
 
 @media screen and (max-width: 768px) {
   .details {
-    padding: 10rem 0 1rem 0;
-
+    padding: 11rem 0 6rem 0;
+    
     .details_backdrop {
       height: 15rem;
     }
@@ -346,10 +335,15 @@
             max-width: 7.5vw;
           }
 
-          .details_container_movie-details_genres
-            > .details_container_movie-details_genres-button {
-            padding: 5px;
-            font-size: .6rem;
+          span {
+            .details_container_movie-details_genres {
+              margin: .8rem 0;
+            
+              .details_container_movie-details_genres-button {
+                padding: 5px;
+                font-size: .6rem;
+              }
+            }
           }
         }
       }
@@ -373,29 +367,24 @@
         .details_container_movie-containervideo-video {
           min-height: 15rem;
           height: 45vw;
-          min-width: 25rem;
-          width: 75vw;
         }
       }
+      
+      .swiper-button-next, .swiper-button-prev {
+        margin: -1.3rem -.5rem;
+      }
+      
+      .carousel1, .carousel2 {
+        margin: 1.5rem auto 0 auto;
+        height: 16.5rem;
+        width: 97%;
 
-      .AllTab > .Tabs {
-        width: 100%;
-        margin: 0 0 8% 0;
-
-        .TabPanel {
-          .carousel1,
-          .carousel2 {
-            margin: 1rem 0 0 0;
-            width: 90vw;
-
-            .item {
-              padding: .4rem 0 0 0;
-              min-height: 12rem;
-              min-width: 8rem;
-
-              p {
-                font-size: 80%;
-              }
+        .item {
+          height: 16rem;
+          
+          button {
+            .item-text {
+              font-size: .8rem;
             }
           }
         }

@@ -5,16 +5,18 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { IoIosStar } from "react-icons/io";
 import { AiFillHeart } from "react-icons/ai";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab } from "@mui/material";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { ToastContainer } from "react-toastify";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 import APIKey from "../../mocks/api";
+import breakpoints from "../../mocks/breakpoints_carousel";
 import resetComponents from "../../utils/ResetComponents";
 import Notification from "../../utils/Notification";
-import { detailscarouselsetting } from "../../mocks/carouselsettings";
 import { SkeletonMovieDetails } from "../../components/Skeleton";
 import Header from "../../components/Header";
 import LoadingButton from "../../components/LoadingButton";
@@ -37,9 +39,9 @@ const MovieDetails = () => {
   const [characters, setCharacters] = useState([]);
   const [movieSimilar, setMovieSimilar] = useState([]);
 
-  const [activeTab, setActiveTab] = useState("tab1");
-  const handleTab = (index) => {
-    setActiveTab(`tab${index}`);
+  const [activeTab, setActiveTab] = useState("1");
+  const handleTab = (event, newValue) => {
+    setActiveTab(newValue);
   };
   
   const handleFavorite = async (e) => {
@@ -100,7 +102,8 @@ const MovieDetails = () => {
       setGenres(respost.data.genres);
       setYearMovie(respost.data.release_date.slice(0, 4));
       
-      const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US&append_to_response=videos`);
+      const videos = await axios.get(`https://api.themoviedb.org/3/movie/${details}/videos?api_key=${APIKey}&language=en-US`);
+      
   
       if (videos.data?.results?.length) {
         setTrailer(videos.data.results[0]);
@@ -121,7 +124,7 @@ const MovieDetails = () => {
       setTrailer,
       setCharacters,
       setMovieSimilar,
-      setActiveTab("tab1")
+      setActiveTab("1")
     );
 
     load();
@@ -143,8 +146,7 @@ const MovieDetails = () => {
   }, [detailsMovie, profile]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <HelmetProvider>
       <Header />
@@ -172,7 +174,7 @@ const MovieDetails = () => {
                   width="640"
                   height="480"
                   src={
-                    detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : imageError
+                    detailsMovie.poster_path ? imagePath + detailsMovie.poster_path : "/imageError.webp"
                   }
                   alt={
                     detailsMovie.title ? detailsMovie.title : "details about movie"
@@ -208,11 +210,10 @@ const MovieDetails = () => {
                     {genres.map((genre) => (
                       <Link
                         to={`/genre/${genre.id}/${genre.name.replaceAll(" ", "-").toLowerCase()}`}
+                        className="details_container_movie-details_genres-button"
                         key={genre.id}
                       >
-                        <button className="details_container_movie-details_genres-button">
-                          {genre.name}
-                        </button>
+                        {genre.name}
                       </Link>
                     ))}
                   </div>
@@ -226,7 +227,7 @@ const MovieDetails = () => {
               </div>
 
               <div className="details_container_movie-containervideo">
-                {trailer.key && (
+                {trailer && trailer.key && (
                   <iframe
                     className="details_container_movie-containervideo-video"
                     type="text/html"
@@ -238,70 +239,91 @@ const MovieDetails = () => {
                 )}
               </div>
 
-              <div className="AllTab">
-                <Tabs defaultIndex={0} className="Tabs">
-                  <TabList className="TabList">
-                    <Tab
-                      onClick={() => handleTab(1)}
-                      className={activeTab === "tab1" ? "active" : "false"}
-                    >
-                      Characters
-                    </Tab>
-                    <Tab
-                      onClick={() => handleTab(2)}
-                      className={activeTab === "tab2" ? "active" : "false"}
-                    >
-                      Similar
-                    </Tab>
+              <div>
+                <TabContext value={activeTab}>
+                  <TabList
+                    TabIndicatorProps={{
+                      sx: {backgroundColor: "#808080"}
+                    }}
+                    sx={{
+                      color: "#f3f3f3", 
+                      bgcolor: "#202020",
+                    }}
+                    textColor="inherit"
+                    onChange={handleTab}
+                  >
+                    <Tab disableRipple label="Characters" value="1" />
+                    <Tab disableRipple label="Similar" value="2" />
                   </TabList>
-                  <TabPanel className="TabPanel">
-                    <Slider {...detailscarouselsetting} className="carousel1">
+                  
+                  <TabPanel value="1" sx={{ padding: "0rem" }}>
+                    <Swiper
+                      slidesPerView={2.3}
+                      spaceBetween={10}
+                      breakpoints={breakpoints}
+                      modules={[Navigation]}
+                      navigation={true}
+                      className="carousel1"
+                    >
                       {characters.map((Character) => (
-                        <div className="item" key={Character.id}>
-                          <img
-                            loading="lazy"
-                            width="640"
-                            height="480"
-                            src={
-                              Character.profile_path ? imagePath + Character.profile_path : imageError
-                            }
-                            alt={
-                              Character.name ? Character.name : "a character"
-                            }
-                          />
-                          <p>{Character.name}</p>
-                        </div>
+                        <SwiperSlide className="item" key={Character.id}>
+                          <button>
+                            <img
+                              className="item-image"
+                              loading="lazy"
+                              width="640"
+                              height="480"
+                              src={
+                                Character.profile_path ? imagePath + Character.profile_path : "/imageError.webp"
+                              }
+                              alt={
+                                Character.name ? Character.name : "a character"
+                              }
+                            />
+                            <p className="item-text">{Character.name}</p>
+                          </button>
+                        </SwiperSlide>
                       ))}
-                    </Slider>
+                    </Swiper>
                   </TabPanel>
 
-                  <TabPanel className="TabPanel">
-                    <Slider {...detailscarouselsetting} className="carousel2">
+                  <TabPanel value="2" sx={{ padding: "0rem" }}>
+                    <Swiper
+                      slidesPerView={2.3}
+                      spaceBetween={10}
+                      breakpoints={breakpoints}
+                      modules={[Navigation]}
+                      navigation={true}
+                      className="carousel2"
+                    >
                       {movieSimilar.map((similar) => (
-                        <div className="item" key={similar.id}>
+                        <SwiperSlide className="item" key={similar.id}>
                           <Link
                             to={`/movies/${similar.id}`}
                             aria-label={similar.title}
                             draggable="false"
                           >
-                            <img
-                              loading="lazy"
-                              height="680"
-                              width="440"
-                              src={
-                                similar.poster_path ? imagePath + similar.poster_path : imageError
-                              }
-                              alt={
-                                similar.title ? similar.title : "a similar movie"
-                              }
-                            />
-                            <p>{similar.title}</p>
+                            <button>
+                              <img
+                                className="item-image"
+                                loading="lazy"
+                                height="680"
+                                width="440"
+                                src={
+                                  similar.poster_path ? imagePath + similar.poster_path : "/imageError.webp"
+                                }
+                                alt={
+                                  similar.title ? similar.title : "a similar movie"
+                                }
+                              />
+                              <p className="item-text">{similar.title}</p>
+                            </button>
                           </Link>
-                        </div>
+                        </SwiperSlide>
                       ))}
-                    </Slider>
+                    </Swiper>
                   </TabPanel>
-                </Tabs>
+                </TabContext>
               </div>
             </div>
           </>

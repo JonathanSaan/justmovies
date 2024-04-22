@@ -18,34 +18,31 @@ export const Movies = () => {
   }, []);
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <>
       {listMovies.length > 0 ? (
-        <>
-          {listMovies.map((movie) => (
-            <div className="home_container_newmovie_card" key={movie.id}>
-              <Link to={`/movies/${movie.id}`} aria-label={movie.title}>
-                <img
-                  className="home_container_newmovie_card-image"
-                  height="333"
-                  width="112"
-                  src={movie.poster_path ? Image_path + movie.poster_path : imageError}
-                  alt={movie.title ? movie.title : "a movie"}
-                />
-              </Link>
-              <Link to={`/movies/${movie.id}`}>
-                <h2 className="home_container_newmovie_card-title">
-                  {movie.title}
-                </h2>
-              </Link>
-            </div>
-          ))}
-        </>
-      ) : (
-        <SkeletonHomeMovies />
-      )}
+         <>
+           {listMovies.map((movie) => (
+             <Link to={`/movies/${movie.id}`} className="home_container_newmovie_card" key={movie.id} aria-label={movie.title}>
+               <div>
+                 <img
+                   className="home_container_newmovie_card-image"
+                   height="333"
+                   width="112"
+                   src={movie.poster_path ? Image_path + movie.poster_path : "/imageError.webp"}
+                   alt={movie.title ? movie.title : "a movie"}
+                 />
+                 <h2 className="home_container_newmovie_card-title">
+                   {movie.title}
+                 </h2>
+               </div>
+             </Link>
+           ))}
+         </>
+       ) : (
+         <SkeletonHomeMovies />
+       )}
     </>
   );
 };

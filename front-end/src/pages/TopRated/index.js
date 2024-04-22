@@ -42,8 +42,7 @@ const TopRated = () => {
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <HelmetProvider>
       <Header />
@@ -53,26 +52,24 @@ const TopRated = () => {
         <meta name="keywords" content="top-rated movies, best-rated movies, highest-rated films" />
       </Helmet>
       <main className="ratedmovie">
+        <h1 className="ratedmovie-title">Top Rated</h1>
         <div className="ratedmovie_container">
-          <h1 className="ratedmovie_container-title">Top Rated</h1>
           {listRated.length > 0 ? (
             <>
               {listRated.map((rated) => (
-                <div className="ratedmovie_container_card" key={rated.id}>
-                  <Link to={`/movies/${rated.id}`} aria-label={rated.title}>
+                <Link to={`/movies/${rated.id}`} className="ratedmovie_container_card" key={rated.id} aria-label={rated.title}>
+                  <div>
                     <img
                       loading="lazy"
                       className="ratedmovie_container_card-image"
-                      src={rated.poster_path ? Image_path + rated.poster_path : imageError}
+                      src={rated.poster_path ? Image_path + rated.poster_path : "/imageError.webp"}
                       height="680"
                       width="440"
                       alt={rated.title ? rated.title : "a top rated movie"}
                     />
-                  </Link>
-                  <Link to={`/movies/${rated.id}`}>
                     <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ))}
             </>
           ) : <SkeletonTopRated />}

@@ -43,12 +43,12 @@ const Recovery = () => {
         <div className="recovery_left">
           <img
             className="recovery_left-backimage"
-            src="movie-theater.jpg"
+            src="movie-theater.webp"
             alt="movie theater"
           />
           <img
             className="recovery_left-image"
-            src="/cassette-tape.png"
+            src="/cassette-tape.webp"
             alt="cassette tape"
           />
         </div>

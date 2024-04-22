@@ -1,65 +1,60 @@
 .newmovies {
   background-color: #191b1c;
-  padding: 6rem 0;
+  padding: 8rem 0 6rem 0;
   min-height: 100vh;
-
-  a {
-    outline: none;
-    text-decoration: none;
+  
+  .newmovies-title {
+    margin: 0 auto;
+    padding: 5px 0 0 8px;
+    width: 85vw;
+    max-width: 100rem;
+    color: #f3f3f3;
+    font-size: 1.5rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-left: 2px solid #808080;
   }
 
   .newmovies_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+    gap: .5rem;
+    margin: 2.5rem auto 3rem auto;
+    padding: 0 0 0 1rem;
     min-height: 20rem;
-    min-width: 50rem;
-    max-width: 78vw;
-
-    .newmovies_container-title {
-      margin: 2rem 0 2rem -1.2rem;
-      padding: 5px 0 0 8px;
-      width: 100%;
-      color: #f3f3f3;
-      font-size: 1.5rem;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border-left: 2px solid #808080;
-    }
+    width: 83vw;
+    max-width: 100rem;
 
     .newmovies_container_card {
       cursor: pointer;
-      margin: 0 0 3em .9vw;
-      height: 19.5vw;
+      -webkit-transition: 350ms;
+      -o-transition: 350ms;
+      transition: 350ms;
+      margin: 0 0 3rem 0;
+      min-height: 24.7rem;
+      width: 15rem;
 
       .newmovies_container_card-image {
         color: transparent;
-        min-width: 7.7rem;
-        height: 18vw;
-        width: 12vw;
+        height: 22rem;
+        width: 100%;
         border-radius: 5px;
       }
 
       .newmovies_container_card-title {
+        color: #f3f3f3;
         white-space: nowrap;
         overflow: hidden;
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
-        margin: .6vw 0 0 0;
-        min-width: 7.7rem;
-        width: 12vw;
-        color: #f3f3f3;
         font-size: 95%;
+        margin: 1rem 0 0 0;
+        width: 100%;
       }
 
       &:hover {
-        -webkit-transition: 350ms;
-        -o-transition: 350ms;
-        transition: 350ms;
         -webkit-transform: scale(1.08);
         -ms-transform: scale(1.08);
         transform: scale(1.08);
@@ -91,31 +86,28 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 798px) {
   .newmovies {
-    padding: 5rem 0 4rem 0;
+    padding: 7rem 0 4rem 0;
+    
+   .newmovies-title {
+     width: 93%;
+   }
 
     .newmovies_container {
+      gap: 1rem;
+      padding: 0;
       min-width: 0;
-      max-width: 87vw;
+      width: 90%;
 
       .newmovies_container_card {
-        height: 27vw;
-        min-height: 10rem;
         margin: 0 auto 3rem auto;
-        width: 23vw;
-        min-width: 8rem;
-
+        height: auto;
+        width: auto;
+        
         .newmovies_container_card-image {
-          min-height: 10em;
+          min-height: 5rem;
           height: 90%;
-          width: 95%;
-        }
-
-        .newmovies_container_card-title {
-          margin: 6px 0 0 0;
-          width: 95%;
-          font-size: .8rem;
         }
       }
     }
@@ -129,6 +121,19 @@
 
         button {
           padding: 1vw;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 451px) {
+  .newmovies {
+    .newmovies_container {
+      .newmovies_container_card {
+        .newmovies_container_card-image {
+          height: 42rem;
         }
       }
     }

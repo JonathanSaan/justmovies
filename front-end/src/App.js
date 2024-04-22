@@ -1,5 +1,4 @@
 import { Analytics } from "@vercel/analytics/react";
-import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -23,7 +22,7 @@ function App() {
   const isLoggedIn = localStorage.getItem("user") || sessionStorage.getItem("user");
 
   return (
-    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+    <>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -53,7 +52,7 @@ function App() {
         </Routes>
       </Router>
       <Analytics debug={false} />
-    </SkeletonTheme>
+    </>
   );
 }
 

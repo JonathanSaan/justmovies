@@ -47,8 +47,7 @@ const Search = () => {
   }, [searched, load]);
 
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <HelmetProvider>
       <Header />
@@ -86,9 +85,7 @@ const Search = () => {
                             className="search_container_moviefound_card_containerimage-image"
                             height="280"
                             width="120"
-                            src={
-                              movie.poster_path ? imagePath + movie.poster_path : imageError
-                            }
+                            src={movie.poster_path ? imagePath + movie.poster_path : "/imageError.webp"}
                             alt={movie.title}
                           />
                         )}
@@ -103,7 +100,7 @@ const Search = () => {
                             className="search_container_moviefound_card_containerimage-image"
                             height="280"
                             width="120"
-                            src={imageError}
+                            src="/imageError.webp"
                             alt="error"
                           />
                         )}

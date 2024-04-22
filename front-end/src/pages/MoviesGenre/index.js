@@ -43,8 +43,7 @@ const MoviesGenre = () => {
   };
 
   const Image_path = "https://image.tmdb.org/t/p/w500";
-  const imageError = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHowX2RIOXDQtQ6EWW7zJ_RC8xhiSsXNihA&usqp=CAU";
-
+  
   return (
     <HelmetProvider>
       <Header />
@@ -54,28 +53,26 @@ const MoviesGenre = () => {
         <meta name="keywords" content={`movies genre, movie category, justmovies genre, ${genre.replace(/-/g, " ")}`} />
       </Helmet>
       <main className="genre">
+        <h1 className="genre-title">
+          {genre.replace(/-/g, " ")}
+        </h1>
         <div className="genre_containergenre">
-          <h1 className="genre_containergenre-title">
-            {genre.replace(/-/g, " ")}
-          </h1>
           {listMovies.length > 0 ? (
             <>
               {listMovies.map((movie) => (
-                <div className="genre_containergenre_card" key={movie.id}>
-                  <Link to={`/movies/${movie.id}`} aria-label={movie.title}>
+                <Link to={`/movies/${movie.id}`} className="genre_containergenre_card" key={movie.id} aria-label={movie.title}>
+                  <div>
                     <img
                       loading="lazy"
                       className="genre_containergenre_card-image"
                       height="680"
                       width="440"
-                      src={movie.poster_path ? Image_path + movie.poster_path : imageError}
+                      src={movie.poster_path ? Image_path + movie.poster_path : "/imageError.webp"}
                       alt={movie.title ? movie.title : "a movie"}
                     />
-                  </Link>
-                  <Link to={`/movies/${movie.id}`}>
                     <h2 className="genre_containergenre_card-title">{movie.title}</h2>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ))}
             </>
           ) : (

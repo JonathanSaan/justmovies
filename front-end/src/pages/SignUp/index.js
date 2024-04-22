@@ -63,12 +63,12 @@ const SignUp = () => {
         <div className="signup_left">
           <img
             className="signup_left-backimage"
-            src="movie-theater.jpg"
+            src="movie-theater.webp"
             alt="movie theater"
           />
           <img
             className="signup_left-image"
-            src="/cassette-tape.png"
+            src="/cassette-tape.webp"
             alt="cassette tape"
           />
         </div>
