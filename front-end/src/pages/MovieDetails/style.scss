@@ -218,7 +218,7 @@
     
     .carousel1 {
       .item {
-        button {
+        p {
           cursor: default;
         }
       }
@@ -226,7 +226,7 @@
        
     .carousel2 {
       .item {
-        button {
+        p {
           cursor: pointer;
         }
       }
@@ -246,7 +246,7 @@
         overflow: hidden;
         position: relative;
         
-        button {
+        p {
           border: none;
           
           .item-image {
@@ -382,7 +382,7 @@
         .item {
           height: 16rem;
           
-          button {
+          p {
             .item-text {
               font-size: .8rem;
             }

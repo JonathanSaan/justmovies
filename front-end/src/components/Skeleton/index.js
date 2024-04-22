@@ -208,11 +208,13 @@ export const SkeletonMovieDetails = () => {
             >
               {Array(20).fill(1).map((card, index) => (
                 <SwiperSlide className="item" key={index}>
-                  <Skeleton 
-                    className="item-image" 
-                    variant="rectangular" 
-                    sx={{ bgcolor: "grey.800" }} 
-                  />
+                  <p>
+                    <Skeleton 
+                      className="item-image" 
+                      variant="rectangular" 
+                      sx={{ bgcolor: "grey.800" }} 
+                    />
+                  </p>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -229,11 +231,13 @@ export const SkeletonMovieDetails = () => {
             >
               {Array(20).fill(1).map((card, index) => (
                 <SwiperSlide className="item" key={index}>
-                  <Skeleton 
-                    className="item-image" 
-                    variant="rectangular" 
-                    sx={{ bgcolor: "grey.800" }} 
-                  />
+                  <p>
+                    <Skeleton 
+                      className="item-image" 
+                      variant="rectangular" 
+                      sx={{ bgcolor: "grey.800" }} 
+                    />
+                  </p>
                 </SwiperSlide>
               ))}
             </Swiper>

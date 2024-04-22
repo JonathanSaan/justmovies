@@ -267,7 +267,7 @@ const MovieDetails = () => {
                     >
                       {characters.map((Character) => (
                         <SwiperSlide className="item" key={Character.id}>
-                          <button>
+                          <p>
                             <img
                               className="item-image"
                               loading="lazy"
@@ -281,7 +281,7 @@ const MovieDetails = () => {
                               }
                             />
                             <p className="item-text">{Character.name}</p>
-                          </button>
+                          </p>
                         </SwiperSlide>
                       ))}
                     </Swiper>
@@ -303,7 +303,7 @@ const MovieDetails = () => {
                             aria-label={similar.title}
                             draggable="false"
                           >
-                            <button>
+                            <p>
                               <img
                                 className="item-image"
                                 loading="lazy"
@@ -317,7 +317,7 @@ const MovieDetails = () => {
                                 }
                               />
                               <p className="item-text">{similar.title}</p>
-                            </button>
+                            </p>
                           </Link>
                         </SwiperSlide>
                       ))}
