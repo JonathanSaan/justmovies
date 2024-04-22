@@ -27,7 +27,7 @@ export const Popular = () => {
   return (
     <Swiper
       allowTouchMove={true}
-      autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
       pagination={{ clickable: true }}
       modules={[Pagination, Navigation, Autoplay]}
       navigation={true}
