@@ -9,7 +9,7 @@
 ## Genre Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/d48446dd8d90c9091471a2e3b15211654db51fe4/screenshots/screenshot3.png)
 
-## New Movie Page
+## New Movies Page
 ![img](https://github.com/JonathanSaan/justmovies/blob/d48446dd8d90c9091471a2e3b15211654db51fe4/screenshots/screenshot4.png)
 
 ## Top Rated Page
