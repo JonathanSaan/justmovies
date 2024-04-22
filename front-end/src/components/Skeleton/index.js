@@ -279,4 +279,4 @@ export const SkeletonProfile = () => {
   );
 }
 
-export const SkeletonProfileSettings = () => <Skeleton className="settings_form-image" sx={{ bgcolor: "grey.800" }} />;
+export const SkeletonProfileSettings = () => <Skeleton className="settings_form-image" variant="circular" sx={{ bgcolor: "grey.800" }} />;
