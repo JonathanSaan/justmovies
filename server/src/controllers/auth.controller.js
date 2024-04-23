@@ -11,25 +11,25 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
   
     if (!email && !password) {
-      return res.status(400).send({ message: "Fill in all the fields" });
+      res.status(400).send({ message: "Fill in all the fields" });
     }
   
     if (!email || !email.length) {
-      return res.status(400).send({ message: "Email is required" });
+      res.status(400).send({ message: "Email is required" });
     }
   
     if (!password || !password.length) {
-      return res.status(400).send({ message: "Password is required" });
+      res.status(400).send({ message: "Password is required" });
     }
     
     if (!password || password.length < 8) {
-      return res.status(400).send({ message: "Password must have at least 8 characters" });
+      res.status(400).send({ message: "Password must have at least 8 characters" });
     }
     
     const user = await loginService(email);
 
     if (!user || !bcrypt.compareSync(password, user.password)) {
-      return res.status(404).send({ message: "User or Password not found" });
+      res.status(404).send({ message: "User or Password not found" });
     }
 
     const token = generateTokenService(user.id, "24hr");
@@ -51,45 +51,45 @@ export const register = async (req, res) => {
     const { username, email, password, repeatPassword } = req.body;
 
     if ( !username || !email || !password || !repeatPassword ) {
-      return res.status(400).send({ message: "Fill in all the fields." });
+      res.status(400).send({ message: "Fill in all the fields." });
     }
     
     if (username.length < 4) {
-      return res.status(400).send({ message: "Username must have at least 4 characters." });
+      res.status(400).send({ message: "Username must have at least 4 characters." });
     }
 
     const usernameRegex = /^[a-zA-Z0-9_-]+$/;
     if (!usernameRegex.test(username)) {
-      return res.status(400).send({ message: "Username can only contain letters, numbers, underscores, and hyphens." });
+      res.status(400).send({ message: "Username can only contain letters, numbers, underscores, and hyphens." });
     }
     
     if (password.length < 8 || repeatPassword.length < 8) {
-      return res.status(400).send({ message: "Passwords must have at least 8 characters." });
+      res.status(400).send({ message: "Passwords must have at least 8 characters." });
     }
     
     if (password !== repeatPassword) {
-      return res.status(400).send({ message: "Passwords must be the same." });
+      res.status(400).send({ message: "Passwords must be the same." });
     }
 
     const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
     if (!specialChars.test(password) || !specialChars.test(repeatPassword)) {
-      return res.status(400).send({ message: "The password must contain at least one special character." });
+      res.status(400).send({ message: "The password must contain at least one special character." });
     }
     
     const existingUsername = await findByUsernameService(username);
     if (existingUsername) {
-      return res.status(400).send({ message: "Username is already in use. Please choose a different username." });
+      res.status(400).send({ message: "Username is already in use. Please choose a different username." });
     }
 
     const existingEmail = await findByEmailService(email);
     if (existingEmail) {
-      return res.status(400).send({ message: "Email is already in use. Please choose a different email." });
+      res.status(400).send({ message: "Email is already in use. Please choose a different email." });
     }
     
     const user = await createService(req.body);
 
     if (!user) {
-      return res.status(400).send({ message: "Error creating user" });
+      res.status(400).send({ message: "Error creating user" });
     }
 
     res.status(201).send({
@@ -111,11 +111,11 @@ export const recovery = async (req, res) => {
     const user = await findByEmailService(email);
     
     if (!email) {
-      return res.status(400).send({ message: "Fill in the field" });
+      res.status(400).send({ message: "Fill in the field" });
     }
 
     if (!user) {
-      return res.status(400).send({ message: "This email is not registered in our system" });
+      res.status(400).send({ message: "This email is not registered in our system" });
     }
     
     const resetToken = generateTokenService(user.id, "1hr");
@@ -145,20 +145,20 @@ export const resetPassword = async (req, res) => {
     await validateService(req, res, token);
 
     if ( !password || !repeatPassword ) {
-      return res.status(400).send({ message: "Fill in all the fields." });
+      res.status(400).send({ message: "Fill in all the fields." });
     }
     
     if (password !== repeatPassword) {
-      return res.status(400).send({ message: "Passwords must be the same." });
+      res.status(400).send({ message: "Passwords must be the same." });
     }
 
     const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
     if (!specialChars.test(password) || !specialChars.test(repeatPassword)) {
-      return res.status(400).send({ message: "The password must contain at least one special character." });
+      res.status(400).send({ message: "The password must contain at least one special character." });
     }
     
 	  if (password.length < 8 || repeatPassword.length < 8) {
-      return res.status(400).send({ message: "Passwords must have at least 8 characters." });
+      res.status(400).send({ message: "Passwords must have at least 8 characters." });
     }
 
     await updatePasswordService(id, password.trim(), repeatPassword.trim());
@@ -166,7 +166,7 @@ export const resetPassword = async (req, res) => {
     res.status(200).send({ message: "Password successfully updated!" });
   } catch (err) {
     if (err.name === "TokenExpiredError") {
-      return res.status(401).send({ message: "Session expired. Please repeat the protocol." });
+      res.status(401).send({ message: "Session expired. Please repeat the protocol." });
     }
     res.status(500).send(err.message);
   }

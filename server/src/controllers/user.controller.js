@@ -26,7 +26,7 @@ export const updateAvatar = async (req, res) => {
     const { avatar } = req.body;
 
     if (!avatar) {
-      return res.status(400).send({ message: "Submit Avatar" });
+      res.status(400).send({ message: "Submit Avatar" });
     }
 
     await updateAvatarService(id, avatar);
@@ -55,10 +55,10 @@ export const updateDescription = async (req, res) => {
     const { description } = req.body;
 
     if (!description) {
-      return res.status(400).send({ message: "Submit Description" });
+      res.status(400).send({ message: "Submit Description" });
     }
     if (description.length <= 5) {
-      return res.status(400).send({ message: "Description must have a minimum of 5 characters." });
+      res.status(400).send({ message: "Description must have a minimum of 5 characters." });
     }
 
     await updateDescriptionService(id, description.trim());
@@ -75,27 +75,27 @@ export const updatePassword = async (req, res) => {
     const { oldPassword, newPassword, repeatPassword } = req.body;
 
     if (!oldPassword || !newPassword || !repeatPassword) {
-      return res.status(400).send({ message: "Please provide old password, new password, and repeat password." });
+      res.status(400).send({ message: "Please provide old password, new password, and repeat password." });
     }
 
     const user = await findByIdService(id);
     const isPasswordCorrect = await comparePasswords(oldPassword, user.password);
 
     if (!isPasswordCorrect) {
-      return res.status(401).send({ message: "Old password is incorrect." });
+      res.status(401).send({ message: "Old password is incorrect." });
     }
 
     if (newPassword.length < 8 || oldPassword.length < 8 || repeatPassword.length < 8) {
-      return res.status(400).send({ message: "Passwords must have a minimum of 8 characters." });
+      res.status(400).send({ message: "Passwords must have a minimum of 8 characters." });
     }
 
     if (newPassword !== repeatPassword) {
-      return res.status(400).send({ message: "Passwords must be the same." });
+      res.status(400).send({ message: "Passwords must be the same." });
     }
 
     const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
     if (!specialChars.test(newPassword) || !specialChars.test(repeatPassword)) {
-      return res.status(400).send({ message: "The passwords must contain at least one special character." });
+      res.status(400).send({ message: "The passwords must contain at least one special character." });
     }
 
     await updatePasswordService(id, newPassword.trim(), repeatPassword.trim());
@@ -113,7 +113,7 @@ export const erase = async (req, res) => {
     const user = await eraseService(id);
 
     if (!user) {
-      return res.status(404).send({ message: "User not found." });
+      res.status(404).send({ message: "User not found." });
     }
 
     res.send({ message: "User successfully deleted!" });
