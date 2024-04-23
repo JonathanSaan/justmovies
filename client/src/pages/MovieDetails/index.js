@@ -64,7 +64,7 @@ const MovieDetails = () => {
         });
         setLoadingButton(false)
         Notification("success", "Movie removed from favorites");
-        setFavorited(!favorited);
+        setFavorited(false);
       } catch (err) {
         setLoadingButton(false)
         Notification("error", err.response.data.message);
@@ -87,7 +87,7 @@ const MovieDetails = () => {
       });
       setLoadingButton(false)
       Notification("success", "Movie added to favorites");
-      setFavorited(!favorited);
+      setFavorited(true);
     } catch (err) {
       setLoadingButton(false)
       Notification("error", err.response.data.message);
