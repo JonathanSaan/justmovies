@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { findByUsernameService } from "../services/user.service.js";
-import client from "../helpers/redis.js";
 
 export const validId = async (req, res, next) => {
   try {
@@ -19,7 +18,7 @@ export const validId = async (req, res, next) => {
 export const validUser = async (req, res, next) => {
   try {
     const username = req.params.username;
-    
+
     const user = await findByUsernameService(username);
 
     if (!user) {
