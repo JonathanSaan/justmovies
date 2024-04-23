@@ -8,22 +8,22 @@ const authMiddleware = (req, res, next) => {
     const [schema, token] = parts;
 
     if (!authorization || schema !== "Bearer") {
-      return res.status(401).send({ message: "Unauthorized." });
+      res.status(401).send({ message: "Unauthorized." });
     }
 
     jvt.verify(token, process.env.SECRET_JVT, async (error, decoded) => {
       if (error) {
-        return res.status(401).send({ message: "You need to be logged in to do that action" });
+        res.status(401).send({ message: "You need to be logged in to do that action" });
       }
       console.log(decoded)
       const user = await findByIdService(decoded.id);
 
       if (!user || !user.id) {
-        return res.status(404).send({ message: "Invalid token!" });
+        res.status(404).send({ message: "Invalid token!" });
       }
 
       req.userId = user._id;
-      return next();
+      next();
     });
   } catch (err) {
     res.status(500).send({ message: err.message });

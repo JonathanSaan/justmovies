@@ -6,7 +6,7 @@ export const validId = async (req, res, next) => {
     const id = req.params.id;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).send({ message: "Invalid ID" });
+      res.status(400).send({ message: "Invalid ID" });
     }
 
     next();
@@ -22,7 +22,7 @@ export const validUser = async (req, res, next) => {
     const user = await findByUsernameService(username);
 
     if (!user) {
-      return res.status(404).send({ message: "User not found" });
+      res.status(404).send({ message: "User not found" });
     }
 
     req.username = username;
