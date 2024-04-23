@@ -4,9 +4,9 @@ export const addFavoriteMovies = async (req, res) => {
   try {
     const { userFrom, movieId, movieTitle, movieImage } = req.body;
 
-    await addFavoriteService(userFrom, movieId, movieTitle, movieImage);
-    
-    res.send({ message: "Movie added to favorites" });
+    const movie = await addFavoriteService(userFrom, movieId, movieTitle, movieImage);
+
+    res.send({ message: "Movie added to favorites", movie });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
