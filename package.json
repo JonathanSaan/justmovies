@@ -2,12 +2,12 @@
   "name": "justmovies",
   "version": "1.0.0",
   "description": "a website about movies",
-  "main": "back-end/src/index.js",
+  "main": "server/src/index.js",
   "scripts": {
-    "start": "node back-end/src/index.js",
-    "backend": "nodemon back-end/src/index.js",
-    "frontend": "npm run front --prefix front-end",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix front-end\"",
+    "start": "node server/src/index.js",
+    "backend": "nodemon server/src/index.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "build": "react-scripts build"
   },
   "author": "JonathanSaan",
