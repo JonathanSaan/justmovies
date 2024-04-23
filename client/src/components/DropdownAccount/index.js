@@ -71,24 +71,24 @@ const DropdownAccount = ({ profile, handleSignOut }) => {
             <>
               <Link to={`/profile/${profile.username}`}>
                 <AiOutlineUser className="dropdown-icon" size={30} />
-                <span>profile</span>
+                <span>Profile</span>
               </Link>
 
               <Link to="/settings">
                 <AiOutlineSetting className="dropdown-icon" size={30} />
-                <span>settings</span>
+                <span>Settings</span>
               </Link>
 
-              <Divider />
+              <Divider sx={{ bgcolor: "#808080" }} />
               <Link to="/" onClick={handleSignOut}>
                 <MdLogin className="dropdown-icon" size={30} />
-                <span>sign out</span>
+                <span>Sign out</span>
               </Link>
             </>
           ) : (
             <Link to="/sign-in">
               <MdLogin className="dropdown-icon" size={30} />
-              <span>sign in</span>
+              <span>Sign in</span>
             </Link>
           )}
         </div>
