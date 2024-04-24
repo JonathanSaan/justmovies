@@ -96,7 +96,7 @@ const Header = () => {
             className="header_search_form-button"
             aria-label="search"
           >
-            <IoIosSearch size={28} color="#FFF" />
+            <IoIosSearch size={28} color="#f3f3f3" />
           </button>
           {typedSearch && searchesDropdown.length > 0 && (
             <div className="header_search_form_dropdown" onSubmit={handleOutsideDropdownClick} ref={refOne}>
