@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 import connectDatabase from "./database/db.js";
 import authRoute from "./routes/auth.route.js";
@@ -14,6 +15,8 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 connectDatabase();
+
+app.use(bodyParser.json({ limit: "10mb" }));
 
 app.use(cors({ 
   origin: process.env.SERVER_FRONT_URL,
