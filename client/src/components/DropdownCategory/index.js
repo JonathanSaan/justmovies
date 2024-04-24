@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { IoCaretDown } from "react-icons/io5";
 
 import "./style.scss";
 
@@ -42,7 +43,10 @@ const DropdownCategory = ({ category }) => {
       arrow
       placement="bottom-start"
     >
-      <button className="dropdown-category-button">Genre</button>
+      <button className="dropdown-category-button">
+        Genre 
+        <IoCaretDown className="dropdown-category-button-icon" size={12} color="#f3f3f3" />
+      </button>
     </HtmlTooltip>
   );
 };
