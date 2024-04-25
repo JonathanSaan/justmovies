@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/autoplay";
 
 import APIKey from "../../mocks/api";
 
@@ -26,12 +26,13 @@ export const Popular = () => {
   
   return (
     <Swiper
-      allowTouchMove={true}
+      modules={[Autoplay, Pagination, Navigation]}
       autoplay={{ delay: 4000, disableOnInteraction: false }}
       pagination={{ clickable: true }}
-      modules={[Pagination, Navigation, Autoplay]}
-      navigation={true}
-      loop={true}
+      allowTouchMove
+      centeredSlides
+      navigation
+      loop
       className="home_container_popular"
     >
       {listPopular.map((popular) => (
