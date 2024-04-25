@@ -23,7 +23,7 @@
   .genre_containergenre {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
     gap: .5rem;
     margin: 2.5rem auto 3rem auto;
     padding: 0 0 0 1rem;
@@ -36,7 +36,7 @@
       -webkit-transition: 350ms;
       -o-transition: 350ms;
       transition: 350ms;
-      margin: 0 0 3rem 0;
+      margin: 0 0 2.5rem 0;
       min-height: 24.7rem;
       width: 15rem;
 
@@ -65,78 +65,33 @@
       }
     }
   }
-
-  ul {
-    margin: -1em 0 0 0;
-
-    li {
-      width: 4vw;
-
-      div {
-        font-size: 1rem;
-        color: #fff;
-      }
-
-      .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-        background-color: #202020;
-      }
-
-      button {
-        font-size: 1rem;
-        padding: 1.2vw 1vw;
-        color: #fff;
-      }
-    }
-  }
 }
 
-@media screen and (max-width: 798px) {
+@media screen and (max-width: 832px) {
   .genre {
-    padding: 7rem 0 4rem 0;
+    padding: 8rem 0 4rem 0;
     
     .genre-title {
       width: 93%;
     }
 
     .genre_containergenre {
+      grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
       gap: 1rem;
       padding: 0;
+      min-height: 30rem;
       min-width: 0;
       width: 90%;
 
       .genre_containergenre_card {
-        margin: 0 auto 3rem auto;
+        margin: 0 0 2rem 0;
+        min-height: 0;
         height: auto;
         width: auto;
         
         .genre_containergenre_card-image {
-          min-height: 5rem;
+          min-height: 15rem;
           height: 90%;
-        }
-      }
-    }
-
-    ul {
-      width: 65vw;
-      margin: -3em 0 0 -4vw;
-
-      li {
-        margin: 0 auto;
-
-        button {
-          padding: 1vw;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 451px) {
-  .genre {
-    .genre_container {
-      .genre_container_card {
-        .genre_containergenre_card-image {
-          height: 42rem;
         }
       }
     }

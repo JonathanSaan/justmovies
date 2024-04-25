@@ -197,7 +197,7 @@
         -webkit-transition: 350ms;
         -o-transition: 350ms;
         transition: 350ms;
-        margin: 0 0 2rem 0;
+        margin: 0 0 2.5rem 0;
         min-height: 24.7rem;
         width: 15rem;
         
@@ -229,7 +229,7 @@
   }
 }
 
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 832px) {
   .home {
     padding: 5rem 0 3rem 0;
 
@@ -283,15 +283,16 @@
         }
 
         .home_container_popular_caption {
-          margin: 8rem 0 0 4rem;
+          margin: 8rem 0 0 16vw;
 
           .home_container_popular_caption-title {
             font-size: 2rem;
           }
           .home_container_popular_caption-description {
             margin: .5rem 0 1.5rem 0;
-            min-width: 0;
-            width: 23rem;
+            min-width: 10rem;
+            width: 70vw;
+            max-width: 23rem;
             font-size: 1rem;
           }
           .home_container_popular_caption-button {
@@ -303,6 +304,7 @@
       }
       
       .home_container_newmovie, .home_container_ratedmovie {
+        grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
         gap: 1rem;
         padding: 0;
         min-width: 0;
@@ -311,27 +313,13 @@
 
         .home_container_newmovie_card, .home_container_ratedmovie_card {
           margin: 0 0 1.5rem 0;
+          min-height: 0;
           height: auto;
           width: auto;
           
           .home_container_newmovie_card-image, .home_container_ratedmovie_card-image {
-            min-height: 22rem;
+            min-height: 13rem;
             height: 90%;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-@media screen and (max-width: 482px) {
-  .home {
-    .home_container {
-      .home_container_newmovie, .home_container_ratedmovie {
-        .home_container_newmovie_card, .home_container_ratedmovie_card {
-          .home_container_newmovie_card-image, .home_container_ratedmovie_card-image {
-            height: 42rem;
           }
         }
       }

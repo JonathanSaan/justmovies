@@ -19,7 +19,7 @@
   .ratedmovie_container {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
     gap: .5rem;
     margin: 2.5rem auto 3rem auto;
     padding: 0 0 0 1rem;
@@ -61,78 +61,33 @@
       }
     }
   }
-
-  ul {
-    margin: -1em 0 0 0;
-
-    li {
-      width: 4vw;
-
-      div {
-        font-size: 1rem;
-        color: #f3f3f3;
-      }
-
-      .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-        background-color: #202020;
-      }
-
-      button {
-        font-size: 1rem;
-        padding: 1.2vw 1vw;
-        color: #f3f3f3;
-      }
-    }
-  }
 }
 
-@media screen and (max-width: 798px) {
+@media screen and (max-width: 832px) {
   .ratedmovie {
-    padding: 7rem 0 4rem 0;
+    padding: 8rem 0 4rem 0;
     
     .ratedmovie-title { 
       width: 93%;
     }
 
     .ratedmovie_container {
+      grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
       gap: 1rem;
       padding: 0;
+      min-height: 30rem;
       min-width: 0;
       width: 90%;
 
       .ratedmovie_container_card {
-        margin: 0 auto 3rem auto;
+        margin: 0 0 2rem 0;
+        min-height: 0;
         height: auto;
         width: auto;
         
         .ratedmovie_container_card-image {
-          min-height: 5rem;
+          min-height: 15rem;
           height: 90%;
-        }
-      }
-    }
-
-    ul {
-      width: 65vw;
-      margin: -3em 0 0 -4vw;
-
-      li {
-        margin: 0 auto;
-
-        button {
-          padding: 1vw;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 451px) {
-  .ratedmovie {
-    .ratedmovie_container {
-      .ratedmovie_container_card {
-        .ratedmovie_container_card-image {
-          height: 42rem;
         }
       }
     }
