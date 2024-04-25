@@ -1,6 +1,8 @@
 import { Pagination as Paginate, styled } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
+import "./style.scss";
+
 const StyledPaginate = styled(Paginate)(({ theme }) => ({
   "button": {
     "&:hover": {
@@ -26,7 +28,7 @@ const StyledPaginate = styled(Paginate)(({ theme }) => ({
 
 const Pagination = ({ page, totalPage, paginate }) => {
   return (
-    <>
+    <div className="pagination_container">
       {totalPage && (
         <Stack sx={{ mt: { lg: "70px", xs: "70px" } }} alignItems="center">
           <StyledPaginate
@@ -38,7 +40,7 @@ const Pagination = ({ page, totalPage, paginate }) => {
           />
         </Stack>
       )}
-    </>
+    </div>
   );
 };
 

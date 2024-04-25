@@ -1,0 +1,17 @@
+.pagination_container {
+  ul {
+    li {
+      margin: 0 .3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .pagination_container {
+    ul {
+      li {
+        margin: 0;
+      }
+    }
+  }
+}
