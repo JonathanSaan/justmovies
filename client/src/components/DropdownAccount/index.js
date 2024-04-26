@@ -79,7 +79,7 @@ const DropdownAccount = ({ profile, handleSignOut }) => {
                 <span>Settings</span>
               </Link>
 
-              <Divider sx={{ margin: ".6rem 0 0", bgcolor: "#808080" }} />
+              <Divider sx={{ margin: ".6rem 0", bgcolor: "#808080" }} />
               <Link to="/" onClick={handleSignOut}>
                 <MdLogin className="dropdown-icon" size={30} />
                 <span>Sign out</span>
