@@ -79,6 +79,9 @@
         .profile_container_favorites_container_item {
           margin: 0 1.2rem 2rem 1.2rem;
           width: 13rem;
+          -webkit-transition: 350ms;
+          -o-transition: 350ms;
+          transition: 350ms;
 
           .profile_container_favorites_container_item-image {
             color: transparent;
@@ -97,9 +100,6 @@
           }
 
           &:hover {
-            -webkit-transition: 350ms;
-            -o-transition: 350ms;
-            transition: 350ms;
             -webkit-transform: scale(1.06);
             -ms-transform: scale(1.06);
             transform: scale(1.06);
