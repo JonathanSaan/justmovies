@@ -70,7 +70,7 @@ const ResetPassword = () => {
         <div className="resetpassword_left">
           <img
             className="resetpassword_left-backimage"
-            src="movie-theater.webp"
+            src="/movie-theater.webp"
             alt="movie theater"
           />
           <img

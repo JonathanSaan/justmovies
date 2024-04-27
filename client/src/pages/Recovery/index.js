@@ -43,7 +43,7 @@ const Recovery = () => {
         <div className="recovery_left">
           <img
             className="recovery_left-backimage"
-            src="movie-theater.webp"
+            src="/movie-theater.webp"
             alt="movie theater"
           />
           <img
