@@ -47,7 +47,7 @@ function App() {
           <Route path="/movies/:details" element={<MovieDetails />} />
           <Route path="/genre/:id/:genre" element={<MoviesGenre />} />
           <Route path="/genre/:id/:genre?page=:page" element={<MoviesGenre />} />
-          <Route path="/reset-password/id=:id/token=:token" element={isLoggedIn ? <Navigate to="/" /> : <ResetPassword />} />
+          <Route path="/reset-password/:id/:token" element={isLoggedIn ? <Navigate to="/" /> : <ResetPassword />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
