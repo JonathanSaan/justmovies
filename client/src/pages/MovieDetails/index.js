@@ -53,8 +53,8 @@ const MovieDetails = () => {
         setLoadingButton(true)
         await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/movies/removeFavorite/${detailsMovie.id}`, {
           data: {
-            userFrom: id,
-            movieId: detailsMovie.id,
+            userId: id,
+            username: profile.username,
             movieTitle: detailsMovie.title,
             movieImage: imagePath + detailsMovie.poster_path,
           },
@@ -75,8 +75,8 @@ const MovieDetails = () => {
     try {
       await axios.post(`${process.env.REACT_APP_SERVER_BACK_URL}/movies/addFavorite/${detailsMovie.id}`,
       {
-        userFrom: id,
-        movieId: detailsMovie.id,
+        userId: id,
+        username: profile.username,
         movieTitle: detailsMovie.title,
         movieImage: imagePath + detailsMovie.poster_path,
       },

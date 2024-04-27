@@ -64,7 +64,7 @@ const Settings = () => {
   const handleChangeAvatar = async () => {
     try {
       setIsLoadingButton1(true);
-      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/avatar/${id}`, { avatar: coverPhoto }, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/avatar/${id}/${profile.username}`, { avatar: coverPhoto }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -81,7 +81,7 @@ const Settings = () => {
   const handleRemoveAvatar = async () => {
     try {
       setIsLoadingButton2(true);
-      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/delete-avatar/${id}`, {}, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/delete-avatar/${id}/${profile.username}`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -99,7 +99,7 @@ const Settings = () => {
   const handleChangeDescription = async (e) => {
     try {
       setIsLoadingButton3(true);
-      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/description/${id}`, e, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/description/${id}/${profile.username}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -116,7 +116,7 @@ const Settings = () => {
   const handleChangePassword = async (e) => {
     try {
       setIsLoadingButton4(true);
-      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/password/${id}`, e, {
+      await axios.patch(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/password/${id}/${profile.username}`, e, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -135,7 +135,7 @@ const Settings = () => {
 
   const handleDeleteAccount = async () => {
     setIsLoadingButton5(true);
-    await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/${id}`, {
+    await axios.delete(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/settings/${id}/${profile.username}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -2,11 +2,12 @@ import { addFavoriteService, deleteFavoriteService } from "../services/movies.se
 
 export const addFavoriteMovies = async (req, res) => {
   try {
-    const { userFrom, movieId, movieTitle, movieImage } = req.body;
+    const { movieId } = req.params;
+    const { userId, username, movieTitle, movieImage } = req.body;
 
-    const movie = await addFavoriteService(userFrom, movieId, movieTitle, movieImage);
+    await addFavoriteService(movieId, userId, username, movieTitle, movieImage);
 
-    res.send({ message: "Movie added to favorites", movie });
+    res.send({ message: "Movie added to favorites" });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
@@ -14,9 +15,10 @@ export const addFavoriteMovies = async (req, res) => {
 
 export const removeFavoriteMovies = async (req, res) => {
   try {
-    const { userFrom, movieId, movieTitle, movieImage } = req.body;
+    const { movieId } = req.params;
+    const { userId, username, movieTitle, movieImage } = req.body;
 
-    await deleteFavoriteService(userFrom, movieId, movieTitle, movieImage);
+    await deleteFavoriteService(movieId, userId, username, movieTitle, movieImage);
 
     res.send({ message: "Movie removed from favorites" });
   } catch (err) {
