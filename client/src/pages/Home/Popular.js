@@ -52,7 +52,7 @@ export const Popular = () => {
               {popular.overview.length > 150 ? `${popular.overview.substring(0, 150)}...` : popular.overview}
             </p>
             <Link to={`/movies/${popular.id}`} className="home_container_popular_caption-button" draggable="false" title={`See more about ${popular.title}`}>
-              see more
+              see details
             </Link>
           </div>
         </SwiperSlide>
