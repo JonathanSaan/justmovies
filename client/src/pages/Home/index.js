@@ -17,6 +17,7 @@ const Home = () => {
       <Header />
       <Helmet>
         <title>justmovies</title>
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
       </Helmet>
       <main className="home">
         <div className="home_container">
