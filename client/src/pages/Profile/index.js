@@ -44,7 +44,7 @@ const Profile = () => {
               <img
                 className="profile_container_details-image"
                 src={profileData.avatar}
-                alt="avatar's user"
+                alt={`Avatar's ${profileData.name ? `${profileData.username}` : "user"}`}
               />
               <div className="profile_container_details_detail">
                 <h1 className="profile_container_details_detail-title">
