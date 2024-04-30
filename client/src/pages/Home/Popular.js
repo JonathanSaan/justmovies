@@ -41,7 +41,7 @@ export const Popular = () => {
             <img
               className="home_container_popular_card-image"
               src={popular.backdrop_path ? Image_path + popular.backdrop_path : "/imageError.webp"}
-              alt={popular.title ? popular.title : "a popular movie"}
+              alt={popular.title ? `Poster of the movie ${popular.title}` : "Image unavailable"}
             />
           </div>
             
@@ -51,7 +51,7 @@ export const Popular = () => {
             <p className="home_container_popular_caption-description">
               {popular.overview.length > 150 ? `${popular.overview.substring(0, 150)}...` : popular.overview}
             </p>
-            <Link to={`/movies/${popular.id}`} className="home_container_popular_caption-button" draggable="false">
+            <Link to={`/movies/${popular.id}`} className="home_container_popular_caption-button" draggable="false" title={`See more about ${popular.title}`}>
               see more
             </Link>
           </div>

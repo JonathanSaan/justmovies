@@ -121,7 +121,7 @@ const Header = () => {
                         height="85"
                         width="65"
                         src={movie.poster_path ? imagePath + movie.poster_path : "/imageError.webp"}
-                        alt={movie.title}
+                        alt={movie.title ? `Poster of the movie ${movie.title}` : "Image unavailable"}
                       />
                       <div className="header_search_form_dropdown_card_description">
                         <h2 className="header_search_form_dropdown_card_description-title">

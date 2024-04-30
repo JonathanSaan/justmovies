@@ -65,7 +65,7 @@ const NewMovies = () => {
                       height="680"
                       width="440"
                       src={movie.poster_path ? Image_path + movie.poster_path : "/imageError.webp"}
-                      alt={movie.title ? movie.title : "a new movie"}
+                      alt={movie.title ? `Poster of the movie ${movie.title}` : "Image unavailable"}
                     />
                     <h2 className="newmovies_container_card-title">{movie.title}</h2>
                   </div>

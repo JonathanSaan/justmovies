@@ -86,7 +86,7 @@ const Search = () => {
                             height="280"
                             width="120"
                             src={movie.poster_path ? imagePath + movie.poster_path : "/imageError.webp"}
-                            alt={movie.title}
+                            alt={movie.title ? `Poster of the movie ${movie.title}` : "Image unavailable"}
                           />
                         )}
                       </Link>

@@ -32,7 +32,7 @@ export const TopRated = () => {
                   height="333"
                   width="112"
                   src={rated.poster_path ? Image_path + rated.poster_path : "/imageError.webp"}
-                  alt={rated.name ? rated.name : "a top rated movie"}
+                  alt={rated.title ? `Poster of the movie ${rated.title}` : "Image unavailable"}
                 />
                 <h2 className="home_container_ratedmovie_card-title">
                   {rated.title}

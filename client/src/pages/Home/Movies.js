@@ -31,7 +31,7 @@ export const Movies = () => {
                    height="333"
                    width="112"
                    src={movie.poster_path ? Image_path + movie.poster_path : "/imageError.webp"}
-                   alt={movie.title ? movie.title : "a movie"}
+                   alt={movie.title ? `Poster of the movie ${movie.title}` : "Image unavailable"}
                  />
                  <h2 className="home_container_newmovie_card-title">
                    {movie.title}

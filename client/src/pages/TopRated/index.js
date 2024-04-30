@@ -62,10 +62,10 @@ const TopRated = () => {
                     <img
                       loading="lazy"
                       className="ratedmovie_container_card-image"
-                      src={rated.poster_path ? Image_path + rated.poster_path : "/imageError.webp"}
                       height="680"
                       width="440"
-                      alt={rated.title ? rated.title : "a top rated movie"}
+                      src={rated.poster_path ? Image_path + rated.poster_path : "/imageError.webp"}
+                      alt={rated.title ? `Poster of the movie ${rated.title}` : "Image unavailable"}
                     />
                     <h2 className="ratedmovie_container_card-title">{rated.title}</h2>
                   </div>

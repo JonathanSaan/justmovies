@@ -276,9 +276,7 @@ const MovieDetails = () => {
                               src={
                                 Character.profile_path ? imagePath + Character.profile_path : "/imageError.webp"
                               }
-                              alt={
-                                Character.name ? Character.name : "a character"
-                              }
+                              alt={`Portrait${Character.name ? ` of ${Character.name}` : ''}`}
                             />
                             <p className="item-text">{Character.name}</p>
                           </p>

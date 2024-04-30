@@ -28,7 +28,7 @@ const SideBar = ({ category, profile, handleSignOut }) => {
 
   return (
     <>
-      <button className="burger" onClick={toggleDrawer(true)}>
+      <button className="burger" onClick={toggleDrawer(true)} aria-label="Open navigation menu">
         <RxHamburgerMenu size={40} />
       </button>
       
@@ -43,7 +43,7 @@ const SideBar = ({ category, profile, handleSignOut }) => {
         }}
         onClose={toggleDrawer(false)}
       >
-        <button className="close" onClick={toggleDrawer(false)}>
+        <button className="close" onClick={toggleDrawer(false)} aria-label="Close drawer">
           <IoIosClose size={40} />
         </button>
         
