@@ -27,12 +27,12 @@ export const Popular = () => {
   return (
     <Swiper
       modules={[Autoplay, Pagination, Navigation]}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      autoplay={{ delay: 5000, disableOnInteraction: false }}
       pagination={{ clickable: true }}
       allowTouchMove
       centeredSlides
       navigation
-      loop
+      slideToLoop={0}
       className="home_container_popular"
     >
       {listPopular.map((popular) => (
