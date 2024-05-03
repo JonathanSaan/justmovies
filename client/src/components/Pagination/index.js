@@ -10,18 +10,21 @@ const StyledPaginate = styled(Paginate)(({ theme }) => ({
       color: "#f3f3f3",
     },
   },
+  "& .MuiTouchRipple-root": {
+    display: "none",
+  },
   "& .MuiPaginationItem-root": {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#202020",
+    backgroundColor: "#323537",
     color: "#f3f3f3",
     height: "3rem",
     width: "3rem",
-    border: "1px solid #808080",
     borderRadius: ".5rem",
     "&.Mui-selected": {
-      backgroundColor: "#0c0c0c !important",
+      backgroundColor: "#0c0c0c",
+      border: "1px solid #808080",
     },
   },
 }));
