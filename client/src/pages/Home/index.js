@@ -19,8 +19,10 @@ const Home = () => {
         <title>justmovies</title>
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
         <link rel="canonical" href="https://justmovies.vercel.app/" />
-        <meta name="description" content="A web site about movies" />
         <meta name="keywords" content="movies, justmovies, a site to watch movies, a site to watch just movies" />
+        <meta name="description" content="A web site about movies" />
+        <meta property="og:description" content="A web site about movies">
+        <meta name="twitter:description" content="A web site about movies">
       </Helmet>
       <main className="home">
         <div className="home_container">
