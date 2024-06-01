@@ -21,6 +21,7 @@ const Home = () => {
         <link rel="canonical" href="https://justmovies.vercel.app/" />
         <meta name="keywords" content="movies, justmovies, a site to watch movies, a site to watch just movies" />
         <meta name="description" content="justmovies - Find and Favorite Your Favorite Movies. Search for movies by name or browse by categories. Discover a vast collection of new releases, classics, and popular films. Create a personalized list of favorites and never miss a movie you love. justmovies is your online destination to explore, discover, and save all your favorite movies. Join us and transform your movie-watching experience!" />
+        <meta property="og:description" content="justmovies - Find and Favorite Your Favorite Movies. Search for movies by name or browse by categories. Discover a vast collection of new releases, classics, and popular films. Create a personalized list of favorites and never miss a movie you love. justmovies is your online destination to explore, discover, and save all your favorite movies. Join us and transform your movie-watching experience!"
       </Helmet>
       <main className="home">
         <div className="home_container">
