@@ -28,16 +28,15 @@
         margin: 1em 0;
         padding: 1rem 0 0 0;
         min-height: 13rem;
+        max-height: 18rem;
         height: 12vw;
         border-top: .5px solid #3e3e3eca;
 
         .search_container_moviefound_card_containerimage > .search_container_moviefound_card_containerimage-image {
           color: #0c0c0c;
           cursor: pointer;
-          min-height: 12rem;
-          height: 11vw;
-          min-width: 10rem;
-          width: 9vw;
+          height: 100%;
+          width: auto;
         }
 
         .search_container_moviefound_card_description {
@@ -116,18 +115,15 @@
         width: 90vw;
 
         .search_container_moviefound_card {
-          .search_container_moviefound_card_containerimage
-            > .search_container_moviefound_card_containerimage-image {
-            min-width: 9rem;
-          }
-
           .search_container_moviefound_card_description {
             .search_container_moviefound_card_description-title {
               font-size: 1rem;
+              max-height: 0;
             }
 
             .search_container_moviefound_card_description-synopsis {
               font-size: .8rem;
+              height: 0;
             }
             .search_container_moviefound_card_description_vote {
               width: 2.7rem;
