@@ -131,6 +131,7 @@ const MovieDetails = () => {
   }, [details]);
 
   useEffect(() => {
+    console.log(detailsMovie)
     const checkFavoriteStatus = async () => {
       if (profile && detailsMovie.id) {
         const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${profile.username}`);
@@ -154,7 +155,23 @@ const MovieDetails = () => {
         <title>{detailsMovie.title ? `${detailsMovie.title} - ` : ""}justmovies</title>
         <meta name="description" content={detailsMovie.overview} />
         <meta name="keywords" content={`movie, ${detailsMovie.title}, trailer, characters, similar movies`} />
+        <meta name="og:title" content={detailsMovie.title} />
+        <meta property="og:site_name" content="justmovies" />
+        <meta property="og:type" content="video.movie" />
+        <meta property="video:duration" content={detailsMovie.runtime * 60} />
+        <meta property="og:url" content={`${process.env.REACT_APP_SERVER_BACK_URL}/movies/${detailsMovie.id}`} />
         <meta property="og:image" content={imagePath + detailsMovie.poster_path} />
+        <meta property="video:release_date" content={detailsMovie.release_date} />
+        {genres.map((genre, index) => (
+          <meta key={index} property="video:tag" content={genre.name} />
+        ))}
+        {characters.map((character, index) => (
+          <meta key={index} property="video:actor" content={character.name} />
+        ))}
+        <meta property="og:video" content={`https://youtube.com/embed/${trailer.key}`} />
+        <meta name="og:description" content={detailsMovie.overview} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
       </Helmet>
       <main className="details">
         {loading ? (
