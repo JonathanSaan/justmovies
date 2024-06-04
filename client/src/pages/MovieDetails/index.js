@@ -131,7 +131,6 @@ const MovieDetails = () => {
   }, [details]);
 
   useEffect(() => {
-    console.log(detailsMovie)
     const checkFavoriteStatus = async () => {
       if (profile && detailsMovie.id) {
         const response = await axios.get(`${process.env.REACT_APP_SERVER_BACK_URL}/profile/${profile.username}`);
