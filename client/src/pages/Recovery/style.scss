@@ -160,11 +160,13 @@
     .recovery_right {
       min-width: 85vw;
       width: 100%;
-
-      .recovery_right_form {
-        .recovery_right_form-input,
-        .recovery_right_form-submit {
-          min-width: 85vw;
+      
+      .recovery_right_container {
+        .recovery_right_form {
+          .recovery_right_form-input,
+          .recovery_right_form-submit {
+            min-width: 85vw;
+          }
         }
       }
     }

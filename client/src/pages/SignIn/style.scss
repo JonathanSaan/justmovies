@@ -171,14 +171,16 @@
       min-width: 85vw;
       width: 100%;
 
-      .signin_right_form {
-        .signin_right_form-input,
-        .signin_right_form-submit {
-          min-width: 85vw;
-        }
+      .signin_right_container {
+        .signin_right_form {
+          .signin_right_form-input,
+          .signin_right_form-submit {
+            min-width: 85vw;
+          }
 
-        .signin_right_form-checkbox {
-          margin: 1rem 0 .3rem 0;
+          .signin_right_form-checkbox {
+            margin: 1rem 0 .3rem 0;
+          }
         }
       }
     }

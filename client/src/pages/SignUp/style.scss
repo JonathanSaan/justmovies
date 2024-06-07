@@ -160,10 +160,12 @@
       min-width: 85vw;
       width: 100%;
 
-      .signup_right_form {
-        .signup_right_form-input,
-        .signup_right_form-submit {
-          min-width: 85vw;
+      .signup_right_container {
+        .signup_right_form {
+          .signup_right_form-input,
+          .signup_right_form-submit {
+            min-width: 85vw;
+          }
         }
       }
     }
