@@ -72,11 +72,11 @@
     }
     
     .swiper-button-next, .swiper-button-prev {
-      --swiper-navigation-size: 1.5rem;
-      margin: -2rem 2rem;
+      --swiper-navigation-size: 1.1rem;
+      margin: -2rem 3rem;
       color: #f3f3f3;
       background-color: #202020;
-      border-radius: 100%;
+      border-radius: 50%;
       -webkit-transition: 300ms;
       -o-transition: 300ms;
       transition: 300ms;
@@ -87,13 +87,13 @@
     }
     
     .swiper-button-prev {
-      padding: 1.9rem 1.5rem 1.9rem 1.3rem;
-      width: 4rem;
+      padding: 1.7rem 1.5rem 1.7rem 1.3rem;
+      width: 3.2rem;
     }
     
     .swiper-button-next {
-      padding: 1.9rem 1.3rem 1.9rem 1.5rem;
-      width: 4rem;
+      padding: 1.7rem 1.3rem 1.7rem 1.5rem;
+      width: 3.2rem;
     }
     
     .home_container_popular {
@@ -144,7 +144,7 @@
             -ms-flex-direction: column;
                 flex-direction: column;
         top: 0;
-        margin: 12rem 0 0 12.5vw;
+        margin: 12rem 0 0 14vw;
         z-index: 2;
 
         .home_container_popular_caption-title {
@@ -168,7 +168,7 @@
           padding: 1rem;
           width: 8.6rem;
           border: .5px solid #808080;
-          border-radius: .5rem;
+          border-radius: .3rem;
           text-transform: uppercase;
           -webkit-transition: 300ms;
           -o-transition: 300ms;
@@ -241,29 +241,30 @@
       
       .swiper-pagination > .swiper-pagination-bullet {
         margin: 0 .3rem;
-        width: 1.4rem;
+        width: 1rem;
       }
       
       .swiper-button-next, .swiper-button-prev {
-        --swiper-navigation-size: 1.2rem;
-        margin: -2rem -.2rem;
+        --swiper-navigation-size: .7rem;
+        margin: -4vw 0;
       }
-      
+
       .swiper-button-prev {
-        padding: 1.3rem 1.2rem 1.4rem 1rem;
-        height: 3rem;
-        width: 3rem;
+        height: 2rem;
+        width: 2rem;
+        padding: 1rem .6rem .95rem .5rem;
       }
-    
+
       .swiper-button-next {
-        padding: 1.3rem 1rem 1.4rem 1.2rem;
-        height: 3rem;
-        width: 3rem;
+        height: 2rem;
+        width: 2rem;
+        padding: 1rem .5rem .95rem .6rem;
       }
       
       .home_container_popular {
         margin: 0 0 3rem 0;
-        height: 33rem;
+        min-height: 16rem;
+        height: 80vw;
         
         .home_container_popular_card {
           height: 100%;
@@ -283,21 +284,22 @@
         }
 
         .home_container_popular_caption {
-          margin: 8rem 0 0 16vw;
+          margin: 14vw 15.5vw;
 
           .home_container_popular_caption-title {
-            font-size: 2rem;
+            font-size: 1.2rem;
           }
           .home_container_popular_caption-description {
-            margin: .5rem 0 1.5rem 0;
+            margin: .5rem 0 1rem 0;
             min-width: 10rem;
-            width: 70vw;
+            width: 69vw;
             max-width: 23rem;
-            font-size: 1rem;
+            font-size: .8rem;
           }
           .home_container_popular_caption-button {
-            width: 8.5rem;
-            font-size: 1rem;
+            padding: .9rem;
+            width: 6.4rem;
+            font-size: .7rem;
           }
         }
       }
