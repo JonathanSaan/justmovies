@@ -87,75 +87,77 @@ const SignIn = () => {
           />
         </div>
         <main className="signin_right">
-          <form className="signin_right_form" onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="signin_right_form-title">Sign in</h1>
-            <ThemeProvider theme={CustomTextField}>
-              <TextField
-                type="email"
-                className="signin_right_form-input"
-                label="Email"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  ...register("email", {
-                    pattern:
-                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-                  }),
-                }}
-              />
-              <TextField
-                type={showPassword ? "text" : "password"}
-                className="signin_right_form-input"
-                label="Password"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {showPassword ? (
-                          <MdOutlineVisibilityOff color="#d3d3d3f9" />
-                        ) : (
-                          <MdOutlineVisibility color="#d3d3d3f9" />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                  ...register("password"),
-                }}
-              />
-            </ThemeProvider>
-
-            <FormControlLabel
-              className="signin_right_form-checkbox"
-              control={
-                <Checkbox
-                  color="default"
-                  style={{ color: "#808080" }}
-                  checked={rememberMe}
-                  onChange={handleRememberMeChange}
+          <div className="signin_right_container">
+            <form className="signin_right_form" onSubmit={handleSubmit(onSubmit)}>
+              <h1 className="signin_right_form-title">Sign in</h1>
+              <ThemeProvider theme={CustomTextField}>
+                <TextField
+                  type="email"
+                  className="signin_right_form-input"
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    ...register("email", {
+                      pattern:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                    }),
+                  }}
                 />
-              }
-              label="Remember me"
-            />
-			<LoadingButton styleButton="signin_right_form-submit" loading={loadingButton} message="Sign in" />
-          </form>
-          <p>
-            Do not have an account?{" "}
-            <Link to="/sign-up" className="signin_right-link">
-              Create new one
-            </Link>
-          </p>
-          <p>
-            <Link to="/recovery" className="signin_right-link">
-              Forgot password?
-            </Link>
-          </p>
+                <TextField
+                  type={showPassword ? "text" : "password"}
+                  className="signin_right_form-input"
+                  label="Password"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? (
+                            <MdOutlineVisibilityOff color="#d3d3d3f9" />
+                          ) : (
+                            <MdOutlineVisibility color="#d3d3d3f9" />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                    ...register("password"),
+                  }}
+                />
+              </ThemeProvider>
+
+              <FormControlLabel
+                className="signin_right_form-checkbox"
+                control={
+                  <Checkbox
+                    color="default"
+                    style={{ color: "#808080" }}
+                    checked={rememberMe}
+                    onChange={handleRememberMeChange}
+                  />
+                }
+                label="Remember me"
+              />
+	      <LoadingButton styleButton="signin_right_form-submit" loading={loadingButton} message="Sign in" />
+            </form>
+            <p>
+              Do not have an account?{" "}
+              <Link to="/sign-up" className="signin_right-link">
+                Create new one
+              </Link>
+            </p>
+            <p>
+              <Link to="/recovery" className="signin_right-link">
+                Forgot password?
+              </Link>
+            </p>
+          </div>
         </main>
         <ToastContainer />
       </div>

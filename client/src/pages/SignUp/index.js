@@ -73,93 +73,95 @@ const SignUp = () => {
           />
         </div>
         <main className="signup_right">
-          <form className="signup_right_form" onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="signup_right_form-title">Sign up</h1>
-            <ThemeProvider theme={CustomTextField}>
-              <TextField
-                type="text"
-                className="signup_right_form-input"
-                label="Username"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  ...register("username"),
-                }}
-              />
-              <TextField
-                type="email"
-                className="signup_right_form-input"
-                label="Email"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  ...register("email", {
-                    pattern:
-                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-                  }),
-                }}
-              />
-              <TextField
-                type={showPassword ? "text" : "password"}
-                className="signup_right_form-input"
-                label="Password"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={() => handleClickShowPassword("password")}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {showPassword ? (
-                          <MdOutlineVisibilityOff color="#d3d3d3f9" />
-                        ) : (
-                          <MdOutlineVisibility color="#d3d3d3f9" />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                  ...register("password"),
-                }}
-              />
-              <TextField
-                type={showRepeatedPassword ? "text" : "password"}
-                className="signup_right_form-input"
-                label="Repeat Password"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {showRepeatedPassword ? (
-                          <MdOutlineVisibilityOff color="#d3d3d3f9" />
-                        ) : (
-                          <MdOutlineVisibility color="#d3d3d3f9" />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                  ...register("repeatPassword"),
-                }}
-              />
-            </ThemeProvider>
-			<LoadingButton styleButton="signup_right_form-submit" loading={loadingButton} message="Sign up" />
-          </form>
-          <p>
-            Already have an account?{" "}
-            <Link to="/sign-in" className="signup_right-link">
-              Sign in
-            </Link>
-          </p>
+          <div className="signup_right_container">
+            <form className="signup_right_form" onSubmit={handleSubmit(onSubmit)}>
+              <h1 className="signup_right_form-title">Sign up</h1>
+              <ThemeProvider theme={CustomTextField}>
+                <TextField
+                  type="text"
+                  className="signup_right_form-input"
+                  label="Username"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    ...register("username"),
+                  }}
+                />
+                <TextField
+                  type="email"
+                  className="signup_right_form-input"
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    ...register("email", {
+                      pattern:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                    }),
+                  }}
+                />
+                <TextField
+                  type={showPassword ? "text" : "password"}
+                  className="signup_right_form-input"
+                  label="Password"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={() => handleClickShowPassword("password")}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? (
+                            <MdOutlineVisibilityOff color="#d3d3d3f9" />
+                          ) : (
+                            <MdOutlineVisibility color="#d3d3d3f9" />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                    ...register("password"),
+                  }}
+                />
+                <TextField
+                  type={showRepeatedPassword ? "text" : "password"}
+                  className="signup_right_form-input"
+                  label="Repeat Password"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showRepeatedPassword ? (
+                            <MdOutlineVisibilityOff color="#d3d3d3f9" />
+                          ) : (
+                            <MdOutlineVisibility color="#d3d3d3f9" />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                    ...register("repeatPassword"),
+                  }}
+                />
+              </ThemeProvider>
+	      <LoadingButton styleButton="signup_right_form-submit" loading={loadingButton} message="Sign up" />
+            </form>
+            <p>
+              Already have an account?{" "}
+              <Link to="/sign-in" className="signup_right-link">
+                Sign in
+              </Link>
+            </p>
+          </div>
         </main>
         <ToastContainer />
       </div>

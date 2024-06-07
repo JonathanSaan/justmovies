@@ -2,6 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 5rem 0 0 0;
   min-height: 100vh;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -96,52 +97,56 @@
     color: #d3d3d3f9;
     z-index: 3;
 
-    .recovery_right_form {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
+    .recovery_right_container {
+      margin: auto;
 
-      .recovery_right_form-title {
-        margin: 1rem auto;
-      }
-      .recovery_right_form-input {
-        background-color: #3e3e3eca;
-        border-radius: .4rem;
-        margin: 1.5rem 0 0 0;
-        height: auto;
-        min-width: 23rem;
-        width: 24vw;
-        caret-color: #d3d3d3f9;
-      }
-      .recovery_right_form-submit {
-        cursor: pointer;
-        background-color: #808080;
-        border: none;
-        border-radius: .4rem;
-        margin: 2rem 0 3rem 0;
-        height: 3.5rem;
-        min-width: 23rem;
-        width: 24vw;
+      .recovery_right_form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
 
-        &:hover {
-          -webkit-filter: Brightness(.8);
-          filter: Brightness(.8);
-          -webkit-transition: 200ms;
-          -o-transition: 200ms;
-          transition: 200ms;
+        .recovery_right_form-title {
+          margin: 0 auto 1rem auto;
+        }
+        .recovery_right_form-input {
+          background-color: #3e3e3eca;
+          border-radius: .4rem;
+          margin: 1.5rem 0 0 0;
+          height: auto;
+          min-width: 23rem;
+          width: 24vw;
+          caret-color: #d3d3d3f9;
+        }
+        .recovery_right_form-submit {
+          cursor: pointer;
+          background-color: #808080;
+          border: none;
+          border-radius: .4rem;
+          margin: 2rem 0 3rem 0;
+          height: 3.5rem;
+          min-width: 23rem;
+          width: 24vw;
+
+          &:hover {
+            -webkit-filter: Brightness(.8);
+            filter: Brightness(.8);
+            -webkit-transition: 200ms;
+            -o-transition: 200ms;
+            transition: 200ms;
+          }
         }
       }
-    }
 
-    .recovery_right-link {
-      color: #808080;
+      .recovery_right-link {
+        color: #808080;
+      }
     }
   }
 }
@@ -153,7 +158,6 @@
     }
 
     .recovery_right {
-      padding: 4rem 0;
       min-width: 85vw;
       width: 100%;
 

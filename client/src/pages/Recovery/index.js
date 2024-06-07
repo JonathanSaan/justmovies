@@ -53,28 +53,30 @@ const Recovery = () => {
           />
         </div>
         <main className="recovery_right">
-      	  <form className="recovery_right_form" onSubmit={handleSubmit(onSubmit)}>
-      	  	<h1 className="recovery_right_form-title">Recovery</h1>
-      	    <ThemeProvider theme={CustomTextField}>
-              <TextField
-                type="email"
-                className="recovery_right_form-input"
-                label="Email"
-                variant="outlined"
-                fullWidth
-                InputProps={{
-                  ...register("email", {
-                    pattern:
-                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-                  }),
-                }}
-              />
-            </ThemeProvider>
-            <LoadingButton styleButton="recovery_right_form-submit" loading={loadingButton} message="Email me some help" />
-      	  </form>
-          <Link to="/sign-in" className="recovery_right-link">
-            Back to Sign in
-          </Link>
+          <div className="recovery_right_container">
+      	    <form className="recovery_right_form" onSubmit={handleSubmit(onSubmit)}>
+      	      <h1 className="recovery_right_form-title">Recovery</h1>
+      	      <ThemeProvider theme={CustomTextField}>
+                <TextField
+                  type="email"
+                  className="recovery_right_form-input"
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    ...register("email", {
+                      pattern:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                    }),
+                  }}
+                />
+              </ThemeProvider>
+              <LoadingButton styleButton="recovery_right_form-submit" loading={loadingButton} message="Email me some help" />
+      	    </form>
+            <Link to="/sign-in" className="recovery_right-link">
+              Back to Sign in
+            </Link>
+          </div>
         </main>
         <ToastContainer />
       </div>
