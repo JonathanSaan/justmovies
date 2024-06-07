@@ -20,9 +20,19 @@ const Home = () => {
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
         <link rel="canonical" href="https://justmovies.vercel.app/" />
         <meta name="keywords" content="movies, justmovies, a site to watch movies, a site to watch just movies" />
-        <meta name="description" content="justmovies - Find and Favorite Your Favorite Movies. Search for movies by name or browse by categories. Discover a vast collection of new releases, classics, and popular films. Create a personalized list of favorites and never miss a movie you love. justmovies is your online destination to explore, discover, and save all your favorite movies. Join us and transform your movie-watching experience!" />
-        <meta property="og:description" content="justmovies - Find and Favorite Your Favorite Movies. Search for movies by name or browse by categories. Discover a vast collection of new releases, classics, and popular films. Create a personalized list of favorites and never miss a movie you love. justmovies is your online destination to explore, discover, and save all your favorite movies. Join us and transform your movie-watching experience!" />
-        <meta name="twitter:description" content="justmovies - Find and Favorite Your Favorite Movies. Search for movies by name or browse by categories. Discover a vast collection of new releases, classics, and popular films. Create a personalized list of favorites and never miss a movie you love. justmovies is your online destination to explore, discover, and save all your favorite movies. Join us and transform your movie-watching experience!" />
+        <meta itemprop="image" content="%PUBLIC_URL%/logo.webp" />
+        <meta property="og:url" content="https://justmovies.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="justmovies" />
+        <meta name="description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
+        <meta property="og:description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
+        <meta name="twitter:description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
+        <meta name="twitter:image" content="%PUBLIC_URL%/logo.webp" />
+        <meta name="twitter:image:alt" content="justmovies logo featuring a cassette tape icon and the site name 'justmovies'" />
+        <meta property="og:image" content="%PUBLIC_URL%/logo.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://justmovies.vercel.app" />
+        <meta name="twitter:title" content="justmovies" />
       </Helmet>
       <main className="home">
         <div className="home_container">
