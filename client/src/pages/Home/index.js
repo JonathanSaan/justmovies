@@ -20,16 +20,16 @@ const Home = () => {
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
         <link rel="canonical" href="https://justmovies.vercel.app/" />
         <meta name="keywords" content="movies, justmovies, a site to watch movies, a site to watch just movies" />
-        <meta itemprop="image" content="%PUBLIC_URL%/logo.webp" />
+        <meta itemprop="image" content="/logo.webp" />
         <meta property="og:url" content="https://justmovies.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="justmovies" />
         <meta name="description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
         <meta property="og:description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
         <meta name="twitter:description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
-        <meta name="twitter:image" content="%PUBLIC_URL%/logo.webp" />
+        <meta name="twitter:image" content="/logo.webp" />
         <meta name="twitter:image:alt" content="justmovies logo featuring a cassette tape icon and the site name 'justmovies'" />
-        <meta property="og:image" content="%PUBLIC_URL%/logo.webp" />
+        <meta property="og:image" content="/logo.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://justmovies.vercel.app" />
         <meta name="twitter:title" content="justmovies" />
