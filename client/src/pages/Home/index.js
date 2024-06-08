@@ -24,9 +24,9 @@ const Home = () => {
         <meta property="og:url" content="https://justmovies.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="justmovies" />
-        <meta name="description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
-        <meta property="og:description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
-        <meta name="twitter:description" content="find and favorite movies on justmovies. Search by name or browse categories. Discover new releases, classics, and popular films. Create a personalized list and never miss a movie you love. Join us to transform your movie-watching experience!" />
+        <meta name="description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
+        <meta property="og:description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
+        <meta name="twitter:description" content="find and favorite movies on justmovies. Search, browse categories, and discover new releases. Create a personalized list and never miss a movie you love!" />
         <meta name="twitter:image" content="%PUBLIC_URL%/logo.webp" />
         <meta name="twitter:image:alt" content="justmovies logo featuring a cassette tape icon and the site name 'justmovies'" />
         <meta property="og:image" content="%PUBLIC_URL%/logo.webp" />
