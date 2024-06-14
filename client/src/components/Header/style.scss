@@ -92,7 +92,7 @@ html {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin: 5rem .5rem 0 0;
+      margin: 4.5rem .3rem 0 0;
       width: 30vw;
       background-color: #333434;
       border-radius: .4rem;
@@ -101,7 +101,7 @@ html {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        padding: .5rem .5rem 1rem .5rem;
+        padding: 1rem .5rem;
 
         .header_search_form_dropdown_card-image {
           color: #0c0c0c;
@@ -209,7 +209,7 @@ html {
       }
 
       .header_search_form_dropdown {
-        margin: 5rem 1.3rem 0 0;
+        margin: 4.5rem 1.2rem 0 0;
         width: 50vw;
 
         .header_search_form_dropdown_card {
