@@ -1,7 +1,33 @@
 .pagination_container {
   ul {
     li {
-      margin: 0 .3rem;
+      margin: 0 0.3rem;
+
+      button {
+        &:hover {
+          background-color: #0c0c0c;
+        }
+      }
+
+      .MuiTouchRipple-root {
+        display: none;
+      }
+
+      .MuiPaginationItem-root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        background-color: #323537;
+        color: #f3f3f3;
+        border-radius: 0.5rem;
+
+        &.Mui-selected {
+          background-color: #0c0c0c;
+          border: 1px solid #808080;
+        }
+      }
     }
   }
 }
@@ -9,8 +35,16 @@
 @media screen and (max-width: 786px) {
   .pagination_container {
     ul {
+      margin: 0 auto;
+
       li {
-        margin: 0;
+        margin: 0 0.05rem;
+
+        .MuiPaginationItem-root {
+          height: 2.5rem;
+          width: 2rem;
+          font-size: 0.8rem;
+        }
       }
     }
   }

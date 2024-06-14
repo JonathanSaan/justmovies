@@ -7,7 +7,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../components/Header";
 import resetComponents from "../../utils/ResetComponents";
 import { SkeletonMoviesGenre } from "../../components/Skeleton";
-import Pagination from "../../components/Pagination";
+import PaginationComponent from "../../components/Pagination";
 import APIKey from "../../mocks/api";
 import "./style.scss";
 
@@ -79,7 +79,7 @@ const MoviesGenre = () => {
             <SkeletonMoviesGenre />
           )}
         </div>
-        <Pagination page={page} totalPage={totalPage} paginate={paginate} />
+        <PaginationComponent page={page} totalPage={totalPage} paginate={paginate} />
       </main>
     </HelmetProvider>
   );

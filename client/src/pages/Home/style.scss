@@ -19,7 +19,7 @@
       align-items: center;
       margin: 0 auto;
       width: 85vw;
-      max-width: 100rem;
+      max-width: 70rem;
 
       .home_container_fade-title {
         color: #f3f3f3;
@@ -46,7 +46,7 @@
         text-transform: uppercase;
         font-size: 1rem;
         color: #f3f3f3;
-        background-color: #202020; 
+        background-color: #202020;
         border: .5px solid #808080;
         border-radius: 3px;
         -webkit-transition: 300ms;
@@ -57,12 +57,13 @@
           margin: 0 0 0 .4rem;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: #0c0c0c;
         }
       }
     }
-    
+
     .swiper-pagination > .swiper-pagination-bullet {
       background-color: #808080;
       margin: 0 .4rem;
@@ -70,8 +71,9 @@
       width: 2rem;
       border-radius: .5rem;
     }
-    
-    .swiper-button-next, .swiper-button-prev {
+
+    .swiper-button-next,
+    .swiper-button-prev {
       --swiper-navigation-size: 1.1rem;
       margin: -2rem 3rem;
       color: #f3f3f3;
@@ -81,21 +83,22 @@
       -o-transition: 300ms;
       transition: 300ms;
     }
-    
-    .swiper-button-next:hover, .swiper-button-prev:hover {
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
       background-color: #0c0c0c;
     }
-    
+
     .swiper-button-prev {
       padding: 1.7rem 1.5rem 1.7rem 1.3rem;
       width: 3.2rem;
     }
-    
+
     .swiper-button-next {
       padding: 1.7rem 1.3rem 1.7rem 1.5rem;
       width: 3.2rem;
     }
-    
+
     .home_container_popular {
       margin: 0 0 2rem 0;
       height: 47rem;
@@ -110,15 +113,15 @@
 
         .home_container_popular_card-image {
           -webkit-filter: brightness(.6);
-                  filter: brightness(.6);
+          filter: brightness(.6);
           -o-object-fit: cover;
-             object-fit: cover;
+          object-fit: cover;
           min-height: 47rem;
           height: 100%;
           width: 100%;
           pointer-events: none;
         }
-        
+
         &::before {
           content: "";
           position: absolute;
@@ -127,13 +130,30 @@
           width: 100%;
           height: 100%;
           z-index: 1;
-          background: rgb(25,27,28);
-          background: -o-linear-gradient(bottom, rgba(25,27,28,1) 0%, rgba(25,27,28,.7963015095571454) 12%, rgba(25,27,28,0) 32%);
-          background: -webkit-gradient(linear, left bottom, left top, from(rgba(25,27,28,1)), color-stop(12%, rgba(25,27,28,.7963015095571454)), color-stop(32%, rgba(25,27,28,0)));
-          background: linear-gradient(0deg, rgba(25,27,28,1) 0%, rgba(25,27,28,.7963015095571454) 12%, rgba(25,27,28,0) 32%); 
+          background: rgb(25, 27, 28);
+          background: -o-linear-gradient(
+            bottom,
+            rgba(25, 27, 28, 1) 0%,
+            rgba(25, 27, 28, .7963015095571454) 12%,
+            rgba(25, 27, 28, 0) 32%
+          );
+          background: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            from(rgba(25, 27, 28, 1)),
+            color-stop(12%, rgba(25, 27, 28, .7963015095571454)),
+            color-stop(32%, rgba(25, 27, 28, 0))
+          );
+          background: linear-gradient(
+            0deg,
+            rgba(25, 27, 28, 1) 0%,
+            rgba(25, 27, 28, .7963015095571454) 12%,
+            rgba(25, 27, 28, 0) 32%
+          );
         }
       }
-        
+
       .home_container_popular_caption {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -141,8 +161,8 @@
         position: absolute;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         top: 0;
         margin: 12rem 0 0 14vw;
         z-index: 2;
@@ -151,7 +171,7 @@
           font-size: 3rem;
           color: #f3f3f3;
         }
-        
+
         .home_container_popular_caption-description {
           margin: 1rem 0 2rem 0;
           min-width: 30rem;
@@ -165,6 +185,7 @@
           cursor: pointer;
           color: #f3f3f3;
           background-color: #202020;
+          font-size: 1rem;
           padding: 1rem;
           width: 8.6rem;
           border: .5px solid #808080;
@@ -174,41 +195,45 @@
           -o-transition: 300ms;
           transition: 300ms;
 
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background-color: #0c0c0c;
           }
         }
       }
     }
-    
-    .home_container_newmovie, .home_container_ratedmovie {
+
+    .home_container_newmovie,
+    .home_container_ratedmovie {
       display: -ms-grid;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-      gap: .5rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+      gap: 1rem;
       margin: 1.5rem auto 3rem auto;
       padding: 0 0 0 1rem;
       min-height: 20rem;
       width: 85vw;
-      max-width: 100rem;
-      
-      .home_container_newmovie_card, .home_container_ratedmovie_card {
+      max-width: 70rem;
+
+      .home_container_newmovie_card,
+      .home_container_ratedmovie_card {
         cursor: pointer;
         -webkit-transition: 350ms;
         -o-transition: 350ms;
         transition: 350ms;
         margin: 0 0 2.5rem 0;
-        min-height: 24.7rem;
-        width: 15rem;
-        
-        .home_container_newmovie_card-image, .home_container_ratedmovie_card-image {
+        min-height: 22rem;
+
+        .home_container_newmovie_card-image,
+        .home_container_ratedmovie_card-image {
           color: #0c0c0c;
-          height: 22rem;
+          min-height: 20rem;
           width: 100%;
           border-radius: 5px;
         }
-        
-        .home_container_newmovie_card-title, .home_container_ratedmovie_card-title {
+
+        .home_container_newmovie_card-title,
+        .home_container_ratedmovie_card-title {
           color: #f3f3f3;
           white-space: nowrap;
           overflow: hidden;
@@ -219,7 +244,8 @@
           width: 100%;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           -webkit-transform: scale(1.06);
           -ms-transform: scale(1.06);
           transform: scale(1.06);
@@ -238,13 +264,14 @@
         min-width: 0;
         width: 95%;
       }
-      
+
       .swiper-pagination > .swiper-pagination-bullet {
         margin: 0 .3rem;
         width: .8rem;
       }
-      
-      .swiper-button-next, .swiper-button-prev {
+
+      .swiper-button-next,
+      .swiper-button-prev {
         --swiper-navigation-size: .7rem;
         margin: -4vw 0;
       }
@@ -260,26 +287,43 @@
         width: 2rem;
         padding: 1rem .5rem .95rem .6rem;
       }
-      
+
       .home_container_popular {
         margin: 0 0 3rem 0;
         min-height: 16rem;
         height: 80vw;
-        
+
         .home_container_popular_card {
           height: 100%;
           -webkit-filter: opacity(100%);
           filter: opacity(100%);
-          
+
           .home_container_popular_card-image {
             min-height: 0;
           }
-          
+
           &::before {
-            background: rgb(25,27,28);
-            background: -o-linear-gradient(bottom, rgba(25,27,28,1) 0%, rgba(25,27,28,.4985487005683813) 14%, rgba(25,27,28,0) 20%);
-            background: -webkit-gradient(linear, left bottom, left top, from(rgba(25,27,28,1)), color-stop(14%, rgba(25,27,28,.4985487005683813)), color-stop(20%, rgba(25,27,28,0)));
-            background: linear-gradient(0deg, rgba(25,27,28,1) 0%, rgba(25,27,28,.4985487005683813) 14%, rgba(25,27,28,0) 20%); 
+            background: rgb(25, 27, 28);
+            background: -o-linear-gradient(
+              bottom,
+              rgba(25, 27, 28, 1) 0%,
+              rgba(25, 27, 28, .4985487005683813) 14%,
+              rgba(25, 27, 28, 0) 20%
+            );
+            background: -webkit-gradient(
+              linear,
+              left bottom,
+              left top,
+              from(rgba(25, 27, 28, 1)),
+              color-stop(14%, rgba(25, 27, 28, .4985487005683813)),
+              color-stop(20%, rgba(25, 27, 28, 0))
+            );
+            background: linear-gradient(
+              0deg,
+              rgba(25, 27, 28, 1) 0%,
+              rgba(25, 27, 28, .4985487005683813) 14%,
+              rgba(25, 27, 28, 0) 20%
+            );
           }
         }
 
@@ -303,24 +347,25 @@
           }
         }
       }
-      
-      .home_container_newmovie, .home_container_ratedmovie {
+
+      .home_container_newmovie,
+      .home_container_ratedmovie {
         grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
-        gap: 1rem;
         padding: 0;
         min-width: 0;
         width: 90%;
         min-height: 30rem;
 
-        .home_container_newmovie_card, .home_container_ratedmovie_card {
+        .home_container_newmovie_card,
+        .home_container_ratedmovie_card {
           margin: 0 0 1.5rem 0;
           min-height: 0;
           height: auto;
           width: auto;
-          
-          .home_container_newmovie_card-image, .home_container_ratedmovie_card-image {
-            min-height: 13rem;
-            height: 90%;
+
+          .home_container_newmovie_card-image,
+          .home_container_ratedmovie_card-image {
+            height: auto;
           }
         }
       }
