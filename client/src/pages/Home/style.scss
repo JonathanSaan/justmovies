@@ -207,13 +207,13 @@
     .home_container_ratedmovie {
       display: -ms-grid;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
       gap: 1rem;
       margin: 1.5rem auto 3rem auto;
       padding: 0 0 0 1rem;
       min-height: 20rem;
       width: 85vw;
-      max-width: 70rem;
+      max-width: 90rem;
 
       .home_container_newmovie_card,
       .home_container_ratedmovie_card {
