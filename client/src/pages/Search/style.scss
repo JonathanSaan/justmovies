@@ -19,7 +19,7 @@
 
     .search_container_moviefound {
       width: 60vw;
-      margin: .5rem 0 0 1.5rem;
+      margin: .4rem 0 0 2rem;
 
       .search_container_moviefound_card {
         display: -webkit-box;
@@ -36,6 +36,8 @@
           color: #0c0c0c;
           cursor: pointer;
           height: 100%;
+          min-height: 12rem;
+          max-width: 11rem;
           width: auto;
         }
 
